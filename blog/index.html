@@ -1,0 +1,86 @@
+---
+title: Blog
+layout: default
+---
+
+<!-- Main -->
+	<section class="wrapper style1">
+		<div class="container">
+			<div id="content">
+				<div class="row">
+					<div class="12u">
+
+						<!-- Blog -->
+							<section>
+								<header class="major">
+									<h2></h2>
+								</header>
+                                      						
+        	<div class="container">
+			<div class="row">
+				<section class="6u">
+					<div class="box post">
+						<a href="#" class="image left"><img src="/assets/images/pic01.jpg" alt="" /></a>
+						<div class="inner">                                          
+                                                  
+       	<h3>Prerequisites</h3>
+							<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+						</div>
+					</div>
+				</section>
+				<section class="6u">
+					<div class="box post">
+						<a href="#" class="image left"><img src="/assets/images/pic02.jpg" alt="" /></a>
+						<div class="inner">
+							<h3>Get Started </h3>
+							<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+						</div>
+					</div>
+				</section>
+			</div>
+                	<div class="container">
+			<div class="row">
+				<section class="6u">
+					<div class="box post">
+						<a href="#" class="image left"><img src="/assets/images/pic01.jpg" alt="" /></a>
+						<div class="inner">
+							<h3>How to Build</h3>
+							<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+						</div>
+					</div>
+				</section>
+				<section class="6u">
+					<div class="box post">
+						<a href="#" class="image left"><img src="/assets/images/pic02.jpg" alt="" /></a>
+						<div class="inner">
+							<h3> How to submit an issue </h3>
+							<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+						</div>
+					</div>
+				</section>
+			</div>
+                          
+                                      
+								{% for post in site.posts offset: 0 limit: 4 %}
+									<div class="row">
+										<section class="12u">
+											<div class="box post">
+												<a href="#" class="image left"><img src="{{ site.baseurl }}{{ post.featured }}" alt=""></a>
+												<div class="inner">
+													<h3>{{ post.title }}</h3>
+													{{ post.excerpt }}
+													<footer>
+														<a href="{{ site.baseurl }}{{ post.url }}" class="button">Continue Reading</a>
+													</footer>
+												</div>
+											</div>
+
+										</section>
+									</div>
+								{% endfor %}
+							</section>
+
+					</div>
+				</div>
+		</div>
+	</section>
