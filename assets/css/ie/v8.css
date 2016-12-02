@@ -11,25 +11,25 @@
 	input[type="email"],
 	textarea {
 		position: relative;
-		-ms-behavior: url("DataHubSystem/assets/css/ie/PIE.htc");
+		-ms-behavior: url("/assets/css/ie/PIE.htc");
 	}
 
 /* Image */
 
 	.image {
-		-ms-behavior: url("DataHubSystem/assets/css/ie/PIE.htc");
+		-ms-behavior: url("/assets/css/ie/PIE.htc");
 	}
 
 		.image img {
 			position: relative;
-			-ms-behavior: url("DataHubSystem/assets/css/ie/PIE.htc");
+			-ms-behavior: url("/assets/css/ie/PIE.htc");
 		}
 
 /* Icon */
 
 	.icon.major {
 		position: relative;
-		-ms-behavior: url("DataHubSystem/assets/css/ie/PIE.htc");
+		-ms-behavior: url("/assets/css/ie/PIE.htc");
 	}
 
 /* Button */
@@ -39,7 +39,7 @@
 	input[type="button"],
 	.button {
 		position: relative;
-		-ms-behavior: url("DataHubSystem/assets/css/ie/PIE.htc");
+		-ms-behavior: url("/assets/css/ie/PIE.htc");
 	}
 
 /* Box */
@@ -57,13 +57,13 @@
 /* Dropotron */
 
 	.dropotron {
-		-ms-behavior: url("DataHubSystem/assets/css/ie/PIE.htc");
+		-ms-behavior: url("/assets/css/ie/PIE.htc");
 	}
 
 /* Banner */
 
 	#banner {
-		-ms-behavior: url("DataHubSystem/assets/css/ie/backgroundsize.min.htc");
+		-ms-behavior: url("/assets/css/ie/backgroundsize.min.htc");
 	}
 
 /* Wrapper */
