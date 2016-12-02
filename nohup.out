@@ -8,3 +8,50 @@ Configuration file: /root/testkalos/DataHubSystem/_config.yml
  Auto-regeneration: enabled for '/root/testkalos/DataHubSystem'
 Configuration file: /root/testkalos/DataHubSystem/_config.yml
 jekyll 3.3.1 | Error:  Address already in use - bind(2) for 127.0.0.1:4002
+Configuration file: /root/testkalos/DataHubSystem/_config.yml
+Configuration file: /root/testkalos/DataHubSystem/_config.yml
+            Source: /root/testkalos/DataHubSystem
+       Destination: /root/testkalos/DataHubSystem/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+                    done in 0.908 seconds.
+ Auto-regeneration: enabled for '/root/testkalos/DataHubSystem'
+Configuration file: /root/testkalos/DataHubSystem/_config.yml
+    Server address: http://127.0.0.1:4003/
+  Server running... press ctrl-c to stop.
+[2016-11-30 11:30:56] ERROR `/assets/css/images/banner.jpg' not found.
+[2016-11-30 11:30:56] ERROR `/favicon.ico' not found.
+[2016-11-30 11:30:56] ERROR `/favicon.ico' not found.
+[2016-11-30 11:31:25] ERROR `/assets/css/images/banner.jpg' not found.
+[2016-11-30 11:32:33] ERROR `/assets/css/images/banner.jpg' not found.
+[2016-11-30 11:33:23] ERROR `/assets/css/images/banner.jpg' not found.
+Configuration file: /root/testkalos/DataHubSystem/_config.yml
+Configuration file: /root/testkalos/DataHubSystem/_config.yml
+            Source: /root/testkalos/DataHubSystem
+       Destination: /root/testkalos/DataHubSystem/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+                    done in 0.327 seconds.
+ Auto-regeneration: enabled for '/root/testkalos/DataHubSystem'
+Configuration file: /root/testkalos/DataHubSystem/_config.yml
+jekyll 3.3.1 | Error:  Address already in use - bind(2) for 127.0.0.1:4003
+      Regenerating: 1 file(s) changed at 2016-12-02 10:37:42 ...done in 0.187427936 seconds.
+[2016-12-02 10:37:59] ERROR `/assets/css/images/banner.jpg' not found.
+[2016-12-02 10:37:59] ERROR `/favicon.ico' not found.
+[2016-12-02 10:37:59] ERROR `/favicon.ico' not found.
+[2016-12-02 10:41:17] ERROR `/assets/css/images/banner.jpg' not found.
+      Regenerating: 1 file(s) changed at 2016-12-02 10:44:44 ...done in 0.191892407 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-02 10:45:11 ...done in 0.20919071 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-02 10:45:26 ...done in 0.187754036 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-02 10:45:44 ...done in 0.190490872 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-02 10:46:09 ...done in 0.198659382 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-02 10:46:34 ...done in 0.192813579 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-02 10:47:02 ...done in 0.206706091 seconds.
+      Regenerating: 2 file(s) changed at 2016-12-02 10:47:38 ...done in 0.210699068 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-02 10:49:17 ...done in 0.19978796 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-02 10:49:36 ...done in 0.199799201 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-02 10:51:00 ...done in 0.206508304 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-02 11:19:35 ...done in 0.202818286 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-02 11:21:24 ...done in 0.204515337 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-02 11:22:31 ...done in 0.20384793 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-02 11:29:21 ...done in 0.177436325 seconds.
