@@ -657,7 +657,7 @@
 /* Banner */
 
 	#banner {
-		background-image: url('images/banner.jpg');
+		background-image: url('banner.jpg');
 		background-position: center center;
 		background-size: cover;
 		height: 28em;
@@ -711,7 +711,7 @@
 		
 		&.style2 {
 			background-color:		#fff;
-			background-image:		url('images/bg02.png'),			url('images/bg03.png'),			url('images/bg01.png');
+			background-image:		url('bg02.png'),			url('images/bg03.png'),			url('images/bg01.png');
 			background-position:	top left,						bottom left,					top left;
 			background-size:		100% 6em,						100% 6em,						auto;
 			background-repeat:		no-repeat,						no-repeat,						repeat;
