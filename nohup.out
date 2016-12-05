@@ -68,3 +68,20 @@ jekyll 3.3.1 | Error:  Address already in use - bind(2) for 127.0.0.1:4003
       Regenerating: 1 file(s) changed at 2016-12-02 11:51:52 ...done in 0.1955736 seconds.
       Regenerating: 1 file(s) changed at 2016-12-02 11:52:59 ...done in 0.203024478 seconds.
       Regenerating: 1 file(s) changed at 2016-12-02 11:55:13 ...done in 0.203110316 seconds.
+[2016-12-02 15:56:08] ERROR `/assets/css/images/banner.jpg' not found.
+[2016-12-02 15:56:08] ERROR `/assets/css/..fonts/fontawesome-webfont.woff' not found.
+[2016-12-02 15:56:08] ERROR `/assets/css/..fonts/fontawesome-webfont.ttf' not found.
+[2016-12-02 17:30:03] ERROR `/assets/css/images/banner.jpg' not found.
+[2016-12-02 17:30:03] ERROR `/assets/css/..fonts/fontawesome-webfont.woff' not found.
+[2016-12-02 17:30:03] ERROR `/assets/css/..fonts/fontawesome-webfont.ttf' not found.
+      Regenerating: 1 file(s) changed at 2016-12-05 10:02:22 ...done in 0.209796168 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-05 10:03:36 ...done in 0.203293233 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-05 10:05:13 ...done in 0.193821298 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-05 10:06:11 ...done in 0.181989054 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-05 10:06:56 ...done in 0.177180836 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-05 10:10:48 ...done in 0.179464583 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-05 10:12:08 ...done in 0.178475418 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-05 10:35:49 ...done in 0.197532576 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-05 10:37:02 ...done in 0.187412203 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-05 10:45:12 ...done in 0.185012481 seconds.
+      Regenerating: 1 file(s) changed at 2016-12-05 10:46:49 ...done in 0.202638684 seconds.
