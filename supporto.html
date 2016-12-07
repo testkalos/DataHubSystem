@@ -1,0 +1,142 @@
+---
+title: Arcana
+layout: default
+---
+			
+<!-- Main -->
+	<section class="wrapper style1">
+		<div class="container">
+			<div id="content">
+
+				<!-- Content -->
+			
+					<article>
+						<header>
+							<h2>DHuS Software Overview</h2>
+						<p> The Data Hub Software (DHuS) is open source software developed by a Serco/Gael consortium to the purpose of supporting the ESA  Copernicus data access.The DHuS provides a simple web interface to allow interactive data discovery and download, and a powerful Application Programming Interface (API) that allows users to access the data via computer programs/scripts thereby automating/integrating the download within their workflow.</p>
+<p>The major functionalities of the Data Hub Software are schematically represented in figure below:</p>
+						</header>
+						
+						<span class="image featured"><img src="assets/images/banner.jpg" alt="" /></span>
+					
+          	<div class="container">
+			<div class="row">
+				<section class="6u">
+					<div class="box post">
+						<a href="#" class="image left"><img src="assets/images/pic01.jpg" alt="" /></a>
+						<div class="inner">
+							<h3>Product Indexing</h3>
+							<p>The indexing module allows to reference products within the local archive, in addition the indexing service can reference products hosted in other DHuS instances. The indexing is based on the creation of configurable metadata. The following set is considered mandatory when applicable for a product type: 
+- Content Date (e.g. sensing start, stop or data validity date) 
+- Content Geometry (e.g. footprint)</p>
+						</div>
+					</div>
+				</section>
+				<section class="6u">
+					<div class="box post">
+						<a href="#" class="image left"><img src="assets/images/pic02.jpg" alt="" /></a>
+						<div class="inner">
+							<h3>Local Archive</h3>
+							<p>The local archive is the core element of the system; it retains the products managed at a given instance. The local archive is managed as a rolling archive. The eviction strategies supported by the referenced DHuS version is based on the ingestion time: the time interval following data ingestion is configurable. Eviction can be triggered whenever the rules are met or according to higher-level strategy, such as the amount of local disk space usage. Eviction can be modulated according to the monitored usage of a product. To improve product download performances and enable fast product access, with potential processing at the same time, the local archive manages products in both compressed and uncompressed versions.</p>
+						</div>
+					</div>
+				</section>
+			</div>
+                	<div class="container">
+			<div class="row">
+				<section class="6u">
+					<div class="box post">
+						<a href="#" class="image left"><img src="assets/images/pic01.jpg" alt="" /></a>
+						<div class="inner">
+							<h3>Centre Management</h3>
+							<p>The centre management service allows the unambiguous identification of the centre to distinguish it from other DHuS centres. It is used to apply the particular configuration of the local services as well as the configuration of its relationship, if any, with other centres. Except for exceptional cases, the centre configuration modification shall not lead to any centre service interruption.</p>
+						</div>
+					</div>
+				</section>
+				<section class="6u">
+					<div class="box post">
+						<a href="#" class="image left"><img src="assets/images/pic02.jpg" alt="" /></a>
+						<div class="inner">
+							<h3> Product Harvesting </h3>
+							<p>The product harvester is the service responsible for the ingestion of external products into the local archive. The ingestion service defines an interface to allow definition of location, product type and characteristics for ingestion into the local archive. Whenever new products are ingested, the ingestion process registers an event with the dispatcher service, to inform it about the availability of the newly ingested products and to allow the propagation of metadata to other potentially interested centres. An integrity measure is calculated on product ingestion that may be checked later on to ensure the product integrity.</p>
+						</div>
+					</div>
+				</section>
+			</div>
+      
+      
+      
+	<section class="wrapper style1">
+		<div class="container">
+			<div class="row">
+				<section class="6u">
+					<div class="box post">
+						<a href="#" class="image left"><img src="assets/images/pic01.jpg" alt="" /></a>
+						<div class="inner">
+							<h3>User Interface</h3>
+							<p>This module provides the user with an interface for the discovery, visualization and downloading of products. It consists of two interfaces: a Graphical User Interface (modern and easy-to-use web application) and an Application Programming Interface (useful and mainly used for batch scripting, machine to machine scripts).</p>
+						</div>
+					</div>
+				</section>
+				<section class="6u">
+					<div class="box post">
+						<a href="#" class="image left"><img src="assets/images/pic02.jpg" alt="" /></a>
+						<div class="inner">
+							<h3>User Management</h3>
+							<p>This module manages the user accounts for access to the DHuS. It allows the definition of roles and permissions of the users. Permissions are usually defined in terms of macro functions e.g. the ability to upload data, download data, view statistics, perform administration etc. This module is used to apply the user shared quota allocation schemes for restricting the download bandwidth. This user account management service is configurable per DHuS instance to allow for ?self-registration? at a hub or for operator driven registration. Each instance can be configured differently for usage by a known community.</p>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="row">
+				<section class="6u">
+					<div class="box post">
+						<a href="#" class="image left"><img src="assets/images/pic03.jpg" alt="" /></a>
+						<div class="inner">
+							<h3>Search and Product Preview</h3>
+							<p>This module provides users the possibility to perform search via standardized API protocols (OData and Open search) and via the graphical user interface. Moreover, in addition to the typical searches allowed by other EO dissemination service interfaces, the DHuS graphical user interface provides the free text search, allowing intuitive searches via keywords for the data required, region of interest, time window etc. The DHuS also allows users to save their defined searches, allowing both the reuse of that set of search parameters at a later date and the possibility to request an email notification whenever a new product matching the parameters is ingested. Following product metadata ingestion, the DHuS routinely applies “post-processing” operations allowing browse previews, data type oriented metadata visualization, following a search.</p>
+						</div>
+					</div>
+				</section>
+				<section class="6u">
+					<div class="box post">
+						<a href="#" class="image left"><img src="assets/images/pic04.jpg" alt="" /></a>
+						<div class="inner">
+							<h3>Product Extraction</h3>
+							<p>The product extraction module manages the ability to disseminate / retrieve sub-components of products (with granularity smaller than the individual files). It is considered a unique and unprecedented capability that is of particular relevance for the voluminous data products managed in the Sentinels mission</p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
+ <h3>Product Dissemination</h3>
+ <p>The dissemination module manages the product dissemination, retrieval and access by the user. The dissemination service supports several protocols, including the product transformation service, which allows transformation of the data at the time of product retrieval. The dissemination system supports the web user interface as well as machine-to-machine application programmable interfaces. Support for common internet tools and standards, (e.g. download managers), is also within the scope of this service</p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
+				
+						<h3>And Yet Another Subheading</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus 
+						justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis, 
+						ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet 
+						vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor. 
+						Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis 
+						rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien. 
+						Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi. 
+						Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.</p>
+
+						<p>Phasellus odio risus, faucibus et viverra vitae, eleifend ac purus. Praesent mattis, enim 
+						quis hendrerit porttitor, sapien tortor viverra magna, sit amet rhoncus nisl lacus nec arcu. 
+						Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna, 
+						fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium. 
+						Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu. 
+						Vestibulum purus augue, tincidunt sit amet iaculis id, porta eu purus.</p>
+					</article>
+		
+			</div>
+		</div>
+	</section>			
