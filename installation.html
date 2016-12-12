@@ -1,0 +1,61 @@
+---
+title: Arcana
+layout: default
+---
+			
+<!-- Main -->
+	<section class="wrapper style1">
+		<div class="container">
+			<div class="row double">
+				<div class="8u">
+					<div id="content">
+
+						<!-- Content -->
+					
+							<article>
+								<header>
+									<h2>DHuS Hub Store</h2>
+									<p>Sidebar on the right, content on the left.</p>
+								</header>
+								
+								<span class="image featured"><img src="assets/images/banner.jpg" alt="" /></span>
+								
+								<p> SNAP TOOLS LINK </p>
+			    	
+              <h1><a href="	http://step.esa.int/main/toolboxes/snap/" id="logo"> <em>SNAP</em></a></h1>
+                	
+                  	
+								<h3>And Yet Another Subheading</h3>
+								<p>nstallation Guide
+The DHuS is a web application, running within a Java Virtual Machine. All its middleware components, such as database and application servers, run inside the JVM container.
+
+In order to allow integration into a hosting environment, the application needs to be installed and configured having well in mind what are the external interfaces to be used.
+
+The application needs to manage two flows:
+the incoming flow: during the products ingestion process, the DHuS SW picks up products (compressed or not) from a folder and move them into another folder. We will call those folders, respectively, inbox and incoming.
+the outgoing flow (how external users can search and download published data): this can happen using http (Tomcat) and, in particular cases, also ftp (service started by DHuS) on some dedicated service ports.
+
+
+Principal DHuS Software Functionality
+The filesystems used by the application, can be two or more;
+
+one filesystem is needed for storing the DB where the products are indexed, along with the logs and application binaries. This filesystem needs to reside on the local disks.
+one or more filesystems are used for archiving the products.
+Given the volume of normal Sentinels production, it is also recommended to use an external disk for mounting the second filesystem, in order to cope with several TBs of products.
+
+System Requirements
+Hardware Requirements
+The technical specifications of the DHuS are provided the following Table.
+</p>
+
+								<p>System Requirements</p>
+							</article>
+				
+					</div>
+				</div>
+				<div class="4u">
+					{% include sidebar.html %}
+				</div>
+			</div>
+		</div>
+	</section>			
