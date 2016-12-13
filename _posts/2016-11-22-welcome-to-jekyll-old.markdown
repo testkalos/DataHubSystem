@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "DHuS Hub Store"
+title:  ""
 date:   2016-11-22 12:06:54 +0100
 categories: jekyll update
 ---
