@@ -50,11 +50,13 @@ The Upload feature is available only to the administrator. DHuS system makes ava
 Optional: Assignation of a product to a collection is manually set by the uploader. A product can be included in any collection.
 
 The DHuS allows the ingestion of Sentinels products using 4 methods:</p>
+<p align="left">
 <ul>
 <li>Ad hoc upload</li>
 <li>Creating a file scanner</li>
 <li>Synchronizing remote archive</li>
 </ul>
+</p>
 figure
 
 <b><p align ="justify">Products upload methods</b></p>
@@ -91,6 +93,7 @@ The DHuS allows synchronizing products from another DHuS instance. For further d
 
 <b><p align ="justify">DHuS Administration</b></p>
 The DHuS provides the Management panel and it contains 4 subpanels called
+<p align="left">
 <ul>
 <li>Users</li>
 <li>Collections</li>
@@ -102,62 +105,213 @@ figure
 The administrator management panel allows managing users. This means that the administrator can create, edit and delete any user.
 
 figure
-<b><p align ="justify"> DHuS User Management panel (GUI)</b> </p>
+<b><p align="left"> DHuS User Management panel (GUI)</b> </p>
 <p align ="justify">
 DHuS implements a user management system that prevents uncontrolled accesses and manipulations from unauthorized users. DHuS proposes a user authentication and authorization strategy defined in its internal Database. Users are able to register or sign-in and the administrator are able to configure the user/group permissions from the Web user interface.
 
 The user management activities are:</p>
-<ul>
+<p align="left">
 <li>to create or delete a user;</li>
 <li>to authorize the user to access a list of services;</li>
 <li>to update a user profile;</li>
-How to register a new user?
+</p>
+<p align="justify"> How to register a new user?
+
+The Administrator shall:    
+Access the DHuS page
+Perform the login
+Select the Management Panel and then select the Users management panel Click on the ?Create? button in the lower part of the User management page, which will enable the form here below
+</p>
+
+
+figure
+<p align="justify"> 
+User creation form GUI
+Fill in the new user creation form (note that the fields marked with an asterisk are mandatory) and click on the functions that the user shall be able to use
+Click on the ?save? button to complete
+Then the email notification service will send an e-mail to the user with his profile information (login, first name, last name, available services...) including a generated password.
+The administrator has the possibility to modify user?s authorization settings and information. To modify whatever authorization setting or user information, the Administrator, before executing the following ?how to? procedures, has to:
+
+Access the DHuS page
+Perform the login
+Select the Management Panel
+Select the Users Management Panel
+Select the name of the user in the users list on the left side of the user management panel
+How to lock the selected user?
+
+Click on the ?locked? checkbox under the Registration form in the right side of the panel,
+
+The administrator shall also indicate the reason of this locking process in the box on the right,
+Click on the ?save? button to complete,
+Then the email notification service will send an e-mail to the user with his profile information (login, first name, last name, available services...) including locking notification and its relative reason, if it has been indicated.
+How to delete the selected user?
+
+Click on the ?Delete? button to delete
+
+</p>> 
+figure
+Update and delete users GUI
+
+The email notification service will send an e-mail to the deleted user with the communication of the deletion process.
+
+<p align="justify"> 
+<b>Collection Management Panel</b>   
+Products are gathered into collections. Collections management consists of:
+1.creating or deleting collections;
+2.adding a sub collection or a collection parent.
+The Collection management panel also lists a set of products to be attached to the collection. The selection of collections is possible by browsing the collection hierarchy on the left. To access the collection management panel, the Administrator has to click on the ?collections? link, sited in the upper left side of the management panel. The collection management panel here below will open. It contains the list of collections on the left and the list of archived products on the right.
+</p>
+
+figure    
+
+DHuS Collection Management Panel (GUI)
+
+<p align="justify"> The administrator can manage the collection: he can create new collection/subcollection and delete an existing collection/subcollection,
+
+In the following subsections some ?How to? tutorials are presented; the steps described in any of these tutorials can only be performed after the following preliminary actions:
+
+Access the DHuS page,
+Perform the login,
+Go to the collection management panel.</p>
+<p align="justify"> 
+How to create a new collection?
+
+Click on the ?create? button in the collection management panel; this will open the panel in Figure below : Create collection
+Insert the collection information in the upper right side of the panel (the name of collection is mandatory),
+(optional) select (by clicking on the associated check box) the products to be added to the collection,
+Click on the ?save? button to register the new collection or click on the ?cancel? button to abort the ?creation of collection? procedure.
+</p>
+<p align="justify"> 
+How to create new sub collection?
+
+Click on the collection inside, which creates the new sub collection,
+Click on the ?sub collection? button in the collection management panel,
+
+
+Insert the collection information in the upper right side of the panel (the name of collection is mandatory),
+Click on the ?save? button to register the new collection or click on the ?cancel? button to abort the ?creation of collection? procedure (note that clicking on ?delete? will delete the collection in which you wanted to create the sub collection).
+
+How to delete a collection/sub collection?:
+Click on the collection/sub collection to delete; it will open the panel in figure below: Create sub collection,
+Click on the ?delete? button,
+Note that the collection management page includes a searching box. It is useful to know if a product is collected somewhere.
+
+System Management Panel
+
+The system management is used to configure basic information in the system. The Administrator from here can access the following sections:
+
+1. Mail configuration: In this form it is possible to configure the SMTP server address, the username, password and e-mail account details to send communications to the users.
+</p>
+figure
+
+<p align="justify"> 
+Mail configuration management Panel
+
+Support information : For any support information it is possible to contact the DHuS Support Team sending an e-mail to dhus@xxx.zz.
+
+<p>
+figure  
+Support configuration management panel
+
+Root configuration: from this panel it is possible to change the administrator password. To do so, insert the old password, the new one and then confirm the new password.
+
+figure
+Root configuration management panel
+
+Restore database: in the dhus.xml file it is possible to configure DHuS so that it performs a periodical dump of the database. From this panel it is possible to restore the database dump.
+figure
+Restore database panel
+To do so, perform the following steps:
+
+Click on the drop-down menu in the `restore-database? section: the list of available dumps will be displayed through a list of dates (date during which the dumps have been performed).
+Select the desired date and then click on ?restore?. DHuS will automatically stop and restart. Once DHuS will be up again, it will contain just the data inserted before the selected dump date
+5. Synchronize Local archive :obsolete function, do not use;
+Eviction Management Panel
+
+The Data Eviction Service is responsible for removing data to keep to the Data Store sizing constraints. The maximum occupied space for each archive depends on theconfiguration. The administrator can handle the eviction of products through the Eviction panel here below.
+figure
+Eviction Management panel (GUI)
+
+The eviction rules are:
+1.First In First Out (FIFO);
+2.Least Recently Used (LRU).
+They can be chose through the drop-down menu named ?Eviction strategy?.
+LFU and LRU are defined using a system of ?hit points?, calculated with the number of searches and downloads for each product.
+The service will log (in the panel on the lower side of the page) any evicted file in the Database and flag the product/entry by removing/updating its Data Store URL that is no longer relevant.
+
+How to activate the archive rolling policy?
+In order to activate the eviction, perform the following steps:
+
+Access the DHuS page
+Perform the login
+Select the Management Panel and then select the Eviction management panel
+Select the Eviction strategy (Fig. 23: Eviction panel (GWT GUI)) using the drop-down menu
+Configure the ?Maximum disk usage before eviction? depending on how much of the machine space can be occupied by data before triggering the eviction (e.g. if the parameter is set to 80, when the disk will be full at 80%, the eviction will be automatically activated)
+Configure the ?Minimal keeping period for a product? parameter. This parameter represents the number of days each product will be kept in the DHuS archive before being evicted (e.g if the parameter is set to 3, the eviction will delete all the products present in the archive for more than three days.)
+OData Synchronizers panel
+The OData synchronizers panel is available just in the AJS GUI. The DHuS provides end users an OData synchronizer service able to populate a DHuS instance with the data stored on the rolling archive of another DHuS instance. The DHuS instance that contains the data to be synchronized is called ?back end? instance, while the one that shall receive the data is called ?front end? instance. In case the rolling archive of the BE contains some products that are not present in the FE, once the synchronization is running, the metadata of the products present in the BE instance that are not in the database of the FE instance will be mirrored.
+
+Preconditions
+
+
+The FE/BE instances should be configured as follows:
+BE: DHuS instance with no quota limitation and having a user with the ?archive management? function enabled.
+FE: having the synchronization functionality enabled, meaning that the dhus.xml of the FE shall contain the following setting:
+BE and FE shall have the incoming folders in the same filesystem
+The OData Synchronizers panel allows the creation and update of synchronizers among two or more DHuS instances.
+
+How to create a new Synchronizers?
+
+The Administrator shall
+Log in as Root in the front end DHuS instance and select the tab ?user profile?
+Select the panel ?OData synchronizers?
+
+
+figure
+OData Synchronizer access
+
+Click on ?Create synchronizer? 
+figure
+OData Synchronizer panel
+figure
+reate an OData Synchronizer
+
+Fill the records as follows:
+- Label= Name of the synchronizer
+- Service URL= https://[Back-EndDHuSaddress]/odata/v1
+- Service Login Username= User name of a user registered in the back end which ha the archive manager rights
+- Service Login Password= password of the user in the previous step
+- Schedule= how often the synchronizer shall be running. - Remote incoming=absolute path of the back end DHuS incoming
+- Request= ?start? or ?stop?
+- Page size= number of products synchronized at each synchronizer run
+- Click on the button with the ?floppy disk? shape
+How to update a Synchronizer?
+The Administrator shall
+Log in as Root in the front end DHuS instance and select the tab ?user profile?
+Select the panel ?OData synchronizers? and then click on the ?pencil? next to the synchronizer to be updated
+
+
+figure
+Updating a synchronizer
+
+Edit the records to be updated
+Click on the button with the ?floppy disk? shape
+How to delete a Synchronizer?
+The Administrator shall:
+Log in as Root in the front end DHuS instance and select the tab ?user profile?,
+Select the panel ?OData synchronizers? and then click on the ?X? shaped button next to the synchronizer to be updated.
+Next to an existing synchronizer tab, there are also buttons for starting and stopping the item. The ?play? button is to start the synchronizer; the ?square? button is to stop it.
+
+Statistics
+The Statistic panel provided by DHuS allows monitoring the activities and connections handled by the software during a certain time-span. To enable these functions, it is necessary to insert in the start.sh the following line:
+
+-Daction.record.inactive=false \
+
+The Statistics functionality is dedicated to the monitoring of the service activity through operation statuses and statistics. Most of these values are extracted from the DHuS Database that is fed regularly by any interested service but in particular by the dedicated DHuS Monitoring Service.
 
 
 
 
-<!--
- <section class="wrapper style1">
-		<div class="container">
-			<div class="row">
-				<section class="6u">
-					<div class="box post">
-						<a href="www.serco.com" class="image left"><img src="assets/images/serco.png" alt="" /></a>
-     	      <a href="www.gael.fr" class="image right"><img src="assets/images/gael.jpg" alt="" /></a>
-						<div class="inner">
-						</div>
-					</div>
-				</section>
- 
- <section class="wrapper style1">
-		<div class="container">
-			<div class="row">
-			 <div class="row">
-				<section class="6u">
-					<div class="box post">
-						<a href="http://www.esa.int/ESA" class="image left"><img src="assets/images/esa-mini.jpg" alt="" /></a>
-          	<a href="http://www.copernicus.eu" class="image right"><img src="assets/images/copernicus-mini.jpg" alt="" /></a>
-						 <a href="http://ec.europa.eu/index_en.html" class="image right"><img src="assets/images/ec-mini.jpg" alt="" /></a>
-                                                                       
-          <div class="inner">
-                </div>
-					</div>
-				</section>
-				
 
- 
- <section class="wrapper style1">
-		<div class="container">
-			<div class="row">
-				<section class="6u">
-					<div class="box post">
-						<a href="http://www.odata.org/" class="image left"><img src="assets/images/odata.png" alt="" /></a> 
-						<a href="https://yourkit.com/" class="image right"><img src="assets/images/yourkit.png" alt="" /></a>
-						<div class="inner">						
-						</div>
-					</div>
-				</section> 
-					</article>
-					</div>-->
 		</div>
 	</section>			
