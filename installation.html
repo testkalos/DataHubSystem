@@ -31,26 +31,69 @@ layout: default
 <li>For Linux http://git-scm.com/book/en/v2/Getting-Started-Installing-Git</li>
 </ul><p>
 								<h3>And Yet Another Subheading</h3>
-								<p>nstallation Guide
-The DHuS is a web application, running within a Java Virtual Machine. All its middleware components, such as database and application servers, run inside the JVM container.
+								<p>Smart installation
+                
+                
+  <p> <b> Installation and setup</b> 
+ <!-- 
+1. Create a user named ‘dhus’. Every step in the installation procedure, if not explicitly mentioned, shall be performed as dhus user.
+2. Create the installation folder mkdir –p [installation-folder] mkdir –p 0.xx.x-x
+3. Download the DHuS shar package here (or alternatively See How to Build Section to create the distribution package) and save it into the installation folder
+4. Change the permissions on the file. chmod +x dhus-XX.XX.XX.shar
+5. Launch ./dhus-0.xx.x-x .shar
+(the package will autoinstall).Once executed, the system setting configuration file can be accessed and updated.
+6. Once the autoinstall procedure is complete, create the following directories for the local archive, the incoming products, the database etc..:
+7. mkdir -p data-local
+8. mkdir -p incoming
+9. mkdir – p var
+Note that the incoming and the Local archive shall be two different folders (e.g. one cannot contain the other and vice versa) not necessarily under the DHuS installation folder. Moreover they shall be located in a partition of the machine where there is a certain amount of space , especially for the incoming folder (the data managed by DHuS will be located here).
+Software Configuration Manual
+Once the autoinstall procedure is complete the installation folder will include:
+-Start.sh
+-Stop.sh
+-Restart.sh
+start.sh
+The start.sh script contains the single startup command for the DHuS.
+Main parameters are : Xms and Xmx
+These refer to memory allocation. We suggest to set the
 
-In order to allow integration into a hosting environment, the application needs to be installed and configured having well in mind what are the external interfaces to be used.
+Xms:1 g
+Xmx:2 g
+Save the file.
+DHuS configuration files are contained in the etc folder created after the launch of the .shar installation package:
+dhus.xml
+server.xml
+log4j2.xml
+Dhus.xml
+1.Set the var Folder path
+<!ENTITY varFolder "/home/dhus/dhus-0.xx.x-x /var/">
+2.Set the incoming Folder path: <incoming path="/home/dhus/dhus-0.xx.x-x /incoming" maxFileNo="10" />
+3.Save the file
+Server. Xml
+The server.xml file contains the Apache Tomcat configuration settings. Please note that:
 
-The application needs to manage two flows:
-the incoming flow: during the products ingestion process, the DHuS SW picks up products (compressed or not) from a folder and move them into another folder. We will call those folders, respectively, inbox and incoming.
-the outgoing flow (how external users can search and download published data): this can happen using http (Tomcat) and, in particular cases, also ftp (service started by DHuS) on some dedicated service ports.
+<Connector port="8080" indicates the http service port to setup: the default value is "8080" <Host name="localhost" This parameter indicates the server hostname.
+1.Set the connect port: free number
+2.<Connector port="8589"
+3.Save the file
+Configuration done…and now?
+Once you make sure that all the parameters are set correctly, allow start.sh script to be executable:
+chmod ug+x start.sh Installation Start the new DHuS version:
+nohup /bin/bash start.sh &> logs.txt &
+Lunch web browser:
+http://localhost:8589
+and… DHuS Starts!!!!!!
 
+Login:
 
-Principal DHuS Software Functionality
-The filesystems used by the application, can be two or more;
-
-one filesystem is needed for storing the DB where the products are indexed, along with the logs and application binaries. This filesystem needs to reside on the local disks.
-one or more filesystems are used for archiving the products.
-Given the volume of normal Sentinels production, it is also recommended to use an external disk for mounting the second filesystem, in order to cope with several TBs of products.
-
-System Requirements
-Hardware Requirements
-The technical specifications of the DHuS are provided the following Table.
+root
+rootpassword  -->           
+                
+                
+                
+                
+                
+                
 </p>
 
 								<p>System Requirements</p>
