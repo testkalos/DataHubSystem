@@ -29,15 +29,15 @@ layout: default
 							<p ALIGN="JUSTIFY">&bull; the <strong>incoming flow</strong>: during the products ingestion process, the DHuS SW picks up products (compressed or not) from a folder and move them into another folder. We will call those folders, respectively, inbox and incoming.</p>
 							<p ALIGN="JUSTIFY">&bull; the <strong> outgoing flow </strong>(how external users can search and download published data): this can happen using http (Tomcat) and, in particular cases, also ftp (service started by DHuS) on some dedicated service ports.</p>
 <p ALIGN="JUSTIFY">The filesystems used by the application, can be two or more;</p>
-<p ALIGN="JUSTIFY">&bull; one filesystem is needed for storing the DB where the products are indexed, along with the logs and application binaries. This filesystem needs to reside on the local disks.</p>
-<p ALIGN="JUSTIFY">&bull; one or more filesystems are used for archiving the products. Given the volume of normal Sentinels production, it is also recommended to use an external disk for mounting the second filesystem, in order to cope with several TBs of products.</p>
+							<p ALIGN="JUSTIFY">&bull;<strong> one filesystem </strong> is needed for storing the DB where the products are indexed, along with the logs and application binaries. This filesystem needs to reside on the local disks.</p>
+							<p ALIGN="JUSTIFY">&bull;<strong> one or more filesystems</strong> are used for archiving the products. Given the volume of normal Sentinels production, it is also recommended to use an external disk for mounting the second filesystem, in order to cope with several TBs of products.</p>
 <h3>System Requirements</h3>
 <p>table</p>
 <h3>Network Requirements</h3>
 <p ALIGN="JUSTIFY">DHuS is accessed primarily via HTTP and FTP interface. The Installation procedure of the DHuS Software must be performed using a non-privileged user (not root); application installed in this way cannot start services listening on ports numbers smaller than 1024. By default the HTTP interface is reachable on 8080 port that must be opened for inbound requests. The DHuS FTP service is reachable, by default, on 2121.The DHuS provides also a mailing service based on an external SMTP server. Following table describes the default DHuS network ports configuration:</p>
 <h3>Software Requirements</h3>
 <p ALIGN="JUSTIFY">DHuS software is fully written in java and can be considered portable to any hardware platforms supported by JRE (Java Runtime Environment). The DHuS supports:</p>
-<p ALIGN="JUSTIFY">- all the Java JDK versions before the 7th (version 8 not yet supported) - the Oracle distribution version 1.7.0_79. It is recommended to use a Linux Operating System working on a multithread environment running in 64bit.</p>
+							<p ALIGN="JUSTIFY">&bull; All the Java JDK versions before the 7th (version 8 not yet supported) &bull; the Oracle distribution version 1.7.0_79. It is recommended to use a Linux Operating System working on a multithread environment running in 64bit.</p>
 <h4>Java</h4>
 <p ALIGN="JUSTIFY">The DHuS server requires Java Runtime Environment version 1.6+ being installed on the system.</p>
 <h4>Mailining Service</h4>
@@ -55,11 +55,11 @@ layout: default
 <p align="JUSTIFY">nohup /bin/bash ./start.sh &amp;</p>
 <p align="JUSTIFY">The log files will be created in the installation directory.</p>
 <h3>Software Configuration Manual</h3>
-<p>DHuS configuration files are contained in the etc folder created after the launch of the .shar installation package:</p>  
-							<p align="JUSTIFY"> <strong>Start.sh</strong>; 
-							<p align="JUSTIFY"> <strong>dhus.xml</strong>; </p>
-							<p align="JUSTIFY"> <strong>server.xml</strong>; </p>
-							<p align="JUSTIFY"> <strong>log4j2.xml</strong>;</p>
+<p align="JUSTIFY"> DHuS configuration files are contained in the etc folder created after the launch of the .shar installation package:</p>  
+							<p align="JUSTIFY">&bull; <strong>Start.sh</strong>; 
+							<p align="JUSTIFY">&bull; <strong>dhus.xml</strong>; </p>
+							<p align="JUSTIFY">&bull; <strong>server.xml</strong>; </p>
+							<p align="JUSTIFY">&bull; <strong>log4j2.xml</strong>;</p>
 
 
 							table		
@@ -68,54 +68,30 @@ layout: default
 							
 <h3>User Interface Configuration Manual</h3>	
 <p ALIGN="JUSTIFY">The DHuS is equipped with AJS GUI. This section deals with the configurability of the AJS GUI which allows a wide set of configuration actions which do not need a restart of DHuS to be applied. Due to the growth of the different centres and related installations, a new configuration management module has been added into the AJS web app. It allows configuring various aspects of the GUI; mainly it is related to style, texts and layout:</p>
-<table style="width:100%">
-  <tr>
-    <th>GUI Parameters</th>
-    
-  </tr>
-  <tr>
-    <td>Title (shown in the header bar)</td>
-  </tr>
-  <tr>
-    <td>Sections visibility (Cart, Profile, Sign In)</td>
-  </tr>
-<tr>
-    <td>URL and texts of the link logos (shown in the header panel</td>
-  </tr>
-<tr>
-    <td>Version text (shown in the info panel)</td>
-  </tr>
-<tr>
-    <td>Data Hub Logo (shown in the info panel)</td>
-  </tr>
-<tr>
-    <td>Mission Tag (shown in the Product List panel)</td>
-  </tr>
-<tr>
-    <td>Mission footprint style and color (shown in the Map panel)</td>
-  </tr>
-<tr>
-    <td>Advanced Search Mission specific fields (shown in Advanced Search Panel)</td>
-  </tr>
-<tr>
-    <td>Map Layer (shown in the Map View)</td>
-  </tr>
+							<p ALIGN="JUSTIFY">&bull;<strong> Title</strong>(shown in the header bar)</p>
+							<p ALIGN="JUSTIFY">&bull;<strong> Sections visibility </strong>(Cart, Profile, Sign In)</p>
+							<p ALIGN="JUSTIFY">&bull;<strong> URL and texts of the link logos</strong>(shown in the header panel)</p>
+							<p ALIGN="JUSTIFY">&bull;<strong> Version text</strong>(shown in the info panel)</p>
+							<p ALIGN="JUSTIFY">&bull;<strong> Data Hub Logo</strong>(shown in the info panel)</p>
+							<p ALIGN="JUSTIFY">&bull;<strong> Mission Tag</strong>(shown in the Product List panel)</p>
+							<p ALIGN="JUSTIFY">&bull;<strong> Mission footprint style and color</strong>(shown in the Map panel)</p>
+							<p ALIGN="JUSTIFY">&bull;<strong> Advanced Search Mission specific fields </strong>(shown in Advanced Search Panel)</p>
+							<p ALIGN="JUSTIFY">&bull;<strong> Map Layer </strong>(shown in the Map View)</p>
 
-</table>
-<p  ALIGN="JUSTIFY">
+<p ALIGN="JUSTIFY">
 Please note that all the settings are included in the client side (2 text files), thus it is possible to change a parameter without restarting the DHuS, but just doing a refresh via browser.</p>
 							
-							<h3>How to change a parameter?</h3>
-							<p align="JUSTIFY">The files in charge of the GUI configuration management are located in:</p>
-<ul>
-<li>[DHUSDIR?]/var/tomcat/webapps/new/config They are:</li>
-<li>appconfig.json (includes 1,2,3,4,5)</li>
-<li>styles.json (includes 6,7)</li>
-</ul>
+		<h3>How to change a parameter?</h3>
+			<p align="JUSTIFY">The files in charge of the GUI configuration management are located in:</p>
+
+<p ALIGN="JUSTIFY">[DHUSDIR?]/var/tomcat/webapps/new/config They are:</p>
+<p ALIGN="JUSTIFY">appconfig.json (includes 1,2,3,4,5)</p>
+<p ALIGN="JUSTIFY">styles.json (includes 6,7)</p>
+
 							
 
 							<h3>Advanced Configuration </h3>
-						<p ALIGN="JUSTIFY">
+			<p ALIGN="JUSTIFY">
 						 A special attention goes to the configuration of the advanced search mission specific fields. The configuration file appconfig.json has been updated in order to manage mission specific filters</p>
 						<p  ALIGN="JUSTIFY"> A "missions" section has been added, containing an array with the following structure:
 "name": , "indexname": , "indexvalue":, "filters":[filter_array]
@@ -182,9 +158,9 @@ Here below an example of filters configuration specific for S1 and S2 missions.<
 							<p ALIGN="JUSTIFY"> In the following we describe the steps needed for migrating from a previous DHuS version (oldversion) to the new DHuS version 0.12.5-6-osf (newversion).
 								First of all, backup the items you need to inherit:</p>
 							
-							<p ALIGN="JUSTIFY"> 1. Database folder (path attribute of tag in dhus.xml)</p>
-							<p ALIGN="JUSTIFY">2. Solr folder (path attribute of tag in dhus.xml)</p>
-							<p ALIGN="JUSTIFY">3. Products archive folder (path attribute of tag in dhus.xml)</p>
+							<p ALIGN="JUSTIFY"><strong> 1. Database folder </strong> (path attribute of tag in dhus.xml)</p>
+							<p ALIGN="JUSTIFY"><strong> 2. Solr folder </strong> (path attribute of tag in dhus.xml)</p>
+							<p ALIGN="JUSTIFY"><strong> 3. Products archive folder </strong> (path attribute of tag in dhus.xml)</p>
 <p ALIGN="JUSTIFY">After you have installed the newversion following the procedure the easiest way is to have the newversion configured (in dhus.xml) to use the pre-existing DHuS archive, database and solr directories. Therefore, in dhus.xml of newversion set the following variables to the same value they have in your oldversion installation Alternatively, you may use the backed up copies in directory of your choice (as usual configured within dhus.xml).</p>
 <p ALIGN="JUSTIFY"> In addition, set in dhus.xml
 cryptType and cryptKey, specifying your database encryption key, or leave empty if your database is not encrypted. </p>
@@ -192,11 +168,11 @@ cryptType and cryptKey, specifying your database encryption key, or leave empty 
 
 							<h3>Scalability Mode Configuration</h3>
 			<p ALIGN="JUSTIFY"> The objective of the configuration in scalability mode is to have several DHuS instances acting as one to share the user load and the products information: the deployment in scalable mode is completely transparent to the user.</p>
-			<h4> 1. Architecture and Deploy </h4>
+			<h3> 1. Architecture and Deploy </h3>
 <p ALIGN="JUSTIFY"> The deployment of DHuS in scalable mode suitable for the operational scenario foresees three main actors:</p>
-							<p ALIGN="JUSTIFY"><strong> one DHuS acting as master</strong></p>
-							<p ALIGN="JUSTIFY"><strong> one or more DHuS acting as replicas</strong></p>
-							<p ALIGN="JUSTIFY"><strong>one proxy</strong></p>
+							<p ALIGN="JUSTIFY">&bull; one DHuS acting as master</p>
+							<p ALIGN="JUSTIFY">&bull; one or more DHuS acting as replicas</p>
+							<p ALIGN="JUSTIFY">&bull;one proxy</p>
 							
 							<h5> Master</h5>
 <p ALIGN="JUSTIFY">The DHuS master is the one and only product data source, meaning, it is in charge of the ingestion/synchronization of products.</p>
@@ -206,7 +182,7 @@ cryptType and cryptKey, specifying your database encryption key, or leave empty 
 It is mandatory that master and replicas share the data store to allow access to ingested products.
 The product deletion and eviction shall be executed on the replicas. User registration shall be executed only on one of the replicas (to avoid database conflicts).</p>
 <h5>Proxy</h5>
-A proxy is needed for load balancing among the replicas. It must be configured to redirect incoming traffic to the DHuS replicas based on a load balancing algorithm with sticky sessions. Please refer to the proxy documentation for instructions on how to implement this.
+<p ALIGN="JUSTIFY">A proxy is needed for load balancing among the replicas. It must be configured to redirect incoming traffic to the DHuS replicas based on a load balancing algorithm with sticky sessions. Please refer to the proxy documentation for instructions on how to implement this.</p>
 
 <h3> 2. Installation and configuration procedure with an empty database</h3>
 <p ALIGN="JUSTIFY"><strong>Step 1: Download</strong> the installation package and install on all machines following</p>
@@ -237,9 +213,13 @@ A proxy is needed for load balancing among the replicas. It must be configured t
 <p ALIGN="JUSTIFY"><strong>Step 4:Start DHuS master</strong> and wait until the startup process is complete.<br /> </p>
 <p ALIGN="JUSTIFY"><strong>Step 5:Start DHuS replicas</strong>.</p>
 <p>&nbsp;</p>
-							
-							
-							
+						
+<h3> 3. Installation and configuration procedure with an already existing database</h3>						
+<p><strong>Step 1</strong>: follow&nbsp;<a href="http://sentineldatahub.github.io/DataHubSystem/page/2016/01/31/Installation-Guide.html#Download">Step 1</a>&nbsp;in previous procedure<br /> <strong>Step 2</strong>: follow&nbsp;<a href="http://sentineldatahub.github.io/DataHubSystem/page/2016/01/31/Installation-Guide.html#MasterC">Step 2</a>&nbsp;in previous procedure, configuring the scalability option as follows.</p>
+<p><span style="color: #3366ff;">-Ddhus.scalability.active=false \</span></p>
+<p><strong>Step 3</strong>: On the master, copy the database and Solr index (in {varfolder}/database and {varfolder}/solr, respectively), overriding the existing directories<br /> <strong>Step 4</strong>&nbsp;: Remove this file : {varfolder}/solr/dhus/conf/managed-schema, if present.<br /> <strong>Step 5</strong>: Start the DHuS Master to perform a&nbsp;<strong>database migration</strong>.<br /> <strong>Step 6</strong>: At the end of the migration process (which can take a while, depending on the number of products and users in the database), stop the DHuS Master.<br /> <strong>Step 7</strong>: Backup the database and Solr index and copy them on each replica overriding the existing directories in {varfolder}.<br /> <strong>Step 8</strong>: Add the option to the start.sh of the master:&nbsp;-Dauto.reload=false&nbsp;to prevent the master from sending its database to the replicas.<br /> <strong>Step 9</strong>: Start DHuS master and wait until the startup process is complete.<br /> Follow Steps 3, 4 and 5 of&nbsp;<a href="http://sentineldatahub.github.io/DataHubSystem/page/2016/01/31/Installation-Guide.html#Replica">previous procedure</a>&nbsp;taking care of starting replicas one at a time.<br /> Please note that at each new replica addition to the cluster it is necessary to shutdown the master and start the replicas from the newest to the oldest.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>				
 							
 							
 							</article>
