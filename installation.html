@@ -186,7 +186,54 @@ Here below an example of filters configuration specific for S1 and S2 missions.<
 cryptType and cryptKey, specifying your database encryption key, or leave empty if your database is not encrypted. </p>
 
 
-						
+							<h3>Scalability Mode Configuration</h3>
+			<p ALIGN="JUSTIFY"> The objective of the configuration in scalability mode is to have several DHuS instances acting as one to share the user load and the products information: the deployment in scalable mode is completely transparent to the user.</p>
+			<h4> 1. Architecture and Deploy </h4>
+<p ALIGN="JUSTIFY"> The deployment of DHuS in scalable mode suitable for the operational scenario foresees three main actors:</p>
+							<p ALIGN="JUSTIFY">one DHuS acting as master</p>
+							<p ALIGN="JUSTIFY">one or more DHuS acting as replicas</p>
+							<p ALIGN="JUSTIFY">one proxy</p>
+							
+							<h5> Master</h5>
+<p ALIGN="JUSTIFY">The DHuS master is the one and only product data source, meaning, it is in charge of the ingestion/synchronization of products.</p>
+
+							<h5>Replicas</h5>
+<p ALIGN="JUSTIFY"> The DHuS replicas are master’s doppelgangers. The product and user information stored in the DHuS master are broadcasted to all the replicas so that users can access product metadata. Replicas are accessed by the users (through the proxy). Consequently, the user information (e.g. profile changes) is spread from the replicas to the master.
+It is mandatory that master and replicas share the data store to allow access to ingested products.
+The product deletion and eviction shall be executed on the replicas. User registration shall be executed only on one of the replicas (to avoid database conflicts).</p>
+<h5>Proxy</h5>
+A proxy is needed for load balancing among the replicas. It must be configured to redirect incoming traffic to the DHuS replicas based on a load balancing algorithm with sticky sessions. Please refer to the proxy documentation for instructions on how to implement this.
+
+							<h4> 2. Installation and configuration procedure with an empty database</h4>
+							<p>Step 1: <strong>Download</strong> the installation package and install on all machines following</p>
+<p>Step 2:<strong> Master Configuration</strong></p>
+<p>In <em>start.sh</em> of the master add the following parameters (some may already be present) to the java executable command line:</p>
+<p><span style="color: #3366ff;">-Dhttp.proxyHost=[proxy external IP] \ </span></p>
+<p><span style="color: #3366ff;">-Dhttp.proxyPort=[proxy port] \ </span></p>
+<p><span style="color: #3366ff;">-Dhttp.nonProxyHosts="[proxy internal IP without last block]."\ (e.g., 192.168.1.) - -</span></p>
+<p><span style="color: #3366ff;">- Ddhus.scalability.active=true \ </span></p>
+<p><span style="color: #3366ff;">-Ddhus.scalability.local.protocol=http \ </span></p>
+<p><span style="color: #3366ff;">-Ddhus.scalability.local.ip=[DHuS master internal IP]</span></p>
+<p><span style="color: #3366ff;"> -Ddhus.scalability.local.port=[DHuS master port, as in server.xml] \ </span></p>
+<p><span style="color: #3366ff;">-Ddhus.scalability.local.path=/ \ </span></p>
+<p>In the <em>dhus.xml</em> set the &ldquo;external&rdquo; parameter with the proxy hostname (or IP) its port and the master&rsquo;s dhus path:</p>
+<p>Step 3: <strong>Replica Configuration</strong></p>
+<p>Configure the <em>start.sh</em> of the replicas as follows:</p>
+<p><span style="color: #3366ff;">-Dhttp.proxyHost=[external proxy IP] \</span></p>
+<p><span style="color: #3366ff;">-Dhttp.proxyPort=[proxy port] \</span></p>
+<p><span style="color: #3366ff;">-Dhttp.nonProxyHosts="[proxy internal IP without last block].*"\&nbsp; (e.g., 192.168.1.*)</span></p>
+<p><span style="color: #3366ff;">-Ddhus.scalability.active=true\</span></p>
+<p><span style="color: #3366ff;">-Ddhus.scalability.local.protocol=http \</span></p>
+<p><span style="color: #3366ff;">-Ddhus.scalability.local.ip=[DHuS replica internal IP] \</span></p>
+<p><span style="color: #3366ff;">-Ddhus.scalability.local.port=[DHuS replica port] \</span></p>
+<p><span style="color: #3366ff;">-Ddhus.scalability.local.path=/\</span></p>
+<p><span style="color: #3366ff;">-Ddhus.scalability.replicaId=[id of the replica, integer] \</span></p>
+<p><span style="color: #3366ff;">-Ddhus.scalability.dbsync.master=http://[DHuS master internal IP ]:[DHuS port]/ \</span></p>
+<p>In the dhus.xml set the &ldquo;external&rdquo; parameter with the proxy hostname (or IP) its port and the replica&rsquo;s dhus path:</p>
+<p><strong>Step 4</strong>: <strong>Start DHuS master</strong> and wait until the startup process is complete.<br /> <strong>Step 5</strong>: <strong>Start DHuS replicas</strong>.</p>
+<p>&nbsp;</p>
+							
+							
 							
 							
 							
