@@ -101,13 +101,90 @@ layout: default
 <p  ALIGN="JUSTIFY">
 Please note that all the settings are included in the client side (2 text files), thus it is possible to change a parameter without restarting the DHuS, but just doing a refresh via browser.</p>
 							
+							<h3>How to change a parameter?</h3>
+							<p ALIGN="JUSTIFY"> The files in charge of the GUI configuration management are located in: </p>
+							<p ALIGN="JUSTIFY"> [DHUSDIR?]/var/tomcat/webapps/new/config They are:</p>
+							<p ALIGN="JUSTIFY"> appconfig.json (includes 1,2,3,4,5)</p>
+							<p ALIGN="JUSTIFY"> styles.json (includes 6,7)</p>
+							
 
+							<h3>Advanced Configuration </h3>
+						<p ALIGN="JUSTIFY">
+						 A special attention goes to the configuration of the advanced search mission specific fields. The configuration file appconfig.json has been updated in order to manage mission specific filters</p>
+						<p  ALIGN="JUSTIFY"> A "missions" section has been added, containing an array with the following structure:
+"name": , "indexname": , "indexvalue":, "filters":[filter_array]
+where [filter_array] is an array of mission-specific filters with the following structure:
+"indexname": "indexlabel": "regex": [OPTIONAL] "indexvalues": (if present it appears a combobox containing the list of all specified values, otherwise nothing appears. present
+Here below an example of filters configuration specific for S1 and S2 missions.</p>
+<p ALIGN="JUSTIFY"> <strong><span style="background-color: #ffffff; color: #3366ff;"> 
+"missions":
+
+  [
+
+{
+
+"name": "Mission: Sentinel-1",
+"indexname": "platformname",
+"indexvalue": "Sentinel-1",
+"filters": [
+{
+
+"indexname": "producttype",
+"indexlabel": "Product Type (SLC,GRD,OCN)",
+"indexvalues": "SLC|GRD|OCN",
+"regex": ".*"
+},
+
+{
+"indexname": "polarisationmode",
+"indexlabel": "Polarisation (e.g.HH,VV,HV,VH,...)",
+            "indexvalues": "HH|VV|HV|VH|HH+HV|VV+VH",
+"regex": ".*"
+},
+
+{
+"indexname": "sensoroperationalmode",
+"indexlabel": "Sensor Mode (SM,IW,EW,WV)",
+"indexvalues": "SM|IW|EW|WV",
+"regex": ".*"
+
+},
+{
+"indexname": "relativeorbitnumber",
+"indexlabel": "Relative Orbit Number (from 1 to 175)",
+        "regex": "[1-9]|[1-9][0-9]|[1-9][0-7][0-5]"
+        }
+]
+},
+{
+"name": "Mission: Sentinel-2",
+"indexname": "platformname",
+"indexvalue": "Sentinel-2",
+"filters": [
+{
+"indexname": "cloudcoverpercentage",
+"indexlabel": "Cloud Cover % (e.g.[0 TO 9.4])"
+}
+        ]
+}
+]  
+</span></strong></p>						
+							<p ALIGN="JUSTIFY"> Once you have changed a value in the file, you only need to refresh your browser to see the change immediately applied. No need to restart the DHuS</p>
+	
 							
+							<h3> Version Upgrade from 0.9.1-osf to 0.12.5-6-osf </h3>
+							<p ALIGN="JUSTIFY"> In the following we describe the steps needed for migrating from a previous DHuS version (oldversion) to the new DHuS version 0.12.5-6-osf (newversion).
+								First of all, backup the items you need to inherit:</p>
 							
-							
-							
-							
-							
+1. Database folder (path attribute of tag in dhus.xml)
+2. Solr folder (path attribute of tag in dhus.xml)
+3. Products archive folder (path attribute of tag in dhus.xml)
+<p ALIGN="JUSTIFY">After you have installed the newversion following the procedure the easiest way is to have the newversion configured (in dhus.xml) to use the pre-existing DHuS archive, database and solr directories. Therefore, in dhus.xml of newversion set the following variables to the same value they have in your oldversion installation Alternatively, you may use the backed up copies in directory of your choice (as usual configured within dhus.xml).</p>
+<p ALIGN="JUSTIFY"> In addition, set in dhus.xml
+cryptType and cryptKey, specifying your database encryption key, or leave empty if your database is not encrypted. </p>
+
+
+						
 							
 							
 							
