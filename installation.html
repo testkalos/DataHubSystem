@@ -45,7 +45,7 @@ layout: default
 <h4>Apache Version</h4>
 <p align="JUSTIFY">The proxy configuration is required in case the HTTPS protocol shall be used. In this case, make sure the apache version compatible with DHuS is the number 2.2.15 with modproxy and modssl. The httpd v command tells which config file Apache is using.
 <h3>Installation and Setup</h3>
-<ul> 1. Create a user named dhus. Every step in the installation procedure, if not explicitly mentioned, shall be performed as dhus user.</ul>
+<ul>1. Create a user named dhus. Every step in the installation procedure, if not explicitly mentioned, shall be performed as dhus user.</ul>
 <ul>2. Create the installation directory: mkdir -p [install-dir]</ul>
 <ul>3. Download the DHuS package (shar package) and save it into the installation directory</ul>
 <ul>4. Change the permissions on the file: chmod +x dhus-XX.XX.XX.shar</ul>
@@ -57,6 +57,28 @@ layout: default
 <h3>Software Configuration Manual</h3>
 <p>DHuS configuration files are contained in the etc folder created after the launch of the .shar installation package: <ol>&bull;  Start.sh</ol><ol> &bull; dhus.xml</ol> <ol> &bull; server.xml </ol><ol> &bull; log4j2.xml</p>
 <p>&nbsp;</p>
+
+							table		
+							
+							
+							
+<h3>User Interface Configuration Manual</h3>	
+<p ALIGN="JUSTIFY">The DHuS is equipped with AJS GUI. This section deals with the configurability of the AJS GUI which allows a wide set of configuration actions which do not need a restart of DHuS to be applied. Due to the growth of the different centres and related installations, a new configuration management module has been added into the AJS web app. It allows configuring various aspects of the GUI; mainly it is related to style, texts and layout:</p>
+<ul> 1. Title (shown in the header bar)</ul>
+<ul> 2. Sections visibility (Cart, Profile, Sign In)</ul>
+<ul> 3. URL and texts of the link logos (shown in the header panel</ul>
+<ul> 4. Version text (shown in the info panel)</ul>
+<ul> 5. Data Hub Logo (shown in the info panel)</ul>
+<ul> 6. Mission Tag (shown in the Product List panel)</ul>
+<ul> 7. Mission footprint style and color (shown in the Map panel)</ul>
+<ul> 8. Advanced Search Mission specific fields (shown in Advanced Search Panel)</ul>
+							<ul> 9. Map Layer (shown in the Map View)</ul></p>
+<p  ALIGN="JUSTIFY">
+									Please note that all the settings are included in the client side (2 text files), thus it is possible to change a parameter without restarting the DHuS, but just doing a refresh via browser.</p>
+							
+
+							
+							
 							
 							
 							
