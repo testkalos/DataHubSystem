@@ -37,7 +37,9 @@ layout: default
 <p ALIGN="JUSTIFY">DHuS is accessed primarily via HTTP and FTP interface. The Installation procedure of the DHuS Software must be performed using a non-privileged user (not root); application installed in this way cannot start services listening on ports numbers smaller than 1024. By default the HTTP interface is reachable on 8080 port that must be opened for inbound requests. The DHuS FTP service is reachable, by default, on 2121.The DHuS provides also a mailing service based on an external SMTP server. Following table describes the default DHuS network ports configuration:</p>
 <h3>Software Requirements</h3>
 <p ALIGN="JUSTIFY">DHuS software is fully written in java and can be considered portable to any hardware platforms supported by JRE (Java Runtime Environment). The DHuS supports:</p>
-							<p ALIGN="JUSTIFY">&bull; All the Java JDK versions before the 7th (version 8 not yet supported) &bull; the Oracle distribution version 1.7.0_79. It is recommended to use a Linux Operating System working on a multithread environment running in 64bit.</p>
+							<p ALIGN="JUSTIFY">&bull; All the Java JDK versions before the 7th (version 8 not yet supported)</p>
+							<p ALIGN="JUSTIFY">&bull; The Oracle distribution version 1.7.0_79.</p>
+							<p ALIGN="JUSTIFY"> It is recommended to use a Linux Operating System working on a multithread environment running in 64bit.</p>
 <h4>Java</h4>
 <p ALIGN="JUSTIFY">The DHuS server requires Java Runtime Environment version 1.6+ being installed on the system.</p>
 <h4>Mailining Service</h4>
@@ -45,13 +47,13 @@ layout: default
 <h4>Apache Version</h4>
 <p align="JUSTIFY">The proxy configuration is required in case the HTTPS protocol shall be used. In this case, make sure the apache version compatible with DHuS is the number 2.2.15 with modproxy and modssl. The httpd v command tells which config file Apache is using.
 <h3>Installation and Setup</h3>
-<p ALIGN="JUSTIFY"> 1. Create a user named dhus. Every step in the installation procedure, if not explicitly mentioned, shall be performed as dhus user.</p>
-<p ALIGN="JUSTIFY"> 2. Create the installation directory: mkdir -p [install-dir]</p>
-<p ALIGN="JUSTIFY"> 3. Download the DHuS package (shar package) and save it into the installation directory</p>
-<p ALIGN="JUSTIFY"> 4. Change the permissions on the file: chmod +x dhus-XX.XX.XX.shar</p>
-<p ALIGN="JUSTIFY"> 5. Launch ./dhus-XX.XX.XX.shar (the package will autoinstall).Once executed, the system setting configuration file can be accessed and updated.</p>
-<p ALIGN="JUSTIFY"> 6. Edit the etc/dhus.xml configuration file and modify the varFolder variable to an absolute path of your choice. This directory will contain the local archive, the incoming products, the database, etc. Eg: &lt;!ENTITY varFolder &ldquo; /home/dhus/local_dhus&rdquo;&gt;</p>
-<p ALIGN="JUSTIFY"> 7. Start the DHuS entering the following command in the installation directory:</p>
+<p ALIGN="JUSTIFY"><strong>Step 1</strong>: Create a user named dhus. Every step in the installation procedure, if not explicitly mentioned, shall be performed as dhus user.</p>
+<p ALIGN="JUSTIFY"><strong>Step 2</strong>: Create the installation directory: mkdir -p [install-dir]</p>
+<p ALIGN="JUSTIFY"><strong>Step 3</strong>: Download the DHuS package (shar package) and save it into the installation directory</p>
+<p ALIGN="JUSTIFY"><strong>Step 4</strong>: Change the permissions on the file: chmod +x dhus-XX.XX.XX.shar</p>
+<p ALIGN="JUSTIFY"><strong>Step 5</strong>:Launch ./dhus-XX.XX.XX.shar (the package will autoinstall).Once executed, the system setting configuration file can be accessed and updated.</p>
+<p ALIGN="JUSTIFY"><strong>Step 6</strong>:Edit the etc/dhus.xml configuration file and modify the varFolder variable to an absolute path of your choice. This directory will contain the local archive, the incoming products, the database, etc. Eg: &lt;!ENTITY varFolder &ldquo; /home/dhus/local_dhus&rdquo;&gt;</p>
+<p ALIGN="JUSTIFY"><strong>Step 7</strong>: Start the DHuS entering the following command in the installation directory:</p>
 <p align="JUSTIFY">nohup /bin/bash ./start.sh &amp;</p>
 <p align="JUSTIFY">The log files will be created in the installation directory.</p>
 <h3>Software Configuration Manual</h3>
