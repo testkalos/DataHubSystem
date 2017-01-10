@@ -194,7 +194,7 @@ The product deletion and eviction shall be executed on the replicas. User regist
 <p ALIGN="JUSTIFY"><span style="color: #3366ff;">- Ddhus.scalability.active=true \ </span></p>
 <p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.local.protocol=http \ </span></p>
 <p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.local.ip=[DHuS master internal IP]</span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;"> -Ddhus.scalability.local.port=[DHuS master port, as in server.xml] \ </span></p>
+<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.local.port=[DHuS master port, as in server.xml] \ </span></p>
 <p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.local.path=/ \ </span></p>
 <p ALIGN="JUSTIFY">In the <em>dhus.xml</em> set the &ldquo;external&rdquo; parameter with the proxy hostname (or IP) its port and the master&rsquo;s dhus path:</p>
 <p ALIGN="JUSTIFY"><strong>Step 3:Replica Configuration</strong></p>
@@ -215,11 +215,18 @@ The product deletion and eviction shall be executed on the replicas. User regist
 <p>&nbsp;</p>
 						
 <h3> 3. Installation and configuration procedure with an already existing database</h3>						
-<p><strong>Step 1</strong>: follow&nbsp;<a href="http://sentineldatahub.github.io/DataHubSystem/page/2016/01/31/Installation-Guide.html#Download">Step 1</a>&nbsp;in previous procedure<br /> <strong>Step 2</strong>: follow&nbsp;<a href="http://sentineldatahub.github.io/DataHubSystem/page/2016/01/31/Installation-Guide.html#MasterC">Step 2</a>&nbsp;in previous procedure, configuring the scalability option as follows.</p>
+<p ALIGN="JUSTIFY"><strong>Step 1</strong>: Follow <strong>Step 1</strong> in previous procedure</p>
+<p ALIGN="JUSTIFY"><strong>Step 2</strong>: Follow <strong>Step 2</strong> in previous procedure, configuring the scalability option as follows.</p>
 <p><span style="color: #3366ff;">-Ddhus.scalability.active=false \</span></p>
-<p><strong>Step 3</strong>: On the master, copy the database and Solr index (in {varfolder}/database and {varfolder}/solr, respectively), overriding the existing directories<br /> <strong>Step 4</strong>&nbsp;: Remove this file : {varfolder}/solr/dhus/conf/managed-schema, if present.<br /> <strong>Step 5</strong>: Start the DHuS Master to perform a&nbsp;<strong>database migration</strong>.<br /> <strong>Step 6</strong>: At the end of the migration process (which can take a while, depending on the number of products and users in the database), stop the DHuS Master.<br /> <strong>Step 7</strong>: Backup the database and Solr index and copy them on each replica overriding the existing directories in {varfolder}.<br /> <strong>Step 8</strong>: Add the option to the start.sh of the master:&nbsp;-Dauto.reload=false&nbsp;to prevent the master from sending its database to the replicas.<br /> <strong>Step 9</strong>: Start DHuS master and wait until the startup process is complete.<br /> Follow Steps 3, 4 and 5 of&nbsp;<a href="http://sentineldatahub.github.io/DataHubSystem/page/2016/01/31/Installation-Guide.html#Replica">previous procedure</a>&nbsp;taking care of starting replicas one at a time.<br /> Please note that at each new replica addition to the cluster it is necessary to shutdown the master and start the replicas from the newest to the oldest.</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>				
+<p ALIGN="JUSTIFY"><strong>Step 3</strong>: On the master, copy the database and Solr index (in {varfolder}/database and {varfolder}/solr, respectively), overriding the existing directories</p>
+<p ALIGN="JUSTIFY"><strong>Step 4</strong>: Remove this file : {varfolder}/solr/dhus/conf/managed-schema, if present.</p>
+<p ALIGN="JUSTIFY"><strong>Step 5</strong>: Start the DHuS Master to perform a <strong>database migration</strong>.</p>
+<p ALIGN="JUSTIFY"><strong>Step 6</strong>: At the end of the migration process (which can take a while, depending on the number of products and users in the database), stop the DHuS Master.</p> 
+<p ALIGN="JUSTIFY"><strong>Step 7</strong>: Backup the database and Solr index and copy them on each replica overriding the existing directories in {varfolder}.</p> 
+<p ALIGN="JUSTIFY"><strong>Step 8</strong>: Add the option to the start.sh of the master:&nbsp;-Dauto.reload=false&nbsp;to prevent the master from sending its database to the replicas.</p> 
+<p ALIGN="JUSTIFY"><strong>Step 9</strong>: Start DHuS master and wait until the startup process is complete.</p> 
+<p ALIGN="JUSTIFY"> Follow Steps 3, 4 and 5 of previous procedure; taking care of starting replicas one at a time.</p> <p>Please note that at each new replica addition to the cluster it is necessary to shutdown the master and start the replicas from the newest to the oldest.
+							</p>				
 							
 							
 							</article>
