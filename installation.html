@@ -43,16 +43,17 @@ layout: default
 <h4>Mailining Service</h4>
 <p ALIGN="JUSTIFY">An SMTP mail server should be made available to the DHuS System in order to allow its mailing functionalities.</p>
 <h4>Apache Version</h4>
-<p ALIGN="JUSTIFY">The proxy configuration is required in case the HTTPS protocol shall be used. In this case, make sure the apache version compatible with DHuS is the number 2.2.15 with modproxy and modssl. The httpd v command tells which config file Apache is using.</p>
+<p align="JUSTIFY">The proxy configuration is required in case the HTTPS protocol shall be used. In this case, make sure the apache version compatible with DHuS is the number 2.2.15 with modproxy and modssl. The httpd v command tells which config file Apache is using.
 <h3>Installation and Setup</h3>
-<ul>1. Create a user named dhus. Every step in the installation procedure, if not explicitly mentioned, shall be performed as dhus user.</ul>
+<ul> 1. Create a user named dhus. Every step in the installation procedure, if not explicitly mentioned, shall be performed as dhus user.</ul>
 <ul>2. Create the installation directory: mkdir -p [install-dir]</ul>
 <ul>3. Download the DHuS package (shar package) and save it into the installation directory</ul>
 <ul>4. Change the permissions on the file: chmod +x dhus-XX.XX.XX.shar</ul>
 <ul>5. Launch ./dhus-XX.XX.XX.shar (the package will autoinstall).Once executed, the system setting configuration file can be accessed and updated.</ul>
 <ul>6. Edit the etc/dhus.xml configuration file and modify the varFolder variable to an absolute path of your choice. This directory will contain the local archive, the incoming products, the database, etc. Eg: &lt;!ENTITY varFolder &ldquo; /home/dhus/local_dhus&rdquo;&gt;</ul>
 <ul>7. Start the DHuS entering the following command in the installation directory:</ul>
- nohup /bin/bash ./start.sh &amp; <p> The log files will be created in the installation directory.</p>
+<p align="JUSTIFY">nohup /bin/bash ./start.sh &amp;</p>
+<p>The log files will be created in the installation directory.</p>
 <h3>Software Configuration Manual</h3>
 <p>DHuS configuration files are contained in the etc folder created after the launch of the .shar installation package: <ol>&bull;  Start.sh</ol><ol> &bull; dhus.xml</ol> <ol> &bull; server.xml </ol><ol> &bull; log4j2.xml</p>
 <p>&nbsp;</p>
