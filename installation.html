@@ -26,8 +26,8 @@ layout: default
 	
                      <h3>Introduction</h3>
 <p ALIGN="JUSTIFY">The DHuS is a web application, running within a Java Virtual Machine. All its middleware components, such as database and application servers, run inside the JVM container. In order to allow integration into a hosting environment, the application needs to be installed and configured having well in mind what are the external interfaces to be used. The application needs to manage two flows:</p>
-<p ALIGN="JUSTIFY">&bull; the incoming flow: during the products ingestion process, the DHuS SW picks up products (compressed or not) from a folder and move them into another folder. We will call those folders, respectively, inbox and incoming.</p>
-<p ALIGN="JUSTIFY">&bull; the outgoing flow (how external users can search and download published data): this can happen using http (Tomcat) and, in particular cases, also ftp (service started by DHuS) on some dedicated service ports.</p>
+							<p ALIGN="JUSTIFY">&bull; the <strong>incoming flow</strong>: during the products ingestion process, the DHuS SW picks up products (compressed or not) from a folder and move them into another folder. We will call those folders, respectively, inbox and incoming.</p>
+							<p ALIGN="JUSTIFY">&bull; the <strong> outgoing flow </strong>(how external users can search and download published data): this can happen using http (Tomcat) and, in particular cases, also ftp (service started by DHuS) on some dedicated service ports.</p>
 <p ALIGN="JUSTIFY">The filesystems used by the application, can be two or more;</p>
 <p ALIGN="JUSTIFY">&bull; one filesystem is needed for storing the DB where the products are indexed, along with the logs and application binaries. This filesystem needs to reside on the local disks.</p>
 <p ALIGN="JUSTIFY">&bull; one or more filesystems are used for archiving the products. Given the volume of normal Sentinels production, it is also recommended to use an external disk for mounting the second filesystem, in order to cope with several TBs of products.</p>
@@ -45,18 +45,22 @@ layout: default
 <h4>Apache Version</h4>
 <p align="JUSTIFY">The proxy configuration is required in case the HTTPS protocol shall be used. In this case, make sure the apache version compatible with DHuS is the number 2.2.15 with modproxy and modssl. The httpd v command tells which config file Apache is using.
 <h3>Installation and Setup</h3>
-<ul>1. Create a user named dhus. Every step in the installation procedure, if not explicitly mentioned, shall be performed as dhus user.</ul>
-<ul>2. Create the installation directory: mkdir -p [install-dir]</ul>
-<ul>3. Download the DHuS package (shar package) and save it into the installation directory</ul>
-<ul>4. Change the permissions on the file: chmod +x dhus-XX.XX.XX.shar</ul>
-<ul>5. Launch ./dhus-XX.XX.XX.shar (the package will autoinstall).Once executed, the system setting configuration file can be accessed and updated.</ul>
-<ul>6. Edit the etc/dhus.xml configuration file and modify the varFolder variable to an absolute path of your choice. This directory will contain the local archive, the incoming products, the database, etc. Eg: &lt;!ENTITY varFolder &ldquo; /home/dhus/local_dhus&rdquo;&gt;</ul>
-<ul>7. Start the DHuS entering the following command in the installation directory:</ul>
+<p ALIGN="JUSTIFY"> 1. Create a user named dhus. Every step in the installation procedure, if not explicitly mentioned, shall be performed as dhus user.</p>
+<p ALIGN="JUSTIFY"> 2. Create the installation directory: mkdir -p [install-dir]</p>
+<p ALIGN="JUSTIFY"> 3. Download the DHuS package (shar package) and save it into the installation directory</p>
+<p ALIGN="JUSTIFY"> 4. Change the permissions on the file: chmod +x dhus-XX.XX.XX.shar</p>
+<p ALIGN="JUSTIFY"> 5. Launch ./dhus-XX.XX.XX.shar (the package will autoinstall).Once executed, the system setting configuration file can be accessed and updated.</p>
+<p ALIGN="JUSTIFY"> 6. Edit the etc/dhus.xml configuration file and modify the varFolder variable to an absolute path of your choice. This directory will contain the local archive, the incoming products, the database, etc. Eg: &lt;!ENTITY varFolder &ldquo; /home/dhus/local_dhus&rdquo;&gt;</p>
+<p ALIGN="JUSTIFY"> 7. Start the DHuS entering the following command in the installation directory:</p>
 <p align="JUSTIFY">nohup /bin/bash ./start.sh &amp;</p>
-<p>The log files will be created in the installation directory.</p>
+<p align="JUSTIFY">The log files will be created in the installation directory.</p>
 <h3>Software Configuration Manual</h3>
-<p>DHuS configuration files are contained in the etc folder created after the launch of the .shar installation package: <ol>&bull;  Start.sh</ol><ol> &bull; dhus.xml</ol> <ol> &bull; server.xml </ol><ol> &bull; log4j2.xml</p>
-<p>&nbsp;</p>
+<p>DHuS configuration files are contained in the etc folder created after the launch of the .shar installation package:</p>  
+							<p align="JUSTIFY"> <strong>Start.sh</strong>; 
+							<p align="JUSTIFY"> <strong>dhus.xml</strong>; </p>
+							<p align="JUSTIFY"> <strong>server.xml</strong>; </p>
+							<p align="JUSTIFY"> <strong>log4j2.xml</strong>;</p>
+
 
 							table		
 							
@@ -190,9 +194,9 @@ cryptType and cryptKey, specifying your database encryption key, or leave empty 
 			<p ALIGN="JUSTIFY"> The objective of the configuration in scalability mode is to have several DHuS instances acting as one to share the user load and the products information: the deployment in scalable mode is completely transparent to the user.</p>
 			<h4> 1. Architecture and Deploy </h4>
 <p ALIGN="JUSTIFY"> The deployment of DHuS in scalable mode suitable for the operational scenario foresees three main actors:</p>
-							<p ALIGN="JUSTIFY">one DHuS acting as master</p>
-							<p ALIGN="JUSTIFY">one or more DHuS acting as replicas</p>
-							<p ALIGN="JUSTIFY">one proxy</p>
+							<p ALIGN="JUSTIFY"><strong> one DHuS acting as master</strong></p>
+							<p ALIGN="JUSTIFY"><strong> one or more DHuS acting as replicas</strong></p>
+							<p ALIGN="JUSTIFY"><strong>one proxy</strong></p>
 							
 							<h5> Master</h5>
 <p ALIGN="JUSTIFY">The DHuS master is the one and only product data source, meaning, it is in charge of the ingestion/synchronization of products.</p>
