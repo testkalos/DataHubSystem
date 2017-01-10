@@ -204,9 +204,9 @@ The product deletion and eviction shall be executed on the replicas. User regist
 <h5>Proxy</h5>
 A proxy is needed for load balancing among the replicas. It must be configured to redirect incoming traffic to the DHuS replicas based on a load balancing algorithm with sticky sessions. Please refer to the proxy documentation for instructions on how to implement this.
 
-							<h4> 2. Installation and configuration procedure with an empty database</h4>
-							<p>Step 1: <strong>Download</strong> the installation package and install on all machines following</p>
-<p ALIGN="JUSTIFY">Step 2:<strong> Master Configuration</strong></p>
+<h3> 2. Installation and configuration procedure with an empty database</h3>
+<p ALIGN="JUSTIFY"><strong>Step 1: Download</strong> the installation package and install on all machines following</p>
+<p ALIGN="JUSTIFY"><strong>Step 2: Master Configuration</strong></p>
 <p ALIGN="JUSTIFY">In <em>start.sh</em> of the master add the following parameters (some may already be present) to the java executable command line:</p>
 <p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Dhttp.proxyHost=[proxy external IP] \ </span></p>
 <p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Dhttp.proxyPort=[proxy port] \ </span></p>
@@ -217,7 +217,7 @@ A proxy is needed for load balancing among the replicas. It must be configured t
 <p ALIGN="JUSTIFY"><span style="color: #3366ff;"> -Ddhus.scalability.local.port=[DHuS master port, as in server.xml] \ </span></p>
 <p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.local.path=/ \ </span></p>
 <p ALIGN="JUSTIFY">In the <em>dhus.xml</em> set the &ldquo;external&rdquo; parameter with the proxy hostname (or IP) its port and the master&rsquo;s dhus path:</p>
-<p ALIGN="JUSTIFY">Step 3: <strong>Replica Configuration</strong></p>
+<p ALIGN="JUSTIFY"><strong>Step 3:Replica Configuration</strong></p>
 <p ALIGN="JUSTIFY">Configure the <em>start.sh</em> of the replicas as follows:</p>
 <p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Dhttp.proxyHost=[external proxy IP] \</span></p>
 <p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Dhttp.proxyPort=[proxy port] \</span></p>
@@ -230,7 +230,8 @@ A proxy is needed for load balancing among the replicas. It must be configured t
 <p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.replicaId=[id of the replica, integer] \</span></p>
 <p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.dbsync.master=http://[DHuS master internal IP ]:[DHuS port]/ \</span></p>
 <p ALIGN="JUSTIFY">In the dhus.xml set the &ldquo;external&rdquo; parameter with the proxy hostname (or IP) its port and the replica&rsquo;s dhus path:</p>
-<p ALIGN="JUSTIFY"><strong>Step 4</strong>: <strong>Start DHuS master</strong> and wait until the startup process is complete.<br /> <strong>Step 5</strong>: <strong>Start DHuS replicas</strong>.</p>
+<p ALIGN="JUSTIFY"><strong>Step 4:Start DHuS master</strong> and wait until the startup process is complete.<br /> </p>
+<p ALIGN="JUSTIFY"><strong>Step 5:Start DHuS replicas</strong>.</p>
 <p>&nbsp;</p>
 							
 							
