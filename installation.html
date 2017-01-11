@@ -22,12 +22,13 @@ layout: default
 							<p ALIGN="JUSTIFY">&bull;<strong> one filesystem </strong> is needed for storing the DB where the products are indexed, along with the logs and application binaries. This filesystem needs to reside on the local disks.</p>
 							<p ALIGN="JUSTIFY">&bull;<strong> one or more filesystems</strong> are used for archiving the products. Given the volume of normal Sentinels production, it is also recommended to use an external disk for mounting the second filesystem, in order to cope with several TBs of products.</p>
 
-							
+<span class="image featured"><img src="assets/images/pic02.jpg" alt="" /></span>
 							<h3><a name="SystemRequirements">System Requirements</a></h3>
 
 <p>table</p>
 <h3><a name="NetworkRequirements">Network Requirements</a></h3>
 <p ALIGN="JUSTIFY">DHuS is accessed primarily via HTTP and FTP interface. The Installation procedure of the DHuS Software must be performed using a non-privileged user (not root); application installed in this way cannot start services listening on ports numbers smaller than 1024. By default the HTTP interface is reachable on 8080 port that must be opened for inbound requests. The DHuS FTP service is reachable, by default, on 2121.The DHuS provides also a mailing service based on an external SMTP server. Following table describes the default DHuS network ports configuration:</p>
+
 <h3><a name="SoftwareRequirements">Software Requirements</a></h3>
 <p ALIGN="JUSTIFY">DHuS software is fully written in java and can be considered portable to any hardware platforms supported by JRE (Java Runtime Environment). The DHuS supports:</p>
 							<p ALIGN="JUSTIFY">&bull; All the Java JDK versions before the 7th (version 8 not yet supported)</p>
@@ -50,6 +51,9 @@ layout: default
 <p ALIGN="JUSTIFY"><strong>Step 7</strong>: Start the DHuS entering the following command in the installation directory:</p>
 <p align="JUSTIFY">nohup /bin/bash ./start.sh &amp;</p>
 <p align="JUSTIFY">The log files will be created in the installation directory.</p>
+
+<span class="image featured"><img src="assets/images/pic02.jpg" alt="" /></span>
+						
 <h3><a name="SoftwareConfigurationManual">Software Configuration Manual</a></h3>
 <p align="JUSTIFY"> DHuS configuration files are contained in the etc folder created after the launch of the .shar installation package:</p>  
 							<p align="JUSTIFY">&bull; <strong>Start.sh</strong>; 
@@ -60,7 +64,7 @@ layout: default
 
 							table		
 							
-							
+<span class="image featured"><img src="assets/images/pic02.jpg" alt="" /></span>							
 							
 	
 <h3><a name="UserInterfaceConfigurationManual">User Interface Configuration Manual</a></h3>
@@ -85,7 +89,7 @@ Please note that all the settings are included in the client side (2 text files)
 <p ALIGN="JUSTIFY">appconfig.json (includes 1,2,3,4,5)</p>
 <p ALIGN="JUSTIFY">styles.json (includes 6,7)</p>
 
-							
+<span class="image featured"><img src="assets/images/pic02.jpg" alt="" /></span>							
 
 				<h3><a name="AdvancedSearchConfiguration">Advanced Search Configuration</a></h3>
 			<p ALIGN="JUSTIFY">
@@ -150,7 +154,7 @@ Here below an example of filters configuration specific for S1 and S2 missions.<
 </span></strong></p>						
 							<p ALIGN="JUSTIFY"> Once you have changed a value in the file, you only need to refresh your browser to see the change immediately applied. No need to restart the DHuS</p>
 	
-							
+<span class="image featured"><img src="assets/images/pic02.jpg" alt="" /></span>							
 							
 							<h3><a name="VersionUpgrade"> Version Upgrade from 0.9.1-osf to 0.12.5-6-osf</a></h3>
 							<p ALIGN="JUSTIFY"> In the following we describe the steps needed for migrating from a previous DHuS version (oldversion) to the new DHuS version 0.12.5-6-osf (newversion).
@@ -163,7 +167,7 @@ Here below an example of filters configuration specific for S1 and S2 missions.<
 <p ALIGN="JUSTIFY"> In addition, set in dhus.xml
 cryptType and cryptKey, specifying your database encryption key, or leave empty if your database is not encrypted. </p>
 
-
+<span class="image featured"><img src="assets/images/pic02.jpg" alt="" /></span>
 							<h3><a name="ScalabilityModeConfiguration">Scalability Mode Configuration</a></h3>
 			<p ALIGN="JUSTIFY"> The objective of the configuration in scalability mode is to have several DHuS instances acting as one to share the user load and the products information: the deployment in scalable mode is completely transparent to the user.</p>
 			
@@ -184,7 +188,9 @@ The product deletion and eviction shall be executed on the replicas. User regist
 <h5>Proxy</h5>
 <p ALIGN="JUSTIFY">A proxy is needed for load balancing among the replicas. It must be configured to redirect incoming traffic to the DHuS replicas based on a load balancing algorithm with sticky sessions. Please refer to the proxy documentation for instructions on how to implement this.</p>
 
-<h3><a name="InstallationAndConfigurationProcedureWithEmptyDatabase">2. Installation and configuration procedure with an empty database</a></h3>							
+<span class="image featured"><img src="assets/images/pic02.jpg" alt="" /></span>
+
+						<h3><a name="InstallationAndConfigurationProcedureWithEmptyDatabase">2. Installation and configuration procedure with an empty database</a></h3>							
 <p ALIGN="JUSTIFY"><strong>Step 1: Download</strong> the installation package and install on all machines following</p>
 <p ALIGN="JUSTIFY"><strong>Step 2: Master Configuration</strong></p>
 <p ALIGN="JUSTIFY">In <em>start.sh</em> of the master add the following parameters (some may already be present) to the java executable command line:</p>
