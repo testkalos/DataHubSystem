@@ -23,7 +23,7 @@ layout: default
 								
 								<span class="image featured"><img src="assets/images/banner.jpg" alt="" /></span>
 						<section class="wrapper style1">
-	<h3><a name="Introduction">Introduction</a></h3>
+<h3><a name="Introduction">Introduction</a></h3>
 <p ALIGN="JUSTIFY">The DHuS is a web application, running within a Java Virtual Machine. All its middleware components, such as database and application servers, run inside the JVM container. In order to allow integration into a hosting environment, the application needs to be installed and configured having well in mind what are the external interfaces to be used. The application needs to manage two flows:</p>
 							<p ALIGN="JUSTIFY">&bull; the <strong>incoming flow</strong>: during the products ingestion process, the DHuS SW picks up products (compressed or not) from a folder and move them into another folder. We will call those folders, respectively, inbox and incoming.</p>
 							<p ALIGN="JUSTIFY">&bull; the <strong> outgoing flow </strong>(how external users can search and download published data): this can happen using http (Tomcat) and, in particular cases, also ftp (service started by DHuS) on some dedicated service ports.</p>
@@ -96,7 +96,7 @@ Please note that all the settings are included in the client side (2 text files)
 
 							
 
-							<h3><a name="AvdancedSerachConfiguration">Advanced Search Configuration</a></h3>
+							<h3><a name="AvdancedSearchConfiguration">Advanced Search Configuration</a></h3>
 			<p ALIGN="JUSTIFY">
 						 A special attention goes to the configuration of the advanced search mission specific fields. The configuration file appconfig.json has been updated in order to manage mission specific filters</p>
 						<p  ALIGN="JUSTIFY"> A "missions" section has been added, containing an array with the following structure:
@@ -173,10 +173,9 @@ Here below an example of filters configuration specific for S1 and S2 missions.<
 cryptType and cryptKey, specifying your database encryption key, or leave empty if your database is not encrypted. </p>
 
 
-							<h3>Scalability Mode Configuration</h3>
 							<h3><a name="ScalabilityModeConfiguration">Scalability Mode Configuration</a></h3>
 			<p ALIGN="JUSTIFY"> The objective of the configuration in scalability mode is to have several DHuS instances acting as one to share the user load and the products information: the deployment in scalable mode is completely transparent to the user.</p>
-			<h3> 1. Architecture and Deploy </h3>
+			
 			<h3><a name="ArchitectureAndDeploy"> 1. Architecture and Deploy</a></h3>
 							
 <p ALIGN="JUSTIFY"> The deployment of DHuS in scalable mode suitable for the operational scenario foresees three main actors:</p>
