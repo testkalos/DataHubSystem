@@ -25,7 +25,7 @@
 			<div id="header">
 						
 				<!-- Logo -->
-					<h1><a href="index.html" id="logo"> <em>Open Source Portal</em></a></h1>
+					<h1><a href="index.html" id="logo">Open Source Portal</a></h1>
 				
 				<!-- Nav -->
 					<nav id="nav">
@@ -34,10 +34,10 @@
 							<li {% if current[1] == 'index.html' %}class="current"{% endif %}><a href="index.html">Home</a></li>
                                                      
 							<li {% if current[1] == 'about.html' %}class="current"{% endif %}><a href=" about.html">About</a></li>
-            
+              <li ><a href="https://github.com/SentinelDataHub/DataHubSystem">Download</a></li>	
              <li {% if current[1] == 'support.html' %}class="current"{% endif %}><a href=" support.html">Support</a></li>
   
-             <li ><a href="https://github.com/SentinelDataHub/DataHubSystem">Download</a></li>	
+             
 	      
              
 							
@@ -54,8 +54,10 @@
       		       </ul>
 							</li>   
 	
-            
-		<ul>
+              <li {% if current[1] == 'demo.html' %}class="current"{% endif %}><a href=" demo.html">Demo Features</a></li>
+	      <li {% if current[1] == 'contacts.html' %}class="current"{% endif %}><a href=" contact.html">Contact Us</a></li>
+		
+							<ul>
 		<li><a href="http://step.esa.int/main/toolboxes/snap/"> Sentinel Application Platform</a></li>
 		<li><a href="http://step.esa.int/main/toolboxes/sentinel-1-toolbox/">Sentinel-1 Toolbox</a></li>
                   <li><a href="http://step.esa.int/main/toolboxes/sentinel-2-toolbox/">Sentinel-2 Toolbox</a></li>   
