@@ -30,11 +30,14 @@ layout: default
 <p ALIGN="JUSTIFY">The filesystems used by the application, can be two or more;</p>
 							<p ALIGN="JUSTIFY">&bull;<strong> one filesystem </strong> is needed for storing the DB where the products are indexed, along with the logs and application binaries. This filesystem needs to reside on the local disks.</p>
 							<p ALIGN="JUSTIFY">&bull;<strong> one or more filesystems</strong> are used for archiving the products. Given the volume of normal Sentinels production, it is also recommended to use an external disk for mounting the second filesystem, in order to cope with several TBs of products.</p>
-<h3>System Requirements</h3>
+
+							
+							<h3><a name="SystemRequirements">System Requirements</a></h3>
+
 <p>table</p>
-<h3>Network Requirements</h3>
+<h3><a name="NetworkRequirements">Network Requirements</a></h3>
 <p ALIGN="JUSTIFY">DHuS is accessed primarily via HTTP and FTP interface. The Installation procedure of the DHuS Software must be performed using a non-privileged user (not root); application installed in this way cannot start services listening on ports numbers smaller than 1024. By default the HTTP interface is reachable on 8080 port that must be opened for inbound requests. The DHuS FTP service is reachable, by default, on 2121.The DHuS provides also a mailing service based on an external SMTP server. Following table describes the default DHuS network ports configuration:</p>
-<h3>Software Requirements</h3>
+<h3><a name="SoftwareRequirements">Software Requirements</a></h3>
 <p ALIGN="JUSTIFY">DHuS software is fully written in java and can be considered portable to any hardware platforms supported by JRE (Java Runtime Environment). The DHuS supports:</p>
 							<p ALIGN="JUSTIFY">&bull; All the Java JDK versions before the 7th (version 8 not yet supported)</p>
 							<p ALIGN="JUSTIFY">&bull; The Oracle distribution version 1.7.0_79.</p>
@@ -45,7 +48,8 @@ layout: default
 <p ALIGN="JUSTIFY">An SMTP mail server should be made available to the DHuS System in order to allow its mailing functionalities.</p>
 <h4>Apache Version</h4>
 <p align="JUSTIFY">The proxy configuration is required in case the HTTPS protocol shall be used. In this case, make sure the apache version compatible with DHuS is the number 2.2.15 with modproxy and modssl. The httpd v command tells which config file Apache is using.
-<h3>Installation and Setup</h3>
+
+<h3><a name="InstallationandSetup">Installation and Setup</a></h3>
 <p ALIGN="JUSTIFY"><strong>Step 1</strong>: Create a user named dhus. Every step in the installation procedure, if not explicitly mentioned, shall be performed as dhus user.</p>
 <p ALIGN="JUSTIFY"><strong>Step 2</strong>: Create the installation directory: mkdir -p [install-dir]</p>
 <p ALIGN="JUSTIFY"><strong>Step 3</strong>: Download the DHuS package (shar package) and save it into the installation directory</p>
@@ -55,7 +59,7 @@ layout: default
 <p ALIGN="JUSTIFY"><strong>Step 7</strong>: Start the DHuS entering the following command in the installation directory:</p>
 <p align="JUSTIFY">nohup /bin/bash ./start.sh &amp;</p>
 <p align="JUSTIFY">The log files will be created in the installation directory.</p>
-<h3>Software Configuration Manual</h3>
+<h3><a name="SoftwareConfigurationManual">Software Configuration Manual</a></h3>
 <p align="JUSTIFY"> DHuS configuration files are contained in the etc folder created after the launch of the .shar installation package:</p>  
 							<p align="JUSTIFY">&bull; <strong>Start.sh</strong>; 
 							<p align="JUSTIFY">&bull; <strong>dhus.xml</strong>; </p>
@@ -67,7 +71,8 @@ layout: default
 							
 							
 							
-<h3>User Interface Configuration Manual</h3>	
+	
+<h3><a name="UserInterfaceConfigurationManual">User Interface Configuration Manual</a></h3>
 <p ALIGN="JUSTIFY">The DHuS is equipped with AJS GUI. This section deals with the configurability of the AJS GUI which allows a wide set of configuration actions which do not need a restart of DHuS to be applied. Due to the growth of the different centres and related installations, a new configuration management module has been added into the AJS web app. It allows configuring various aspects of the GUI; mainly it is related to style, texts and layout:</p>
 							<p ALIGN="JUSTIFY">&bull;<strong> Title</strong>(shown in the header bar)</p>
 							<p ALIGN="JUSTIFY">&bull;<strong> Sections visibility </strong>(Cart, Profile, Sign In)</p>
@@ -91,7 +96,7 @@ Please note that all the settings are included in the client side (2 text files)
 
 							
 
-							<h3>Advanced Configuration </h3>
+							<h3><a name="AvdancedSerachConfiguration">Advanced Search Configuration</a></h3>
 			<p ALIGN="JUSTIFY">
 						 A special attention goes to the configuration of the advanced search mission specific fields. The configuration file appconfig.json has been updated in order to manage mission specific filters</p>
 						<p  ALIGN="JUSTIFY"> A "missions" section has been added, containing an array with the following structure:
@@ -155,7 +160,8 @@ Here below an example of filters configuration specific for S1 and S2 missions.<
 							<p ALIGN="JUSTIFY"> Once you have changed a value in the file, you only need to refresh your browser to see the change immediately applied. No need to restart the DHuS</p>
 	
 							
-							<h3> Version Upgrade from 0.9.1-osf to 0.12.5-6-osf </h3>
+							
+							<h3><a name="VersionUpgrade"> Version Upgrade from 0.9.1-osf to 0.12.5-6-osf</a></h3>
 							<p ALIGN="JUSTIFY"> In the following we describe the steps needed for migrating from a previous DHuS version (oldversion) to the new DHuS version 0.12.5-6-osf (newversion).
 								First of all, backup the items you need to inherit:</p>
 							
@@ -168,8 +174,11 @@ cryptType and cryptKey, specifying your database encryption key, or leave empty 
 
 
 							<h3>Scalability Mode Configuration</h3>
+							<h3><a name="ScalabilityModeConfiguration">Scalability Mode Configuration</a></h3>
 			<p ALIGN="JUSTIFY"> The objective of the configuration in scalability mode is to have several DHuS instances acting as one to share the user load and the products information: the deployment in scalable mode is completely transparent to the user.</p>
 			<h3> 1. Architecture and Deploy </h3>
+			<h3><a name="ArchitectureAndDeploy"> 1. Architecture and Deploy</a></h3>
+							
 <p ALIGN="JUSTIFY"> The deployment of DHuS in scalable mode suitable for the operational scenario foresees three main actors:</p>
 							<p ALIGN="JUSTIFY">&bull; one DHuS acting as master</p>
 							<p ALIGN="JUSTIFY">&bull; one or more DHuS acting as replicas</p>
@@ -185,7 +194,7 @@ The product deletion and eviction shall be executed on the replicas. User regist
 <h5>Proxy</h5>
 <p ALIGN="JUSTIFY">A proxy is needed for load balancing among the replicas. It must be configured to redirect incoming traffic to the DHuS replicas based on a load balancing algorithm with sticky sessions. Please refer to the proxy documentation for instructions on how to implement this.</p>
 
-<h3> 2. Installation and configuration procedure with an empty database</h3>
+<h3><a name="InstallationAndConfigurationProcedureWithEmptyDatabase">2. Installation and configuration procedure with an empty database</a></h3>							
 <p ALIGN="JUSTIFY"><strong>Step 1: Download</strong> the installation package and install on all machines following</p>
 <p ALIGN="JUSTIFY"><strong>Step 2: Master Configuration</strong></p>
 <p ALIGN="JUSTIFY">In <em>start.sh</em> of the master add the following parameters (some may already be present) to the java executable command line:</p>
@@ -215,7 +224,9 @@ The product deletion and eviction shall be executed on the replicas. User regist
 <p ALIGN="JUSTIFY"><strong>Step 5:Start DHuS replicas</strong>.</p>
 <p>&nbsp;</p>
 						
-<h3> 3. Installation and configuration procedure with an already existing database</h3>						
+<h3> 3. Installation and configuration procedure with an already existing database</h3>	
+	<h3><a name="InstallationAndConfigurationProcedureWithExistingDatabase">3. Installation and configuration procedure with an already existing database</a></h3>
+							
 <p ALIGN="JUSTIFY"><strong>Step 1</strong>: Follow <strong>Step 1</strong> in previous procedure</p>
 <p ALIGN="JUSTIFY"><strong>Step 2</strong>: Follow <strong>Step 2</strong> in previous procedure, configuring the scalability option as follows.</p>
 <p><span style="color: #3366ff;">-Ddhus.scalability.active=false \</span></p>
