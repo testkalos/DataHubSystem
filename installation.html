@@ -142,6 +142,16 @@ layout: default
 </table>
 <h3><a name="NetworkRequirements">Network Requirements</a></h3>
 <p ALIGN="JUSTIFY">DHuS is accessed primarily via HTTP and FTP interface. The Installation procedure of the DHuS Software must be performed using a non-privileged user (not root); application installed in this way cannot start services listening on ports numbers smaller than 1024. By default the HTTP interface is reachable on 8080 port that must be opened for inbound requests. The DHuS FTP service is reachable, by default, on 2121.The DHuS provides also a mailing service based on an external SMTP server. Following table describes the default DHuS network ports configuration:</p>
+<table style="border:1px solid black;border-collapse:collapse;">
+<tbody>
+<tr>
+<th style="border:1px solid black;"><strong>SERVICES</strong></th><th style="border:1px solid black;"><strong>INBOUND</strong></th><th style="border:1px solid black;"><strong>OUTBOUND</strong></th></tr>
+<tr><th style="border:1px solid black;">HTTP</th><th style="border:1px solid black;">8080</th><th>-</th></tr>
+<tr><th style="border:1px solid black;">HTTPS</th><th style="border:1px solid black;">443</th><th style="border:1px solid black;">-</th></tr>
+<tr><th style="border:1px solid black;">FTP</th><th style="border:1px solid black;">2121</th><th style="border:1px solid black;">-</th></tr>
+<tr><th style="border:1px solid black;">SMTP</th><th style="border:1px solid black;">-</th><th style="border:1px solid black;">25</th></tr>
+</tbody>
+</table>	
 
 <h3><a name="SoftwareRequirements">Software Requirements</a></h3>
 <p ALIGN="JUSTIFY">DHuS software is fully written in java and can be considered portable to any hardware platforms supported by JRE (Java Runtime Environment). The DHuS supports:</p>
@@ -176,16 +186,7 @@ layout: default
 							<p align="JUSTIFY">&bull; <strong>server.xml</strong>; </p>
 							<p align="JUSTIFY">&bull; <strong>log4j2.xml</strong>;</p>
 
-<table style="border:1px solid black;border-collapse:collapse;">
-<tbody>
-<tr>
-<th style="border:1px solid black;"><strong>SERVICES</strong></th><th style="border:1px solid black;"><strong>INBOUND</strong></th><th style="border:1px solid black;"><strong>OUTBOUND</strong></th></tr>
-<tr><th style="border:1px solid black;">HTTP</th><th style="border:1px solid black;">8080</th><th>-</th></tr>
-<tr><th style="border:1px solid black;">HTTPS</th><th style="border:1px solid black;">443</th><th style="border:1px solid black;">-</th></tr>
-<tr><th style="border:1px solid black;">FTP</th><th style="border:1px solid black;">2121</th><th style="border:1px solid black;">-</th></tr>
-<tr><th style="border:1px solid black;">SMTP</th><th style="border:1px solid black;">-</th><th style="border:1px solid black;">25</th></tr>
-</tbody>
-</table>		
+	
 							
 <span class="image featured"><img src="assets/images/pic02.jpg" alt="" /></span>							
 							
