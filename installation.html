@@ -99,7 +99,9 @@ layout: default
 					</header>
 				</div>
 </section>				
-
+<p ALIGN="JUSTIFY">
+	The technical specifications of the DHuS are provided the following table:</p>
+				
 <table style="border:1px solid black;border-collapse:collapse;">
 <tbody>
 <tr>
@@ -127,7 +129,7 @@ layout: default
 <th style="border:1px solid black;">1 TB</th>
 </tr>
 <tr>
-<th style="border:1px solid black;"><strong>ARCHIVE</strong></th>
+<th style="border:1px solid black;"><strong>ARCHIVE*</strong></th>
 <th style="border:1px solid black;">50 TB(1 Month Rolling Archive)</th>
 <th style="border:1px solid black;">200 TB (till 3 month Rolling Archive)</th>
 <th style="border:1px solid black;">500 TB</th>
@@ -146,6 +148,11 @@ layout: default
 </tr>
 </tbody>
 </table>
+<p ALIGN="JUSTIFY">* Size of the archive is provided for a typical Copernicus production rate </p>	
+<p ALIGN="JUSTIFY">The Linux based operating Systems in which the DHuS operability has been tested are:
+<p ALIGN="JUSTIFY">&bull;-Debian 7.7</p>
+<p ALIGN="JUSTIFY">&bull;-Red Hat 6.7 </p>
+				
 <h3><a name="NetworkRequirements">Network Requirements</a></h3>
 <p ALIGN="JUSTIFY">DHuS is accessed primarily via HTTP and FTP interface. The Installation procedure of the DHuS Software must be performed using a non-privileged user (not root); application installed in this way cannot start services listening on ports numbers smaller than 1024. By default the HTTP interface is reachable on 8080 port that must be opened for inbound requests. The DHuS FTP service is reachable, by default, on 2121.The DHuS provides also a mailing service based on an external SMTP server. Following table describes the default DHuS network ports configuration:</p>
 <table style="border:1px solid black;border-collapse:collapse;">
