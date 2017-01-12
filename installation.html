@@ -347,7 +347,7 @@ The product deletion and eviction shall be executed on the replicas. User regist
 							
 <p ALIGN="JUSTIFY"><strong>Step 1</strong>: Follow <strong>Step 1</strong> in previous procedure</p>
 <p ALIGN="JUSTIFY"><strong>Step 2</strong>: Follow <strong>Step 2</strong> in previous procedure, configuring the scalability option as follows.</p>
-<p><span style="color: #3366ff;">-Ddhus.scalability.active=false \</span></p>
+<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.active=false \</span></p>
 <p ALIGN="JUSTIFY"><strong>Step 3</strong>: On the master, copy the database and Solr index (in {varfolder}/database and {varfolder}/solr, respectively), overriding the existing directories</p>
 <p ALIGN="JUSTIFY"><strong>Step 4</strong>: Remove this file : {varfolder}/solr/dhus/conf/managed-schema, if present.</p>
 <p ALIGN="JUSTIFY"><strong>Step 5</strong>: Start the DHuS Master to perform a <strong>database migration</strong>.</p>
@@ -355,7 +355,8 @@ The product deletion and eviction shall be executed on the replicas. User regist
 <p ALIGN="JUSTIFY"><strong>Step 7</strong>: Backup the database and Solr index and copy them on each replica overriding the existing directories in {varfolder}.</p> 
 <p ALIGN="JUSTIFY"><strong>Step 8</strong>: Add the option to the start.sh of the master:&nbsp;-Dauto.reload=false&nbsp;to prevent the master from sending its database to the replicas.</p> 
 <p ALIGN="JUSTIFY"><strong>Step 9</strong>: Start DHuS master and wait until the startup process is complete.</p> 
-<p ALIGN="JUSTIFY"> Follow Steps 3, 4 and 5 of previous procedure; taking care of starting replicas one at a time.</p> <p>Please note that at each new replica addition to the cluster it is necessary to shutdown the master and start the replicas from the newest to the oldest.
+<p ALIGN="JUSTIFY"> Follow Steps 3, 4 and 5 of previous procedure; taking care of starting replicas one at a time.</p> 
+<p ALIGN="JUSTIFY">Please note that at each new replica addition to the cluster it is necessary to shutdown the master and start the replicas from the newest to the oldest.
 							</p>				
 							
 							
