@@ -89,7 +89,7 @@ layout: default
 							<p ALIGN="JUSTIFY">&bull;<strong> one filesystem </strong> is needed for storing the DB where the products are indexed, along with the logs and application binaries. This filesystem needs to reside on the local disks.</p>
 							<p ALIGN="JUSTIFY">&bull;<strong> one or more filesystems</strong> are used for archiving the products. Given the volume of normal Sentinels production, it is also recommended to use an external disk for mounting the second filesystem, in order to cope with several TBs of products.</p>
 
-<span class="image featured"><img src="assets/images/figure-2.png" alt="" /></span>
+<!--<span class="image featured"><img src="assets/images/figure-2.png" alt="" /></span>-->
 							<h3><a name="SystemRequirements">System Requirements</a></h3>
 
 <p>&nbsp;</p>
@@ -177,35 +177,13 @@ layout: default
 
 <table style="height: 163px;" width="553">
 <tbody>
-<tr>
-<td><strong>SERVICES</strong></td>
-<td><strong>INBOUND</strong></td>
-<td><strong>OUTBOUND</strong></td>
-</tr>
-<tr>
-<td>&nbsp;HTTP</td>
-<td>8080</td>
-<td>-</td>
-</tr>
-<tr>
-<td>HTTPS</td>
-<td>
+<tr><th><strong>SERVICES</strong></th><th><strong>INBOUND</strong></th><th><strong>OUTBOUND</strong></th></tr>
+<tr><th>HTTP</th><th>8080</th><th>-</th></tr>
+<tr><th>HTTPS</th><th>
 <p>443</p>
-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>FTP&nbsp;</td>
-<td>2121</td>
-<td>-</td>
-</tr>
-<tr>
-<td>SMTP&nbsp;</td>
-<td>-</td>
-<td>25</td>
-</tr>
-<tr>
-</tr>
+</th><th>-</th></tr>
+<tr><th>FTP</th><th>2121</th><th>-</th></tr>
+<tr><th>SMTP</th><th>-</th><th>25</th></tr>
 </tbody>
 </table>		
 							
