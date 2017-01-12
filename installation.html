@@ -277,7 +277,7 @@ Here below an example of filters configuration specific for S1 and S2 missions.<
 </span></strong></p>						
 							<p ALIGN="JUSTIFY"> Once you have changed a value in the file, you only need to refresh your browser to see the change immediately applied. No need to restart the DHuS</p>
 	
-<span class="image featured"><img src="assets/images/pic02.jpg" alt="" /></span>							
+					
 							
 							<h3><a name="VersionUpgrade"> Version Upgrade from 0.9.1-osf to 0.12.5-6-osf</a></h3>
 							<p ALIGN="JUSTIFY"> In the following we describe the steps needed for migrating from a previous DHuS version (oldversion) to the new DHuS version 0.12.5-6-osf (newversion).
@@ -290,7 +290,7 @@ Here below an example of filters configuration specific for S1 and S2 missions.<
 <p ALIGN="JUSTIFY"> In addition, set in dhus.xml
 cryptType and cryptKey, specifying your database encryption key, or leave empty if your database is not encrypted. </p>
 
-<span class="image featured"><img src="assets/images/pic02.jpg" alt="" /></span>
+
 							<h3><a name="ScalabilityModeConfiguration">Scalability Mode Configuration</a></h3>
 			<p ALIGN="JUSTIFY"> The objective of the configuration in scalability mode is to have several DHuS instances acting as one to share the user load and the products information: the deployment in scalable mode is completely transparent to the user.</p>
 			
@@ -311,7 +311,7 @@ The product deletion and eviction shall be executed on the replicas. User regist
 <h5>Proxy</h5>
 <p ALIGN="JUSTIFY">A proxy is needed for load balancing among the replicas. It must be configured to redirect incoming traffic to the DHuS replicas based on a load balancing algorithm with sticky sessions. Please refer to the proxy documentation for instructions on how to implement this.</p>
 
-<span class="image featured"><img src="assets/images/pic02.jpg" alt="" /></span>
+<span class="image featured"><img src="assets/images/scalability.jpg" alt="" /></span>
 
 						<h3><a name="InstallationAndConfigurationProcedureWithEmptyDatabase">2. Installation and configuration procedure with an empty database</a></h3>							
 <p ALIGN="JUSTIFY"><strong>Step 1: Download</strong> the installation package and install on all machines following</p>
@@ -343,7 +343,7 @@ The product deletion and eviction shall be executed on the replicas. User regist
 <p ALIGN="JUSTIFY"><strong>Step 5:Start DHuS replicas</strong>.</p>
 <p>&nbsp;</p>
 						
-	<h3><a name="InstallationAndConfigurationProcedureWithExistingDatabase">3. Installation and configuration procedure with an already existing database</a></h3>
+				<h3><a name="InstallationAndConfigurationProcedureWithExistingDatabase">3. Installation and configuration procedure with an already existing database</a></h3>
 							
 <p ALIGN="JUSTIFY"><strong>Step 1</strong>: Follow <strong>Step 1</strong> in previous procedure</p>
 <p ALIGN="JUSTIFY"><strong>Step 2</strong>: Follow <strong>Step 2</strong> in previous procedure, configuring the scalability option as follows.</p>
