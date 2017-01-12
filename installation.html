@@ -150,10 +150,19 @@ layout: default
 </table>
 <p ALIGN="JUSTIFY">* Size of the archive is provided for a typical Copernicus production rate </p>	
 <p ALIGN="JUSTIFY">The Linux based operating Systems in which the DHuS operability has been tested are:
-<p ALIGN="JUSTIFY">&bull;-Debian 7.7</p>
-<p ALIGN="JUSTIFY">&bull;-Red Hat 6.7 </p>
-				
-<h3><a name="NetworkRequirements">Network Requirements</a></h3>
+<p ALIGN="JUSTIFY">&bull; Debian 7.7</p>
+<p ALIGN="JUSTIFY">&bull; Red Hat 6.7 </p>
+
+
+<section id="cta" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h3><a name="NetworkRequirements">Network Requirements</a></h3>
+						
+					</header>
+				</div>
+</section>				
+
 <p ALIGN="JUSTIFY">DHuS is accessed primarily via HTTP and FTP interface. The Installation procedure of the DHuS Software must be performed using a non-privileged user (not root); application installed in this way cannot start services listening on ports numbers smaller than 1024. By default the HTTP interface is reachable on 8080 port that must be opened for inbound requests. The DHuS FTP service is reachable, by default, on 2121.The DHuS provides also a mailing service based on an external SMTP server. Following table describes the default DHuS network ports configuration:</p>
 <table style="border:1px solid black;border-collapse:collapse;">
 <tbody>
@@ -165,8 +174,17 @@ layout: default
 <tr><th style="border:1px solid black;">SMTP</th><th style="border:1px solid black;">-</th><th style="border:1px solid black;">25</th></tr>
 </tbody>
 </table>	
+<section id="cta" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h3><a name="SoftwareRequirements">Software Requirements</a></h3>
+						
+					</header>
+				</div>
+</section>
+				
+				
 
-<h3><a name="SoftwareRequirements">Software Requirements</a></h3>
 <p ALIGN="JUSTIFY">DHuS software is fully written in java and can be considered portable to any hardware platforms supported by JRE (Java Runtime Environment). The DHuS supports:</p>
 							<p ALIGN="JUSTIFY">&bull; All the Java JDK versions before the 7th (version 8 not yet supported)</p>
 							<p ALIGN="JUSTIFY">&bull; The Oracle distribution version 1.7.0_79.</p>
@@ -178,8 +196,15 @@ layout: default
 <h4>Apache Version</h4>
 <p align="JUSTIFY">The proxy configuration is required in case the HTTPS protocol shall be used. In this case, make sure the apache version compatible with DHuS is the number 2.2.15 with modproxy and modssl. The httpd v command tells which config file Apache is using.
 
-	
-<h3><a name="InstallationAndSetup">Installation and Setup</a></h3>
+<section id="cta" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h3><a name="InstallationAndSetup">Installation and Setup</a></h3>
+						
+					</header>
+				</div>
+</section>	
+
 <p ALIGN="JUSTIFY"><strong>Step 1</strong>: Create a user named dhus. Every step in the installation procedure, if not explicitly mentioned, shall be performed as dhus user.</p>
 <p ALIGN="JUSTIFY"><strong>Step 2</strong>: Create the installation directory: mkdir -p [install-dir]</p>
 <p ALIGN="JUSTIFY"><strong>Step 3</strong>: Download the DHuS package (shar package) and save it into the installation directory</p>
@@ -191,8 +216,16 @@ layout: default
 <p align="JUSTIFY">The log files will be created in the installation directory.</p>
 
 <span class="image featured"><img src="assets/images/pic02.jpg" alt="" /></span>
+
+<section id="cta" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h3><a name="SoftwareConfigurationManual">Software Configuration Manual</a></h3>
 						
-<h3><a name="SoftwareConfigurationManual">Software Configuration Manual</a></h3>
+					</header>
+				</div>
+</section>					
+
 <p align="JUSTIFY"> DHuS configuration files are contained in the etc folder created after the launch of the .shar installation package:</p>  
 							<p align="JUSTIFY">&bull; <strong>Start.sh</strong>; 
 							<p align="JUSTIFY">&bull; <strong>dhus.xml</strong>; </p>
@@ -202,9 +235,16 @@ layout: default
 	
 							
 <span class="image featured"><img src="assets/images/pic02.jpg" alt="" /></span>							
-							
+<section id="cta" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h3><a name="UserInterfaceConfigurationManual">User Interface Configuration Manual</a></h3>
+						
+					</header>
+				</div>
+</section>							
 	
-<h3><a name="UserInterfaceConfigurationManual">User Interface Configuration Manual</a></h3>
+
 <p ALIGN="JUSTIFY">The DHuS is equipped with AJS GUI. This section deals with the configurability of the AJS GUI which allows a wide set of configuration actions which do not need a restart of DHuS to be applied. Due to the growth of the different centres and related installations, a new configuration management module has been added into the AJS web app. It allows configuring various aspects of the GUI; mainly it is related to style, texts and layout:</p>
 							<p ALIGN="JUSTIFY">&bull;<strong> Title</strong>(shown in the header bar)</p>
 							<p ALIGN="JUSTIFY">&bull;<strong> Sections visibility </strong>(Cart, Profile, Sign In)</p>
@@ -227,8 +267,15 @@ Please note that all the settings are included in the client side (2 text files)
 <p ALIGN="JUSTIFY">styles.json (includes 6,7)</p>
 
 <span class="image featured"><img src="assets/images/pic02.jpg" alt="" /></span>							
-
-				<h3><a name="AdvancedSearchConfiguration">Advanced Search Configuration</a></h3>
+<section id="cta" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h3><a name="AdvancedSearchConfiguration">Advanced Search Configuration</a></h3>
+						
+					</header>
+				</div>
+</section>
+				
 			<p ALIGN="JUSTIFY">
 						 A special attention goes to the configuration of the advanced search mission specific fields. The configuration file appconfig.json has been updated in order to manage mission specific filters</p>
 						<p  ALIGN="JUSTIFY"> A "missions" section has been added, containing an array with the following structure:
@@ -290,10 +337,17 @@ Here below an example of filters configuration specific for S1 and S2 missions.<
 ]  
 </span></strong></p>						
 							<p ALIGN="JUSTIFY"> Once you have changed a value in the file, you only need to refresh your browser to see the change immediately applied. No need to restart the DHuS</p>
-	
+<section id="cta" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h3><a name="VersionUpgrade"> Version Upgrade from 0.9.1-osf to 0.12.5-6-osf</a></h3>
+						
+					</header>
+				</div>
+</section>	
 					
 							
-							<h3><a name="VersionUpgrade"> Version Upgrade from 0.9.1-osf to 0.12.5-6-osf</a></h3>
+							
 							<p ALIGN="JUSTIFY"> In the following we describe the steps needed for migrating from a previous DHuS version (oldversion) to the new DHuS version 0.12.5-6-osf (newversion).
 								First of all, backup the items you need to inherit:</p>
 							
@@ -334,6 +388,7 @@ The product deletion and eviction shall be executed on the replicas. User regist
 
 <img src="assets/images/scalability.jpg" alt=""/>
 
+				
 						<h3><a name="InstallationAndConfigurationProcedureWithEmptyDatabase">2. Installation and configuration procedure with an empty database</a></h3>							
 <p ALIGN="JUSTIFY"><strong>Step 1: Download</strong> the installation package and install on all machines following</p>
 <p ALIGN="JUSTIFY"><strong>Step 2: Master Configuration</strong></p>
