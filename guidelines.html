@@ -50,16 +50,15 @@ The figure below shows the major steps in a developer’s contribution process.
  <p ALIGN="JUSTIFY">&bull; On GitHub, navigate to the SentinelDataHub/DataHubSystem repository.</p>
  <p ALIGN="JUSTIFY">&bull;In the top-right corner of the page, click Fork.</p>
 <p align="justify">
-In this way you have a fork on the DHuS repository, but you don’t have yet the files of the DHuS repository.
-b. To get the files you must clone the project:
-On GitHub, navigate to your fork of the DHuS repository. In the right sidebar of your fork's repository page, click to copy the clone URL for your fork.
-</p> 
+In this way you have a fork on the DHuS repository, but you don’t have yet the files of the DHuS repository.</p>
+ <P ALIGN="JUSTIFY"> b. To get the files you must clone the project:
+On GitHub, navigate to your fork of the DHuS repository. In the right sidebar of your fork's repository page, click to copy the clone URL for your fork.</p> 
 <p align="justify">
 	
 In a terminal: 
-<p align="justify"><span style="background-color: #ffffff; color: #3366ff;"> $git clone https://github.com/SentinelDataHub/DataHubSystem.git</span></p>
+<p align="justify"><span style="background-color: #ffffff; color: #3366ff;"> $git clone https://github.com/SentinelDataHub/DataHubSystem.git</span>
 (You will be prompted for the passphrase previously inserted when the ssh key was generated).
-Fork and clone are similar; they are related; they are not interchangeable.
+Fork and clone are similar; they are related; they are not interchangeable.</p>
 <p ALIGN="JUSTIFY">&bull;The clone operation is built into git: git-clone - clones a repository into a new directory.</p> 
 <p ALIGN="JUSTIFY">&bull;The fork operation lets anyone fork an existing repository and push changes to their personal fork without requiring access be granted to the source repository. The changes must then be pulled into the source repository by the project maintainers. This model reduces the amount of friction for new contributors and is popular with open source projects because it allows people to work independently without upfront coordination.</p> 
 
@@ -70,27 +69,29 @@ The difference between forking and cloning is really a difference in intent and 
 <p ALIGN="JUSTIFY">
 Note: one thing that's sort of interesting is that you never directly update your forked repo from the original ("upstream") repo after the original "fork" operation. Subsequent to that, updates to your forked repo are indirect: you pull from upstream into your cloned repo, to bring it up to date, then (if you wish), you push those changes into your forked repo. 
 </p>
-<p align="JUSTIFY"> <strong>STEP 3</strong> Development </strong></p>
+<p align="JUSTIFY"> <strong>STEP 3</strong>: Development </strong></p>
 <p align="JUSTIFY"> You can modify the source code and add some nice features, fix a bug, and then push the changes in you fork, but take care about the mandatory rules and best practices summarized in the table below. 
 	The developments process includes the following steps:</p>
-<p align="JUSTIFY"> <strong>STEP I</strong>Identify the feature or the bug you are willing to implement</p> 
-<p align="JUSTIFY"> <strong>STEP II</strong>Update the master branch of fork </p>
+<p align="JUSTIFY"> <strong>STEP I</strong>: Identify the feature or the bug you are willing to implement</p> 
+<p align="JUSTIFY"> <strong>STEP II</strong>: Update the master branch of fork </p>
 
 <p align="JUSTIFY"> <span style="background-color: #ffffff; color: #3366ff;">$ git checkout branch_name</span></p> 
 				
 <p align="JUSTIFY"> <span style="background-color: #ffffff; color: #3366ff;"> $ git fetch upstream branch_name </span></p> 
 <p align="JUSTIFY"> <span style="background-color: #ffffff; color: #3366ff;"> $ git merge --ff-only FETCH_HEAD </span></p>  
 
-<p align="JUSTIFY"> <strong>STEP III</strong>Create a new branch for the issue following the naming convention. There are 2 type of branches: 
+<p align="JUSTIFY"> <strong>STEP III</strong>: Create a new branch for the issue following the naming convention. There are 2 type of branches: 
 a. Feature Branch: this branch is dedicated for all features developments. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. </p>
 b. Hotfix Branch: this branch is dedicated for bug fixing. 
-<p align="JUSTIFY"> <strong>STEP IV</strong>Develop on the newly created branch (in general a new feature) </p>
+<p align="JUSTIFY"> <strong>STEP IV</strong>: Develop on the newly created branch (in general a new feature) </p>
 
-<p align="JUSTIFY"> <strong>STEP V</strong>Commit every atomic modify (add the id of GitHub issue at the end of the comment for each commit) </p>
-<p align="JUSTIFY"> <strong>STEP VI</strong>Pull request from issue branch via GitHub user interface </p>
-<p align="JUSTIFY"> <strong>STEP VII</strong>Interact with maintainer via GitHub pull request board <p>
+<p align="JUSTIFY"> <strong>STEP V</strong>: Commit every atomic modify (add the id of GitHub issue at the end of the comment for each commit) </p>
+<p align="JUSTIFY"> <strong>STEP VI</strong>: Pull request from issue branch via GitHub user interface </p>
+<p align="JUSTIFY"> <strong>STEP VII</strong>: Interact with maintainer via GitHub pull request board <p>
 
-Mandatory Rules Branch naming convention 
+<p align="justify"><strong> Mandatory Rules Branch naming convention</strong></p>
+
+			<table>			
 •	For a Feature branch: 
 feature-<GitHub_issue_id>-short_issue_description 
 •	For Hotfix branch 
@@ -118,8 +119,8 @@ Best Practices
 •	If a special deployment or patch is needed, contact the Maintainers to add them to the OSF repository 
 
 •	All source code committed to the main repository must be written by an author covered by the AGPL. 
-
-<p align="JUSTIFY"> <strong>STEP 4</strong>Rebase</strong></p>
+				</table>
+<p align="JUSTIFY"> <strong>STEP 4</strong>: Rebase</strong></p>
 The golden rule of git rebase is to never use it on MASTER branch and on public branches. 
 Before rebasing a fetch must be done to be sure that you have the updated version of the software. You can rebase the feature branch onto master branch using the following commands: 
 			<p align="JUSTIFY"> a. Update a local branch from upstream repository</p> 
@@ -141,7 +142,7 @@ The major benefit of rebasing is that you get a much cleaner project history. Fi
 The changes must then be pulled into the source repository by the project maintainer. To have the project maintainers do so, a “pull request” must be issued by the developer. 
 On GitHub navigate to your repository with the changes you want someone else to pull and press the Pull Request button. 
 Note that pull requests can be sent from any branch or commit but it's recommended that a topic branch be used so that follow-up commits can be pushed to update the pull request if necessary.
-     </p>
+    </p>
 
 <h3><strong>4. Workflow</strong></h3>
  
@@ -149,15 +150,15 @@ Note that pull requests can be sent from any branch or commit but it's recommend
  <h3><strong>5. GitHub issue System</strong></h3>
 <p align="justify">
 In order to submit a bug, a document, a new feature or ask a question you can open a new issue in GitHub issue tracking. It is a great place to easily share and collaborate on your issues.
-				<p align="justify"><strong> STEP 1 1</strong>Click on Issues on the right side;</p>
-				<p align="justify"><strong> STEP 2</strong>Click New Issue;</p>
-				<p align="justify"><strong> STEP 3</strong>Insert Title and one of the following labels:</p>
+				<p align="justify"><strong> STEP 1 </strong>: Click on Issues on the right side;</p>
+				<p align="justify"><strong> STEP 2 </strong>: Click New Issue;</p>
+				<p align="justify"><strong> STEP 3 </strong>: Insert Title and one of the following labels:</p>
 				<p align="justify">•BUG:Software Problem Reports.</p>
 <p align="justify">•DOCUMENTATION: Documentation is used to report issues on documents, and manuals.</p>
 				<p align="justify">•FEATURE: Feature is used for specific feature work or improvements.</p>
 				<p align="justify">•HELP: WANTED Help wanted is used to ask generic support.</p>
-				<p align="justify"><strong> STEP 4</strong>Insert text description;</p>
-				<p align="justify"><strong> STEP 5</strong>.Submit new issue.</p>
+				<p align="justify"><strong> STEP 4</strong>: Insert text description;</p>
+				<p align="justify"><strong> STEP 5</strong>: Submit new issue.</p>
 
 <p align="justify">
 <h2><strong>File Header text to be used</strong></h2>
