@@ -42,7 +42,7 @@ If you want to work with the source code or libraries of DHuS, we recommend you 
 As developer you can contribute to the OSF DHuS project in the form of source code patches, new code, or bug reports, but could also include web site content like articles, FAQs, or screenshots. If the maintainers like your work, they might pull your fix into the original repository! If you want more details about the roles and related responsibilities see the Governance Model document.
 The figure below shows the major steps in a developer’s contribution process. 
 </p>
-<img src="assets/images/dev-steps.jpg"
+						<p><img src="assets/images/dev-steps.jpg" </p>
  
  <p ALIGN="JUSTIFY"> <strong>STEP 1</strong>: Git Install and Setup </p>
 <p align="JUSTIFY"> <strong>STEP 2</strong>: Fork-Clone Project</p>
@@ -70,25 +70,25 @@ The difference between forking and cloning is really a difference in intent and 
 <p ALIGN="JUSTIFY">
 Note: one thing that's sort of interesting is that you never directly update your forked repo from the original ("upstream") repo after the original "fork" operation. Subsequent to that, updates to your forked repo are indirect: you pull from upstream into your cloned repo, to bring it up to date, then (if you wish), you push those changes into your forked repo. 
 </p>
-<p align="JUSTIFY"> <strong>3- Development </strong></p>
+<p align="JUSTIFY"> <strong>STEP 3</strong> Development </strong></p>
 <p align="JUSTIFY"> You can modify the source code and add some nice features, fix a bug, and then push the changes in you fork, but take care about the mandatory rules and best practices summarized in the table below. 
 	The developments process includes the following steps:</p>
-<p align="JUSTIFY"> <strong>STEP 1</strong>Identify the feature or the bug you are willing to implement</p> 
-<p align="JUSTIFY"> <strong>STEP 2</strong>Update the master branch of fork </p>
+<p align="JUSTIFY"> <strong>STEP I</strong>Identify the feature or the bug you are willing to implement</p> 
+<p align="JUSTIFY"> <strong>STEP II</strong>Update the master branch of fork </p>
 
 <p align="JUSTIFY"> <span style="background-color: #ffffff; color: #3366ff;">$ git checkout branch_name</span></p> 
 				
 <p align="JUSTIFY"> <span style="background-color: #ffffff; color: #3366ff;"> $ git fetch upstream branch_name </span></p> 
 <p align="JUSTIFY"> <span style="background-color: #ffffff; color: #3366ff;"> $ git merge --ff-only FETCH_HEAD </span></p>  
 
-<p align="JUSTIFY"> <strong>STEP 3</strong>Create a new branch for the issue following the naming convention. There are 2 type of branches: 
+<p align="JUSTIFY"> <strong>STEP III</strong>Create a new branch for the issue following the naming convention. There are 2 type of branches: 
 a. Feature Branch: this branch is dedicated for all features developments. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. </p>
 b. Hotfix Branch: this branch is dedicated for bug fixing. 
-<p align="JUSTIFY"> <strong>STEP 4</strong>Develop on the newly created branch (in general a new feature) </p>
+<p align="JUSTIFY"> <strong>STEP IV</strong>Develop on the newly created branch (in general a new feature) </p>
 
-<p align="JUSTIFY"> <strong>STEP 5</strong>Commit every atomic modify (add the id of GitHub issue at the end of the comment for each commit) </p>
-<p align="JUSTIFY"> <strong>STEP 6</strong>Pull request from issue branch via GitHub user interface </p>
-<p align="JUSTIFY"> <strong>STEP 7</strong>Interact with maintainer via GitHub pull request board <p>
+<p align="JUSTIFY"> <strong>STEP V</strong>Commit every atomic modify (add the id of GitHub issue at the end of the comment for each commit) </p>
+<p align="JUSTIFY"> <strong>STEP VI</strong>Pull request from issue branch via GitHub user interface </p>
+<p align="JUSTIFY"> <strong>STEP VII</strong>Interact with maintainer via GitHub pull request board <p>
 
 Mandatory Rules Branch naming convention 
 •	For a Feature branch: 
@@ -119,22 +119,20 @@ Best Practices
 
 •	All source code committed to the main repository must be written by an author covered by the AGPL. 
 
-
-4- Rebase 
+<p align="JUSTIFY"> <strong>STEP 4</strong>Rebase</strong></p>
 The golden rule of git rebase is to never use it on MASTER branch and on public branches. 
 Before rebasing a fetch must be done to be sure that you have the updated version of the software. You can rebase the feature branch onto master branch using the following commands: 
-a. Update a local branch from upstream repository 
-
-$ git checkout <branch_name> 
-$ git fetch upstream <branch_name> 
-$ git merge --ff-only FETCH_HEAD 
-b. Rebase the branch 
-
-$ git checkout <branch_name> 
-$ git rebase <parent_branch_name>
+			<p align="JUSTIFY"> a. Update a local branch from upstream repository</p> 
+		<p align="JUSTIFY"><span style="background-color: #ffffff; color: #3366ff;"> $ git checkout branch_name</span><p>
+		<p align="JUSTIFY"><span style="background-color: #ffffff; color: #3366ff;">$ git fetch upstream branch_name</span></p>
+		<p align="JUSTIFY"><span style="background-color: #ffffff; color: #3366ff;">$ git merge --ff-only FETCH_HEAD </span></p>
+<p align="JUSTIFY"> b. Rebase the branch </p>
+<p align="JUSTIFY"><span style="background-color: #ffffff; color: #3366ff;">$ git checkout <branch_name></span></p> 
+<p align="JUSTIFY"><span style="background-color: #ffffff; color: #3366ff;">$ git rebase <parent_branch_name></span></p> 
 
 c. Publish to your repository the rebase 
-$ git push -f origin <branch_name> 
+<p align="JUSTIFY"><span style="background-color: #ffffff; color: #3366ff;">$ git push -f origin branch_name</span></p>
+<p align="JUSTIFY">
 This moves the entire feature branch to begin on the tip of the master branch, effectively incorporating all of the new commits in master. But, instead of using a merge commit, rebasing re-writes the project history by creating brand new commits for each commit in the original branch. 
 Running git rebase with the -i flag begins an interactive rebasing session. Instead of blindly moving all of the commits to the new base, interactive rebasing gives you the opportunity to alter individual commits in the process. This lets you clean up history by removing, splitting, and altering an existing series of commits. 
 There are two trade-offs for this pristine commit history: safety and traceability. If you don’t follow the Golden Rule of Rebasing, re-writing project history can be potentially catastrophic for your collaboration workflow. And, less importantly, rebasing loses the context provided by a merge commit—you can’t see when upstream changes were incorporated into the feature. 
@@ -151,15 +149,15 @@ Note that pull requests can be sent from any branch or commit but it's recommend
  <h3><strong>5. GitHub issue System</strong></h3>
 <p align="justify">
 In order to submit a bug, a document, a new feature or ask a question you can open a new issue in GitHub issue tracking. It is a great place to easily share and collaborate on your issues.
-				<p align="justify"><strong> Step 1</strong>Click on Issues on the right side;</p>
-				<p align="justify"><strong> Step 2</strong>Click New Issue;</p>
-				<p align="justify"><strong> Step 3</strong>Insert Title and one of the following labels:</p>
+				<p align="justify"><strong> STEP 1 1</strong>Click on Issues on the right side;</p>
+				<p align="justify"><strong> STEP 2</strong>Click New Issue;</p>
+				<p align="justify"><strong> STEP 3</strong>Insert Title and one of the following labels:</p>
 				<p align="justify">•BUG:Software Problem Reports.</p>
 <p align="justify">•DOCUMENTATION: Documentation is used to report issues on documents, and manuals.</p>
 				<p align="justify">•FEATURE: Feature is used for specific feature work or improvements.</p>
 				<p align="justify">•HELP: WANTED Help wanted is used to ask generic support.</p>
-				<p align="justify"><strong> Step 4</strong>Insert text description;</p>
-				<p align="justify"><strong> Step 5</strong>.Submit new issue.</p>
+				<p align="justify"><strong> STEP 4</strong>Insert text description;</p>
+				<p align="justify"><strong> STEP 5</strong>.Submit new issue.</p>
 
 <p align="justify">
 <h2><strong>File Header text to be used</strong></h2>
