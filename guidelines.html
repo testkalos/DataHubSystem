@@ -17,12 +17,11 @@ layout: default
 <p align="JUSTIFY">      
 This document provides detailed guidelines for the Open Source (OS) DHus Project contributors. 
 The main sections are: </p>
-<p align="JUSTIFY"> 1.Contribution Process</p>
-<p align="JUSTIFY"> 2.Prerequisites</p>
-<p align="JUSTIFY"> 3.Developer’ Steps</p>
-<p align="JUSTIFY"> 4.Integration Workflow</p>
-<p align="JUSTIFY"> 5.GitHub Issue system</p>
-
+						<p align="JUSTIFY"><strong> 1.Contribution Process</strong></p>
+						<p align="JUSTIFY"><strong> 2.Prerequisites</strong></p>
+                                                <p align="JUSTIFY"><strong> 3.Developer’Steps</strong></p>
+						<p align="JUSTIFY"><strong> 4.Integration Workflow</strong></p>
+                                                <p align="JUSTIFY"><strong> 5.GitHub Issue system</strong></p>
 <h3><strong>1. Contribution Process</strong></h3>
 <p align="JUSTIFY">  
 You can contribute to the project, regardless of the skills, as there are many ways to contribute. For instance, you might be active on issue tracking system, or might supply patches. The various ways of contributing are described below.
@@ -33,9 +32,9 @@ Open Source DHuS project uses GitHub to manage the bugs, as well as other issues
 <h3><strong>2. Prerequisites</strong></h3>
 <p  align="JUSTIFY">  
 If you want to work with the source code or libraries of DHuS, we recommend you first make sure you have the following software installed:
-<p align="justify"<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">• Java SE Development Kit (SDK)</a></p>
-<p align="justify"<a href="http://maven.apache.org/download.cgi">• Maven</a></p>
-<p align="justify"< a href="https://github.com/"> • Git</p>
+<p align="justify"><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">• Java SE Development Kit (SDK)</a></p>
+<p align="justify"><a href="http://maven.apache.org/download.cgi">• Maven</a></p>
+						<p align="justify">< a href="https://github.com/"> • Git</a></p>
 </p>
 
 <h3><strong>3.Developer' Step</strong></h3>
@@ -65,10 +64,6 @@ Fork and clone are similar; they are related; they are not interchangeable.
 The difference between forking and cloning is really a difference in intent and purpose: 
 •	The forked repository is mostly static. It exists in order to allow you to publish work for code review purposes. You don't do active development in your forked repository (in fact, you can't; because it doesn't exist on your computer, it exists on GitHub's server in the cloud). 
 •	The cloned repository is your active repo. It is where you do all your work. But other people generally don't have access to your personal cloned repo, because it's on your laptop. So that's why you have the forked repo, so you can push changes to it for others to see and review. 
-
-
-
-
 
 Note: one thing that's sort of interesting is that you never directly update your forked repo from the original ("upstream") repo after the original "fork" operation. Subsequent to that, updates to your forked repo are indirect: you pull from upstream into your cloned repo, to bring it up to date, then (if you wish), you push those changes into your forked repo. 
 3- Development 
@@ -146,24 +141,25 @@ The major benefit of rebasing is that you get a much cleaner project history. Fi
 The changes must then be pulled into the source repository by the project maintainer. To have the project maintainers do so, a “pull request” must be issued by the developer. 
 On GitHub navigate to your repository with the changes you want someone else to pull and press the Pull Request button. 
 Note that pull requests can be sent from any branch or commit but it's recommended that a topic branch be used so that follow-up commits can be pushed to update the pull request if necessary.
-4.	Workflow
-This workflow is a very common workflow with hub-based tools like GitHub, where it’s easy to fork a project and push your changes into your fork for everyone to see. One of the main advantages of this approach is that you can continue to work, and the maintainer of the main repository can pull in your changes at any time. Contributors don’t have to wait for the project to incorporate their changes – each party can work at their own pace. The figure below shows how it works.   
+     </p>
+     <h3><strong>4. Workflow</strong></h3>
  
-5.	GitHub issue System
+This workflow is a very common workflow with hub-based tools like GitHub, where it’s easy to fork a project and push your changes into your fork for everyone to see. One of the main advantages of this approach is that you can continue to work, and the maintainer of the main repository can pull in your changes at any time. Contributors don’t have to wait for the project to incorporate their changes – each party can work at their own pace. The figure below shows how it works.   
+ <h3><strong>5. GitHub issue System</strong></h3>
+<p align="justify">
 In order to submit a bug, a document, a new feature or ask a question you can open a new issue in GitHub issue tracking. It is a great place to easily share and collaborate on your issues.
+				<p align="justify">1.Click on Issues on the right side;</p>
+				<p align="justify">2.Click New Issue;</p>
+				<p align="justify">3.Insert Title and one of the following labels:</p>
+				<p align="justify">•BUG Software Problem Reports.</p>
+<p align="justify">•DOCUMENTATION Documentation is used to report issues on documents, and manuals.</p>
+				<p align="justify">•FEATURE Feature is used for specific feature work or improvements.</p>
+				<p align="justify">•HELP WANTED Help wanted is used to ask generic support.</p>
+				<p align="justify">4.Insert text description;</p>
+				<p align="justify">5.Submit new issue.</p>
 
-1.	Click on Issues on the right side;
-2.	Click New Issue;
-3.	Insert Title and one of the following labels:
-•	BUG Software Problem Reports.
-•	DOCUMENTATION Documentation is used to report issues on documents, and manuals.
-•	FEATURE Feature is used for specific feature work or improvements.
-•	HELP WANTED Help wanted is used to ask generic support.
-4.	Insert text description;
-5.	Submit new issue.
-</p>
 <p>
-Annex A. File Header text to be used
+<h2><strong>File Header text to be used</strong></h2>
 /* * Data HUb Service (DHuS) - For Space data distribution. * Copyright (C) 2013,2014,2015 European Space Agency (ESA) * Copyright (C) 2013,2014,2015 GAEL Systems * Copyright (C) 2013,2014,2015 Serco * * This file is part of DHuS software sources. * * This program is free software: you can redistribute it and/or modify * it under the terms of the GNU Affero General Public License as * published by the Free Software Foundation, either version 3 of the * License, or (at your option) any later version. * * This program is distributed in the hope that it will be useful, * but WITHOUT ANY WARRANTY; without even the implied warranty of * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the * GNU Affero General Public License for more details. * * You should have received a copy of the GNU Affero General Public License * along with this program. If not, see <http://www.gnu.org/licenses/>. */ This source is commented in java style, but must be encapsulated in the various languages comment style: shell # # Data HUb Service (DHuS) - For Space data distribution. # Copyright (C) 2013,2014,2015 European Space Agency (ESA) .... XML <!-- Data HUb Service (DHuS) - For Space data distribution. Copyright (C) 2013,2014,2015 European Space Agency (ESA) ... --> 
 C/C++ /* * Data HUb Service (DHuS) - For Space data distribution. * Copyright (C) 2013,2014,2015 European Space Agency (ESA) *... */  
 
