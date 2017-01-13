@@ -56,9 +56,9 @@ On GitHub, navigate to your fork of the DHuS repository. In the right sidebar of
 <p align="justify">
 	
 In a terminal: 
-<p align="justify"><span style="background-color: #ffffff; color: #3366ff;"> $git clone https://github.com/SentinelDataHub/DataHubSystem.git</span>
-(You will be prompted for the passphrase previously inserted when the ssh key was generated).
-Fork and clone are similar; they are related; they are not interchangeable.</p>
+<p align="justify"><span style="background-color: #ffffff; color: #3366ff;"> $git clone https://github.com/SentinelDataHub/DataHubSystem.git</span></p>
+<p align="justify">(You will be prompted for the passphrase previously inserted when the ssh key was generated).</p>
+<p align="justify">Fork and clone are similar; they are related; they are not interchangeable.</p>
 <p ALIGN="JUSTIFY">&bull;The clone operation is built into git: git-clone - clones a repository into a new directory.</p> 
 <p ALIGN="JUSTIFY">&bull;The fork operation lets anyone fork an existing repository and push changes to their personal fork without requiring access be granted to the source repository. The changes must then be pulled into the source repository by the project maintainers. This model reduces the amount of friction for new contributors and is popular with open source projects because it allows people to work independently without upfront coordination.</p> 
 
@@ -80,21 +80,29 @@ Note: one thing that's sort of interesting is that you never directly update you
 <p align="JUSTIFY"> <span style="background-color: #ffffff; color: #3366ff;"> $ git fetch upstream branch_name </span></p> 
 <p align="JUSTIFY"> <span style="background-color: #ffffff; color: #3366ff;"> $ git merge --ff-only FETCH_HEAD </span></p>  
 
-<p align="JUSTIFY"> <strong>STEP III</strong>: Create a new branch for the issue following the naming convention. There are 2 type of branches: 
-a. Feature Branch: this branch is dedicated for all features developments. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. </p>
-b. Hotfix Branch: this branch is dedicated for bug fixing. 
+<p align="JUSTIFY"> <strong>STEP III</strong>: Create a new branch for the issue following the naming convention.</p>
+<p align="JUSTIFY"> There are 2 type of branches:</p> 
+<strong>a. Feature Branch</strong>: this branch is dedicated for all features developments. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. </p>
+<strong>b. Hotfix Branch</strong>: this branch is dedicated for bug fixing. 
 <p align="JUSTIFY"> <strong>STEP IV</strong>: Develop on the newly created branch (in general a new feature) </p>
 
 <p align="JUSTIFY"> <strong>STEP V</strong>: Commit every atomic modify (add the id of GitHub issue at the end of the comment for each commit) </p>
 <p align="JUSTIFY"> <strong>STEP VI</strong>: Pull request from issue branch via GitHub user interface </p>
 <p align="JUSTIFY"> <strong>STEP VII</strong>: Interact with maintainer via GitHub pull request board <p>
 
-<p align="justify"><strong> Mandatory Rules Branch naming convention</strong></p>
-<p>&nbsp;</p>
-<table style="border: 1px solid black; border-collapse: collapse; height: 145px;" width="518">
-<tbody>
-<tr><!-- <th><a href="installation.html#Introduction">Introduction</a></th>--><th style="border: 1px solid black; text-align: left;">
-<ul>
+		<p align="justify"><strong> Mandatory Rules</strong></p> 
+<table style="border:1px solid black;border-collapse:collapse;">
+<tbody>	
+<tr>
+    <th style="border:1px solid black;">Branch naming convention. For a Feature branch: 
+         feature-GitHub_issue_id>-short_issue_description.
+	 For Hotfix branch:hotfix-< GitHub_issue_id >-short_issue_description 
+ </th>
+</tr>  
+	
+	
+	
+	
 <li style="text-align: justify;">For a Feature branch:&nbsp;<em> feature-&lt;GitHub_issue_id&gt;-short_issue_description</em></li>
 </ul>
 <ul>
@@ -150,7 +158,7 @@ b. Hotfix Branch: this branch is dedicated for bug fixing.
 </tbody>
 </table>
 			
-<p align="justify"> strong> Best Practices </strong></p>
+<p align="justify"> <strong> Best Practices </strong></p>
 <table style="border:1px solid black;border-collapse:collapse;">
 <tbody>
 <tr>
