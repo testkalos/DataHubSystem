@@ -42,7 +42,7 @@ If you want to work with the source code or libraries of DHuS, we recommend you 
 As developer you can contribute to the OSF DHuS project in the form of source code patches, new code, or bug reports, but could also include web site content like articles, FAQs, or screenshots. If the maintainers like your work, they might pull your fix into the original repository! If you want more details about the roles and related responsibilities see the Governance Model document.
 The figure below shows the major steps in a developer’s contribution process. 
 </p>
-						<p><img src="assets/images/dev-steps.jpg" </p>
+<p><img src="assets/images/dev-steps.jpg" </p>
  
  <p ALIGN="JUSTIFY"> <strong>STEP 1</strong>: Git Install and Setup </p>
 <p align="JUSTIFY"> <strong>STEP 2</strong>: Fork-Clone Project</p>
@@ -83,7 +83,7 @@ Note: one thing that's sort of interesting is that you never directly update you
 <p align="JUSTIFY"> <strong>STEP III</strong>: Create a new branch for the issue following the naming convention.</p>
 <p align="JUSTIFY"> There are 2 type of branches:</p> 
 <strong>a. Feature Branch</strong>: this branch is dedicated for all features developments. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. </p>
-<strong>b. Hotfix Branch</strong>: this branch is dedicated for bug fixing. 
+		<strong>b. Hotfix Branch</strong>: this branch is dedicated for bug fixing. </p>
 <p align="JUSTIFY"> <strong>STEP IV</strong>: Develop on the newly created branch (in general a new feature) </p>
 
 <p align="JUSTIFY"> <strong>STEP V</strong>: Commit every atomic modify (add the id of GitHub issue at the end of the comment for each commit) </p>
@@ -158,7 +158,7 @@ Note: one thing that's sort of interesting is that you never directly update you
 </tbody>
 </table>
 			
-<p align="justify"> <strong> Best Practices </strong></p>
+<p align="justify"> <strong> Best Practices </strong>
 <table style="border:1px solid black;border-collapse:collapse;">
 <tbody>
 <tr>
@@ -177,6 +177,7 @@ Note: one thing that's sort of interesting is that you never directly update you
  <tr>
     <th style="border:1px solid black;">All source code committed to the main repository must be written by an author covered by the AGPL. </th>
 </tr>
+	</p>
 	</tbody>
 </table>
 <p align="JUSTIFY"> <strong>STEP 4</strong>: Rebase</strong></p>
@@ -190,7 +191,7 @@ Before rebasing a fetch must be done to be sure that you have the updated versio
 <p align="JUSTIFY"><span style="background-color: #ffffff; color: #3366ff;">$ git checkout <branch_name></span></p> 
 <p align="JUSTIFY"><span style="background-color: #ffffff; color: #3366ff;">$ git rebase <parent_branch_name></span></p> 
 
-c. Publish to your repository the rebase 
+<p align="JUSTIFY">c. Publish to your repository the rebase</p> 
 <p align="JUSTIFY"><span style="background-color: #ffffff; color: #3366ff;">$ git push -f origin branch_name</span></p>
 <p align="JUSTIFY">
 This moves the entire feature branch to begin on the tip of the master branch, effectively incorporating all of the new commits in master. But, instead of using a merge commit, rebasing re-writes the project history by creating brand new commits for each commit in the original branch. 
