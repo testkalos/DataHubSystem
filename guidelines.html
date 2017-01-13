@@ -34,8 +34,8 @@ Open Source DHuS project uses GitHub to manage the bugs, as well as other issues
 If you want to work with the source code or libraries of DHuS, we recommend you first make sure you have the following software installed:
 <p align="justify"><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">• Java SE Development Kit (SDK)</a></p>
 <p align="justify"><a href="http://maven.apache.org/download.cgi">• Maven</a></p>
-						<p align="justify">< a href="https://github.com/"> • Git</a></p>
-
+<p align="justify"><a href="https://github.com/">• Git</a></p>
+						
 
 <h3><strong>3.Developer' Step</strong></h3>
 <p align="JUSTIFY">  
@@ -44,8 +44,8 @@ The figure below shows the major steps in a developer’s contribution process.
 </p>
 <img src="assets/images/dev-steps.jpg"
  
-<p align="JUSTIFY"><strong>Step 1</strong>Git Install and Setup </p>
-				<p align="JUSTIFY"> <strong>2</strong>Fork-Clone Project</p>
+ <p ALIGN="JUSTIFY"> <strong>STEP 1</strong>: Git Install and Setup </p>
+<p align="JUSTIFY"> <strong>STEP 2</strong>: Fork-Clone Project</p>
  <P ALIGN="JUSTIFY"> a. A fork is a copy of a repository. Forking a repository allows you to experiment without affecting the original project.</p>
  <p ALIGN="JUSTIFY">&bull; On GitHub, navigate to the SentinelDataHub/DataHubSystem repository.</p>
  <p ALIGN="JUSTIFY">&bull;In the top-right corner of the page, click Fork.</p>
@@ -53,38 +53,42 @@ The figure below shows the major steps in a developer’s contribution process.
 In this way you have a fork on the DHuS repository, but you don’t have yet the files of the DHuS repository.
 b. To get the files you must clone the project:
 On GitHub, navigate to your fork of the DHuS repository. In the right sidebar of your fork's repository page, click to copy the clone URL for your fork.
+</p> 
+<p align="justify">
+	
 In a terminal: 
-$git clone https://github.com/SentinelDataHub/DataHubSystem.git
+<p align="justify"><span style="background-color: #ffffff; color: #3366ff;"> $git clone https://github.com/SentinelDataHub/DataHubSystem.git</span></p>
 (You will be prompted for the passphrase previously inserted when the ssh key was generated).
 Fork and clone are similar; they are related; they are not interchangeable.
 <p ALIGN="JUSTIFY">&bull;The clone operation is built into git: git-clone - clones a repository into a new directory.</p> 
 <p ALIGN="JUSTIFY">&bull;The fork operation lets anyone fork an existing repository and push changes to their personal fork without requiring access be granted to the source repository. The changes must then be pulled into the source repository by the project maintainers. This model reduces the amount of friction for new contributors and is popular with open source projects because it allows people to work independently without upfront coordination.</p> 
 
-The difference between forking and cloning is really a difference in intent and purpose: 
+<p ALIGN="JUSTIFY">
+The difference between forking and cloning is really a difference in intent and purpose:</p> 
 <p ALIGN="JUSTIFY">&bull;The forked repository is mostly static. It exists in order to allow you to publish work for code review purposes. You don't do active development in your forked repository (in fact, you can't; because it doesn't exist on your computer, it exists on GitHub's server in the cloud). </p>
 <p ALIGN="JUSTIFY">&bull;The cloned repository is your active repo. It is where you do all your work. But other people generally don't have access to your personal cloned repo, because it's on your laptop. So that's why you have the forked repo, so you can push changes to it for others to see and review. </p>
 <p ALIGN="JUSTIFY">
 Note: one thing that's sort of interesting is that you never directly update your forked repo from the original ("upstream") repo after the original "fork" operation. Subsequent to that, updates to your forked repo are indirect: you pull from upstream into your cloned repo, to bring it up to date, then (if you wish), you push those changes into your forked repo. 
 </p>
 <p align="JUSTIFY"> <strong>3- Development </strong></p>
-You can modify the source code and add some nice features, fix a bug, and then push the changes in you fork, but take care about the mandatory rules and best practices summarized in the table below. 
-The developments process includes the following steps:
-				<p align="JUSTIFY"> <strong>STEP 1</strong>Identify the feature or the bug you are willing to implement</p> 
-				<p align="JUSTIFY"> <strong>STEP 2</strong>Update the master branch of fork </p>
-$ git checkout <branch_name> 
-$ git fetch upstream <branch_name>
-$ git merge --ff-only FETCH_HEAD 
+<p align="JUSTIFY"> You can modify the source code and add some nice features, fix a bug, and then push the changes in you fork, but take care about the mandatory rules and best practices summarized in the table below. 
+	The developments process includes the following steps:</p>
+<p align="JUSTIFY"> <strong>STEP 1</strong>Identify the feature or the bug you are willing to implement</p> 
+<p align="JUSTIFY"> <strong>STEP 2</strong>Update the master branch of fork </p>
 
-				<p align="JUSTIFY"> <strong>STEP 3</strong>Create a new branch for the issue following the naming convention. There are 2 type of branches: 
+<p align="JUSTIFY"> <span style="background-color: #ffffff; color: #3366ff;">$ git checkout branch_name</span></p> 
+				
+<p align="JUSTIFY"> <span style="background-color: #ffffff; color: #3366ff;"> $ git fetch upstream branch_name </span></p> 
+<p align="JUSTIFY"> <span style="background-color: #ffffff; color: #3366ff;"> $ git merge --ff-only FETCH_HEAD </span></p>  
+
+<p align="JUSTIFY"> <strong>STEP 3</strong>Create a new branch for the issue following the naming convention. There are 2 type of branches: 
 a. Feature Branch: this branch is dedicated for all features developments. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. </p>
 b. Hotfix Branch: this branch is dedicated for bug fixing. 
-				<p align="JUSTIFY"> <strong>STEP 4</strong>Develop on the newly created branch (in general a new feature) </p>
+<p align="JUSTIFY"> <strong>STEP 4</strong>Develop on the newly created branch (in general a new feature) </p>
 
-				<p align="JUSTIFY"> <strong>STEP 5</strong>Commit every atomic modify (add the id of GitHub issue at the end of the comment for each commit) </p>
-
-				<p align="JUSTIFY"> <strong>STEP 6</strong>Pull request from issue branch via GitHub user interface </p>
-
-				<p align="JUSTIFY"> <strong>STEP 7</strong>Interact with maintainer via GitHub pull request board <p>
+<p align="JUSTIFY"> <strong>STEP 5</strong>Commit every atomic modify (add the id of GitHub issue at the end of the comment for each commit) </p>
+<p align="JUSTIFY"> <strong>STEP 6</strong>Pull request from issue branch via GitHub user interface </p>
+<p align="JUSTIFY"> <strong>STEP 7</strong>Interact with maintainer via GitHub pull request board <p>
 
 Mandatory Rules Branch naming convention 
 •	For a Feature branch: 
