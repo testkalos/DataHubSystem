@@ -15,9 +15,72 @@ layout: default
 							<h2>OData Synchronizer Panel</h2>
 											</header>
 <p align="JUSTIFY">      
-Once the installation package (see Installation Guide section) has been successfully installed, the DHuS server can be accessed online (https://dhus.xxx.zz) or on local URL (https://localhost/).
+The OData synchronizers panel is available just in the AJS GUI. The DHuS provides end users an OData synchronizer service able to populate a DHuS instance with the data stored on the rolling archive of another DHuS instance.
 
-To access the administrator panels, it is first necessary to login as root,using the default settings. The button is displayed in the upper right side of the DHuS Home page.	</p>
+The DHuS instance that contains the data to be synchronized is called back end instance, while the one that shall receive the data is called front end instance. 
+In case the rolling archive of the BE contains some products that are not present in the FE, once the synchronization is running, the metadata of the products present in the BE instance that are not in the database of the FE instance will be mirrored.
+						</p>
+<p align="JUSTIFY"><strong>Preconditions</strong></p>
+<p align="JUSTIFY">   
+	The FE/BE instances should be configured as follows:</p>
+
+<p align="JUSTIFY">&bull; BE: DHuS instance with no quota limitation and having a user with the archive management function enabled.</p>
+<p align="JUSTIFY">&bull;FE: having the synchronization functionality enabled, meaning that the dhus.xml of the FE shall contain the following setting:</p>
+executor enabled="true" batchModeEnabled="false" 
+<p align="JUSTIFY">&bull; and FE shall have the incoming folders in the same filesystem
+						</p>
+
+<p align="JUSTIFY">The OData Synchronizers panel allows the creation and update of synchronizers among two or more DHuS instances.</p>
+
+						<p align="JUSTIFY"><strong>How to create a new Synchronizers?</strong></p>
+						<p align="JUSTIFY">The Administrator shall:</p>
+
+<p align="JUSTIFY"> 1. Log in as Root in the front end DHuS instance and select the tab user profile </p>
+<p align="JUSTIFY"> 2. Select the panel OData synchronizers </p>
+
+<img src="https://raw.githubusercontent.com/calogera/DataHubSystem/gh-pages/images/figure24.png" alt=""/> 
+						<p> <strong> OData Synchronizer access</strong></p>
+						<p align="JUSTIFY">3.Click on Create synchronizer</p>
+<img src="https://raw.githubusercontent.com/calogera/DataHubSystem/gh-pages/images/figure25.png"alt=""/>
+
+						<p align="JUSTIFY"> <strong> OData Synchronizer panel</strong></p>
+
+<img src="https://raw.githubusercontent.com/calogera/DataHubSystem/gh-pages/images/figure26.png" alt=""/p> 
+						<p align="JUSTIFY">4. Create an OData Synchronizer</p>
+						<p align="justify">Fill the records as follows: </p>
+<p align="JUSTIFY">&bull;Label= Name of the synchronizer </p>
+<p align="JUSTIFY">&bull;Service URL= https://[Back-End_DHuS_address]/odata/v1 </p>
+<p align="JUSTIFY">&bull; Service Login Username= User name of a user registered in the back end which ha the archive manager rights</p> 
+<p align="JUSTIFY">&bull;Service Login Password= password of the user in the previous step </p>
+<p align="JUSTIFY">&bull; Schedule= how often the synchronizer shall be running.</p>
+<p align="JUSTIFY">&bull;Remote incoming=absolute path of the back end DHuS incoming</p> 
+<p align="JUSTIFY">&bull;Request= start or stop </p>
+<p align="JUSTIFY">&bull;Page size= number of products synchronized at each synchronizer run </p>
+<p align="JUSTIFY">5. Click on the button with the floppy disk shape </p>
+
+						<p align="justify"> <strong> How to update a Synchronizer?</strong></p>
+						<p align="justify">The Administrator shall:</p> 
+
+<p align="JUSTIFY">1. Log in as Root in the front end DHuS instance and select the tab user profile;</p>
+<p align="JUSTIFY">2. Select the panel OData synchronizers and then click on the pencil next to the synchronizer to be updated</p>
+
+<img src="https://raw.githubusercontent.com/calogera/DataHubSystem/gh-pages/images/figure27.png" alt=""/>
+						<p align="justify"><strong> Updating a synchronizer</strong></p>
+						<p align="JUSTIFY">1. Edit the records to be updated</p>
+						<p align="JUSTIFY">2. Click on the button with the floppy disk shape</p>
+
+						<p align="JUSTIFY"><strong>How to delete a Synchronizer?</strong></p>
+						<p align="justify">The Administrator shall:</p> 
+
+<p align="JUSTIFY">1. Log in as Root in the front end DHuS instance and select the tab user profile;</p>
+<p align="JUSTIFY">2. Select the panel OData synchronizers and then click on the X shaped button next to the synchronizer to be updated.</p>
+
+<p align="JUSTIFY">Next to an existing synchronizer tab, there are also buttons for starting and stopping the item. The play button is to start the synchronizer; the square button is to stop it.</p>
+						
+						
+						
+						
+						</p>
 
 		</div>
 	</section>		
