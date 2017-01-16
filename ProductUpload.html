@@ -1,22 +1,72 @@
----
-title: Arcana
-layout: default
----	
+<!DOCTYPE HTML>
 <html>
+    <head>
+        <title>Open Source Portal</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+ 		<script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/skel-layers.min.js"></script>
+        <script src="assets/js/init.js"></script>
+        <noscript>
+            <link rel="stylesheet" href="assets/css/skel.css" />
+            <link rel="stylesheet" href="assets/css/style.css" />
+            <link rel="stylesheet" href="assets/css/style-wide.css" />
+        </noscript>
+
+    </head>
+    <body>
+
+        <!-- Header -->
+            <div id="header">
+                <h1><a href="index.html" id="logo">Open Source Portal</a></h1>
+     <!--<h1>
+     <a href="index.html" class="image left"><img src="assets/images/oslogomini.jpg" "alt="" /></a>
+     <a href="http://ec.europa.eu/index_en.html" class="image left"><img src="assets/images/ec-mini.jpg" "alt=""/></a>
+     <a href="index.html" id="logo"> <em>Open Source Portal</em></a>
+     <a href="http://www.copernicus.eu/" class="image left"><img src="assets/images/copernicus-mini.jpg" "alt=""/></a>
+     <a href="http://www.esa.int/ESA" class="image left"><img src="/assets/images/esa-mini.jpg" "alt=""/></a>
+     </h1>-->
+
+        <nav id="nav">
+                        <ul>
+                        <li ><a href="index.html">Home</a></li>
+                        <li ><a href="about.html">About</a></li>
+
+                            <li ><a href="https://github.com/SentinelDataHub/DataHubSystem">Download</a></li>
+                            <li ><a href="support.html">Support</a></li>
+                            <li ><a href="hubstore.html">DHuS HuB Store</a></li>
+                            <li>
+               	<a href="">Documentation</a>
+                                <ul>
+                                    <li><a href="governance.html"> Governance Model</a></li>
+                                    <li><a href="guidelines.html">Developer Guidelines</a></li>
+                 <!-- <li><a href="#">Interface Control Document</a></li>-->
+      		       </ul>
+                            </li>
+
+
+                <li ><a href="demo.html">Demo Features</a></li>
+                <li ><a href="contact.html">Contacts Us</a></li>
+
+                        </ul>
+                    </nav>
+
+            </div>
 <!-- Main -->
 <section id="banner">
 </section>
-	<section class="wrapper style1">
-		<div class="container">
-			<div id="content">
-				<!-- Content -->
-					<article>
-						
-						<header>
-							<h2>Product Upload</h2>
-											</header>
-						
-<body>
+    <section class="wrapper style1">
+        <div class="container">
+            <div id="content">
+                <!-- Content -->
+                    <article>
+
+                        <header>
+                            <h2>Product Upload</h2>
+                                            </header>
 <p align="justify">
 The Upload feature is available only to the administrator. DHuS system makes available an incoming space to let the user upload a product. Once uploaded, data is processed to be referenced by DHuS clients.
 This panel gathers all the information necessary to perform the upload (at least the path to the product).
@@ -24,9 +74,9 @@ Optional: Assignation of a product to a collection is manually set by the upload
 
 <p align="justify">
 The DHuS allows the ingestion of Sentinels products using these methods:</p>
-	<p align="justify"> &bull;<strong> Ad hoc upload;</strong></p>
-	<p align="justify"> &bull;<strong> Creating a file scanner;</strong></p>
-	<p align="justify"> &bull;<strong> Synchronizing remote archive;</strong></p>
+    <p align="justify"> &bull;<strong> Ad hoc upload;</strong></p>
+    <p align="justify"> &bull;<strong> Creating a file scanner;</strong></p>
+    <p align="justify"> &bull;<strong> Synchronizing remote archive;</strong></p>
 
 
    <img src ="https://raw.githubusercontent.com/calogera/DataHubSystem/gh-pages/images/table4.png" alt=""/>
@@ -56,7 +106,7 @@ Once in the Upload panel, it is possible to perform the upload of a product: sel
 
 <p><strong>File scanner panel (GUI)</strong></p>
 
-	<p>To create a file scanner:</p>
+    <p>To create a file scanner:</p>
 
 <p align="justify">1. Access the upload panel;
 <p align="justify">2. Fill the Url to scan field with the path of the folder containing the products (if the products are in the same machine where DHuS is installed, the field shall be filled as file:///path/of/the/folder).</p>
@@ -71,6 +121,10 @@ Once in the Upload panel, it is possible to perform the upload of a product: sel
 <p align="justify">The DHuS allows synchronizing products from another DHuS instance. For further details, go to OData Synchronizers panel section.</p>
 
 
+</article>
+</div>
+        </div>
+    </section>
 </body>
 
 </html>
