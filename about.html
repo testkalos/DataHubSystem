@@ -29,51 +29,50 @@
      <a href="http://www.copernicus.eu/" class="image left"><img src="assets/images/copernicus-mini.jpg" "alt=""/></a>
      <a href="http://www.esa.int/ESA" class="image left"><img src="/assets/images/esa-mini.jpg" "alt=""/></a>    
      </h1>-->
-				<!-- Nav -->
-					<nav id="nav">
+				
+		<nav id="nav">
 						<ul>
-						<li ><a href="index.html">Home</a></li>
-						<li ><a href="about.html">About</a></li>
-      	                                     
-              
-									<!--
-                  <li>
-										<a href="">Submenu</a>
-										<ul>
-											<li><a href="#">Lorem dolor</a></li>
-											<li><a href="#">Phasellus magna</a></li>
-											<li><a href="#">Magna phasellus</a></li>
-											<li><a href="#">Etiam nisl</a></li>
-											<li><a href="#">Veroeros feugiat</a></li>
-										</ul>
-									</li>
-                                                        
-                                                               
-									<li><a href="#">Veroeros feugiat</a></li>-->
-						
-                                           
-							<li ><a href="https://github.com/SentinelDataHub/DataHubSystem">Download</a></li>	
-							<li ><a href="support.html">Support</a></li>
-							<li ><a href="hubstore.html">DHuS HuB Store</a></li>
-							<li>
+							{% assign current = page.url | downcase | split: '/' %}
+							<li {% if current[1] == 'index.html' %}class="current"{% endif %}><a href="index.html">Home</a></li>
+                                                     
+							<li {% if current[1] == 'about.html' %}class="current"{% endif %}><a href=" about.html">About</a></li>
+              <li ><a href="https://github.com/SentinelDataHub/DataHubSystem">Download</a></li>	
+             <li {% if current[1] == 'support.html' %}class="current"{% endif %}><a href=" support.html">Support</a></li>
+  
+             
+	      
+             
+							
+							
+	      
+	    <!-- <li ><a href="support.html">Support</a></li> -->                                
+        <li {% if current[1] == 'hubstore.html' %}class="current"{% endif %}><a href=" hubstore.html">DHuS HuB Store</a></li>
+           <li>
                	<a href="">Documentation</a>
 								<ul>
 									<li><a href="governance.html"> Governance Model</a></li>
 									<li><a href="guidelines.html">Developer Guidelines</a></li>
-                 <!-- <li><a href="#">Interface Control Document</a></li>-->
+                <!--  <li><a href="#">Interface Control Document</a></li>-->
       		       </ul>
-							</li>
-					
-							
-				<li ><a href="demo.html">Demo Features</a></li>
-				<li ><a href="contact.html">Contacts Us</a></li>
-					<!--		<li ><a href="/two-sidebar.html">Two Sidebar</a></li>
-							<li ><a href="/no-sidebar.html">No Sidebar</a></li>
-                                                 -->
-						</ul>
-					</nav>
+							</li>   
+	
+          <li {% if current[1] == 'demo.html' %}class="current"{% endif %}><a href=" demo.html">Demo Features</a></li>
+	
+	
+	 <li {% if current[1] == 'contact.html' %}class="current"{% endif %}><a href="contact.html"> Contact Us</a></li>
 
-			</div>
+							
+                         </ul>
+                          
+			
+					</nav>		
+				
+				
+				
+				
+				
+				
+				</div>
 	<div class="home">
 <h1 class="page-heading"></h1>
   
@@ -112,10 +111,7 @@ Any interested users can download and build the code, although they must be info
 
 However, in the future, updated DHuS system releases will be published including new functions, correcting issues and supporting the future Sentinel products, when qualified.
 </p>
-
-
-
-                    </article>
+ </article>
   </div>
         </div>
     </section>
