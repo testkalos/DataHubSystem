@@ -59,24 +59,24 @@
 <section id="banner">
 </section>
 
-<h1 id="userguides">USER GUIDES</h1>
+<h1>USER GUIDES</h1>
 
-<h2 id="preface">Preface</h2>
+<h2>Preface</h2>
 
 <p>This guide is oriented at anyone interested on Space Data Dissemination, that wants to use a configurable, user friendly, extensible Graphical User Interface for the SentinelDataHub/DataHubSystem, based on Web Components (Polymer).</p>
 
-<h2 id="prerequisites">Prerequisites</h2>
+<h2>Prerequisites</h2>
 
 <p>Before we dive in, the knowledge and software requirements follows.</p>
 
-<h4 id="webdevelopment">Web development</h4>
+<h4>Web development</h4>
 
 <p>To understand every part of the following guide it is required at least some <code>HTML</code>, <code>CSS</code> and <code>Javascript</code> programming experience.
 Basic knowledge of HTML5, CSS and Javascript principles are enough to run and configure the ESA Scientific HUB Open Web Components.</p>
 
 <p>Intermediate web developers.</p>
 
-<h4 id="webcomponents">Web Components</h4>
+<h4>Web Components</h4>
 
 <p><code>Web Components</code> are a set of standards beign added to the HTML and DOM specification, by the W3C.
   The main features of Web Components standards are:</p>
@@ -91,7 +91,7 @@ Basic knowledge of HTML5, CSS and Javascript principles are enough to run and co
 <li>HTML Template: allows documents to contain inert chuncks of DOM</li>
 </ul>
 
-<h4 id="polymer">Polymer</h4>
+<h4>Polymer</h4>
 
 <p><code>Polymer</code> is an open-source library for creating web applications using web components, following Material Design principles.</p>
 
@@ -103,22 +103,22 @@ Basic knowledge of HTML5, CSS and Javascript principles are enough to run and co
 
 <p><code>npm</code> is the node.js package manager.</p>
 
-<h4 id="bower">Bower</h4>
+<h4>Bower</h4>
 
 <p><code>bower</code> is package manager of web (html/css/js) dependencies for client side (browser).</p>
 
-<h4 id="gulp">Gulp</h4>
+<h4>Gulp</h4>
 
 <p><code>Gulp</code> is a Node.js task manager. The philosophy of gulp is <em>code over configurations</em></p>
 
-<h4 id="odata">OData</h4>
+<h4>OData</h4>
 
 <p><code>OData</code> is a protocol to create and consume  queryable and interoperable RESTful APIs.
 It is a wrapper of RESTful APIs.</p>
 
-<h2 id="chapter1openwebcomponents">Chapter 1: Open Web Components</h2>
+<h2>Chapter 1: Open Web Components</h2>
 
-<h4 id="helloopenwebcomponents">Hello open web components</h4>
+<h4>Hello open web components</h4>
 
 <p>The <strong>Open Web Components</strong> (<strong>OWC</strong>) is a client side software following the Single Page Application approach, for space data dissemination. The Software is developed using Polymer library.</p>
 
@@ -136,19 +136,19 @@ It is a wrapper of RESTful APIs.</p>
 
 <p><img src="https://cloud.githubusercontent.com/assets/1030870/17594167/9f590f5e-5fe8-11e6-9a73-44692ecdfa1a.png" alt="modularity" /></p>
 
-<h5 id="modularity">Modularity</h5>
+<h5>Modularity</h5>
 
 <p>The <strong>OWC</strong> architecture follows Object Oriented Programming. Every component is an independent module. Easy to use and easy to integrate in the main application.</p>
 
-<h5 id="extensibility">Extensibility</h5>
+<h5>Extensibility</h5>
 
 <p>The <strong>OWC</strong> application is extensible, following the best practices of this guide it is possible to integrate new web components.</p>
 
-<h5 id="customization">Customization</h5>
+<h5>Customization</h5>
 
 <p>The main application components are customizable. It is possible to customize the main menu, defining the components to integrate and it is possible to modify the appearance of application.</p>
 
-<h5 id="opensource">Open Source</h5>
+<h5>Open Source</h5>
 
 <p><strong>OWC</strong> project is a Open Source project. Our mission is to create a developers community to create a set of web components in space dissemination field.</p>
 
@@ -168,15 +168,15 @@ component panel width in pixels (a default value is used if no width is provided
 </body>
 </html>
 
-<h2 id="chapter2anewcomponent">Chapter 2: A new component</h2>
+<h2>Chapter 2: A new component</h2>
 
-<h4 id="introduction">Introduction</h4>
+<h4>Introduction</h4>
 
 <p><em>OWC</em> is based on web components standard, using Google's Polymer library.
 Every entity in <em>OWC</em> is a web component, following the Model View Controller design pattern.
 <em>OWC</em> is compatible with javascript ECMAScript 5 and ECMAScript 6.</p>
 
-<h4 id="averysimplepolymercomponent">A very simple Polymer component</h4>
+<h4>A very simple Polymer component</h4>
 
 <p>The basic Polymer component is an extension of html tags, defining the name of the new tag, the view and the controller of this new component.
 An example of a new component with name <em>new_component</em> written in ES6  follows:</p>
@@ -477,7 +477,7 @@ Outcome:</p>
 
 <p><img src="https://cloud.githubusercontent.com/assets/18163634/21136185/dfb295f0-c124-11e6-893b-03dcb736a689.png" alt="modularity" /></p>
 
-<h4 id="howtointegrateanewwebcomponentinowc">How to integrate a new web component in OWC</h4>
+<h4>How to integrate a new web component in OWC</h4>
 
 <p>After creating a new component it is necessary to integrate it into OWC to make it visible to all the other components of the application.
 To do this it is enough to insert the reference link to the component in <strong>elements.html</strong> file located in the folder <strong>app/elements</strong>.</p>
@@ -489,7 +489,7 @@ To do this it is enough to insert the reference link to the component in <strong
 &lt;link rel="import" href="authentication-manager/authentication-manager.html"&gt;
 </code></pre>
 
-<h4 id="usage">Usage</h4>
+<h4>Usage</h4>
 
 <p>The publication of a new panel in the DOM is done through the navigation component. It is enough to invoke the pushComponent method, passing a set of parameters.</p>
 
@@ -531,11 +531,11 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 
 <p><img src="https://cloud.githubusercontent.com/assets/18163634/21136214/fed75ef2-c124-11e6-9b88-995d72d08598.png" alt="modularity" /></p>
 
-<h2 id="chapter4communicationamongcomponentsmessagebroker">Chapter 4: communication among components (message broker)</h2>
+<h2>Chapter 4: communication among components (message broker)</h2>
 
 <p>The communication among web components is managed by the Message Broker, a centralized messaging system based on the publish-subscribe Design Pattern.</p>
 
-<h4 id="architecture-1">Architecture</h4>
+<h4>Architecture</h4>
 
 <p>In software architecture, publish–subscribe is a messaging pattern involving 2 main actors: publishers and subscribers.</p>
 
@@ -555,7 +555,7 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 <li>publish, which is used by publishers to send notifications about one or more message classes.</li>
 </ul>
 
-<h4 id="anamembusage0001ausage"><a name="mbusage0001"></a> Usage</h4>
+<h4><a name="mbusage0001"></a> Usage</h4>
 
 <p><em>message-broker</em> web component is part of <em>owc-app</em> web component, which is included in OWC application.</p>
 
