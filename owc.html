@@ -363,7 +363,7 @@ python -m SimpleHTTPServer 8081
 </code></pre>
 <p align=“JUSTIFY”><strong>Note</strong>: be careful about dependencies inclusion of bower_components folder. Outcome:</p>
 <p align=“JUSTIFY”><span class="image featured"><img src="https://cloud.githubusercontent.com/assets/1030870/21138202/435af3a6-c12d-11e6-885d-3e8625d4078f.png" alt="auto-docs" /></span></p>
-<h2 id="chapter3thenavigationcomponent">Chapter 3: the navigation component</h2>
+<h2 id="chapter3thenavigationcomponent">3.The navigation component</h2>
 <h4 id="architecture">Architecture</h4>
 <p align=“JUSTIFY”>This component manages the currently displayed components using the navigation stack, which is represented by an array of components. The first element in the array is the root, the <strong>dynamic-main-menu</strong>. The last element in the array is the component currently being displayed. The user can add components to the stack using the method <strong>pushComponent</strong> of navigation manager and can remove all components from the navigation stack, except for the root element, using the <strong>popComponent</strong> method. In Desktop view the new component is pushed on the right of the last visualized component and it is possible to move inside the navigation system, in Mobile view instead the new component is pushed up the currently visualized component.</p>
 <p align=“JUSTIFY”><span class="image featured"><img src="https://cloud.githubusercontent.com/assets/18163634/21136185/dfb295f0-c124-11e6-893b-03dcb736a689.png" alt="modularity" /></span></p>
@@ -490,7 +490,7 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 <pre><code class=" javascript language- javascript">this.owcApp.toastManager.warn('Product Type Not Supported');
 </code></pre>
 <p align=“JUSTIFY”><span class="image featured"><img src="https://cloud.githubusercontent.com/assets/10920750/21133518/70502fe8-c119-11e6-81a6-3e041b3164b0.png" alt="toast-warn-example" /></span></p>
-<h2 id="chapter6datatypeagnosticsemanticmanager">Chapter 6: Data Type Agnostic (Semantic Manager)</h2>
+<h2 id="chapter6datatypeagnosticsemanticmanager">6.Data Type Agnostic (Semantic Manager)</h2>
 <p align=“JUSTIFY”>The Open Web Components (OWC) is a generic set of components to allow the dissemination of data; it is independent from data types. Ingested Objects in the DHuS have a specific class type, for every class type the UI components (e.g. List, Map) need to extract a set of attributes from the server model, this means that the OWC must know the semantic of the server model. To avoid hardcoded sematic in the components code, the OWC use a generic model with the right attributes for every item, exploiting a Semantic Schema from Server.</p>
 <p align=“JUSTIFY”>The <em>Semantic Manager</em> generates the generic model extracting the data from the Search Request Model applying the mapping defined in the Semantic Schema.</p>
 <h4 id="architecture-2">Architecture</h4>
