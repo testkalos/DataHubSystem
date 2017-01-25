@@ -117,13 +117,21 @@ The OData Synchronizers panel is the User interface allowing the creation and up
 
 <p align="JUSTIFY">&bull;Label= Name of the synchronizer </p>
 <p align="JUSTIFY">&bull;Service URL= https://[Back-End_DHuS_address]/odata/v1 </p>
-<p align="JUSTIFY">&bull; Service Login Username= User name of a user registered in the back end which ha the archive manager rights</p>
+<p align="JUSTIFY">&bull; Service Login Username= User name of a user registered in the back end. In case of metadata synchronization, the archive manager rights enabled are requested for this user, otherwise the synchronization between Back End and Front End would log errors or, if the remote incoming parameter is left blank, the dhus will synchronize only the Back End catalogue.</p>
 <p align="JUSTIFY">&bull;Service Login Password= password of the user in the previous step </p>
 <p align="JUSTIFY">&bull; Schedule= how often the synchronizer shall be running.</p>
-<p align="JUSTIFY">&bull;Remote incoming=absolute path of the back end DHuS incoming</p>
+<p align="JUSTIFY">&bull;Remote incoming=absolute path incoming of the incoming folder configured for the DHuS installed on the Back End instance (it must be specified ONLY if the “Copy product” field is set as false)</p>
 <p align="JUSTIFY">&bull;Request= start or stop </p>
-<p align="JUSTIFY">&bull;Page size= number of products synchronized at each synchronizer run </p>
-<p align="JUSTIFY">5. Click on the button with the floppy disk shape </p>
+<p align="JUSTIFY">&bull;Target Collection= is a nullable and modifiable property with no default value. If specified, the synchronized products will be filed in the referenced FE Collection</p>
+<p align="JUSTIFY">&bull;Page size= number of products synchronized at each synchronizer run (in case of product synchronization, the number configured in this field will determinate how many products will be simultaneously copied (it is suggested to set this parameter lower than the total number of threads allowed in the system). </p>
+<p align="JUSTIFY">&bull; Copy product= this parameter determinates if the synchronization is a metadata synchronization or is a products synchronization:</p>
+	<p align="JUSTIFY">&bull; False: the synchronizer will synchronize only the metadata of the products (the products are stored only in the Back End incoming folder)</p>
+	<p align="JUSTIFY">&bull; True: the synchronizer will make a copy of the products in the Front End incoming folder during the synchronization. </p>
+<p align="JUSTIFY"> Note that if this parameter is set as true, the “Remote Incoming” field shall be set as empty.</p>
+<p align="JUSTIFY">&bull;Filter Parameter= following the odata filters syntax, it filters the products and synchronize the only one respecting this filter. Example: substringof(‘S1A_’,Name) For reference see : https://scihub.copernicus.eu/userguide/5APIsAndBatchScripting</p>
+<p align="JUSTIFY">&bull;Source Collection= Back End Collection filter: only the products on the Back End instances, which are belonging to the configured collection, will be synchronized to the Front End instance. If this field is left empty, the synchronizer will synchronize every products without any check on their Back End collection.</p>		   
+<p align="JUSTIFY">&bull; Last Ingestion Date= Filter on the Ingestion date of the products stored in the Back End instances. Products with ingestion date >= of the one here indicated will be synchronized. Once the synchronizer ends, this field is updated with the ingestion date of the last synched product. During the next synchrionizer start (according the set “Schedule”), only products with the ingestion date > of the one here indicated will be synchronized.</p>	    
+<p align="JUSTIFY">5. Click on the button with the floppy disk shape. </p>
 
                         <p align="justify"> <strong> How to update a Synchronizer?</strong></p>
                         <p align="justify">The Administrator shall:</p>
@@ -142,7 +150,7 @@ The OData Synchronizers panel is the User interface allowing the creation and up
 <p align="JUSTIFY">1. Log in as Root in the front end DHuS instance and select the tab user profile;</p>
 <p align="JUSTIFY">2. Select the panel OData synchronizers and then click on the X shaped button next to the synchronizer to be updated.</p>
 
-<p align="JUSTIFY">Next to an existing synchronizer tab, there are also buttons for starting and stopping the item. The play button is to start the synchronizer; the square button is to stop it.</p>
+<p align="JUSTIFY">Next to an existing synchronizer tab, there are also buttons for <strong>starting</strong> and <strong>stopping</strong> the item. The play button is to start the synchronizer; the square button is to stop it.</p>
                     </article>
 
 
