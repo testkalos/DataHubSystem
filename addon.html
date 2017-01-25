@@ -80,7 +80,7 @@
 The Data Hub Software is designed to provide users with a distributable service of mirror archives and dissemination means for products.</p>
 <img src="assets/images/fig1addon.jpg" alt="">
 <p align="JUSTIFY"> DHuS can ingest and disseminate a specific product if a specific Add-on for it exists. Add-ons are pluggable modules (JAR) containing information necessary to classify mission products</p>
-DHuS can be easily extended to manage new data by means of new Add-ons development.</p>
+<p align="JUSTIFY"> DHuS can be easily extended to manage new data by means of new Add-ons development.</p>
 <p align="justify">No software changes are needed to DHuS  Core to manage new Add-ons or to modify existing ones.</p>
 <img src="assets/images/fig2addon.jpg" alt="">
 <h3> Technologies and design</h3>
@@ -98,7 +98,62 @@ DRB is used within DHuS to access and extract data information.</p>
 <h3>Languages and Standards</h3>
 <img src="assets/images/fig6addon.jpg">
 <img src="assets/images/fig7addon.jpg">
+<h3> Implementation and Integration</h3>
+<p align="justify">Contains product class hierarchy defined by means of Web Ontology Language (OWL)</p>
+ <img src="assets/images/fig8addon.jpg">
+			    <p align="justify"> <strong>Topic coding rules</strong></p>
+			    <p align="justify">1.Class type identifier;</p>
+			     <p align="justify">2.Class type comment (optional);</p>
+			     <p align="justify">3.Product class subclass of Drb Item;</p>
+			     <p align="justify">4.Definition of matching rules (at least one);</p>
+			     <p align="justify">5.XML schema definition (optional);</p>
+			     <p align="justify">OWL is used in DHuS Add-on to organize the data type configuration under classes and subclasses with inheritable properties. 
+				     In the DHuS context, OWL is used for product class characterization by means of:</p>
+			    <p align="justify">&bull;Filenames Regex</p>
+			    <p align="justify">&bull;Product structure matching rules</p>
+			    <p align="justify">Metadata Extractor</p>
+<img src="assets/images/fig9addon.jpg">			    
+			    <p align="justify"><strong>Metadata Extractor Coding Rules</strong></p>
+			    
+			    <p align="justify">1.Metadata extractor sections should be bound to a topic class type;</p>
+			     <p align="justify">2.The definition of following metadata is MANDATORY:
+				     < p align="justify">&bull; “Filename”</p>
+   < p align="justify">&bull; “Format”;</p>
+			     <p align="justify">3. In case of image preview generation, the add-on should contain drb-image library and JAI library as maven dependencies;</p>
+			
+			    <p align="justify"><strong> XQuery and XPath</strong></p>
+		<p align="justify">DHuS Add-ons use DRB XQuery Engine to query and transform set of products both structured and unstructured, usually in XML form.
+			XQuery uses XPath expression syntax to address specific parts of product.</p>
+			    <p align="justify"><strong> JAVA</strong></p>
+			    <p align="justify">In the Add-on context, it is possible to use Java for:</p>
+<p align="justify">&bull;Calling static methods defined in Java classes included in the add-on (for metadata extraction)</p>
+<p align="justify">&bull;Including Java code directly inside ontology files (for image processing)</p>
+	    
+			    <h3>Recommendation</h3>
+			    <p align="justify">Product class types definition without ambiguity </p>
 
+			    <p align="justify"> &bull; Product class types definition should avoid code repetition</p>
+
+			    <p align="justify"> &bull;xsd schema import for binary format browsing</p>
+
+			    <p align="justify"> &bull;Index definition to improve data search using search engine (Solr)</p>
+
+			    <p align="justify"> &bull;XQuery language preferred for metadata extraction</p>
+			    
+			    <h3> Add-on Loading</h3>
+			<p align="justify"> Add-ons can be integrated in the DHuS easily copying the JAR modules in the DHuS library path and restarting the system</p>
+
+<img src="assets/images/addon10.jpg">
+			    <h3> Schema check and update</h3>
+			    <p align="justify">1.At start-up the DHuS</p>
+			    <p align="justify">2.Loads the add-ons included in its library path</p>
+			    <p align="justify">3.Checks the metadata types defined in the addons</p>
+			    <p align="justify">4.Updates the schema of the search engine, if new indexes are found</p> 
+			    <p align="justify">These activities don't impact on DHuS Core.<p>
+  <img src ="assets/images/addon11.jpg">
+			    
+			    
+			    
    </article>
    </body>
 </html>
