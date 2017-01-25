@@ -80,7 +80,7 @@
 The following scripts permit massive products deletion via API.</p>
 
 <p align="justify">&bull;  <strong>getID.sh</strong>: it produces the UUID of products retrieving this information from the specified product names</p>
-<p align="justify">& bull;<strong> delete_mod.sh</strong>: it performs the deletion of the products listed in the getID.sh script.</p>
+<p align="justify">&bull;  <strong> delete_mod.sh</strong>: it performs the deletion of the products listed in the getID.sh script.</p>
 <p align="justify">The script getID.sh has 3 input parameter:</p> 
 <p align="justify"> 1) original file containing names of products to be deleted;</p>
 <p align="justify"> 2) number N of files in which you want to split the original file (used when the number of products is high)</p>
@@ -91,10 +91,9 @@ The split operation allows to delete a big number of products by more scripts (i
 <p align="justify">The output main files produced by getID.sh are:</p>
 <p align="justify">1) UUID_</p>
 {i}.txt i=1,2,3,....,N; file containing the UUID of products of i-th block of names
-<p align="justify">2) PRODUCTSNOTFOUND_{i}</p>
-.txt i=1,2,3,....,N; file containing the names of products not found by i-th query on DB
-Each UUID_
-{i}.txt file is the input parameter of the script delete_mod.sh that performs the deletion of UUID on Virtual machine where it is launched.
+<p align="justify">2) PRODUCTSNOTFOUND_{i}
+	.txt i=1,2,3,....,N; file containing the names of products not found by i-th query on DB</p>
+<p align="justify">Each UUID_ {i}.txt file is the input parameter of the script delete_mod.sh that performs the deletion of UUID on Virtual machine where it is launched.</p>
 
 <p align="justify"> The input parameter of the script delete_mod.sh are:</p>
 <p align="justify">1) number of deletions in parallel</p>
