@@ -214,7 +214,8 @@ enable="true"/>
 			    <p align="justify"><strong> STEP 2</strong></p> 
 			    <p align="justify">Log in as administrator (root)</p>
 			  
-			    <p align="justify"><strong> STEP 3</strong>Access the following link:</p>
+			    <p align="justify"><strong> STEP 3</strong></p>
+			  <p align="justify"> Access the following link:</p>
 			   
 			    <p><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users?$orderby=Username</span> </p> 
 <p align="justify"> Verify that the  list of users is visible and it is sorted depending on the username </p>
@@ -235,7 +236,9 @@ enable="true"/>
 <d:SubUsage>unknown</d:SubUsage>
 </m:properties>
 </content>
+	</span>
 	</code>
+	
 <p align="justify">The users are sorted depending on the username.</p>
 	<p align="justify"><strong> STEP 4</strong> </p>
 	<p align="justify"> Verify that the number returned by the URL:</p>
@@ -264,9 +267,53 @@ enable="true"/>
 <p align="justify"><d:Request></p>
 <p align="justify"><d:Duration></p>
 
+	</span>
 	</code>
 	
+<p align="justify"><strong> STEP 7</strong> </p>	
+	<p align="justify">Once logged in as administrator, access the URL:</p> 
+<p align="justify"><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users(‘root’)/SystemRoles </span></p>
+	<p align="justify"> to visualize the user roles of the administrator user</p>
+	<p align="justify"> The administrator has everyrole available on the Hub:</p>
+	<p align="justify">&bull;Search</p>
+	<p align="justify">&bull;Upload</p>
+	<p align="justify">&bull;Archive manager</p>
+	<p align="justify">&bull;Statistics</p>
+	<p align="justify">&bull;System manager</p>
+	<p align="justify">&bull;Data manager</p>
+	<p align="justify">&bull;Download</p>
+
+<p align="justify"><strong> STEP 8</strong> </p>
+	<p align="justify">Access the URL:</p> 
+<p align="justify"><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Networks(0L)/NetworkStatistic </span></p> 
+	<p align="justify">To visualize the statistics associated to the network. </p>
+<p align="justify">The NetworkStatistics reports the informations related to the statistics of the network (activity period in ms, number of connection within this period). 
+
+<id>
+<p align="justify"><span style="color: #0000ff;">https://scihub-test.esa.int/dhus/odata/v1/Networks(0L)/NetworkStatistics(0L)</span></p>
+</id>
+<title type="text">0</title>
+<updated>2016-02-25T15:32:12.613Z</updated>
+<category term="DHuS.NetworkStatistic" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme"/>
+<link href="NetworkStatistics(0L)" rel="edit" title="NetworkStatistic"/>
+<content type="application/xml">
+<m:properties>
+<d:Id>0</d:Id>
+<d:ActivityPeriod>
+<d:ConnectionNumber></m:properties>
+</content>
+</entry>
 	</p>
+<p align="justify"><strong> STEP 9</strong> </p>	
+	<p align="justify"> Access the URL:</p> 
+<p align="justify"><span style="color: #0000ff;"> https://[dhus]/dhus/odata/v1/Connections?$filter=substringof(Request,'odata/v1')</span></p>
+	<p align="justify">to visualize all the odata queries performed by the users.All the odata queries performed by the users are visualized</p> 
+	
+<p align="justify"><strong> STEP 10</strong> </p>	
+	<p align="justify">Launch a product download via GUI.Access the URL:</p> 
+<p align="justify"><span style="color: #0000ff;"> https://[dhus]/odata/v1/Connections?$filter=Status eq 'PENDING'</span></p>
+
+	
 	
 
 			    
