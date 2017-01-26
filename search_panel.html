@@ -82,10 +82,82 @@
 			    <p align="JUSTIFY"><strong>Step 2</strong>:Delete them clicking on the trashbin icon in the lower side of the panel itself.
 			    </p>
 
+<header>
+                            <h2>Deletion via OData API</h2>
+                                            </header>
+<p align="JUSTIFY">
+
+The following scripts permit massive products deletion via API.</p>
+
+<p align="justify">&bull;  <strong>getID.sh</strong>: it produces the UUID of products retrieving this information from the specified product names</p>
+<p align="justify">&bull;  <strong> delete_mod.sh</strong>: it performs the deletion of the products listed in the getID.sh script.</p>
+<p align="justify">The script getID.sh has 3 input parameter:</p> 
+<p align="justify"> 1) original file containing names of products to be deleted;</p>
+<p align="justify"> 2) number N of files in which you want to split the original file (used when the number of products is high)</p>
+<p align="justify"> 3) folder containing DB (in-operation DB copy) on which will be performed the query, that get the UUID of products by their names </p>
+<p align="justify">For each i-th file (i=1,2,3,.....,N) the query, related to the products names of the i-th file, is built and performed.
+The split operation allows to delete a big number of products by more scripts (i=1,2,3,......,N) launched in parallel, one for each i-th UUID file.
+</p>
+<p align="justify">The output main files produced by getID.sh are:</p>
+<p align="justify">1) UUID_</p>
+{i}.txt i=1,2,3,....,N; file containing the UUID of products of i-th block of names
+<p align="justify">2) PRODUCTSNOTFOUND_{i}
+	.txt i=1,2,3,....,N; file containing the names of products not found by i-th query on DB</p>
+<p align="justify">Each UUID_ {i}.txt file is the input parameter of the script delete_mod.sh that performs the deletion of UUID on Virtual machine where it is launched.</p>
+
+<p align="justify"> The input parameter of the script delete_mod.sh are:</p>
+<p align="justify">1) number of deletions in parallel</p>
+			    <p align="justify">2) file containing the UUID to be deleted (UUID_{i} .txt)</p>
+<p align="justify">The deletion of single UUID product (CURL command) and the related log is produced by del_prod_mod.sh that is a script present in delete_mod.sh.
+If the log produces, for a specific UUID, the string "in XXX s return code 20..." the product is deleted</p>
+
+
+			    
+			    <section class="wrapper style1">
+		<div class="container">
+			<div class="row double">
+				<section class="4u">
+					<div class="box highlight">
+						<i class="icon major fa-paper-plane"></i>
+					<h3><a href="https://raw.githubusercontent.com/testkalos/DataHubSystem/master/delete_mod.sh">Delete_mod.sh</a></h3>
+						
+					</div>
+				</section>
+				<section class="4u">
+					<div class="box highlight">
+						<i class="icon major fa-pencil"></i>
+					<h3><a href="https://raw.githubusercontent.com/testkalos/DataHubSystem/master/getID.sh">GetId.sh</a></h3>
+					
+					</div>
+				</section>
+				<section class="4u">
+					<div class="box highlight">
+						<i class="icon major fa-wrench"></i>
+                           
+						<h3><a href="https://raw.githubusercontent.com/testkalos/DataHubSystem/master/del_prod_mod.sh">Del_prod_mod.sh</a></h3>
+					
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
+		    
+
+		    
+		    </article>
+            </div>
+        </div>
+
+    </section>
+    </body>
+</html>			    
+			    
+<!--			    
+			    
 </article>
             </div>
         </div>
 
     </section>
     </body>
-</html>
+</html>-->
