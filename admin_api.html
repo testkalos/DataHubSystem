@@ -77,7 +77,7 @@
                                             </header>
 <p align="JUSTIFY">
 User connection information inspection via OData protocol </p>
-<p align="JUSTIFY">The table shows in detail all steps  needed to visualize the information about users and their connections through OData.</p>
+<p align="JUSTIFY">The procedure shows in detail all steps  needed to visualize the information about users and their connections through OData.</p>
 <!--
 <table style="border: 1px solid black; border-collapse: collapse; float: left";>
 <tbody>
@@ -204,27 +204,28 @@ Download&nbsp;</th></tr>
 </th><th style="border: 1px solid black;">All the on-going request managed by DHuS are visualized. In particular, the download launched in step 10 of this procedure&nbsp;</th></tr>
 </tbody>
 </table>-->
-		 <p align="justify"><strong> STEP 1</strong> Stop DHuS 
-<p>Add to the server.xml file the following lines:</p>
+			    <p align="justify"><strong> STEP 1: </strong></p>
+<p align="justify">Stop DHuS </p>
+<p align="justify"> Add to the server.xml file the following lines:</p>
 <p><span style="color: #0000ff;"> Valve className="fr.gael.dhus.server.http.valve.AccessValve" pattern=".*  useLogger="true"
 enable="true"/>
-	</span><p>
+	</span></p>
 			    <p align="justify">Start DHuS</p>
-
-			    <p align="justify"><strong> STEP 2</strong> Stop DHuS    </p> 
+			    <p align="justify"><strong> STEP 2</strong></p> 
 			    <p align="justify">Log in as administrator (root)</p>
 			  
-			    <p align="justify"><strong> STEP 3</strong>Access the following link
+			    <p align="justify"><strong> STEP 3</strong>Access the following link:</p>
 			   
 			    <p><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users?$orderby=Username</span> </p> 
 <p align="justify"> Verify that the  list of users is visible and it is sorted depending on the username </p>
 			    <p align="justify"> The following information relative to each user is visualized:</p>
 <p align="justify"><span style="color: #0000ff;">
+<code>
 <m:properties>
 <d:Username> 
 <d:Email>
 <d:FirstName>
-<d:LastName>Te
+<d:LastName>
 <d:Country>
 <d:Phone/>
 <d:Address/>
@@ -234,16 +235,39 @@ enable="true"/>
 <d:SubUsage>unknown</d:SubUsage>
 </m:properties>
 </content>
-	</span> </p>
-	<p align="justify">The users are sorted depending on the username.</p>
-	<p align="justify"><strong> STEP 4</strong> Verify that the number returned by the URL:
-		 <span style="color: #0000ff;"> https:// DHuS_URL /odata/v1/Users/$count?</span>
+	</code>
+<p align="justify">The users are sorted depending on the username.</p>
+	<p align="justify"><strong> STEP 4</strong> </p>
+	<p align="justify"> Verify that the number returned by the URL:</p>
+<p align="justify"><span style="color: #0000ff;"> https:// DHuS_URL /odata/v1/Users/$count?</span></p>
 <p align="justify"> Is equal to the total number of users registered to the Hub (The total number of users is visible from the GUI under management->Users) 
 </p> 
-	<p align="justify">The number of users is the same. </p>	
+<p align="justify">The number of users is the same. </p>	
+<p align="justify"><strong> STEP 5</strong> </p>
+<p align="justify"> Log in with as a general user (search, download) and access the following URL:</p>
+<p align="justify"><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users?$filter= $filter=Username eq ‘Username’</span></p>
+<p align="justify">The User information about the user are visualised. When refreshing the page pushing the F5 button, the field “updated” is updated with the current time.</p>	
 
+<p align="justify"><strong> STEP 6</strong> </p>
+	<p align="justify">Access the Node:</p>
+<p align="justify"><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users(‘Username’)/Connections </span></p>
+<p align="justify">All the URL accessed by the user are listed. For each connection the following info are displayed:</p>
+<code><p align="justify"><span style="color: #0000ff;">
+	<p align="justify"> <entry></p>
+<p align="justify"><id></p>
+<p align="justify"><title> </p>
+<p align="justify"><updated></p>
+<p align="justify"><m:properties></p>
+<p align="justify"><d:Id></p>
+<p align="justify"><d:Date></p>
+<p align="justify"><d:RemoteIp></p>
+<p align="justify"><d:Request></p>
+<p align="justify"><d:Duration></p>
 
-			    
+	</code>
+	
+	</p>
+	
 
 			    
 			    
