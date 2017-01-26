@@ -78,10 +78,10 @@
 <p align="JUSTIFY">
 User connection information inspection via OData protocol </p>
 <p align="JUSTIFY">The table shows in detail all steps  needed to visualize the information about users and their connections through OData.</p>
-<!--
-<table style="border: 1px solid black; border-collapse: collapse; height: 171px;" width="455">
+
+<table style="border: 1px solid black; border-collapse: collapse; float: left";>
 <tbody>
-<tr><!-- <th><a href="installation.html#Introduction">Introduction</a></th><th style="border: 1px solid black;">Step ID</th><th style="border: 1px solid black;">Step Description</th><th style="border: 1px solid black;"><strong>Expected Output</strong></th></tr>
+	<tr><th style="border: 1px solid black;"><strong>Step ID</strong></th><th style="border: 1px solid black;"><strong>Step Description</strong></th><th style="border: 1px solid black;"><strong>Expected Output</strong></th></tr>
 <tr><th style="border: 1px solid black;">1.</th><th style="border: 1px solid black;">
 <p style="text-align: justify;">Stop DHuS</p>
 <p style="text-align: justify;">Add to the server.xml file the following lines</p>
@@ -203,59 +203,8 @@ Download&nbsp;</th></tr>
 <p style="text-align: justify;"><span style="color: #0000ff;">https://[dhus]/odata/v1/Connections?$filter=Status eq 'PENDING'</span></p>
 </th><th style="border: 1px solid black;">All the on-going request managed by DHuS are visualized. In particular, the download launched in step 10 of this procedure&nbsp;</th></tr>
 </tbody>
-</table>-->
-		  
-	
-<table style="border: 1px solid black; border-collapse: collapse; float: left;">
-<tbody>
-<tr><th style="border: 1px solid black;"><strong>Step ID</strong></th><th style="border: 1px solid black;"><strong>Step Description</strong></th><th style="border: 1px solid black;"><strong>Expected Output</strong></th></tr>
-<tr>
- <th style="border: 1px solid black;">Step 1</th><th style="border: 1px solid black;">
-<p style="text-align: left;" align="justified">Stop DHuS</p>
-<p style="text-align: left;" align="justified">Add to the server.xml file the following lines:</p>
-<p style="text-align: left;"><span style="color: #0000ff;">&lt; Valve className="fr.gael.dhus.server.http.valve.AccessValve" pattern=".*" useLogger="true" enable="true"/&gt;</span></p>
-<p style="text-align: left;" align="justified">Start DHuS</th>
-<th style="border: 1px solid black;">-</th>
-</tr>
-	<tr>
-<th style="border: 1px solid black;">Step 2</th><th style="border: 1px solid black;">
-<th style="border: 1px solid black;"></th>Log in as administrator (root) <th style="border: 1px solid black;">
-	<th style="border: 1px solid black;">-</th></tr>
-	
-tr>
-<th style="border: 1px solid black;">Step 3</th><th style="border: 1px solid black;">
-	<th style="border: 1px solid black;"></th><p align="justify">Access the following link:</p>
-https://DHuS_URL/odata/v1/Users?$orderby=Username 
-<p align="justify"> verify that the  list of users is visible and it is sorted depending on the username</p>
-<th style="border: 1px solid black;">
-	<th style="border: 1px solid black;">The following information relative to each user is visualized
-<p code>
-<m:properties>
-<d:Username> 
-<d:Email>
-<d:FirstName>
-<d:LastName>Te
-<d:Country>
-<d:Phone/>
-<d:Address/>
-<d:Domain>
-<d:SubDomain>
-<d:Usage>
-<d:SubUsage>unknown</d:SubUsage>
-</m:properties>
-</content>
-	</p> 
-	<p align="justify">The users are sorted depending on the username</p>
-</th></tr>
-	
-	
-	
-	
-</tbody>
-</table>    
-		    
-		    
-		    
+</table>
+
 		    
 		    </article>
 		</div>
