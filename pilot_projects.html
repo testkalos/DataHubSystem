@@ -94,23 +94,24 @@ The following are the prerequisites for the Unix system where the DHuS will be i
 
 <p align="justify"><strong> STEP1:</strong>In a directory of your choice, create the working directory for the application Docker_Dhus:
 <code>
-mkdir Docker_Dhus
-cd Docker_Dhus
-				</code>			
+<p><span style="color: #0000ff;">mkdir Docker_Dhus</span></p>
+	<p><span style="color: #0000ff;">cd Docker_Dhus</span></p>
+</code>			
 <p align="JUSTIFY">
 	The rest of commands below must be run from inside the Docker_Dhus directory:</p>
 <p align="justify"><strong> STEP 2:</strong>In the directory Docker_Dhus, extract the content of the file Docker_Dhus_files_for_source_code.tar:</p>
-				<code>tar xvf Docker_Dhus_files_for_source_code.tar</code>
+<code>
+	<p><span style="color: #0000ff;">tar xvf Docker_Dhus_files_for_source_code.tar</span></p>
 <p align="justify"><strong> STEP 3:</strong>Download the Docker Dhus build environment from the Docker Hub and build the local image:</p> 
-				<code>docker-compose build</code>
+	<code><p> <span style="color: #0000ff;">docker-compose build</span> </p></code>
 <p align="justify"><strong> STEP 4:</strong>Clone the DHuS source distribution from the github:</p>
-				<code>docker-compose run dhus clone</code>
+	<code><p> <span style="color: #0000ff;">docker-compose run dhus clone</span></p></code>
 <p align="justify"><strong> STEP 5:</strong>From the cloned DHuS source distribution build the application:</p>
-				<code>docker-compose run dhus build</code>
-				<p align="justify"><strong> STEP 6:</strong>Install the builded DHuS:</p>
-				<code> docker-compose run dhus install</code>
-				<p align="justify"><strong> STEP 7:</strong>Start the installed DHuS:</p>
-				<code>docker-compose run --service-ports dhus execute &</code>
+	<code><p><span style="color: #0000ff;">docker-compose run dhus build</span></p></code>
+<p align="justify"><strong> STEP 6:</strong>Install the builded DHuS:</p>
+<code><p><span style="color: #0000ff;">docker-compose run dhus install</span></p></code>
+<p align="justify"><strong> STEP 7:</strong>Start the installed DHuS:</p>
+	<code><p><span style="color: #0000ff;"> docker-compose run --service-ports dhus execute & </span></p></code>
 <p align="justify">				
 	The server will be accessible at: http://localhost:8081</p>
 <p align="justify"> Note: In case the local port 8081 is being used by another application on the host, modify the docker-compose.yml file distributed with the tar:
@@ -126,9 +127,9 @@ cd Docker_Dhus
 <p align="justify"> To stop the DHuS properly, execute the stop.sh script internally to the container:</p>
 
 				<p align="justify"><strong> STEP 1:</strong> Verify the name of the running docker container executing the DHuS:</p>
-				<code>docker ps -a</code>
+	<code><p><span style="color: #0000ff;"> docker ps -a</span></p></code>
 				<p align="justify"><strong> STEP 2:</strong>  Stop the DHuS: </p>
-	<CODE> docker exec &LT;container name> /usr/shared/DHUS/stop.sh	</code>
+	<code><p><span style="color: #0000ff;"> docker exec &LT;container name> /usr/shared/DHUS/stop.sh</span></p>	</code>
 <code>
 Eg:
 $ docker ps -a:
@@ -137,7 +138,7 @@ CONTAINER ID      IMAGE               COMMAND          CREATED             STATU
 127d7b2b81f3     dockerdhus_dhus       "make execute"        7 minutes ago       Exited (0) 5 minutes ago                                        dockerdhus_dhus_run_5
 3325e95b078f      dockerdhus_dhus       "make execute"      41 minutes ago      Exited (0) 7 minutes ago                                        dockerdhus_dhus_run_4
 	</code>
-	<code>$ docker exec dockerdhus_dhus_run_6 /usr/shared/DHUS/stop.sh	</code>
+	<code><p><span style="color: #0000ff;"> $ docker exec dockerdhus_dhus_run_6 /usr/shared/DHUS/stop.sh</span> </p>	</code>
 						
 						
 						
