@@ -211,10 +211,10 @@ Download&nbsp;</th></tr>
 enable="true"/>
 	</span></p>
 			    <p align="justify">Start DHuS</p>
-			    <p align="justify"><strong> STEP 2</strong></p> 
+			    <p align="justify"><strong> STEP 2:</strong></p> 
 			    <p align="justify">Log in as administrator (root)</p>
 			  
-			    <p align="justify"><strong> STEP 3</strong></p>
+			    <p align="justify"><strong> STEP 3:</strong></p>
 			  <p align="justify"> Access the following link:</p>
 			   
 			    <p><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users?$orderby=Username</span> </p> 
@@ -240,18 +240,18 @@ enable="true"/>
 	</code>
 	
 <p align="justify">The users are sorted depending on the username.</p>
-	<p align="justify"><strong> STEP 4</strong> </p>
+	<p align="justify"><strong> STEP 4: </strong> </p>
 	<p align="justify"> Verify that the number returned by the URL:</p>
 <p align="justify"><span style="color: #0000ff;"> https:// DHuS_URL /odata/v1/Users/$count?</span></p>
 <p align="justify"> Is equal to the total number of users registered to the Hub (The total number of users is visible from the GUI under management->Users) 
 </p> 
 <p align="justify">The number of users is the same. </p>	
-<p align="justify"><strong> STEP 5</strong> </p>
+<p align="justify"><strong> STEP 5: </strong> </p>
 <p align="justify"> Log in with as a general user (search, download) and access the following URL:</p>
 <p align="justify"><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users?$filter= $filter=Username eq ‘Username’</span></p>
 <p align="justify">The User information about the user are visualised. When refreshing the page pushing the F5 button, the field “updated” is updated with the current time.</p>	
 
-<p align="justify"><strong> STEP 6</strong> </p>
+<p align="justify"><strong> STEP 6:</strong> </p>
 	<p align="justify">Access the Node:</p>
 <p align="justify"><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users(‘Username’)/Connections </span></p>
 <p align="justify">All the URL accessed by the user are listed. For each connection the following info are displayed:</p>
@@ -270,7 +270,7 @@ enable="true"/>
 	</span>
 	</code>
 	
-<p align="justify"><strong> STEP 7</strong> </p>	
+<p align="justify"><strong> STEP 7: </strong> </p>	
 	<p align="justify">Once logged in as administrator, access the URL:</p> 
 <p align="justify"><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users(‘root’)/SystemRoles </span></p>
 	<p align="justify"> to visualize the user roles of the administrator user</p>
@@ -283,7 +283,7 @@ enable="true"/>
 	<p align="justify">&bull;Data manager</p>
 	<p align="justify">&bull;Download</p>
 
-<p align="justify"><strong> STEP 8</strong> </p>
+<p align="justify"><strong> STEP 8:</strong> </p>
 	<p align="justify">Access the URL:</p> 
 <p align="justify"><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Networks(0L)/NetworkStatistic </span></p> 
 	<p align="justify">To visualize the statistics associated to the network. </p>
@@ -304,12 +304,12 @@ enable="true"/>
 </content>
 </entry>
 	</p>
-<p align="justify"><strong> STEP 9</strong> </p>	
+<p align="justify"><strong> STEP 9:</strong> </p>	
 	<p align="justify"> Access the URL:</p> 
 <p align="justify"><span style="color: #0000ff;"> https://[dhus]/dhus/odata/v1/Connections?$filter=substringof(Request,'odata/v1')</span></p>
 	<p align="justify">to visualize all the odata queries performed by the users.All the odata queries performed by the users are visualized</p> 
 	
-<p align="justify"><strong> STEP 10</strong> </p>	
+<p align="justify"><strong> STEP 10:</strong> </p>	
 	<p align="justify">Launch a product download via GUI.Access the URL:</p> 
 <p align="justify"><span style="color: #0000ff;"> https://[dhus]/odata/v1/Connections?$filter=Status eq 'PENDING'</span></p>
 
