@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>   
+<html>
+	<head>
+		<title>Open Source Portal</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+ 		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/skel-layers.min.js"></script>
+		<script src="assets/js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="assets/css/skel.css" />
+			<link rel="stylesheet" href="assets/css/style.css" />
+			<link rel="stylesheet" href="assets/css/style-wide.css" />
+		</noscript>
+	
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+				<h1><a href="index.html" id="logo">Open Source Portal</a></h1>		
+     <!--<h1>
+     <a href="index.html" class="image left"><img src="assets/images/oslogomini.jpg" "alt="" /></a>
+     <a href="http://ec.europa.eu/index_en.html" class="image left"><img src="assets/images/ec-mini.jpg" "alt=""/></a>
+     <a href="index.html" id="logo"> <em>Open Source Portal</em></a>
+     <a href="http://www.copernicus.eu/" class="image left"><img src="assets/images/copernicus-mini.jpg" "alt=""/></a>
+     <a href="http://www.esa.int/ESA" class="image left"><img src="/assets/images/esa-mini.jpg" "alt=""/></a>    
+     </h1>-->
+				
+		<nav id="nav">
+						<ul>
+						<li ><a href="index.html">Home</a></li>
+						<li ><a href="about.html">About</a></li>
+
+							<li ><a href="https://github.com/SentinelDataHub/DataHubSystem">Download</a></li>	
+							<li ><a href="support.html">Support</a></li>
+							
+							<li>
+               	<a href="">Documentation</a>
+								<ul>
+									<li><a href="governance.html"> Governance Model</a></li>
+									<li><a href="guidelines.html">Developer Guidelines</a></li>
+                 <!-- <li><a href="#">Interface Control Document</a></li>-->
+      		       </ul>
+							</li>
+					
+							
+				<li ><a href="demo.html">Pilot Projects</a></li>
+							<li ><a href="">External Resources</a>
+							         <ul>
+								<li><a href="http://step.esa.int/main/toolboxes/snap/"> SNAP</a></li>
+								<li><a href="http://step.esa.int/main/toolboxes/sentinel-1-toolbox/">S-1 Toolbox </a></li>
+								<li><a href="http://step.esa.int/main/toolboxes/sentinel-2-toolbox/">S-2 Toolbox</a></li>
+								<li><a href="http://step.esa.int/main/toolboxes/sentinel-3-toolbox/">S-3 Toolbox</a></li>
+								</ul>
+							</li>
+				<li ><a href="contact.html">Contact Us</a></li>
+					
+						</ul>
+					</nav>
+
+			</div>
+				
+<!-- Main -->
+<section id="banner">
+</section>
+	<section class="wrapper style1">
+		<div class="container">
+			<div id="content">
+				<!-- Content -->
+					<article>
+						
+						<header>
+							<h2>Pilot Projects</h2>
+											</header>
+<p align="JUSTIFY">
+						<h3>Introduction</h3>
+	</p>
+<h2> Installation of DHuS from source distribution using Docker</h2>
+<p align="JUSTIFY"> Short guide for downloading the DHuS source distribution, compiling the application, install and execute it, using the Docker and Docker-compose S/W.</p>
+
+				<h2>1.Prerequisites</h2>
+<p align="JUSTIFY">
+The following are the prerequisites for the Unix system where the DHuS will be installed:
+<p align="JUSTIFY">&bull; Connection to Internet;
+<p align="JUSTIFY">&bull; Docker and docker-compose S/W already installed. Please refer to the official Docker documentation at https://docs.docker.com/ for the Docker and Docker-Compose installation requisites and installation instructions for the different Operating Systems.</p>
+<p align="JUSTIFY">&bull;Creation of user and group “dhus” with UID 10125 and GID 10125. If a user/group dhus is already existing on the host with different UID/GID, another name can be used. The user must be also added to the group docker (created as part of the docker s/w installation).</p>
+				<h2>2.	Installation and execution</h2>
+<p align="JUSTIFY">
+ Using the dhus account (or the other name assigned to UID 10125):</p>
+
+<p align="justify"><strong> STEP1:</strong>In a directory of your choice, create the working directory for the application Docker_Dhus:
+<code>
+mkdir Docker_Dhus
+cd Docker_Dhus
+				</code>			
+<p align="JUSTIFY">
+	The rest of commands below must be run from inside the Docker_Dhus directory:</p>
+<p align="justify"><strong> STEP 2:</strong>In the directory Docker_Dhus, extract the content of the file Docker_Dhus_files_for_source_code.tar:</p>
+				<code>tar xvf Docker_Dhus_files_for_source_code.tar</code>
+<p align="justify"><strong> STEP 3:</strong>Download the Docker Dhus build environment from the Docker Hub and build the local image:</p> 
+				<code>docker-compose build</code>
+<p align="justify"><strong> STEP 4:</strong>Clone the DHuS source distribution from the github:</p>
+				<code>docker-compose run dhus clone</code>
+<p align="justify"><strong> STEP 5:</strong>From the cloned DHuS source distribution build the application:</p>
+				<code>docker-compose run dhus build</code>
+				<p align="justify"><strong> STEP 6:</strong>Install the builded DHuS:</p>
+				<code> docker-compose run dhus install</code>
+				<p align="justify"><strong> STEP 7:</strong>Start the installed DHuS:</p>
+				<code>docker-compose run --service-ports dhus execute &</code>
+<p align="justify">				
+	The server will be accessible at: http://localhost:8081</p>
+<p align="justify"> Note: In case the local port 8081 is being used by another application on the host, modify the docker-compose.yml file distributed with the tar:
+				</p>
+<p align="justify">				
+	From: “8081:8081”</p>
+<p align="justify">To: “&lt;your chosen port>: 8081”
+</p>
+				<p align="justify">Start the DHuS again.</p>
+
+				<h2>3.	DHuS stop</h2>
+
+<p align="justify"> To stop the DHuS properly, execute the stop.sh script internally to the container:</p>
+
+				<p align="justify"><strong> STEP 1:</strong> Verify the name of the running docker container executing the DHuS:</p>
+				<code>docker ps -a</code>
+				<p align="justify"><strong> STEP 2:</strong>  Stop the DHuS: </p>
+	<CODE> docker exec &LT;container name> /usr/shared/DHUS/stop.sh	</code>
+<code>
+Eg:
+$ docker ps -a:
+CONTAINER ID      IMAGE               COMMAND          CREATED             STATUS                   PORTS                    NAMES
+89060bd12a31     dockerdhus_dhus      "make execute"        3 minutes ago       Up 3 minutes           0.0.0.0:8081->8081/tcp      dockerdhus_dhus_run_6
+127d7b2b81f3     dockerdhus_dhus       "make execute"        7 minutes ago       Exited (0) 5 minutes ago                                        dockerdhus_dhus_run_5
+3325e95b078f      dockerdhus_dhus       "make execute"      41 minutes ago      Exited (0) 7 minutes ago                                        dockerdhus_dhus_run_4
+	</code>
+	<code>$ docker exec dockerdhus_dhus_run_6 /usr/shared/DHUS/stop.sh	</code>
+						
+						
+						
+						
+						
+						
+						
+						
+	</article>
+		</div>
+		</div>
+	</section>
