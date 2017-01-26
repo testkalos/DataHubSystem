@@ -130,14 +130,51 @@
 	<p align="JUSTIFY">&bull; Stop the DHuS:</p> 
 	<p><span style="color: #0000ff;"> docker exec &lt; container ID> /home/dhus/DHUS/stop.sh</span></p>	
 
-Eg:
-$ docker ps -a:
-CONTAINER ID     IMAGE          COMMAND               CREATED             STATUS                 PORTS                  NAMES
-9bde14068242         dhus           "bash -c 'cd /home/dh"     3 minutes ago       Up 3 minutes            0.0.0.0:8081->8081/tcp     big_wozniak
-2ffc742b2e92           dhus            "bash -c 'cd /home/dh"    41 minutes ago    Exited (0) About an hour ago                           angry_thompson
-d2a17cefc308           dhus            "bash -c 'cd /home/dh"    2 hours ago          Exited (0) About an hour ago                            thirsty_babbage
-$ docker exec 9bde14068242 /home/dhus/DHUS/stop.sh	
 
+Example: 
+	<p><span style="color: #0000ff;"> $ docker ps -a:</span></p>
+<table style="height: 74px;" width="463">
+<tbody>
+<tr>
+<td><strong>CONTAINER ID</strong></td>
+<td><strong>IMAGE</strong></td>
+<td><strong>COMMAND</strong></td>
+<td><strong>CREATED</strong></td>
+<td><strong>STATUS</strong></td>
+<td><strong>PORTS</strong></td>
+<td><strong>NAMES</strong></td>
+</tr>
+<tr>
+<td><span style="color: #ff0000;">9bde14068242&nbsp; </span></td>
+<td><span style="color: #ff0000;">dhus </span></td>
+<td><span style="color: #ff0000;">"bash -c 'cd /home/dh"&nbsp;&nbsp;&nbsp;&nbsp; </span></td>
+<td><span style="color: #ff0000;">3 minutes ago&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></td>
+<td><span style="color: #ff0000;">Up 3 minutes&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+<td><span style="color: #ff0000;">0.0.0.0:8081-&gt;8081/tcp</span></td>
+<td>
+<p><span style="color: #ff0000;">big_wozniak</span></p>
+</td>
+</tr>
+<tr>
+<td>2ffc742b2e92&nbsp;&nbsp;</td>
+<td>dhus</td>
+<td>"bash -c 'cd /home/dh"&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>41 minutes ago&nbsp;&nbsp;&nbsp;</td>
+<td>Exited (0) About an hour ago</td>
+<td>&nbsp;</td>
+<td>angry_thompson</td>
+</tr>
+<tr>
+<td>d2a17cefc308&nbsp;</td>
+<td>dhus</td>
+<td>"bash -c 'cd /home/dh"&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>2 hours ago&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>Exited (0) About an hour ago</td>
+<td>&nbsp;</td>
+<td>thirsty_babbage</td>
+</tr>
+</tbody>
+</table>
 						
 						
 						
