@@ -205,12 +205,46 @@ Download&nbsp;</th></tr>
 </tbody>
 </table>-->
 		 <p align="justify"><strong> STEP 1</strong> Stop DHuS 
-Add to the server.xml file the following lines:</p>
-    <code><span style="color: #0000ff;"><Valve className="fr.gael.dhus.server.http.valve.AccessValve"
-						 pattern=".* </span></code>
+<p>Add to the server.xml file the following lines:</p>
+<p><span style="color: #0000ff;"> Valve className="fr.gael.dhus.server.http.valve.AccessValve" pattern=".*  useLogger="true"
+enable="true"/>
+	</span><p>
+			    <p align="justify">Start DHuS</p>
+
+			    <p align="justify"><strong> STEP 2</strong> Stop DHuS    </p> 
+			    <p align="justify">Log in as administrator (root)</p>
+			  
+			    <p align="justify"><strong> STEP 3</strong>Access the following link
+			   
+			    <p><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users?$orderby=Username</span> </p> 
+<p align="justify"> Verify that the  list of users is visible and it is sorted depending on the username </p>
+			    <p align="justify"> The following information relative to each user is visualized:</p>
+<p align="justify"><span style="color: #0000ff;">
+<m:properties>
+<d:Username> 
+<d:Email>
+<d:FirstName>
+<d:LastName>Te
+<d:Country>
+<d:Phone/>
+<d:Address/>
+<d:Domain>
+<d:SubDomain>
+<d:Usage>
+<d:SubUsage>unknown</d:SubUsage>
+</m:properties>
+</content>
+	</span> </p>
+	<p align="justify">The users are sorted depending on the username.</p>
+	<p align="justify"><strong> STEP 4</strong> Verify that the number returned by the URL:
+		 <span style="color: #0000ff;"> https:// DHuS_URL /odata/v1/Users/$count?</span>
+<p align="justify"> Is equal to the total number of users registered to the Hub (The total number of users is visible from the GUI under management->Users) 
+</p> 
+	<p align="justify">The number of users is the same. </p>	
+
 
 			    
-			    
+
 			    
 			    
 		    
