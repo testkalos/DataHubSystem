@@ -204,6 +204,34 @@ Download&nbsp;</th></tr>
 </th><th style="border: 1px solid black;">All the on-going request managed by DHuS are visualized. In particular, the download launched in step 10 of this procedure&nbsp;</th></tr>
 </tbody>
 </table>
+		  
+	<table style="border:1px solid black;border-collapse:collapse;">
+<tbody>
+<tr>
+    <th style="border:1px solid black;">
+      Step 1  </th>
+  <th style="border:1px solid black;">Stop DHuS
+
+Add to the server.xml file the following lines
+
+<Valve className="fr.gael.dhus.server.http.valve.AccessValve"
+
+    pattern=".*"
+
+   useLogger="true"
+
+enable="true"/>
+
+ Start DHuS</th>
+  <th style="border:1px solid black;">-</th>
+</tr>
+</tbody>
+</table>	    
+		    
+		    
+		    
+		    
+		    
 		    </article>
 		</div>
 	    </div>
