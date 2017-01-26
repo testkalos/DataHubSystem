@@ -221,24 +221,24 @@ enable="true"/>
 <p align="justify"> Verify that the  list of users is visible and it is sorted depending on the username </p>
 			    <p align="justify"> The following information relative to each user is visualized:</p>
 
-<pre>
-<code>
-<p><span style="color: #0000ff;"> &lt;m:properties></span></p>
-<p><span style="color: #0000ff;">&lt;d:Username> </span></p>
-<p><span style="color: #0000ff;">&lt;d:Email></span></p>
-<p><span style="color: #0000ff;">&lt;d:FirstName></span></p>
-<p><span style="color: #0000ff;">&lt;:LastName></span></p>
-<p><span style="color: #0000ff;">&lt;d:Country></span></p>
-<p><span style="color: #0000ff;">&lt;d:Phone/></span></p>
-<p><span style="color: #0000ff;">&lt;d:Address/></span></p>
-<p><span style="color: #0000ff;">&lt;d:Domain></span></p>
-<p><span style="color: #0000ff;">&lt;d:SubDomain></span></p>
-<p><span style="color: #0000ff;">&lt;d:Usage></span></p>
-<p><span style="color: #0000ff;">&lt;d:SubUsage>unknown&lt;/d:SubUsage></span></p>
-<p><span style="color: #0000ff;">&lt;/m:properties></span></p>
-<p><span style="color: #0000ff;">&lt;/content>;</span></p>
+
+<pre><code>&lt;m:properties>
+&lt;d:Username> 
+&lt;d:Email>
+&lt;d:FirstName>
+&lt;:LastName>
+&lt;d:Country>
+&lt;d:Phone/>
+&lt;d:Address/>
+&lt;d:Domain>
+&lt;d:SubDomain>
+&lt;d:Usage>
+&lt;d:SubUsage>unknown&lt;/d:SubUsage>
+&lt;/m:properties>
+&lt;/content>;
+
 </pre>
-</code>  
+</code>
 <p align="justify">The users are sorted depending on the username.</p>
 	<p align="justify"><strong> STEP 4: </strong> </p>
 	<p align="justify"> Verify that the number returned by the URL:</p>
@@ -256,19 +256,19 @@ enable="true"/>
 <p align="justify"><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users(‘Username’)/Connections </span></p>
 <p align="justify">All the URL accessed by the user are listed. For each connection the following info are displayed:</p>
 <code><p align="justify"><span style="color: #0000ff;">
-	<p align="justify"> <entry></p>
-<p align="justify"><id></p>
-<p align="justify"><title> </p>
-<p align="justify"><updated></p>
-<p align="justify"><m:properties></p>
-<p align="justify"><d:Id></p>
-<p align="justify"><d:Date></p>
-<p align="justify"><d:RemoteIp></p>
-<p align="justify"><d:Request></p>
-<p align="justify"><d:Duration></p>
-
-	</span>
-	</code>
+<pre><code>
+&lt;entry>
+&lt;id>
+&lt;title 
+&lt;updated>
+&lt;m:properties>
+&lt;d:Id>
+&lt;d:Date>
+&lt;d:RemoteIp>
+&lt;d:Request>
+&lt;d:Duration>
+</pre>
+</code>
 	
 <p align="justify"><strong> STEP 7: </strong> </p>	
 	<p align="justify">Once logged in as administrator, access the URL:</p> 
@@ -290,20 +290,22 @@ enable="true"/>
 <p align="justify">The NetworkStatistics reports the informations related to the statistics of the network (activity period in ms, number of connection within this period). 
 
 <id>
-<p align="justify"><span style="color: #0000ff;">https://scihub-test.esa.int/dhus/odata/v1/Networks(0L)/NetworkStatistics(0L)</span></p>
-</id>
-<title type="text">0</title>
-<updated>2016-02-25T15:32:12.613Z</updated>
-<category term="DHuS.NetworkStatistic" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme"/>
-<link href="NetworkStatistics(0L)" rel="edit" title="NetworkStatistic"/>
-<content type="application/xml">
-<m:properties>
-<d:Id>0</d:Id>
-<d:ActivityPeriod>
-<d:ConnectionNumber></m:properties>
-</content>
-</entry>
-	</p>
+<p align="justify"><span style="color: #0000ff;"><p>&lt;id&gt; https://scihub-test.esa.int/dhus/odata/v1/Networks(0L)/NetworkStatistics(0L)</p>
+<pre><code>
+
+&lt;title type="text"&gt;0
+&lt;updated&gt; 2016-02-25T15:32:12.613Z &lt;/updated&gt;
+&lt;category term="DHuS.NetworkStatistic"  &lt;scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme"/gt;
+&lt;link href="NetworkStatistics(0L)" rel="edit" title="NetworkStatistic"/&gt;
+&lt;content type="application/xml"&gt;
+&lt;m:properties&gt;
+&lt;d:Id&gt;0 &lt;/d:Id&gt;
+&lt;d:ActivityPeriod&gt;
+&lt;d:ConnectionNumber&gt;&lt;/m:properties&gt;
+&lt;/content&gt;
+&lt;/entry&gt;
+</code></pre>
+
 <p align="justify"><strong> STEP 9:</strong> </p>	
 	<p align="justify"> Access the URL:</p> 
 <p align="justify"><span style="color: #0000ff;"> https://[dhus]/dhus/odata/v1/Connections?$filter=substringof(Request,'odata/v1')</span></p>
