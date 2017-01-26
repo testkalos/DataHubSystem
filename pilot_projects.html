@@ -131,14 +131,52 @@ The following are the prerequisites for the Unix system where the DHuS will be i
 				<p align="justify"><strong> STEP 2:</strong>  Stop the DHuS: </p>
 	<code><p><span style="color: #0000ff;"> docker exec &LT;container name> /usr/shared/DHUS/stop.sh</span></p>	</code>
 <code>
-Eg:
-$ docker ps -a:
-CONTAINER ID      IMAGE               COMMAND          CREATED             STATUS                   PORTS                    NAMES
-89060bd12a31     dockerdhus_dhus      "make execute"        3 minutes ago       Up 3 minutes           0.0.0.0:8081->8081/tcp      dockerdhus_dhus_run_6
-127d7b2b81f3     dockerdhus_dhus       "make execute"        7 minutes ago       Exited (0) 5 minutes ago                                        dockerdhus_dhus_run_5
-3325e95b078f      dockerdhus_dhus       "make execute"      41 minutes ago      Exited (0) 7 minutes ago                                        dockerdhus_dhus_run_4
-	</code>
-	<code><p><span style="color: #0000ff;"> $ docker exec dockerdhus_dhus_run_6 /usr/shared/DHUS/stop.sh</span> </p>	</code>
+Example: 
+<code><p><span style="color: #0000ff;">	
+	$ docker ps -a:</span></p></code>
+                                   
+<p>&nbsp;</p>
+<table style="height: 74px;" width="463">
+<tbody>
+<tr>
+<td><strong>CONTAINER ID</strong></td>
+<td><strong>IMAGE</strong></td>
+<td><strong>COMMAND</strong></td>
+<td><strong>CREATED</strong></td>
+<td><strong>STATUS</strong></td>
+<td><strong>PORTS</strong></td>
+<td><strong>NAMES</strong></td>
+</tr>
+<tr>
+<td><span style="color: #ff0000;">&nbsp;89060bd12a31&nbsp;</span></td>
+<td><span style="color: #ff0000;">&nbsp;dockerdhus_dhus&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</span></td>
+<td><span style="color: #ff0000;">&nbsp;"make execute" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+<td><span style="color: #ff0000;">&nbsp;3 minutes ago&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+<td><span style="color: #ff0000;">&nbsp;Up 3 minutes&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+<td><span style="color: #ff0000;">&nbsp;0.0.0.0:8081-&gt;8081/tcp&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+<td><span style="color: #ff0000;">dockerdhus_dhus_run_6&nbsp;</span></td>
+</tr>
+<tr>
+<td>&nbsp;127d7b2b81f3 &nbsp;</td>
+<td>dockerdhus_dhus&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp; &nbsp;&nbsp;"make execute" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>7 minutes ago&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</td>
+<td>Exited (0) 5 minutes ago&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;</td>
+<td>dockerdhus_dhus_run_5</td>
+</tr>
+<tr>
+<td>3325e95b078f</td>
+<td>dockerdhus_dhus&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp; &nbsp;"make execute" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>41 minutes ago&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</td>
+<td>&nbsp;Exited (0) 7 minutes ago&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;</td>
+<td>dockerdhus_dhus_run_4</td>
+</tr>
+</tbody>
+</table>	
+<code><p><span style="color: #0000ff;"> $ docker exec dockerdhus_dhus_run_6 /usr/shared/DHUS/stop.sh</span> </p>	</code>
 						
 						
 						
