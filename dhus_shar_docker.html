@@ -42,7 +42,7 @@
 								<ul>
 									<li><a href="governance.html"> Governance Model</a></li>
 									<li><a href="guidelines.html">Developer Guidelines</a></li>
-                 <!-- <li><a href="#">Interface Control Document</a></li>-->
+               
       		       </ul>
 							</li>
 					
@@ -77,45 +77,58 @@
 											</header>
 <p align="JUSTIFY">
 						<h3>Introduction</h3>
-	</p>
-Installation of DHuS from shar file distribution using Docker
+	
+						<h2>Installation of DHuS from shar file distribution using Docker</h2>
 
-Short guide for installing and executing the DHuS shar distribution, using the Docker S/W.
-1.	Prerequisites
+<p align="JUSTIFY"> Short guide for installing and executing the DHuS shar distribution, using the Docker S/W.<p>
+						<h2>1.	Prerequisites</h2>
 
-The following are the prerequisites for the Unix system where the DHuS will be installed:
--	Connection to Internet
--	docker S/W already installed. Please refer to the official Docker documentation at https://docs.docker.com/ for the Docker installation requisites and installation instructions for the different Operating Systems.
--	Creation of user and group “dhus” with UID 10125 and GID 10125. If a user/group dhus is already existing on the host with different UID/GID, another name can be used. The user must be also added to the group docker (created as part of the docker s/w installation).
+<p align="JUSTIFY">The following are the prerequisites for the Unix system where the DHuS will be installed:</p>
+						<p align="JUSTIFY">&bull; Connection to Internet;</p>
+<p align="JUSTIFY">&bull;Docker S/W already installed. Please refer to the official Docker documentation at https://docs.docker.com/ for the Docker installation requisites and installation instructions for the different Operating Systems.</p>
+<p align="JUSTIFY">&bull;Creation of user and group “dhus” with UID 10125 and GID 10125. If a user/group dhus is already existing on the host with different UID/GID, another name can be used. The user must be also added to the group docker (created as part of the docker s/w installation).</p>
 
-2.	DHuS build and execution
+						<h2> 2.	DHuS build and execution</h2>
 
-Using the dhus account (or the other name assigned to UID 10125):
+						<p align="JUSTIFY">Using the dhus account (or the other name assigned to UID 10125):</p>
 
--	In a directory of your choice, create the directories for building the application Docker_Dhus image and to contain the archive and database. Eg:
-mkdir /home/dhus/Docker_Dhus
-mkdir /home/dhus/DHuS_archive
-cd /home/dhus/Docker_Dhus
-The rest of commands below must be run from inside the Docker_Dhus directory
--	In the directory Docker_Dhus, extract the content of the file Docker_Dhus_file_for_shar.tar:
-tar xvf Docker_Dhus_file_for_shar.tar
--	Build the Docker Dhus image: 
-docker build -t dhus .
--	Start the builded DHuS:
-docker run -u dhus -d -p 8081:8081 -t -v /home/dhus/DHuS_archive:/local_dhus dhus
+<p align="JUSTIFY">&bull; In a directory of your choice, create the directories for building the application Docker_Dhus image and to contain the archive and database. Eg:
+<code>
+	<p><span style="color: #0000ff;"> mkdir /home/dhus/Docker_Dhus</span></p>
+	<p><span style="color: #0000ff;">mkdir /home/dhus/DHuS_archive</span> </p>
+	<p><span style="color: #0000ff;"> cd /home/dhus/Docker_Dhus</span> </p>
+	</code>
+<p align="JUSTIFY"> The rest of commands below must be run from inside the Docker_Dhus directory.</p>
+<p align="JUSTIFY">&bull; In the directory Docker_Dhus, extract the content of the file Docker_Dhus_file_for_shar.tar:
+<code>
+	<p><span style="color: #0000ff;">
+		tar xvf Docker_Dhus_file_for_shar.tar</span> </p>
+<p align="JUSTIFY">&bull; Build the Docker DHus image: </p>
+<p><span style="color: #0000ff;">
+	<code>
+		docker build -t dhus .</code></span></p>
 
-The server will be accessible at http://localhost:8081
-Note: In case the local port 8081 is being used by another application on the host, start the dhus to be listening on another port:
-Eg: “-p 8181:8081”
+<p align="JUSTIFY">&bull; Start the builded DHuS:</p>
+<code>
+	<p><span style="color: #0000ff;">
+	docker run -u dhus -d -p 8081:8081 -t -v /home/dhus/DHuS_archive:/local_dhus dhus</span><p>
+	</code>
 
-3.	DHuS stop
+<p align="JUSTIFY">The server will be accessible at http://localhost:8081</p>
+<p align="JUSTIFY">Note: In case the local port 8081 is being used by another application on the host, start the dhus to be listening on another port:</p>
 
-To stop the DHuS properly, execute the stop.sh script internally to the container:
+	<p align="JUSTIFY">Eg: “-p 8181:8081”</p>
 
--	Verify the ID of the running docker container executing the DHuS:
-docker ps -a
--	Stop the DHuS: 
-docker exec <container ID> /home/dhus/DHUS/stop.sh	
+	<h2>3.	DHuS stop</h2>
+
+<p align="JUSTIFY">To stop the DHuS properly, execute the stop.sh script internally to the container:</p>
+
+	<p align="JUSTIFY">&bull; Verify the ID of the running docker container executing the DHuS:</p>
+<code>
+	<p><span style="color: #0000ff;">
+		docker ps -a</span></p></code>
+	<p align="JUSTIFY">&bull; Stop the DHuS:</p> 
+	<p><span style="color: #0000ff;"> docker exec &lt; container ID> /home/dhus/DHUS/stop.sh</span></p>	
 
 Eg:
 $ docker ps -a:
