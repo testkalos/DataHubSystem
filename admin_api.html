@@ -81,8 +81,8 @@
                         <header>
                             <h2>Admin API</h2>
                                             </header>
-<p align="JUSTIFY">
-User connection information inspection via OData protocol </p>
+
+			    <h1>User connection information inspection via OData protocol </h1>
 <p align="JUSTIFY">The procedure shows in detail all steps  needed to visualize the information about users and their connections through OData.</p>
 <!--
 <table style="border: 1px solid black; border-collapse: collapse; float: left";>
@@ -323,10 +323,62 @@ enable="true"/>
 
 	
 	
+  <h1>User Synchronization via API</h1>
+ <p align="justify"><strong> STEP 1:</strong> Log in the machine where the Front End (FE) DHuS is installed.  This DHuS instance shall be filled with users registered in the Back End (BE).</p>
+	
+  <p align="justify"><strong> STEP 2:</strong>On the DHuS acting as FE, set the environment variables to connect to the syncing instance of the DHuS.</p>
+Example:
+<pre><code>
+export DHOST=localhost:8080
+export DLOGIN=root
+export DPASS=a
+	</code></pre>
+Doing the commands:
+<pre><code>
+echo $DHOST
+echo DLOGIN
+echo DPASS
+</pre> </code>
+the correspondent values are displayed 
+	<p align="justify"><strong> STEP 3 </strong>
+		Create a working folder containing the following scripts and auxiliary files:</p>
+	<p align-="justify">&bull; ./getSynchronizer </p>
+	<p align-="justify">&bull;	./createSynchronizer </p>
+	<p align-="justify">&bull;	Body.txt</p>
+	<p align-="justify">&bull;	./updateSynchronizer </p>
+	<p align-="justify">&bull;	./deleteSynchronizer </p>
+	<p align="justify"> Available on <a href="https://github.com/jobayle/dhus_user_sync_scripts"> https://github.com/jobayle/dhus_user_sync_scripts</a></p>
+	<p align="justify"><strong> STEP 4 </strong>
+	Then use the command:
+./getSynchronizer [id] (if no user synchronizer is available, launchr this command with no id in input)
+The information regarding the currently available user synchronizer are displayed. </p>
+<p align="justify"><strong> STEP 5 </strong>	
+Then create the user synchronizer use the command:
+<pre>
+	<code>
+./createSynchronizer &lt;-D_SCHEDULE=...> &lt;-D_REQUEST=start|stop> &lt;-D_SERVICEURL=...> [-D_LABEL=...] [-D_SERVICELOGIN=...] [-D_SERVICEPASSWORD=...]
+(e.g. /createSynchronizer -D_SCHEDULE="0 */3 * * * ?" -D_REQUEST=stop -D_SERVICEURL="http://192.168.0.105:8080/odata/v1" -D_LABEL=my_user_syncer -D_SERVICELOGIN=root -D_SERVICEPASSWORD=a)
+</code>
+</pre>
+<p align="justify">Performing again the command in step 4 of this procedure, the characteristic of the user sync are displayed. </p> 
+Update the user synchronizer through the following commands:
+<p align="justify"><strong> STEP 6 </strong>
+<pre>
+	<code>	
+./updateSynchronizer <id> [-D_SCHEDULE=...] [-D_REQUEST=start|stop] [-D_SERVICEURL=...] [-D_LABEL=...] [-D_SERVICELOGIN=...] [-D_SERVICEPASSWORD=...]
+(e.g. ./updateSynchronizer 0 -D_SCHEDULE='0 24 * * * ?')
+	</code>
+	</pre>
+	
+<p align="justify"> Performing again the command in step 4 of this procedure, the characteristic of the user sync are displayed updated as requested.</p>	
 
-			    
-			    
-		    
+<p align="justify"><strong> STEP 7 </strong>		
+Delete the synchronizer using the following command:
+<code>
+./deleteSynchronizer &lt;id>
+	</code>
+<p align="justify">Performing again the command in step 4 of this procedure, the characteristic of the user sync are no longer available.</p>
+	
 		    </article>
 		</div>
 	    </div>
@@ -348,6 +400,4 @@ enable="true"/>
     
     
     
-    
-    </body>
-</html>
+   
