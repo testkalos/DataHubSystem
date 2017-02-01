@@ -249,8 +249,6 @@ enable="true"/>
 &lt;/m:properties>
 &lt;/content>;
 
-</pre>
-</code>
 <p align="justify">The users are sorted depending on the username.</p>
 	<p align="justify"><strong> STEP 4: </strong> </p>
 	<p align="justify"> Verify that the number returned by the URL:</p>
@@ -279,9 +277,8 @@ enable="true"/>
 &lt;d:RemoteIp>
 &lt;d:Request>
 &lt;d:Duration>
-</pre>
 </code>
-	</p>	
+</pre>
 <p align="justify"><strong> STEP 7: </strong> </p>	
 	<p align="justify">Once logged in as administrator, access the URL:</p> 
 <p align="justify"><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users(‘root’)/SystemRoles </span></p>
@@ -317,7 +314,7 @@ enable="true"/>
 &lt;/content&gt;
 &lt;/entry&gt;
 </code></pre>
-	</p>
+	
 <p align="justify"><strong> STEP 9:</strong> </p>	
 	<p align="justify"> Access the URL:</p> 
 <p align="justify"><span style="color: #0000ff;"> https://[dhus]/dhus/odata/v1/Connections?$filter=substringof(Request,'odata/v1')</span></p>
@@ -371,12 +368,12 @@ Create the user synchronizer use the command:
 <p align="justify">Performing again the command in step 4 of this procedure, the characteristic of the user sync are displayed. </p> 
 Update the user synchronizer through the following commands:
 <p align="justify"><strong> STEP 6: </strong>
-<pre>
-	<code>	
+
+
+
 ./updateSynchronizer <id> [-D_SCHEDULE=...] [-D_REQUEST=start|stop] [-D_SERVICEURL=...] [-D_LABEL=...] [-D_SERVICELOGIN=...] [-D_SERVICEPASSWORD=...]
 (e.g. ./updateSynchronizer 0 -D_SCHEDULE='0 24 * * * ?')
-	</code>
-	</pre>
+	
 	
 <p align="justify"> Performing again the command in step 4 of this procedure, the characteristic of the user sync are displayed updated as requested.</p>	
 
@@ -417,41 +414,41 @@ If the log produces, for a specific UUID, the string "in XXX s return code 20...
 
 
 			    
-			    <section class="wrapper style1">
+	 <section class="wrapper style1">
 		<div class="container">
 			<div class="row double">
-				<section class="4u">
-					<div class="box highlight">
+					<section class="4u">
+						<div class="box highlight">
 						<i class="icon major fa-paper-plane"></i>
-					<h3><a href="https://raw.githubusercontent.com/testkalos/DataHubSystem/master/delete_mod.sh">Delete_mod.sh</a></h3>
-						
-					</div>
-				</section>
-				<section class="4u">
+						<h3><a href="https://raw.githubusercontent.com/testkalos/DataHubSystem/master/delete_mod.sh">Delete_mod.sh</a></h3>	
+						</div>
+					</section>
+					
+					<section class="4u">
 					<div class="box highlight">
 						<i class="icon major fa-pencil"></i>
-					<h3><a href="https://raw.githubusercontent.com/testkalos/DataHubSystem/master/getID.sh">GetId.sh</a></h3>
-					
+						<h3><a href="https://raw.githubusercontent.com/testkalos/DataHubSystem/master/getID.sh">GetId.sh</a></h3>
 					</div>
-				</section>
-				<section class="4u">
-					<div class="box highlight">
+					</section>
+					
+					<section class="4u">
+						<div class="box highlight">
 						<i class="icon major fa-wrench"></i>
                            
 						<h3><a href="https://raw.githubusercontent.com/testkalos/DataHubSystem/master/del_prod_mod.sh">Del_prod_mod.sh</a></h3>
-					
-					</div>
-				</section>
-			</div>
-		</div>
-	</section>
-		    
+						</div>
+					</section>
+		    		 </div>
+		   	</div>
+	      </section>
+		   
+		
+        </article>
+  </div>
+</div>
+</section>
+</body>
+</html>
 
-		    
-		    </article>
-            </div>
-        </div>
 
-    </section>
-    </body>
-</html>			    
+  		    
