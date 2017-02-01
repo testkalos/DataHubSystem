@@ -357,7 +357,10 @@ Create the user synchronizer use the command:
 <pre>
 	<code>
 ./createSynchronizer &lt;-D_SCHEDULE=...> &lt;-D_REQUEST=start|stop> &lt;-D_SERVICEURL=...> [-D_LABEL=...] [-D_SERVICELOGIN=...] [-D_SERVICEPASSWORD=...]
-(e.g. /createSynchronizer -D_SCHEDULE="0 */3 * * * ?" -D_REQUEST=stop -D_SERVICEURL="http://192.168.0.105:8080/odata/v1" -D_LABEL=my_user_syncer -D_SERVICELOGIN=root -D_SERVICEPASSWORD=a)
+<p align="justify">(Example:</p>
+
+. /createSynchronizer -D_SCHEDULE="0 */3 * * * ?" -D_REQUEST=stop -D_SERVICEURL="http://192.168.0.105:8080/odata/v1" -D_LABEL=my_user_syncer -D_SERVICELOGIN=root -D_SERVICEPASSWORD=a)
+
 </code>
 </pre>
 <p align="justify">Performing again the command in step 4 of this procedure, the characteristic of the user sync are displayed. </p> 
