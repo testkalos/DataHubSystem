@@ -81,8 +81,16 @@
                         <header>
                             <h2>Admin API</h2>
                                             </header>
+<section id="cta" class="wrapper style3">
+                <div class="container">
+                    <header>
+                        <h3><a name="SystemRequirements">User connection information inspection via OData protocol </a></h3>
 
-			    <h1>User connection information inspection via OData protocol </h1>
+                    </header>
+                </div>
+</section>
+			    
+			<!--    <h1>User connection information inspection via OData protocol </h1>-->
 <p align="JUSTIFY">The procedure shows in detail all steps  needed to visualize the information about users and their connections through OData.</p>
 <!--
 <table style="border: 1px solid black; border-collapse: collapse; float: left";>
@@ -322,8 +330,17 @@ enable="true"/>
 <p align="justify"><span style="color: #0000ff;"> https://[dhus]/odata/v1/Connections?$filter=Status eq 'PENDING'</span></p>
 
 	
+<section id="cta" class="wrapper style3">
+                <div class="container">
+                    <header>
+                        <h3><a name="User Synchronization via API">User Synchronization</a></h3>
+
+                    </header>
+                </div>
+</section>	
 	
-  <h1>User Synchronization via API</h1>
+	
+  <!--<h1>User Synchronization via API</h1>-->
  <p align="justify"><strong> STEP 1:</strong> Log in the machine where the Front End (FE) DHuS is installed.  This DHuS instance shall be filled with users registered in the Back End (BE).</p>
 	
   <p align="justify"><strong> STEP 2:</strong>On the DHuS acting as FE, set the environment variables to connect to the syncing instance of the DHuS.</p>
@@ -338,7 +355,7 @@ Doing the commands:
 echo $DHOST
 echo DLOGIN
 echo DPASS
-</pre> </code>
+</code></pre> 
 the correspondent values are displayed 
 	<p align="justify"><strong> STEP 3: </strong>
 		Create a working folder containing the following scripts and auxiliary files:</p>
@@ -382,17 +399,80 @@ Delete the synchronizer using the following command:
 	</code>
 <p align="justify">Performing again the command in step 4 of this procedure, the characteristic of the user sync are no longer available.</p>
 	
-		    </article>
+	<section id="cta" class="wrapper style3">
+                <div class="container">
+                    <header>
+                        <h3><a name="Products Deletion via API">User Synchronization</a></h3>
+
+                    </header>
+                </div>
+</section>
+	
+<p align="JUSTIFY">
+
+The following scripts permit massive products deletion via API.</p>
+
+<p align="justify">&bull;  <strong>getID.sh</strong>: it produces the UUID of products retrieving this information from the specified product names</p>
+<p align="justify">&bull;  <strong> delete_mod.sh</strong>: it performs the deletion of the products listed in the getID.sh script.</p>
+<p align="justify">The script getID.sh has 3 input parameter:</p> 
+<p align="justify"> 1) original file containing names of products to be deleted;</p>
+<p align="justify"> 2) number N of files in which you want to split the original file (used when the number of products is high)</p>
+<p align="justify"> 3) folder containing DB (in-operation DB copy) on which will be performed the query, that get the UUID of products by their names </p>
+<p align="justify">For each i-th file (i=1,2,3,.....,N) the query, related to the products names of the i-th file, is built and performed.
+The split operation allows to delete a big number of products by more scripts (i=1,2,3,......,N) launched in parallel, one for each i-th UUID file.
+</p>
+<p align="justify">The output main files produced by getID.sh are:</p>
+<p align="justify">1) UUID_</p>
+{i}.txt i=1,2,3,....,N; file containing the UUID of products of i-th block of names
+<p align="justify">2) PRODUCTSNOTFOUND_{i}
+	.txt i=1,2,3,....,N; file containing the names of products not found by i-th query on DB</p>
+<p align="justify">Each UUID_ {i}.txt file is the input parameter of the script delete_mod.sh that performs the deletion of UUID on Virtual machine where it is launched.</p>
+
+<p align="justify"> The input parameter of the script delete_mod.sh are:</p>
+<p align="justify">1) number of deletions in parallel</p>
+			    <p align="justify">2) file containing the UUID to be deleted (UUID_{i} .txt)</p>
+<p align="justify">The deletion of single UUID product (CURL command) and the related log is produced by del_prod_mod.sh that is a script present in delete_mod.sh.
+If the log produces, for a specific UUID, the string "in XXX s return code 20..." the product is deleted</p>
+
+
+			    
+			    <section class="wrapper style1">
+		<div class="container">
+			<div class="row double">
+				<section class="4u">
+					<div class="box highlight">
+						<i class="icon major fa-paper-plane"></i>
+					<h3><a href="https://raw.githubusercontent.com/testkalos/DataHubSystem/master/delete_mod.sh">Delete_mod.sh</a></h3>
+						
+					</div>
+				</section>
+				<section class="4u">
+					<div class="box highlight">
+						<i class="icon major fa-pencil"></i>
+					<h3><a href="https://raw.githubusercontent.com/testkalos/DataHubSystem/master/getID.sh">GetId.sh</a></h3>
+					
+					</div>
+				</section>
+				<section class="4u">
+					<div class="box highlight">
+						<i class="icon major fa-wrench"></i>
+                           
+						<h3><a href="https://raw.githubusercontent.com/testkalos/DataHubSystem/master/del_prod_mod.sh">Del_prod_mod.sh</a></h3>
+					
+					</div>
+				</section>
+			</div>
 		</div>
-	    </div>
-	    </section>
-	    
-		    </body>
-	<html>
-		
+	</section>
+		    
+		    
+		    </article>
+            </div>
+        </div>
 
-
-  
+    </section>
+    </body>
+</html>
     
     
     
