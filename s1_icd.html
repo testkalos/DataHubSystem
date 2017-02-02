@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>   
+<html>
+	<head>
+		<title>Open Source Portal</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+ 		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/skel-layers.min.js"></script>
+		<script src="assets/js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="assets/css/skel.css" />
+			<link rel="stylesheet" href="assets/css/style.css" />
+			<link rel="stylesheet" href="assets/css/style-wide.css" />
+		</noscript>
+	
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+				<h1><a href="index.html" id="logo">Open Source Portal</a></h1>		
+     <!--<h1>
+     <a href="index.html" class="image left"><img src="assets/images/oslogomini.jpg" "alt="" /></a>
+     <a href="http://ec.europa.eu/index_en.html" class="image left"><img src="assets/images/ec-mini.jpg" "alt=""/></a>
+     <a href="index.html" id="logo"> <em>Open Source Portal</em></a>
+     <a href="http://www.copernicus.eu/" class="image left"><img src="assets/images/copernicus-mini.jpg" "alt=""/></a>
+     <a href="http://www.esa.int/ESA" class="image left"><img src="/assets/images/esa-mini.jpg" "alt=""/></a>    
+     </h1>-->
+				
+		<nav id="nav">
+						<ul>
+						<li ><a href="index.html">Home</a></li>
+						<li ><a href="about.html">About</a></li>
+
+							<li ><a href="https://github.com/SentinelDataHub/DataHubSystem">Download</a></li>	
+							<li ><a href="support.html">Support</a></li>
+							
+							<li>
+               	<a href="">Documentation</a>
+								<ul>
+									<li><a href="governance.html"> Governance Model</a></li>
+									<li><a href="guidelines.html">Developer Guidelines</a></li>
+                 <!-- <li><a href="#">Interface Control Document</a></li>-->
+      		       </ul>
+							</li>
+					
+							
+					<li> <a href=""> Pilot Projects</a>
+							<ul>
+								<li><a href="dhus_docker_installation.html"> Docker Technologies Integration</a></li>
+								<li><a href="">Multi-Mission Access</a></li>
+								<li><a href="wms.html">WMS-Integration</a></li>
+					</ul>
+				</li>
+							<li ><a href="">External Resources</a>
+							         <ul>
+								<li><a href="http://step.esa.int/main/toolboxes/snap/"> SNAP</a></li>
+								<li><a href="http://step.esa.int/main/toolboxes/sentinel-1-toolbox/">S-1 Toolbox </a></li>
+								<li><a href="http://step.esa.int/main/toolboxes/sentinel-2-toolbox/">S-2 Toolbox</a></li>
+								<li><a href="http://step.esa.int/main/toolboxes/sentinel-3-toolbox/">S-3 Toolbox</a></li>
+								</ul>
+							</li>
+				<li ><a href="contact.html">Contact Us</a></li>
+					
+						</ul>
+					</nav>
+
+			</div>
+	<div class="home">
+
+<h1 class="page-heading"></h1>
+
+ 
+<!-- Main -->
+<section id="banner">
+</section>
+    <section class="wrapper style1">
+        <div class="container">
+            <div id="content">
+                <!-- Content -->
+                    <article>
+
+                        <header>
+                            <h2>Sentinel-1 ICD</h2>
+                        </header>
+<p align="JUSTIFY"> <strong>Introducing the Sentinel-1 products formatting</strong></p>
+<p align="JUSTIFY">
+SENTINEL-1 data products are distributed using a SENTINEL-specific variation of the Standard Archive Format for Europe (SAFE) format specification. The SAFE format has been designed to act as a common format for archiving and conveying data within ESA Earth Observation archiving facilities.
+The SENTINEL-SAFE format wraps a folder containing image data in a binary data format and product metadata in XML. This flexibility allows the format to be scalable enough to represent all levels of SENTINEL products.
+A SENTINEL product refers to a directory folder that contains a collection of information. It includes:</p>
+<p align="JUSTIFY">&bull; a 'manifest.safe' file which holds the general product information in XML;</p>
+<p align="JUSTIFY">&bull; subfolders for measurement datasets containing image data in various binary formats;</p>
+<p align="JUSTIFY">&bull;a preview folder containing 'quicklooks' in PNG format, Google Earth overlays in KML format and HTML preview files;</p>
+<p align="JUSTIFY">&bull; an annotation folder containing the product metadata in XML as well as calibration data </p>
+<p align="JUSTIFY">&bull; a support folder containing the XML schemes describing the product XML.</p>
+<p align="JUSTIFY">The data delivered is packaged as a file structure containing a manifest file in XML format listing general product metadata and subfolders for measurement data, annotations, previews and support files.</p>
+
+</p>
+<p align="JUSTIFY"> <strong>Inspection of Product Nodes </strong></p>
+<p align="justify">
+The DHuS recognises the Sentinel-1 products at ingestion time and makes products nodes accessible through the OData Protocol. The following odata query returns the list of nodes within the document root (first level).</p>
+Note that both UUID and product name are needed
+<code>
+. /odata/v1/Products[‘UUID’]/Nodes('PRODUCT_NAME.SAFE')/Nodes</code>
+</p>
+
+ </article>
+  </div>
+        </div>
+    </section>
+		</div>
+</body>
+</html>
