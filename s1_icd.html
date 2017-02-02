@@ -98,16 +98,30 @@ A SENTINEL product refers to a directory folder that contains a collection of in
 <p align="JUSTIFY">&bull; a support folder containing the XML schemes describing the product XML.</p>
 <p align="JUSTIFY">The data delivered is packaged as a file structure containing a manifest file in XML format listing general product metadata and subfolders for measurement data, annotations, previews and support files.</p>
 
-</p>
-<p align="JUSTIFY"> <strong>Inspection of Product Nodes </strong></p>
-<p align="justify">
-The DHuS recognises the Sentinel-1 products at ingestion time and makes products nodes accessible through the OData Protocol. The following odata query returns the list of nodes within the document root (first level).</p>
-Note that both UUID and product name are needed
-<code>
-. /odata/v1/Products[‘UUID’]/Nodes('PRODUCT_NAME.SAFE')/Nodes</code>
-</p>
 
- </article>
+<p align="JUSTIFY"> <strong>Inspection of Product Nodes (Odata Protocol) </strong></p>
+<p align="justify">
+The DHuS recognises the Sentinel-1 products at ingestion time and makes products nodes accessible through the OData Protocol. The following odata query returns the list of nodes within the document root (first level).
+			    Note that both UUID and product name are needed</p>
+<p align="JUSTIFY">
+. /odata/v1/Products[‘UUID’]/Nodes('PRODUCT_NAME.SAFE')/Nodes
+</p>
+			<p align="JUSTIFY">    To inspect the nodes of lower levels:</p>
+			<p align="JUSTIFY">    /odata/v1/Products[‘UUID’]/Nodes('PRODUCT_NAME.SAFE')/Nodes(‘nodename’)/Nodes</p>
+
+<p align="JUSTIFY"> For example, in order to get all children of the Node ‘annotation’ of a Product</p>
+
+<p align="justify"> /odata/v1/Products('2573986b-f66e-46a4-90e8-00598c3b6475')/Nodes('S1A_S5_GRDH_1SSV_20141003T182910_20141003T182928_002669_002F8D_E968.SAFE')/Nodes('annotation')/Nodes </p>		    
+
+<p align="JUSTIFY">  
+
+<p align="JUSTIFY"> <strong>Open Search Indexes</strong></p>
+		    
+Every open search is triggered by adding to the dhus path the string ”/search?q=” followed by the example provided in the last column below.
+	
+		    
+		    
+		    </article>
   </div>
         </div>
     </section>
