@@ -119,7 +119,755 @@ The DHuS recognises the Sentinel-1 products at ingestion time and makes products
 		    
 Every open search is triggered by adding to the dhus path the string ”/search?q=” followed by the example provided in the last column below.
 	
-		    
+	<table style="border:1px solid black;border-collapse:collapse;">
+<tbody>
+<p>&nbsp;</p>
+<tr>
+<td width="173">
+<p><strong>Metadata Name</strong></p>
+</td>
+<td width="327">
+<p><strong>Index Name </strong></p>
+</td>
+<td width="453">
+<p><strong>Description</strong></p>
+</td>
+<td width="386">
+<p><strong>Example</strong></p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Acquisition Type</strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Acquisition Type</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Carrier rocket </strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Carrier rocket</strong><strong> name (</strong><strong>Soyuz</strong><strong>)</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Collection</strong></p>
+</td>
+<td width="327">
+<p><strong>collection</strong></p>
+</td>
+<td width="453">
+<p><strong>Name of the collection the products is linked</strong></p>
+</td>
+<td width="386">
+<p>collection:name_collection</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Cycle number</strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>&nbsp;</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Date</strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Start time of the acquisition period of the sensor </strong><strong>in UTC format (yyyy-mm-ddThh:mm:ss.ssssssZ)</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Filename</strong></p>
+</td>
+<td width="327">
+<p><strong>filename</strong></p>
+</td>
+<td width="453">
+<p><strong>Name of the file</strong></p>
+</td>
+<td width="386">
+<p>filename:S1A_EW*</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Footprint</strong></p>
+</td>
+<td width="327">
+<p><strong>Footprint</strong></p>
+</td>
+<td width="453">
+<p><strong>Footprint polygon coordinates</strong></p>
+</td>
+<td width="386">
+<p>footprint:"Intersects(POLYGON((-13.115927734375 27.752507427949,37.509072265625 27.752507427949,37.509072265625 61.475999093721,-13.115927734375 61.475999093721,-13.115927734375 27.752507427949)))"</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Format</strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Format of the product (safe)</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Identifier</strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Product identifier</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Ingestion Date </strong></p>
+</td>
+<td width="327">
+<p><strong>IngestionDate</strong></p>
+</td>
+<td width="453">
+<p><strong>Product Ingestion date </strong><strong>in UTC format (yyyy-mm-ddThh:mm:ss.ssssssZ)</strong></p>
+</td>
+<td width="386">
+<p>ingestionDate:[2014-11-11T00:00:00.000Z TO NOW ]</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Instrument</strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Instrument short name</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Instrument abbreviation </strong></p>
+</td>
+<td width="327">
+<p><strong>instrumentShortName</strong></p>
+</td>
+<td width="453">
+<p><strong>Instrument short name </strong><strong>SAR-C</strong></p>
+</td>
+<td width="386">
+<p>instrumentshortname:&rsquo;SAR&rsquo;</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Instrument description </strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>The description of the instrument is linked to </strong><a href="https://sentinel.esa.int/web/sentinel/missions/sentinel-1">https://sentinel.esa.int/web/sentinel/missions/sentinel-1</a></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Instrument mode </strong></p>
+</td>
+<td width="327">
+<p><strong>sensorOperationalMode</strong></p>
+</td>
+<td width="453">
+<p><strong>Instrument mode</strong></p>
+</td>
+<td width="386">
+<p>sensoroperationalmode:S1</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Instrument name </strong></p>
+</td>
+<td width="327">
+<p><strong>instrumentName</strong></p>
+</td>
+<td width="453">
+<p><strong>Instrument name: </strong><strong>Synthetic Aperture Radar (C-band)</strong></p>
+</td>
+<td width="386">
+<p>instrumentName:SAR</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Instrument swath </strong></p>
+</td>
+<td width="327">
+<p><strong>swathIdentifier</strong></p>
+</td>
+<td width="453">
+<p><strong>Instrument swath</strong></p>
+</td>
+<td width="386">
+<p>swathidentifier:IW</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Instrument </strong></p>
+</td>
+<td width="327">&nbsp;</td>
+<td width="453">
+<p><strong>Instrument: SAR-C</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>JTS footprint</strong></p>
+</td>
+<td width="327">
+<p><strong>&nbsp;</strong></p>
+</td>
+<td width="453">
+<p><strong>JTS footprint</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Launch date </strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Launch date: April 3rd, 2014</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Mission datatake id </strong></p>
+</td>
+<td width="327">
+<p><strong>missionDatatakeId</strong></p>
+</td>
+<td width="453">
+<p><strong>Mission datatake identifier </strong></p>
+</td>
+<td width="386">
+<p>missiondatatakeid:12283</p>
+<p>missiondatatakeid:[12300 TO 12800]</p>
+<p>&nbsp;(notice that in the search qery there should be entered the decimal value of the mission datat take id dhus will return the products having dt ids in hexadecimal: 12283=002FFB)</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Mission type </strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Mission type: Earth Observation</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Mode</strong></p>
+</td>
+<td width="327">
+<p><strong>sensoroperationalmode</strong></p>
+</td>
+<td width="453">
+<p><strong>Sensor mode</strong></p>
+</td>
+<td width="386">
+<p>sensoroperationalmode:S1</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>NSSDC identifier </strong></p>
+</td>
+<td width="327">
+<p><strong>platformidentifier</strong></p>
+</td>
+<td width="453">
+<p><strong>Platform NSSDC identifier</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Operator </strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Operator Name: </strong><strong>European Space Agency</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Orbit number (start) </strong></p>
+</td>
+<td width="327">
+<p><strong>orbitNumber</strong></p>
+<p><strong>&nbsp;</strong></p>
+</td>
+<td width="453">
+<p><strong>Absolute orbit number of the stopping of acquisitions</strong></p>
+</td>
+<td width="386">
+<p>orbitnumber:[2000 TO 2700]</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Orbit number (stop) </strong></p>
+</td>
+<td width="327">
+<p><strong>lastOrbitNumber</strong></p>
+<p><strong>&nbsp;</strong></p>
+</td>
+<td width="453">
+<p><strong>Absolute orbit number of the stopping of acquisitions</strong></p>
+</td>
+<td width="386">
+<p>lastorbitnumber:[2000 TO 2700]</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Pass direction </strong></p>
+</td>
+<td width="327">
+<p><strong>orbitDirection</strong></p>
+</td>
+<td width="453">
+<p><strong>Track direction</strong></p>
+</td>
+<td width="386">
+<p>orbitdirection:ASCENDING</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Phase identifier </strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Orbit phase identifier to which the oldest data unit of the data object refers</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Polarisation </strong></p>
+</td>
+<td width="327">
+<p><strong>polarisationMode</strong></p>
+</td>
+<td width="453">
+<p><strong>Enumeration of valid polarisations for the Sentinel-1</strong></p>
+<p><strong>SAR instrument.</strong></p>
+</td>
+<td width="386">
+<p>polarisationmode:'HH HV'</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Product class </strong></p>
+</td>
+<td width="327">
+<p><strong>productclass</strong></p>
+</td>
+<td width="453">
+<p><strong>Class of the products</strong></p>
+</td>
+<td width="386">
+<p>productclass:S</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Product class description </strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Description of the class of the product </strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Product composition </strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Enumeration of product composition indicators. The valid values are: "Individual", to indicate a full nonsliced product; "Slice", to indicate that this is a single slice of a larger product; and "Assembled", to indicate that this is a product that has been created by combining multiple slices.</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Product level </strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Processing level of the products</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Product type </strong></p>
+</td>
+<td width="327">
+<p><strong>productType</strong></p>
+</td>
+<td width="453">
+<p><strong>Output product type.</strong></p>
+</td>
+<td width="386">
+<p>producttype:SLC</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Relative orbit (start) </strong></p>
+</td>
+<td width="327">
+<p><strong>relativeOrbitNumber</strong></p>
+</td>
+<td width="453">
+<p><strong>Indicates if the orbit number refers to the oldest or the most recent data unit.</strong></p>
+</td>
+<td width="386">
+<p>relativeorbitnumber:[10 TO 30]</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Relative orbit (stop) </strong></p>
+</td>
+<td width="327">
+<p><strong>last</strong><strong>R</strong><strong>elative</strong><strong>O</strong><strong>rbit</strong><strong>N</strong><strong>umber</strong></p>
+<p><strong>&nbsp;</strong></p>
+</td>
+<td width="453">
+<p><strong>Indicates if the orbit number refers to the oldest or the most recent data unit.</strong></p>
+<p><strong>Shall be ""start"" if the occurrence is 1.</strong></p>
+</td>
+<td width="386">
+<p>lastrelativeorbitnumber:[10 TO 30]</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Resolution </strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Resolution class (not present in SLC Products)</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Satellite</strong></p>
+</td>
+<td width="327">
+<p><strong>platformname</strong></p>
+</td>
+<td width="453">
+<p><strong>Satellite of the acquisition (</strong><strong>Sentinel-1</strong><strong>)</strong></p>
+</td>
+<td width="386">
+<p>platformname:Sentinel</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Satellite description </strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>The description of the satellite is linked to </strong><a href="https://sentinel.esa.int/web/sentinel/missions/sentinel-1">https://sentinel.esa.int/web/sentinel/missions/sentinel-1</a></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Satellite name </strong></p>
+</td>
+<td width="327">
+<p><strong>platformShortName</strong></p>
+</td>
+<td width="453">
+<p><strong>Satellite of the acquisition name (</strong><strong>Sentinel-1</strong><strong>)</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Satellite number </strong></p>
+</td>
+<td width="327">
+<p><strong>platformSerialIdentifier</strong></p>
+</td>
+<td width="453">
+<p><strong>Number of the satellite of the acquisition</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Sensing start </strong></p>
+</td>
+<td width="327">
+<p><strong>beginPosition</strong></p>
+</td>
+<td width="453">
+<p><strong>Sensing Start time of the data segment in UTC format (yyyy-mm-ddThh:mm:ss.ssssssZ)</strong></p>
+</td>
+<td width="386">
+<p>beginposition:[2014-01-01T00:00:00.000Z TO NOW]</p>
+<p>beginposition:[NOW-1HOUR TO NOW]</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Sensing stop </strong></p>
+</td>
+<td width="327">
+<p><strong>endPosition</strong></p>
+<p><strong>&nbsp;</strong></p>
+</td>
+<td width="453">
+<p><strong>Sensing Stop time of the data segment in UTC format (yyyy-mm-ddThh:mm:ss.ssssssZ)</strong></p>
+</td>
+<td width="386">
+<p>endposition:[2014-01-01T00:00:00.000Z TO NOW]</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Size</strong></p>
+</td>
+<td width="327">
+<p><strong>size</strong></p>
+</td>
+<td width="453">
+<p><strong>Products size</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Slice number </strong></p>
+</td>
+<td width="327">
+<p><strong>slicenumber</strong></p>
+</td>
+<td width="453">
+<p><strong>Number of slices of the acquisition</strong></p>
+</td>
+<td width="386">
+<p>slicenumber:[5 TO 7]</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Start relative orbit number </strong></p>
+</td>
+<td width="327">
+<p><strong>relativeOrbitNumber</strong></p>
+</td>
+<td width="453">
+<p><strong>Indicates if the orbit number refers to the oldest or the most recent data unit.</strong></p>
+</td>
+<td width="386">
+<p>relativeorbitnumber:[10 TO 30]</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Status </strong></p>
+</td>
+<td width="327">
+<p><strong>status</strong></p>
+</td>
+<td width="453">
+<p><strong>Status of products</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Stop relative orbit number </strong></p>
+</td>
+<td width="327">
+<p><strong>last</strong><strong>R</strong><strong>elative</strong><strong>O</strong><strong>rbit</strong><strong>N</strong><strong>umber</strong></p>
+<p><strong>&nbsp;</strong></p>
+</td>
+<td width="453">
+<p><strong>Indicates if the orbit number refers to the oldest or the most recent data unit.</strong></p>
+<p><strong>Shall be ""start"" if the occurrence is 1.</strong></p>
+</td>
+<td width="386">
+<p>lastrelativeorbitnumber:[10 TO 30]</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Swath Identifier</strong></p>
+</td>
+<td width="327">
+<p><strong>swathidentifier</strong></p>
+</td>
+<td width="453">
+<p><strong>Swath Identifier</strong></p>
+</td>
+<td width="386">
+<p>swathidentifier:IW</p>
+</td>
+</tr>
+<tr>
+<td width="173">
+<p><strong>Timeliness Category </strong></p>
+</td>
+<td width="327">
+<p><strong>-</strong></p>
+</td>
+<td width="453">
+<p><strong>Timeliness category under which the product was produced, i.e. time frame from the data acquisition (for the near real time categories) or from the satellite tasking to the product delivery to the end user.</strong></p>
+</td>
+<td width="386">
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>	    
 		    
 		    </article>
   </div>
