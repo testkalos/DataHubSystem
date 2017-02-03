@@ -22,13 +22,7 @@
         <!-- Header -->
             <div id="header">
                 <h1><a href="index.html" id="logo">Open Source Portal</a></h1>
-     <!--<h1>
-     <a href="index.html" class="image left"><img src="assets/images/oslogomini.jpg" "alt="" /></a>
-     <a href="http://ec.europa.eu/index_en.html" class="image left"><img src="assets/images/ec-mini.jpg" "alt=""/></a>
-     <a href="index.html" id="logo"> <em>Open Source Portal</em></a>
-     <a href="http://www.copernicus.eu/" class="image left"><img src="assets/images/copernicus-mini.jpg" "alt=""/></a>
-     <a href="http://www.esa.int/ESA" class="image left"><img src="/assets/images/esa-mini.jpg" "alt=""/></a>
-     </h1>-->
+    
 
         <nav id="nav">
                         <ul>
@@ -90,139 +84,14 @@
  <h2>User connection information inspection via OData protocol </h2>
 			    
 <p align="JUSTIFY">The procedure shows in detail all steps  needed to visualize the information about users and their connections through OData.</p>
-<!--
-<table style="border: 1px solid black; border-collapse: collapse; float: left";>
-<tbody>
-	<tr><th style="border: 1px solid black;"><strong>Step ID</strong></th><th style="border: 1px solid black;"><strong>Step Description</strong></th><th style="border: 1px solid black;"><strong>Expected Output</strong></th></tr>
-<tr><th style="border: 1px solid black;">1.</th><th style="border: 1px solid black;">
-<p style="text-align: justify;">Stop DHuS</p>
-<p style="text-align: justify;">Add to the server.xml file the following lines</p>
-<p style="text-align: left;"><span style="color: #0000ff;">&lt;Valve className="fr.gael.dhus.server.http.valve.AccessValve"</span></p>
-<p style="text-align: left;"><span style="color: #0000ff;">&nbsp;&nbsp;&nbsp; pattern=".*"</span></p>
-<p style="text-align: left;"><span style="color: #0000ff;">&nbsp; &nbsp;useLogger="true"</span></p>
-<p style="text-align: left;"><span style="color: #0000ff;">enable="true"/&gt;</span></p>
-<p style="text-align: justify;">&nbsp;Start DHuS</p>
-</th><th style="border: 1px solid black;">&nbsp;</th></tr>
-<tr><th style="border: 1px solid black;">2.</th><th style="border: 1px solid black; text-align: left;">Log in as administrator (root)</th><th style="border: 1px solid black;">&nbsp;</th></tr>
-<tr><th style="border: 1px solid black;">3.</th><th style="border: 1px solid black;">
-<p style="text-align: left;">Access the following link</p>
-<p style="text-align: left;"><a href="https://DHuS_URL/odata/v1/Users?$orderby=Username">https://DHuS_URL/odata/v1/Users?$orderby=Username</a></p>
-<p style="text-align: left;">verify that the&nbsp; list of users is visible and it is sorted depending on the username</p>
-</th><th style="border: 1px solid black; text-align: justify;">
-<p>The following information relative to each user is visualized</p>
-<p>&nbsp;</p>
-<p><span style="color: #0000ff;">&lt;m:properties&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:Username&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:Email&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:FirstName&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:LastName&gt;Te</span></p>
-<p><span style="color: #0000ff;">&lt;d:Country&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:Phone/&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:Address/&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:Domain&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:SubDomain&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:Usage&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:SubUsage&gt;unknown&lt;/d:SubUsage&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;/m:properties&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;/content&gt;</span></p>
-<p>&nbsp;</p>
-The users are sorted depending on the username&nbsp;</th></tr>
-<tr><th style="border: 1px solid black;">4.</th><th style="border: 1px solid black; text-align: left;">
-<p style="text-align: justify;">Verify that the number returned by the URL</p>
-<p style="text-align: justify;"><a href="https://scihub-test.esa.int/odata/v1/Users/$count">https:// DHuS_URL /odata/v1/Users/$count</a><span style="color: #0000ff;">?</span></p>
-Is equal to the total number of users registered to the Hub (The total number of users is visible from the GUI under management-&gt;Users)</th><th style="border: 1px solid black; text-align: justify;">The number of users is the same&nbsp;</th></tr>
-<tr><th style="border: 1px solid black;">5.</th><th style="border: 1px solid black;">
-<p style="text-align: left;">Log in with as a general user (search, download) and access the following URL</p>
-<p style="text-align: left;"><span style="color: #0000ff;">https://DHuS_URL/odata/v1/Users?$filter= $filter=Username eq &lsquo;Username&rsquo;</span></p>
-</th><th style="border: 1px solid black; text-align: justify;">
-<p>The User information about the user are visualised. When refreshing the page pushing the F5 button, the field &ldquo;updated&rdquo; is updated with the current time</p>
-&nbsp;</th></tr>
-<tr><th style="border: 1px solid black;">6.</th><th style="border: 1px solid black; text-align: justify;">
-<p>Access the Node</p>
-<span style="color: #0000ff;">https://DHuS_URL/odata/v1/Users(&lsquo;Username&rsquo;)/Connections </span></th><th style="border: 1px solid black; text-align: justify;">
-<p><span style="color: #0000ff;">All the URL accessed by the user are listed. For each connection the following info are displayed</span></p>
-<p><span style="color: #0000ff;">&lt;entry&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;id&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;title&nbsp;</span></p>
-<p><span style="color: #0000ff;">&lt;updated&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;m:properties&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:Id&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:Date&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:RemoteIp&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:Request&gt;</span></p>
-<span style="color: #0000ff;">&lt;d:Duration&gt;&nbsp;</span></th></tr>
-<tr><th style="border: 1px solid black;">7.</th><th style="border: 1px solid black;">
-<p style="text-align: justify;">Once logged in as administrator, access the URL</p>
-<p style="text-align: justify;"><a href="https://DHuS_URL/odata/v1/Users('root')/SystemRoles">https://DHuS_URL/odata/v1/Users(&lsquo;root&rsquo;)/SystemRoles</a></p>
-<p style="text-align: justify;">to visualize the user roles of the administrator user</p>
-</th><th style="border: 1px solid black; text-align: justify;">
-<p>The administrator has everyrole available on the Hub:</p>
-<ul>
-<li>Search</li>
-<li>Upload</li>
-<li>Archive manager</li>
-<li>Statistics</li>
-<li>System manager</li>
-<li>Data manager</li>
-</ul>
-Download&nbsp;</th></tr>
-<tr><th style="border: 1px solid black;">8.</th><th style="border: 1px solid black;">
-<p style="text-align: justify;">Access the URL</p>
-<p style="text-align: justify;"><a href="https://DHuS_URL/odata/v1/Networks(0L)/NetworkStatistic">https://DHuS_URL/odata/v1/Networks(0L)/NetworkStatistic</a>&nbsp;</p>
-<p style="text-align: justify;">To visualize the statistics associated to the network</p>
-</th><th style="border: 1px solid black; text-align: left;">
-<table style="height: 436px;" width="782">
-<tbody>
-<tr>
-<td width="31%">
-<p>The NetworkStatistics reports the informations related to the statistics of the network (activity period in ms, number of connection within this period).</p>
-<p>&nbsp;</p>
-<p><span style="color: #0000ff;">&lt;id&gt;</span></p>
-<p><span style="color: #0000ff;">https://scihub-test.esa.int/dhus/odata/v1/Networks(0L)/NetworkStatistics(0L)</span></p>
-<p><span style="color: #0000ff;">&lt;/id&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;title&nbsp;type="text"&gt;0&lt;/title&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;updated&gt;2016-02-25T15:32:12.613Z&lt;/updated&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;category&nbsp;term="DHuS.NetworkStatistic"&nbsp;scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme"/&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;link&nbsp;href="NetworkStatistics(0L)"&nbsp;rel="edit"&nbsp;title="NetworkStatistic"/&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;content&nbsp;type="application/xml"&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;m:properties&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:Id&gt;0&lt;/d:Id&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:ActivityPeriod&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;d:ConnectionNumber&gt;&lt;/m:properties&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;/content&gt;</span></p>
-<p><span style="color: #0000ff;">&lt;/entry&gt;</span></p>
-</td>
-</tr>
-</tbody>
-</table>
-&nbsp;</th></tr>
-<tr><th style="border: 1px solid black;">9.</th><th style="border: 1px solid black; text-align: justify;">
-<table style="height: 103px;" width="546">
-<tbody>
-<tr>
-<td width="61%">
-<p>Access the URL</p>
-<p><a href="https://[dhus]/dhus/odata/v1/Connections?$filter=substringof(Request,'odata/v1')">https://[dhus]/dhus/odata/v1/Connections?$filter=substringof(Request,'odata/v1')</a></p>
-<p>to visualize all the odata queries performed by the users</p>
-</td>
-</tr>
-</tbody>
-</table>
-</th><th style="border: 1px solid black; text-align: left;">All the odata queries performed by the users are visualized&nbsp;</th></tr>
-<tr><th style="border: 1px solid black;">10.</th><th style="border: 1px solid black;">
-<p style="text-align: justify;">Launch a product download via GUI.</p>
-<p style="text-align: justify;">Access the URL</p>
-<p style="text-align: justify;"><span style="color: #0000ff;">https://[dhus]/odata/v1/Connections?$filter=Status eq 'PENDING'</span></p>
-</th><th style="border: 1px solid black;">All the on-going request managed by DHuS are visualized. In particular, the download launched in step 10 of this procedure&nbsp;</th></tr>
-</tbody>
-</table>-->
-			    <p align="justify"><strong> STEP 1: </strong></p>
-<p align="justify">Stop DHuS </p>
-<p align="justify"> Add to the server.xml file the following lines:</p>
-<p><span style="color: #0000ff;"> &lt; Valve className="fr.gael.dhus.server.http.valve.AccessValve" pattern=".*  useLogger="true"
+
+<p align="justify"><strong> STEP 1: </strong><br>
+Stop DHuS <br>
+Add to the server.xml file the following lines:<br>
+<span style="color: #0000ff;"> &lt; Valve className="fr.gael.dhus.server.http.valve.AccessValve" pattern=".*  useLogger="true"
 enable="true"/>
-	</span></p>
-			    <p align="justify">Start DHuS</p>
+	</span><br>
+	Start DHuS</p>
 			    <p align="justify"><strong> STEP 2:</strong></p> 
 			    <p align="justify">Log in as administrator (root)</p>
 			  
