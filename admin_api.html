@@ -79,10 +79,8 @@
 	
 	 <p align="justify">1. User connection information inspection via OData protocol <br>
 			    2. User Synchronization<br>	
-			    3. Products deletion</p>
-			    			    
- <h2>User connection information inspection via OData protocol </h2>
-			    
+			    3. Products deletion</p>			    			    
+ <h2>User connection information inspection via OData protocol </h2>		    
 <p align="JUSTIFY">The procedure shows in detail all steps  needed to visualize the information about users and their connections through OData.</p>
 
 <p align="justify"><strong> STEP 1: </strong><br>
@@ -92,17 +90,14 @@ Add to the server.xml file the following lines:<br>
 enable="true"/>
 	</span><br>
 	Start DHuS</p>
-			    <p align="justify"><strong> STEP 2:</strong><br> 
-			    Log in as administrator (root)</p>
+ <p align="justify"><strong> STEP 2:</strong><br> 
+ Log in as administrator (root)</p>
 			  
-			    <p align="justify"><strong> STEP 3:</strong><br>
-			   Access the following link:<br>
-			   
-			    <span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users?$orderby=Username</span>  
+ <p align="justify"><strong> STEP 3:</strong><br>
+Access the following link:<br>			   
+<span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users?$orderby=Username</span>  
  Verify that the  list of users is visible and it is sorted depending on the username <br>
-			  The following information relative to each user is visualized:</p>
-
-
+The following information relative to each user is visualized:<br>
 <pre><code>&lt;m:properties>
 &lt;d:Username> 
 &lt;d:Email>
@@ -117,15 +112,15 @@ enable="true"/>
 &lt;d:SubUsage>unknown&lt;/d:SubUsage>
 &lt;/m:properties>
 &lt;/content>;
-
 <p align="justify">The users are sorted depending on the username.</p>
 
-	<p align="justify"><strong> STEP 4: </strong> <br>
-	Verify that the number returned by the URL:<br>
+<p align="justify"><strong> STEP 4: </strong> <br>
+Verify that the number returned by the URL:<br>
 <span style="color: #0000ff;"> https:// DHuS_URL /odata/v1/Users/$count?</span><br>
 Is equal to the total number of users registered to the Hub (The total number of users is visible from the GUI under management->Users) 
 <br> 
 The number of users is the same. </p>	
+
 <p align="justify"><strong> STEP 5: </strong> <br>
 Log in with as a general user (search, download) and access the following URL:<br>
 <span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users?$filter= $filter=Username eq ‘Username’</span><br>
@@ -150,22 +145,21 @@ All the URL accessed by the user are listed. For each connection the following i
 </code>
 </pre>
 
-<p align="justify"><strong> STEP 7: </strong> </p>	
-	<p align="justify">Once logged in as administrator, access the URL:</p> 
-<p align="justify"><span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users(‘root’)/SystemRoles </span></p>
-	<p align="justify"> to visualize the user roles of the administrator user</p>
-	<p align="justify"> The administrator has everyrole available on the Hub:</p>
-	<p align="justify">&bull;Search</p>
-	<p align="justify">&bull;Upload</p>
-	<p align="justify">&bull;Archive manager</p>
-	<p align="justify">&bull;Statistics</p>
-	<p align="justify">&bull;System manager</p>
-	<p align="justify">&bull;Data manager</p>
-	<p align="justify">&bull;Download</p>
+<p align="justify"><strong> STEP 7: </strong> <br>	
+Once logged in as administrator, access the URL:<br> 
+<span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users(‘root’)/SystemRoles </span><br>
+to visualize the user roles of the administrator user <br>
+The administrator has everyrole available on the Hub:<br>
+- Search;<br>
+- Upload;<br>
+- Archive manager;<br>
+- Statistics;<br>
+- System manager;<br>
+- Data manager;<br>
+- Download</p>
 
 <p align="justify"><strong> STEP 8:</strong> <br>
 Access the URL:<br> 
-
 <span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Networks(0L)/NetworkStatistic </span><br> 
 To visualize the statistics associated to the network. <br>
 The NetworkStatistics reports the informations related to the statistics of the network (activity period in ms, number of connection within this period). 
@@ -217,15 +211,15 @@ the correspondent values are displayed
 
 	<p align="justify"><strong> STEP 3: </strong>
 	Create a working folder containing the following scripts and auxiliary files:<br>
-	<p align-="justify">&bull; ./getSynchronizer <br>
-	<p align-="justify">&bull;	./createSynchronizer <br>
-	<p align-="justify">&bull;	Body.txt<br>
-	<p align-="justify">&bull;	./updateSynchronizer <br>
-	<p align-="justify">&bull;	./deleteSynchronizer <br>
-	<p align="justify"> Available on <a href="https://github.com/jobayle/dhus_user_sync_scripts"> https://github.com/jobayle/dhus_user_sync_scripts</a><br>
-	
-	<p align="justify"><strong> STEP 4: </strong>
-	Use the command:
+	- ./getSynchronizer <br>
+	- ./createSynchronizer <br>
+	- Body.txt<br>
+	- ./updateSynchronizer <br>
+	- ./deleteSynchronizer <br>
+ Available on <a href="https://github.com/jobayle/dhus_user_sync_scripts"> https://github.com/jobayle/dhus_user_sync_scripts</a><br>
+<p align="justify"><strong> STEP 4: </strong><br>
+
+Use the command:
 ./getSynchronizer [id] (if no user synchronizer is available, launchr this command with no id in input)
 The information regarding the currently available user synchronizer are displayed. <br>
 <p align="justify"><strong> STEP 5: </strong>	
@@ -242,17 +236,14 @@ Create the user synchronizer use the command:
 <p align="justify">Performing again the command in step 4 of this procedure, the characteristic of the user sync are displayed. </p> 
 
 Update the user synchronizer through the following commands:
-<p align="justify"><strong> STEP 6: </strong>
-
-
+<p align="justify"><strong> STEP 6: </strong><br>
 
 ./updateSynchronizer <id> [-D_SCHEDULE=...] [-D_REQUEST=start|stop] [-D_SERVICEURL=...] [-D_LABEL=...] [-D_SERVICELOGIN=...] [-D_SERVICEPASSWORD=...]
-(e.g. ./updateSynchronizer 0 -D_SCHEDULE='0 24 * * * ?')
-	
+(e.g. ./updateSynchronizer 0 -D_SCHEDULE='0 24 * * * ?')<br>	
 	
 <p align="justify"> Performing again the command in step 4 of this procedure, the characteristic of the user sync are displayed updated as requested.</p>	
 
-<p align="justify"><strong> STEP 7: </strong>		
+<p align="justify"><strong> STEP 7: </strong><br>		
 Delete the synchronizer using the following command:
 <code>
 ./deleteSynchronizer &lt;id>
@@ -263,29 +254,27 @@ Delete the synchronizer using the following command:
 	
 <p align="JUSTIFY">
 
-The following scripts permit massive products deletion via API.</p>
-
-<p align="justify">&bull;  <strong>getID.sh</strong>: it produces the UUID of products retrieving this information from the specified product names<br>
-<p align="justify">&bull;  <strong> delete_mod.sh</strong>: it performs the deletion of the products listed in the getID.sh script.<br>
-<p align="justify">The script getID.sh has 3 input parameter:<br> 
-<p align="justify"> 1) original file containing names of products to be deleted;<br>
-<p align="justify"> 2) number N of files in which you want to split the original file (used when the number of products is high)<br>
-<p align="justify"> 3) folder containing DB (in-operation DB copy) on which will be performed the query, that get the UUID of products by their names <br>
-<p align="justify">For each i-th file (i=1,2,3,.....,N) the query, related to the products names of the i-th file, is built and performed.
-The split operation allows to delete a big number of products by more scripts (i=1,2,3,......,N) launched in parallel, one for each i-th UUID file.
-</p>
-<p align="justify">The output main files produced by getID.sh are:<br>
-<p align="justify">1) UUID_<br>
+The following scripts permit massive products deletion via API.<br>
+  <strong>getID.sh</strong>: it produces the UUID of products retrieving this information from the specified product names<br>
+<strong> delete_mod.sh</strong>: it performs the deletion of the products listed in the getID.sh script.<br>
+The script getID.sh has 3 input parameter:<br> 
+ 1) original file containing names of products to be deleted;<br>
+ 2) number N of files in which you want to split the original file (used when the number of products is high)<br>
+ 3) folder containing DB (in-operation DB copy) on which will be performed the query, that get the UUID of products by their names <br>
+For each i-th file (i=1,2,3,.....,N) the query, related to the products names of the i-th file, is built and performed.<br>
+The split operation allows to delete a big number of products by more scripts (i=1,2,3,......,N) launched in parallel, one for each i-th UUID file.<br>
+<br>
+The output main files produced by getID.sh are:<br>
+1) UUID_<br>
 {i}.txt i=1,2,3,....,N; file containing the UUID of products of i-th block of names
-<p align="justify">2) PRODUCTSNOTFOUND_{i}
+2) PRODUCTSNOTFOUND_{i}<br>
 	.txt i=1,2,3,....,N; file containing the names of products not found by i-th query on DB<br>
-<p align="justify">Each UUID_ {i}.txt file is the input parameter of the script delete_mod.sh that performs the deletion of UUID on Virtual machine where it is launched.<br>
-
-<p align="justify"> The input parameter of the script delete_mod.sh are:<br>
-<p align="justify">1) number of deletions in parallel<br>
-			    <p align="justify">2) file containing the UUID to be deleted (UUID_{i} .txt)<br>
-<p align="justify">The deletion of single UUID product (CURL command) and the related log is produced by del_prod_mod.sh that is a script present in delete_mod.sh.
-If the log produces, for a specific UUID, the string "in XXX s return code 20..." the product is deleted. <br>
+Each UUID_ {i}.txt file is the input parameter of the script delete_mod.sh that performs the deletion of UUID on Virtual machine where it is launched.<br>
+The input parameter of the script delete_mod.sh are:<br>
+1) number of deletions in parallel<br>
+2) file containing the UUID to be deleted (UUID_{i} .txt)<br>
+The deletion of single UUID product (CURL command) and the related log is produced by del_prod_mod.sh that is a script present in delete_mod.sh.
+If the log produces, for a specific UUID, the string "in XXX s return code 20..." the product is deleted. </p>
 
 
 
