@@ -95,10 +95,11 @@ enable="true"/>
 			  
  <p align="justify"><strong> STEP 3:</strong><br>
 Access the following link:<br>			   
-<span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users?$orderby=Username</span>  
+<span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users?$orderby=Username</span> <br> 
  Verify that the  list of users is visible and it is sorted depending on the username <br>
 The following information relative to each user is visualized:<br>
-<code>&lt;m:properties>
+	 
+<pre><code>&lt;m:properties>
 &lt;d:Username> 
 &lt;d:Email>
 &lt;d:FirstName>
@@ -142,8 +143,7 @@ All the URL accessed by the user are listed. For each connection the following i
 &lt;d:Duration>
 </code>
 </pre>
-
-<p align="justify"><strong> STEP 7: </strong> <br>	
+<strong> STEP 7: </strong> <br>	
 Once logged in as administrator, access the URL:<br> 
 <span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users(‘root’)/SystemRoles </span><br>
 to visualize the user roles of the administrator user <br>
@@ -154,14 +154,13 @@ The administrator has everyrole available on the Hub:<br>
 - Statistics;<br>
 - System manager;<br>
 - Data manager;<br>
-- Download</p>
+- Download<br>
 
 <p align="justify"><strong> STEP 8:</strong> <br>
 Access the URL:<br> 
 <span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Networks(0L)/NetworkStatistic </span><br> 
 To visualize the statistics associated to the network. <br>
 The NetworkStatistics reports the informations related to the statistics of the network (activity period in ms, number of connection within this period). 
-<br>
 <id>
 <p align="justify"><span style="color: #0000ff;"><p>&lt;id&gt; https://scihub-test.esa.int/dhus/odata/v1/Networks(0L)/NetworkStatistics(0L)</p>
 <pre><code>
@@ -178,7 +177,7 @@ The NetworkStatistics reports the informations related to the statistics of the 
 &lt;/content&gt;
 &lt;/entry&gt;
 </code></pre>
-	
+	<br>
 <p align="justify"><strong> STEP 9:</strong> <br>	
  Access the URL:<br> 
 <span style="color: #0000ff;"> https://[dhus]/dhus/odata/v1/Connections?$filter=substringof(Request,'odata/v1')</span><br>
@@ -191,7 +190,9 @@ Launch a product download via GUI.Access the URL:<br>
 	
 <h2>User Synchronization via API</h2>
  <p align="justify"><strong> STEP 1:</strong> Log in the machine where the Front End (FE) DHuS is installed.  This DHuS instance shall be filled with users registered in the Back End (BE).<br>
-<strong> STEP 2:</strong>On the DHuS acting as FE, set the environment variables to connect to the syncing instance of the DHuS.</p>
+
+<strong> STEP 2:</strong>On the DHuS acting as FE, set the environment variables to connect to the syncing instance of the DHuS.<br>
+
 
 Example:
 <pre><code>
@@ -207,7 +208,8 @@ echo DPASS
 </code></pre> 
 the correspondent values are displayed 
 
-	<p align="justify"><strong> STEP 3: </strong>
+	<p align="justify"><strong> STEP 3: </strong><br>
+	
 	Create a working folder containing the following scripts and auxiliary files:<br>
 	- ./getSynchronizer <br>
 	- ./createSynchronizer <br>
@@ -223,9 +225,9 @@ The information regarding the currently available user synchronizer are displaye
 <p align="justify"><strong> STEP 5: </strong>	
 Create the user synchronizer use the command:
 <pre>
-	<code>
+<code>
 ./createSynchronizer &lt;-D_SCHEDULE=...> &lt;-D_REQUEST=start|stop> &lt;-D_SERVICEURL=...> [-D_LABEL=...] [-D_SERVICELOGIN=...] [-D_SERVICEPASSWORD=...]
-<p align="justify">(Example:<br>
+<p align="justify">Example:<br>
 <code>
 . /createSynchronizer -D_SCHEDULE="0 */3 * * * ?" -D_REQUEST=stop -D_SERVICEURL="http://192.168.0.105:8080/odata/v1" 
 -D_LABEL=my_user_syncer -D_SERVICELOGIN=root -D_SERVICEPASSWORD=a)
@@ -238,18 +240,15 @@ Update the user synchronizer through the following commands:
 
 ./updateSynchronizer <id> [-D_SCHEDULE=...] [-D_REQUEST=start|stop] [-D_SERVICEURL=...] [-D_LABEL=...] [-D_SERVICELOGIN=...] [-D_SERVICEPASSWORD=...]
 (e.g. ./updateSynchronizer 0 -D_SCHEDULE='0 24 * * * ?')<br>	
-	
-<p align="justify"> Performing again the command in step 4 of this procedure, the characteristic of the user sync are displayed updated as requested.</p>	
+ Performing again the command in step 4 of this procedure, the characteristic of the user sync are displayed updated as requested.<br>	
 
 <p align="justify"><strong> STEP 7: </strong><br>		
 Delete the synchronizer using the following command:
 <code>
 ./deleteSynchronizer &lt;id>
 	</code>
-<p align="justify">Performing again the command in step 4 of this procedure, the characteristic of the user sync are no longer available.</p>
-	
+Performing again the command in step 4 of this procedure, the characteristic of the user sync are no longer available.</p>
 	<h2>Products Deletion</h2>
-	
 <p align="JUSTIFY">
 
 The following scripts permit massive products deletion via API.<br>
