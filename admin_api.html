@@ -98,7 +98,7 @@ Access the following link:<br>
 <span style="color: #0000ff;"> https://DHuS_URL/odata/v1/Users?$orderby=Username</span>  
  Verify that the  list of users is visible and it is sorted depending on the username <br>
 The following information relative to each user is visualized:<br>
-<pre><code>&lt;m:properties>
+<code>&lt;m:properties>
 &lt;d:Username> 
 &lt;d:Email>
 &lt;d:FirstName>
@@ -112,14 +112,12 @@ The following information relative to each user is visualized:<br>
 &lt;d:SubUsage>unknown&lt;/d:SubUsage>
 &lt;/m:properties>
 &lt;/content>;
-<p align="justify">The users are sorted depending on the username.</p>
-
-<p align="justify"><strong> STEP 4: </strong> <br>
+<p align="justify">The users are sorted depending on the username.<br>
+<strong> STEP 4: </strong> <br>
 Verify that the number returned by the URL:<br>
 <span style="color: #0000ff;"> https:// DHuS_URL /odata/v1/Users/$count?</span><br>
-Is equal to the total number of users registered to the Hub (The total number of users is visible from the GUI under management->Users) 
-<br> 
-The number of users is the same. </p>	
+Is equal to the total number of users registered to the Hub (The total number of users is visible from the GUI under management->Users)
+The number of users is the same. <br>	
 
 <p align="justify"><strong> STEP 5: </strong> <br>
 Log in with as a general user (search, download) and access the following URL:<br>
