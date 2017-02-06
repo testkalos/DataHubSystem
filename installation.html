@@ -326,14 +326,12 @@
 Please note that all the settings are included in the client side (2 text files), thus it is possible to change a parameter without restarting the DHuS, but just doing a refresh via browser.</p>
 
         <h3>How to change a parameter?</h3>
-            <p align="JUSTIFY">The files in charge of the GUI configuration management are located in:</p>
+            <p align="JUSTIFY">The files in charge of the GUI configuration management are located in:<br>
 
-		    <p ALIGN="JUSTIFY">[DHUSDIR?]/var/tomcat/webapps/new/conf</p>
-		    <p ALIGN="JUSTIFY">appconfig.json </p>
-		    <p align="justify"> and  in [DHUSDIR?]/var/tomcat/webapps/ROOT/config  </p>
-      <p ALIGN="JUSTIFY">styles.json </p>
-
-
+		  [DHUSDIR?]/var/tomcat/webapps/new/conf<br>
+		  appconfig.json <br>
+		  and  in [DHUSDIR?]/var/tomcat/webapps/ROOT/config  <br>
+                  styles.json <br>
 <section id="cta" class="wrapper style3">
                 <div class="container">
                     <header>
@@ -458,32 +456,32 @@ The product deletion and eviction shall be executed on the replicas. User regist
 
                         <h3><a name="InstallationAndConfigurationProcedureWithEmptyDatabase">2. Installation and configuration procedure with an empty database</a></h3>
 <p ALIGN="JUSTIFY"><strong>Step 1: Download</strong> the installation package and install on all machines following</p>
-<p ALIGN="JUSTIFY"><strong>Step 2: Master Configuration</strong></p>
-<p ALIGN="JUSTIFY">In <em>start.sh</em> of the master add the following parameters (some may already be present) to the java executable command line:</p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Dhttp.proxyHost=[proxy external IP] \ </span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Dhttp.proxyPort=[proxy port] \ </span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Dhttp.nonProxyHosts="[proxy internal IP without last block]."\ (e.g., 192.168.1.) - -</span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">- Ddhus.scalability.active=true \ </span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.local.protocol=http \ </span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.local.ip=[DHuS master internal IP]</span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.local.port=[DHuS master port, as in server.xml] \ </span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.local.path=/ \ </span></p>
-<p ALIGN="JUSTIFY">In the <em>dhus.xml</em> set the &ldquo;external&rdquo; parameter with the proxy hostname (or IP) its port and the master&rsquo;s dhus path:</p>
-<p ALIGN="JUSTIFY"><strong>Step 3:Replica Configuration</strong></p>
-<p ALIGN="JUSTIFY">Configure the <em>start.sh</em> of the replicas as follows:</p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Dhttp.proxyHost=[external proxy IP] \</span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Dhttp.proxyPort=[proxy port] \</span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Dhttp.nonProxyHosts="[proxy internal IP without last block].*"\&nbsp; (e.g., 192.168.1.*)</span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.active=true\</span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.local.protocol=http \</span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.local.ip=[DHuS replica internal IP] \</span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.local.port=[DHuS replica port] \</span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.local.path=/\</span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.replicaId=[id of the replica, integer] \</span></p>
-<p ALIGN="JUSTIFY"><span style="color: #3366ff;">-Ddhus.scalability.dbsync.master=http://[DHuS master internal IP ]:[DHuS port]/ \</span></p>
-<p ALIGN="JUSTIFY">In the dhus.xml set the &ldquo;external&rdquo; parameter with the proxy hostname (or IP) its port and the replica&rsquo;s dhus path:</p>
-<p ALIGN="JUSTIFY"><strong>Step 4:Start DHuS master</strong> and wait until the startup process is complete.<br /> </p>
-<p ALIGN="JUSTIFY"><strong>Step 5:Start DHuS replicas</strong>.</p>
+<p ALIGN="JUSTIFY"><strong>Step 2: Master Configuration</strong></p><br>
+In <em>start.sh</em> of the master add the following parameters (some may already be present) to the java executable command line:<br>
+<span style="color: #3366ff;">-Dhttp.proxyHost=[proxy external IP] \ </span><br>
+<span style="color: #3366ff;">-Dhttp.proxyPort=[proxy port] \ </span><br>
+<span style="color: #3366ff;">-Dhttp.nonProxyHosts="[proxy internal IP without last block]."\ (e.g., 192.168.1.) - -</span><br>
+<span style="color: #3366ff;">- Ddhus.scalability.active=true \ </span><br>
+<span style="color: #3366ff;">-Ddhus.scalability.local.protocol=http \ </span><br>
+<span style="color: #3366ff;">-Ddhus.scalability.local.ip=[DHuS master internal IP]</span><br>
+<span style="color: #3366ff;">-Ddhus.scalability.local.port=[DHuS master port, as in server.xml] \ </span><br>
+<span style="color: #3366ff;">-Ddhus.scalability.local.path=/ \ </span><br>
+In the <em>dhus.xml</em> set the &ldquo;external&rdquo; parameter with the proxy hostname (or IP) its port and the master&rsquo;s dhus path:<br>
+<p ALIGN="JUSTIFY"><strong>Step 3:Replica Configuration</strong><br>
+Configure the <em>start.sh</em> of the replicas as follows:<br>
+<span style="color: #3366ff;">-Dhttp.proxyHost=[external proxy IP] \</span><br>
+<span style="color: #3366ff;">-Dhttp.proxyPort=[proxy port] \</span><br>
+<span style="color: #3366ff;">-Dhttp.nonProxyHosts="[proxy internal IP without last block].*"\&nbsp; (e.g., 192.168.1.*)</span><br>
+<span style="color: #3366ff;">-Ddhus.scalability.active=true\</span><br>
+<span style="color: #3366ff;">-Ddhus.scalability.local.protocol=http \</span><br>
+<span style="color: #3366ff;">-Ddhus.scalability.local.ip=[DHuS replica internal IP] \</span><br>
+<span style="color: #3366ff;">-Ddhus.scalability.local.port=[DHuS replica port] \</span><br>
+<span style="color: #3366ff;">-Ddhus.scalability.local.path=/\</span></p>
+<span style="color: #3366ff;">-Ddhus.scalability.replicaId=[id of the replica, integer] \</span><br>
+<span style="color: #3366ff;">-Ddhus.scalability.dbsync.master=http://[DHuS master internal IP ]:[DHuS port]/ \</span><br>
+In the dhus.xml set the &ldquo;external&rdquo; parameter with the proxy hostname (or IP) its port and the replica&rsquo;s dhus path:<br>
+<strong>Step 4:Start DHuS master.</strong> and wait until the startup process is complete.<br /> <br>
+<strong>Step 5:Start DHuS replicas.</strong><br>
 <p>&nbsp;</p>
 
                 <h3><a name="InstallationAndConfigurationProcedureWithExistingDatabase">3. Installation and configuration procedure with an already existing database</a></h3>
