@@ -76,8 +76,8 @@
 			    <p align="justify">The Admin API permit to perform the following activities:</p>
 	
 	 <p align="justify"><a href="admin_api.html#User">1. User connection information inspection via OData protocol </a><br>
-		 <a name="Synchro"> 2. User Synchronization</a><br>	
-		 <a name="Products"> 3. Products deletion</a></p>	
+		<a href="admin_api.html#Synchro">2. User Synchronization</a><br>	
+		<a href="admin_api.html#Products">3. Products deletion</a></p>	
 			    
 			    <h2><a name="User">User connection information inspection via OData protocol </a></h2>		    
 <p align="JUSTIFY">The procedure shows in detail all steps  needed to visualize the information about users and their connections through OData.</p>
@@ -187,7 +187,7 @@ Launch a product download via GUI.Access the URL:<br>
 <span style="color: #0000ff;"> https://[dhus]/odata/v1/Connections?$filter=Status eq 'PENDING'</span></p>
 
 	
-<h2><a href="admin_api.html#Synchro">User Synchronization via API</a></h2>
+<h2><a name="Synchro">User Synchronization via API</a></h2>
  <p align="justify"><strong> STEP 1:</strong> Log in the machine where the Front End (FE) DHuS is installed.  This DHuS instance shall be filled with users registered in the Back End (BE).<br>
 
 <strong> STEP 2:</strong>On the DHuS acting as FE, set the environment variables to connect to the syncing instance of the DHuS.<br>
@@ -247,7 +247,7 @@ Delete the synchronizer using the following command:
 ./deleteSynchronizer &lt;id>
 	</code>
 Performing again the command in step 4 of this procedure, the characteristic of the user sync are no longer available.</p>
-	<h2><a href="admin_api.html#Products">Products Deletion </a></h2>
+	<h2><a name="Products">Products Deletion </a></h2>
 <p align="JUSTIFY">
 The following scripts permit massive products deletion via API.<br>
   <strong>getID.sh</strong>: it produces the UUID of products retrieving this information from the specified product names<br>
