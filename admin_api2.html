@@ -73,13 +73,11 @@
                         <header>
                             <h2>Admin API</h2>
                                             </header>
-			    <p align="justify">The Admin API permit to perform the following activities:</p>
-	
-	 <p align="justify"><a href="admin_api.html#User">1. User connection information inspection via OData protocol </a><br>
-		<a href="admin_api.html#Synchro">2. User Synchronization</a><br>	
-		<a href="admin_api.html#Products">3. Products deletion</a></p>	
-			    
-			    <h2><a name="User">User connection information inspection via OData protocol </a></h2>		    
+<p align="justify">The Admin API permit to perform the following activities:<br>
+<p align="justify"><a href="admin_api.html#User">1. User connection information inspection via OData protocol </a><br>
+<a href="admin_api.html#Synchro">2. User Synchronization</a><br>	
+<a href="admin_api.html#Products">3. Products deletion</a><br>
+<h2><a name="User">User connection information inspection via OData protocol </a></h2>		    
 <p align="JUSTIFY">The procedure shows in detail all steps  needed to visualize the information about users and their connections through OData.</p>
 
 <p align="justify"><strong> STEP 1: </strong><br>
@@ -185,11 +183,8 @@ to visualize all the odata queries performed by the users.All the odata queries 
 <p align="justify"><strong> STEP 10:</strong> <br>	
 Launch a product download via GUI.Access the URL:<br> 
 <span style="color: #0000ff;"> https://[dhus]/odata/v1/Connections?$filter=Status eq 'PENDING'</span></p>
-
-	
 <h2><a name="Synchro">User Synchronization via API</a></h2>
  <p align="justify"><strong> STEP 1:</strong> Log in the machine where the Front End (FE) DHuS is installed.  This DHuS instance shall be filled with users registered in the Back End (BE).<br>
-
 <strong> STEP 2:</strong>On the DHuS acting as FE, set the environment variables to connect to the syncing instance of the DHuS.<br>
 
 
@@ -248,26 +243,21 @@ Delete the synchronizer using the following command:
 	</code>
 Performing again the command in step 4 of this procedure, the characteristic of the user sync are no longer available.</p>
 	<h2><a name="Products">Products Deletion </a></h2>
-
-
-
-
 <p align="JUSTIFY">
 
-The following scripts permit massive products deletion via API.</p>
+The following scripts permit massive products deletion via API.<br>
 
-<p align="justify">&bull;  <strong>getID.sh</strong>: it produces the UUID of products retrieving this information from the specified product names</p>
-<p align="justify">&bull;  <strong> delete_mod.sh</strong>: it performs the deletion of the products listed in the getID.sh script.</p>
-<p align="justify">The script getID.sh has 3 input parameter:</p> 
-<p align="justify"> 1) original file containing names of products to be deleted;</p>
-<p align="justify"> 2) number N of files in which you want to split the original file (used when the number of products is high)</p>
-<p align="justify"> 3) folder containing DB (in-operation DB copy) on which will be performed the query, that get the UUID of products by their names </p>
+<p align="justify">&bull;  <strong>getID.sh</strong>: it produces the UUID of products retrieving this information from the specified product names<br>
+<p align="justify">&bull;  <strong> delete_mod.sh</strong>: it performs the deletion of the products listed in the getID.sh script.<br>
+<p align="justify">The script getID.sh has 3 input parameter:<br> 
+<p align="justify"> 1) original file containing names of products to be deleted;<br>
+<p align="justify"> 2) number N of files in which you want to split the original file (used when the number of products is high)<br>
+<p align="justify"> 3) folder containing DB (in-operation DB copy) on which will be performed the query, that get the UUID of products by their names <br>
 <p align="justify">For each i-th file (i=1,2,3,.....,N) the query, related to the products names of the i-th file, is built and performed.
 The split operation allows to delete a big number of products by more scripts (i=1,2,3,......,N) launched in parallel, one for each i-th UUID file.
 </p>
-<p align="justify">The output main files produced by getID.sh are:</p>
-<p align="justify">1) UUID_</p>
-{i}.txt i=1,2,3,....,N; file containing the UUID of products of i-th block of names
+<p align="justify">The output main files produced by getID.sh are:<br>
+<p align="justify">1) UUID_</p> {i}.txt i=1,2,3,....,N; file containing the UUID of products of i-th block of names
 <p align="justify">2) PRODUCTSNOTFOUND_{i}
 	.txt i=1,2,3,....,N; file containing the names of products not found by i-th query on DB</p>
 <p align="justify">Each UUID_ {i}.txt file is the input parameter of the script delete_mod.sh that performs the deletion of UUID on Virtual machine where it is launched.</p>
@@ -277,12 +267,11 @@ The split operation allows to delete a big number of products by more scripts (i
 			    <p align="justify">2) file containing the UUID to be deleted (UUID_{i} .txt)</p>
 <p align="justify">The deletion of single UUID product (CURL command) and the related log is produced by del_prod_mod.sh that is a script present in delete_mod.sh.
 If the log produces, for a specific UUID, the string "in XXX s return code 20..." the product is deleted. </p>
-
-
 			    
-			    <section class="wrapper style1">
+	<!--<section class="wrapper style1">
 		<div class="container">
-			<div class="row double">
+		<div class="row double">-->
+			
 				<section class="4u">
 					<div class="box highlight">
 						<i class="icon major fa-paper-plane"></i>
@@ -290,6 +279,7 @@ If the log produces, for a specific UUID, the string "in XXX s return code 20...
 						
 					</div>
 				</section>
+				
 				<section class="4u">
 					<div class="box highlight">
 						<i class="icon major fa-pencil"></i>
@@ -305,16 +295,7 @@ If the log produces, for a specific UUID, the string "in XXX s return code 20...
 					
 					</div>
 				</section>
-			</div>
-		</div>
-	</section>
-		    
 
 		    
-		    </article>
-            </div>
-        </div>
-
-    </section>
     </body>
 </html>			    
