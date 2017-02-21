@@ -13,7 +13,12 @@
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/skel-layers.min.js"></script>
 		<script src="assets/js/init.js"></script>
-	
+		<style>
+			.code-block{
+				background-color: #f7f7f7;
+				font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+			}
+	   	</style>
 	</head>
     <body>
 
@@ -131,7 +136,7 @@
 <h4>A very simple Polymer component</h4>
 <p align="JUSTIFY">The basic Polymer component is an extension of html tags, defining the name of the new tag, the view and the controller of this new component. An example of a new component with name <em>new_component</em> written in ES6 follows:</p>
 <pre>
-<code>
+<code class="code-block">
 &lt;dom-module id="new-component"&gt;
 &lt;template&gt;
   &lt;style&gt;
@@ -389,8 +394,7 @@ on-click="details" title="View Product Details"&gt;&lt;/paper-icon-button&gt;
 <li>Javascript</li>
 </ul>
 <pre>
-<< >>
-<  < > >
+
 details(){
 var product = document.createElement('product-details');
 this.navigationManager.pushComponent(product, '500px', 'Product Details');
