@@ -82,7 +82,7 @@
 <p align="JUSTIFY">To understand every part of the following guide it is required at least some <code>HTML</code>, <code>CSS</code> and <code>Javascript</code> programming experience. Basic knowledge of HTML5, CSS and Javascript principles are enough to run and configure the ESA Scientific HUB Open Web Components.</p>
 <p align="JUSTIFY">Intermediate web developers.</p>
 <h4>Web Components</h4>
-<code>Web Components</code><p align=“JUSTIFY”> are a set of standards beign added to the HTML and DOM specification, by the W3C. The main features of Web Components standards are:</p>
+<p align=“JUSTIFY”>Web Components are a set of standards beign added to the HTML and DOM specification, by the W3C. The main features of Web Components standards are:</p>
 
 			    <p align=“JUSTIFY”>&bull;<strong>Custom Elements</strong>: API to define new HTML Elements<br>
 			    <p align=“JUSTIFY”>&bull;<strong>Shadow DOM</strong>: Encapsulated DOM and styling<br>
@@ -130,7 +130,7 @@
 <p align=“JUSTIFY”><em>OWC</em> is based on web components standard, using Google's Polymer library. Every entity in <em>OWC</em> is a web component, following the Model View Controller design pattern. <em>OWC</em> is compatible with javascript ECMAScript 5 and ECMAScript 6.</p>
 <h4>A very simple Polymer component</h4>
 <p align="JUSTIFY">The basic Polymer component is an extension of html tags, defining the name of the new tag, the view and the controller of this new component. An example of a new component with name <em>new_component</em> written in ES6 follows:</p>
-
+<pre>
 <code>
 &lt;dom-module id="new-component"&gt;
 &lt;template&gt;
@@ -154,14 +154,15 @@
   &lt;/script&gt;
 &lt;/dom-module&gt;
 </code>
-		    
+	</pre>	    
 <p align=“JUSTIFY”>The sections of the snippet above are:</p>
 <p align=“JUSTIFY”><strong>The module</strong></p>
-<code>&lt;dom-module id="new-component"&gt;
+<pre>
+		    <code>&lt;dom-module id="new-component"&gt;
 ...
 &lt;/dom-module&gt;
 </code>
-		    
+	</pre>	    
 <p align=“JUSTIFY”>This section defines a new html tag module with name <em>new-component</em>.</p>
 <p align=“JUSTIFY”><strong>The view</strong> <br>
 <h1>New Component title</h1>
@@ -169,7 +170,7 @@
 <p align=“JUSTIFY”><strong>The controller</strong></p>
 <p align="JUSTIFY">Following the Model View Controller design pattern, the controller contains the logic to glue the model with the view. The controller get the data from the data-sources (model) to bind this data with the view. Using <em>Polymer</em> it is possible to bind the data in the bidirectional way. For more information we suggest to read the <a href="https://www.polymer-project.org/1.0/docs/devguide/data-binding">official documentation</a> about it.</p>
 <p align=“JUSTIFY”>The controller is defined inside the script block of our web component:</p>
-
+<pre>
 <code>  &lt;script&gt;
     (function() {
        'use strict';
@@ -183,7 +184,7 @@
     })();
   &lt;/script&gt;
 </code>
-		    
+</pre>		    
 <p align=“JUSTIFY”><em>OWC</em> is developed using ES6 (<a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript</a> 6 standard). So in the example above the controller is implemented via a Javascript class definition, with name <em>NewComponent</em>. The approach to follow using ES6 with Polymer is detailed in this <a href="https://www.polymer-project.org/1.0/blog/es6">Polymer's official blog post</a>;</p>
 <p align=“JUSTIFY”>The class could implement the callbacks of Polymer following the lifecycle of Polymer elements. For Example:</p>
 <ul>
@@ -208,8 +209,7 @@
 ├── wct.conf.js
 └── wct.conf.json
 </code></pre>
-<ul>
-<ul>
+
 <li>
 <p align=“JUSTIFY”><strong>bower.json</strong> This file contains the third part dependencies, downloadable via <a href="https://bower.io/">Bower</a>.</p>
 </li>
@@ -220,14 +220,9 @@
 <code>bower install</code> command via terminal.</li>
 </ul>
 </li>
-</ul>
-</ul>
-<p align=“JUSTIFY”>&nbsp;</p>
-<ul>
-<li>
+
 <p align=“JUSTIFY”><strong>index.html</strong> This file contains the code to autogenerate the Polymer component documentations and demo.<br>
-</li>
-</ul>
+
 <ul>
 <li>
 <p align=“JUSTIFY”><strong>package.json</strong> This file contains the nodejs/npm dependencies, to install these dependencies run the command <code>npm install</code> via terminal.<br>
