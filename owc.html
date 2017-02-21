@@ -272,14 +272,10 @@
 <br><pre><code>cd &lt;owc-path&gt;
 </code></pre>
 <p align=“JUSTIFY”>2) run owc create new component tool:</p>
-<pre  class="code-block"><code>python tools/new_component.py create
-<pre  class="code-block"><code>Repository path (empty to load the path from configuration file):
-</code></pre>
-<pre  class="code-block"><code>Repository url (empty to load the path from configuration file):
-</code></pre>
+		    <pre  class="code-block"><code>python tools/new_component.py create</code></pre>
+<pre  class="code-block"><code>Repository path (empty to load the path from configuration file):</code></pre>
 <p align=“JUSTIFY”>Insert the git repository url of this component (empty if there isn't a repository).</p>
-<pre  class="code-block"><code>New element name:
-</code></pre>
+		    <pre  class="code-block"><code>New element name:</code></pre>
 <p align=“JUSTIFY”>Insert the name of the new component. It must be composed with two words with a '-' character (e.g. new-component)</p>
 <pre  class="code-block"><code>New element class:
 </code></pre>
@@ -289,7 +285,8 @@
 <p align=“JUSTIFY”>Insert a description of the new component.</p>
 <p align=“JUSTIFY”>Output:</p>
 <pre class="code-block">
-<code>Template path: /data/owc-project/app/elements/_template-element, new component path: /data/owc-project/app/elements/new-component
+<code>Template path: /data/owc-project/app/elements/_template-element,
+new component path: /data/owc-project/app/elements/new-component
 setting demo...
 setting test...
 setting README...
@@ -298,6 +295,7 @@ setting wct files...
 setting element file
 [DONE]
 </code></pre>
+		    
 <p align=“JUSTIFY”>The code of the new component is available in the folder <pre  class="code-block"><code>&lt;clone_path&gt;/client/owc-client/app/elements/new-component/</code></pre>. The new component contains the basic structure of the polymer, with unit tests, demo section, auto documentation generation, web component code.</p>
 <h4 id="howtointegratethenewcomponentinowc">How to integrate the new component in owc</h4>
 <p align=“JUSTIFY”>Import the new component in <pre  class="code-block"><code>&lt;clone_path&gt;/client/owc-client/src/main/app/elements/elements.html</code></pre> to include the new component into <em>OWC</em> project.</p>
