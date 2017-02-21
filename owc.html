@@ -131,8 +131,8 @@
 <h4>A very simple Polymer component</h4>
 <p align="JUSTIFY">The basic Polymer component is an extension of html tags, defining the name of the new tag, the view and the controller of this new component. An example of a new component with name <em>new_component</em> written in ES6 follows:</p>
 
-		    <code>&lt;dom-module id="new-component"&gt;
-
+<code>
+&lt;dom-module id="new-component"&gt;
 &lt;template&gt;
   &lt;style&gt;
     h1{
@@ -141,7 +141,6 @@
   &lt;/style&gt;
   &lt;h1&gt;New Component title&lt;/h1&gt;
 &lt;/template&gt;
-
 &lt;script&gt;
     (function() {
        'use strict';
@@ -151,10 +150,8 @@
            }
        };
       Polymer(NewComponent);
-
     })();
   &lt;/script&gt;
-
 &lt;/dom-module&gt;
 </code>
 		    
@@ -165,7 +162,7 @@
 &lt;/dom-module&gt;
 </code></pre>
 <p align=“JUSTIFY”>This section defines a new html tag module with name <em>new-component</em>.</p>
-<p align=“JUSTIFY”><strong>The view</strong> ```</p>
+<p align=“JUSTIFY”><strong>The view</strong> <br>
 <h1>New Component title</h1>
 <p align=“JUSTIFY”>``` The template tag contains the view of the new web component. This section contains the markup and styles. It is represent the View part of the MVC design pattern.</p>
 <p align=“JUSTIFY”><strong>The controller</strong></p>
