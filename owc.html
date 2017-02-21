@@ -388,11 +388,12 @@ on-click="details" title="View Product Details"&gt;&lt;/paper-icon-button&gt;
 <ul>
 <li>Javascript</li>
 </ul>
-<pre><code class="javascript language-javascript">details(){
+<pre>
+details(){
 var product = document.createElement('product-details');
 this.navigationManager.pushComponent(product, '500px', 'Product Details');
 }
-</code></pre>
+</pre>
 <p align=“JUSTIFY”><span class="image featured"><img src="https://cloud.githubusercontent.com/assets/18163634/21136214/fed75ef2-c124-11e6-9b88-995d72d08598.png" alt="modularity" /></span></p>
 <h2>4. Communication among components (message broker)</h2>
 <p align=“JUSTIFY”>The communication among web components is managed by the Message Broker, a centralized messaging system based on the publish-subscribe Design Pattern.</p>
