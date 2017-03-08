@@ -157,28 +157,26 @@ Before we dive in, a brief description of Standards and technologies involved is
 <p style="text-align: justify;"><strong>OWC</strong> components layout is managed by the navigation-manager component, which is in charge of displaying OWC components inside the browser. The navigation system makes it possible to present data efficiently and makes it easier for the user to navigate among components, since it pushes components in the navigation stack and displays them horizontally on the screen in the order they are requested by end users.</p>
 <p style="text-align: justify;">OWC navigation-manager component is constituted by a main class, containing the following methods:<br>
 
-&pull; pushComponent, devoted to create the DOM element of the component to be displayed on main application container and to add to navigation stack the component itself. Input parameters are:<br>
-<br>
-  <ul>
-<li>component name</li>
-<li>panel width in pixels</li>
-<li>panel title</li>
-<li>a boolean used to choose if close button is to be shown or not (true to hide, false to show)</li>
-<li>a boolean used to choose if panel is resizible (true to resize, false to fix size)</li>
-<li>maximun number of times a component can be pushed</li>
-</ul>
- <ul>
+&bull; pushComponent, devoted to create the DOM element of the component to be displayed on main application container and to add to navigation stack the component itself. Input parameters are:<br>
+
+- component name<br>
+- panel width in pixels<br>
+- panel title<br>
+- a boolean used to choose if close button is to be shown or not (true to hide, false to show)<br>
+- a boolean used to choose if panel is resizible (true to resize, false to fix size)<br>
+- maximun number of times a component can be pushed<br>
+
 &bull; popComponent, devoted to remove a component from navigation stack on user request, which in turn implies component removal from main application container. Input parameter is the name of the component to remove.</li>
 </ul>
 <h2 id="chapter2webcomponentarchitecture">Chapter 2: Web Component architecture</h2>
 <h3 id="introduction">Introduction</h3>
 <p style="text-align: justify;"><em>OWC</em> is based on web components standard, using Google's Polymer library. Each entity in <em>OWC</em> is a web component, following the Model View Controller (MVC) design pattern and compatible with JavaScript ECMAScript 5 and ECMAScript 6.</p>
 <h3 id="abasicpolymercomponent">A basic Polymer component</h3>
-<p style="text-align: justify;">The basic Polymer component is an extension of HTML tags, where the root element contains component name. A minimum set of tags is used to define:</p>
-<ul style="text-align: justify;">
-<li>component view (HTML and CSS)</li>
-<li>component controller (JavaScript)</li>
-</ul>
+<p style="text-align: justify;">The basic Polymer component is an extension of HTML tags, where the root element contains component name. A minimum set of tags is used to define:<br>
+
+&bull; component view (HTML and CSS)<br>
+&bull; component controller (JavaScript)<br>
+
 <p style="text-align: justify;">Below is reported an example of a new component with name <em>new_component</em> written following ECMAScript 6 standard.</p>
 <p style="text-align: justify;">&nbsp;</p>
  <pre  class="code-block">
@@ -230,13 +228,15 @@ h1 {font-size:33px;
 &lt;/style &gt;
 &lt;h1&gt;New Component title &lt;/h1 &gt;
 &lt;/template&gt;
-&lt;
+
 </code> </pre>
 
 <h4 id="componentcontroller">Component Controller</h4>
 <p style="text-align: justify;">Following the Model View Controller design pattern, the controller contains the logic to glue the model with the view. The controller gets data from the data-sources (i.e. model) and binds this data to the view. <em>Polymer</em> supports also bidirectional data binding. For more information, please refer to <a href="https://www.polymer-project.org/1.0/docs/devguide/data-binding">official documentation</a>.</p>
 <p style="text-align: justify;">The controller is defined inside the &lt;script&gt; block of a Web Component, as indicated in the code below.</p>
-<pre><code>  &lt;script&gt;
+<pre  class="code-block">
+<code>
+ &lt;script&gt;
     (function() {
        'use strict';
        class NewComponent {
@@ -250,6 +250,7 @@ h1 {font-size:33px;
   &lt;/script&gt;
   
 </code></pre>
+		
 <p style="text-align: justify;"><em>OWC</em> is developed using ES6 (<a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript 6</a> standard). The approach to follow using ES6 with Polymer is detailed in <a href="https://www.polymer-project.org/1.0/blog/es6">Polymer's official blog post</a>.</p>
 <p style="text-align: justify;">With regard to example above, the controller is implemented within a Javascript class, named <em>NewComponent</em>. This class includes, if needed, implementation of the main callbacks of Polymer used to handle Polymer elements lifecycle. These methods are:</p>
 <ul>
