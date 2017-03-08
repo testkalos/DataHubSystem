@@ -264,7 +264,8 @@ h1 {font-size:33px;
 <p style="text-align: justify;">The code line <code>Polymer(NewComponent);</code> (reported in the previous code snippet) registers the new component class as new Polymer object. The new component is usable as HTML tag after executing this statement.</p>
 <h3 id="anamembstructure0001awebcomponentfolderstructure"><a name="mbstructure0001"></a>Web component folder structure</h3>
 <p style="text-align: justify;"><em>OWC</em> web components folder structure is inspired from Google's official web components folder structure.</p>
-<pre><code>├── bower.json
+<pre  class="code-block">
+<code>├── bower.json
 ├── demo
 │&nbsp;&nbsp; └── index.html
 ├── index.html
@@ -279,20 +280,20 @@ h1 {font-size:33px;
 </code></pre>
 <p style="text-align: justify;">Main files contained in the web component are:</p>
 <ul>
-<li style="text-align: justify;"><strong>bower.json</strong>: this file contains the third part dependencies, downloadable via <a href="https://bower.io/">Bower</a>. To install locally component's dependecies, you have to run <code>bower install</code> command on a terminal.</li>
-<li style="text-align: justify;"><strong>demo</strong> folder, which contains the file <em>index.html</em>, with HTML code used for component demonstration page.</li>
-<li style="text-align: justify;"><strong>index.html</strong>: this file contains the code to autogenerate the Polymer component documentations and demo.</li>
-<li style="text-align: justify;"><strong>package.json</strong>: this file contains the Nodejs and npm dependencies. To install locally component's dependecies, you have to run <code>npm install</code> command on a terminal.</li>
-<li style="text-align: justify;"><strong>README.md</strong>, i.e. Markdown documentation of component, containing typically a high level and short description of component's functionalities.</li>
-<li style="text-align: justify;"><strong>new-component.html</strong>: this file contains the source code of the web component.</li>
-<li style="text-align: justify;"><strong>test</strong> folder, which contains the following files:
+<li style="text-align: justify;"><strong>• bower.json</strong>: this file contains the third part dependencies, downloadable via <a href="https://bower.io/">Bower</a>. To install locally component's dependecies, you have to run <code>bower install</code> command on a terminal.</li>
+<li style="text-align: justify;"><strong>• demo</strong> folder, which contains the file <em>index.html</em>, with HTML code used for component demonstration page.</li>
+<li style="text-align: justify;"><strong>• index.html</strong>: this file contains the code to autogenerate the Polymer component documentations and demo.</li>
+<li style="text-align: justify;"><strong>• package.json</strong>: this file contains the Nodejs and npm dependencies. To install locally component's dependecies, you have to run <code>npm install</code> command on a terminal.</li>
+<li style="text-align: justify;"><strong>• README.md</strong>, i.e. Markdown documentation of component, containing typically a high level and short description of component's functionalities.</li>
+<li style="text-align: justify;"><strong>• new-component.html</strong>: this file contains the source code of the web component.</li>
+<li style="text-align: justify;"><strong>• test</strong> folder, which contains the following files:
 <ul>
-<li><strong>index.html</strong>,including instruction to exploit the <a href="https://github.com/Polymer/web-component-tester">web component tester</a> used for web component unit tests</li>
-<li><strong>new-component.html</strong>, containing the implementation of unit tests for the <em>new-component</em></li>
+<li><strong>-index.html</strong>,including instruction to exploit the <a href="https://github.com/Polymer/web-component-tester">web component tester</a> used for web component unit tests</li>
+<li><strong>-new-component.html</strong>, containing the implementation of unit tests for the <em>new-component</em></li>
 </ul>
 </li>
-<li style="text-align: justify;"><strong>wct.conf.js</strong>: in this file are listed <a href="https://github.com/Polymer/web-component-tester">web component tester</a> module settings</li>
-<li style="text-align: justify;"><strong>wct.conf.json</strong>: this file includes <a href="https://github.com/Polymer/web-component-tester">web component tester</a> module configuration</li>
+<li style="text-align: justify;"><strong>• wct.conf.js</strong>: in this file are listed <a href="https://github.com/Polymer/web-component-tester">web component tester</a> module settings</li>
+<li style="text-align: justify;"><strong>• wct.conf.json</strong>: this file includes <a href="https://github.com/Polymer/web-component-tester">web component tester</a> module configuration</li>
 </ul>
 <h2 id="chapter3owcmaincomponents">Chapter 3: OWC main components</h2>
 <h3 id="navigationmanagercomponent" style="text-align: justify;">navigation-manager component</h3>
