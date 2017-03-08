@@ -335,7 +335,7 @@ on-click="details" title="View Product Details"&gt;&lt;/paper-icon-button&gt;
 </ul>
 <pre  class="code-block">
 <code>
-	details(){
+details(){
 var product = document.createElement('product-details');
 this.navigationManager.pushComponent(product, '500px', 'Product Details');
 }
@@ -350,9 +350,9 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 <p style="text-align: justify;"><img src="../src/main/frontend/docs/publish-subscribe.png" alt="pubsub" /></p>
 <p style="text-align: justify;">This component exposed 3 main interfaces:</p>
 <ul style="text-align: justify;">
-<li>subscribe, which is used by subscribers to express interest in one or more classes containing message definition;</li>
-<li>unsubscribe, which is used by subscribers to express ended interest in one or more classes containing message definition;</li>
-<li>publish, which is used by publishers to send notifications about one or more message classes.</li>
+<li>• subscribe, which is used by subscribers to express interest in one or more classes containing message definition;</li>
+<li>• unsubscribe, which is used by subscribers to express ended interest in one or more classes containing message definition;</li>
+<li>• publish, which is used by publishers to send notifications about one or more message classes.</li>
 </ul>
 <h4 id="anamembusage0001ausage" style="text-align: justify;"><a name="mbusage0001"></a> Usage</h4>
 <p style="text-align: justify;"><em>message-broker</em> web component is part of <em>owc-app</em> web component, which is included in OWC application.</p>
