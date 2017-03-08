@@ -130,37 +130,34 @@ Before we dive in, a brief description of Standards and technologies involved is
 &bull; include different functionalities on different sites<br>
 &bull; combine the same functionalities in different ways on different sites. The following figure is a representation of this concept.<br>
 			    </p>
-                
 
-  
   
 <p><img src="https://cloud.githubusercontent.com/assets/1030870/17594167/9f590f5e-5fe8-11e6-9a73-44692ecdfa1a.png" alt="modularity" /></p>
 <h4 id="modularity">Modularity</h4>
 <p style="text-align: justify;">Since <strong>OWC</strong> architecture follows Object Oriented Programming, each component has to be designed and implemented as an independent module. This ensures the possibility to use and integrate easily a module in the main application, since each component is selfstanding and contains everything necessary to execute the desired functionalities.</p>
 <h4 id="extensibility">Extensibility</h4>
-<p style="text-align: justify;">The <strong>OWC</strong> application is extensible, because it-s possible to add new functionalities (i.e. new components) without any impact on existing code. One of the most powerful innovation of Web Components standard is the chance of importing components located everywhere in the web. This implies that is possible to extend the application with:</p>
-<ul>
-<li style="text-align: justify;">internal components, i.e. components located within OWC application</li>
-<li style="text-align: justify;">external components, i.e. components deployed outside OWC application and reachable through an HTTP URL</li>
-</ul>
+<p style="text-align: justify;">The <strong>OWC</strong> application is extensible, because it-s possible to add new functionalities (i.e. new components) without any impact on existing code. One of the most powerful innovation of Web Components standard is the chance of importing components located everywhere in the web. This implies that is possible to extend the application with:<br>
+&bull; internal components, i.e. components located within OWC application<br>
+&bull; external components, i.e. components deployed outside OWC application and reachable through an HTTP URL<br>
+
 <p><img src="https://cloud.githubusercontent.com/assets/10920750/23408234/9ff94906-fdc7-11e6-9ff8-6cd6451234cb.png" alt="ext_int" /></p>
 <p style="text-align: justify;">The extensibility principle is fully granted following the best practices of this guide for new components development.</p>
 <h4 id="customization">Customization</h4>
-<p style="text-align: justify;">Another important aspect of <strong>OWC</strong> is Customization, implemented in terms of:</p>
-<ul>
-<li>menu items (i.e. functionalities) displayed in application menu, which is fully configurable</li>
-<li>data representation, thanks to the possibility to define which kind of information needs to be extracted from a data model and how this information have to be represented</li>
-<li>application theme, which can be saved on browser local storage, allowing each user to configure application according to its preferences</li>
-<li>application language, by means of internationalization support</li>
-</ul>
+<p style="text-align: justify;">Another important aspect of <strong>OWC</strong> is Customization, implemented in terms of:<br>
+
+&bull; menu items (i.e. functionalities) displayed in application menu, which is fully configurable<br>
+&bull; data representation, thanks to the possibility to define which kind of information needs to be extracted from a data model and how this information have to be represented<br>
+&bull; application theme, which can be saved on browser local storage, allowing each user to configure application according to its preferences<br>
+&bull; application language, by means of internationalization support<br>
 <p style="text-align: justify;">Customization principle will be detailed deeply in next paragraphs</p>
+			    
 <h4 id="opensource">Open Source</h4>
 <p style="text-align: justify;"><strong>OWC</strong> project is a Open Source project with the goal of creating a community of developers interested in implementing new web components suitable to space products dissemination field. Thanks to modularity and extensibility principles, components implemented by Open Source community can be dynamically imported in OWC application on the basis of users' needs.</p>
 <h3 id="componentslayoutmanagement">Components layout management</h3>
 <p style="text-align: justify;"><strong>OWC</strong> components layout is managed by the navigation-manager component, which is in charge of displaying OWC components inside the browser. The navigation system makes it possible to present data efficiently and makes it easier for the user to navigate among components, since it pushes components in the navigation stack and displays them horizontally on the screen in the order they are requested by end users.</p>
-<p style="text-align: justify;">OWC navigation-manager component is constituted by a main class, containing the following methods:</p>
-<ul>
-<li style="text-align: justify;">pushComponent, devoted to create the DOM element of the component to be displayed on main application container and to add to navigation stack the component itself. Input parameters are:
+<p style="text-align: justify;">OWC navigation-manager component is constituted by a main class, containing the following methods:<br>
+
+&pull; pushComponent, devoted to create the DOM element of the component to be displayed on main application container and to add to navigation stack the component itself. Input parameters are:<br>
 <ul>
 <li>component name</li>
 <li>panel width in pixels</li>
@@ -169,8 +166,8 @@ Before we dive in, a brief description of Standards and technologies involved is
 <li>a boolean used to choose if panel is resizible (true to resize, false to fix size)</li>
 <li>maximun number of times a component can be pushed</li>
 </ul>
-</li>
-<li style="text-align: justify;">popComponent, devoted to remove a component from navigation stack on user request, which in turn implies component removal from main application container. Input parameter is the name of the component to remove.</li>
+ <ul>
+&bull; popComponent, devoted to remove a component from navigation stack on user request, which in turn implies component removal from main application container. Input parameter is the name of the component to remove.</li>
 </ul>
 <h2 id="chapter2webcomponentarchitecture">Chapter 2: Web Component architecture</h2>
 <h3 id="introduction">Introduction</h3>
