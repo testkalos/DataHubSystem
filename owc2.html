@@ -158,7 +158,8 @@ Before we dive in, a brief description of Standards and technologies involved is
 <p style="text-align: justify;">OWC navigation-manager component is constituted by a main class, containing the following methods:<br>
 
 &pull; pushComponent, devoted to create the DOM element of the component to be displayed on main application container and to add to navigation stack the component itself. Input parameters are:<br>
-<ul>
+<br>
+  <ul>
 <li>component name</li>
 <li>panel width in pixels</li>
 <li>panel title</li>
@@ -180,7 +181,9 @@ Before we dive in, a brief description of Standards and technologies involved is
 </ul>
 <p style="text-align: justify;">Below is reported an example of a new component with name <em>new_component</em> written following ECMAScript 6 standard.</p>
 <p style="text-align: justify;">&nbsp;</p>
-<pre><code>&lt;dom-module id="new-component"&gt;
+ <pre  class="code-block">
+<code>
+  dom-module id="new-component"&gt;
 
 &lt;template&gt;
   &lt;style&gt;
@@ -206,18 +209,29 @@ Before we dive in, a brief description of Standards and technologies involved is
 
 &lt;/dom-module&gt;
 </code></pre>
+		    
 <p style="text-align: justify;">The code snippet is detailed in the next paragraphs.</p>
 <h4 id="dommodule" style="text-align: justify;">dom-module</h4>
 <p style="text-align: justify;">The <strong>dom-module</strong> is the HTML tag used by Polymer to specify the web component DOM (Document Object Model), called <em>local DOM</em>. The following code snippet is used to define a new html tag module with name <em>new-component</em>.</p>
-<pre><code>&lt;dom-module id="new-component"&gt;
+<pre  class="code-block">
+<code>
+dom-module id="new-component"&gt;
 ...
 &lt;/dom-module&gt;
 </code></pre>
 <h4 id="componentview" style="text-align: justify;">Component View</h4>
 <p style="text-align: justify;">Component view is included in HTML &lt;template&gt; element, a mechanism for holding client-side content that is not to be rendered when a page is loaded but may subsequently be instantiated during runtime using JavaScript. The template tag contains HTML tags and CSS style definition. Below is reported a code snipped related to <em>new_component</em> view.</p>
-<p>```</p>
-<h1>New Component title</h1>
-<p>```</p>
+<pre  class="code-block">
+<code>
+&lt;template&gt;
+<style>
+h1 {font-size:33px;
+}
+&lt;/style &gt;
+&lt;h1>New Component title &lt;/h1 &gt;
+&lt;/template>
+&lt;/pre></code> 
+
 <h4 id="componentcontroller">Component Controller</h4>
 <p style="text-align: justify;">Following the Model View Controller design pattern, the controller contains the logic to glue the model with the view. The controller gets data from the data-sources (i.e. model) and binds this data to the view. <em>Polymer</em> supports also bidirectional data binding. For more information, please refer to <a href="https://www.polymer-project.org/1.0/docs/devguide/data-binding">official documentation</a>.</p>
 <p style="text-align: justify;">The controller is defined inside the &lt;script&gt; block of a Web Component, as indicated in the code below.</p>
