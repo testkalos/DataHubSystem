@@ -224,13 +224,14 @@ dom-module id="new-component"&gt;
 <pre  class="code-block">
 <code>
 &lt;template&gt;
-<style>
+&lt;style&gt;
 h1 {font-size:33px;
 }
 &lt;/style &gt;
-&lt;h1>New Component title &lt;/h1 &gt;
-&lt;/template>
-&lt;/pre></code> 
+&lt;h1&gt;New Component title &lt;/h1 &gt;
+&lt;/template&gt;
+&lt;
+</code> </pre>
 
 <h4 id="componentcontroller">Component Controller</h4>
 <p style="text-align: justify;">Following the Model View Controller design pattern, the controller contains the logic to glue the model with the view. The controller gets data from the data-sources (i.e. model) and binds this data to the view. <em>Polymer</em> supports also bidirectional data binding. For more information, please refer to <a href="https://www.polymer-project.org/1.0/docs/devguide/data-binding">official documentation</a>.</p>
@@ -247,6 +248,7 @@ h1 {font-size:33px;
 
     })();
   &lt;/script&gt;
+  
 </code></pre>
 <p style="text-align: justify;"><em>OWC</em> is developed using ES6 (<a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript 6</a> standard). The approach to follow using ES6 with Polymer is detailed in <a href="https://www.polymer-project.org/1.0/blog/es6">Polymer's official blog post</a>.</p>
 <p style="text-align: justify;">With regard to example above, the controller is implemented within a Javascript class, named <em>NewComponent</em>. This class includes, if needed, implementation of the main callbacks of Polymer used to handle Polymer elements lifecycle. These methods are:</p>
