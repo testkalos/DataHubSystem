@@ -334,7 +334,7 @@ on-click="details" title="View Product Details"&gt;&lt;/paper-icon-button&gt;
 <li>• Javascript code</li>
 </ul>
 <pre  class="code-block">
-<code>
+<code> 
 details(){
 var product = document.createElement('product-details');
 this.navigationManager.pushComponent(product, '500px', 'Product Details');
@@ -362,13 +362,14 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 <h5 id="publishmethodusage" style="text-align: justify;">Publish method usage</h5>
 <p style="text-align: justify;">A possible use case of <strong>publish</strong> method is to notify when a new model from server is ready to be used by components that need that model.</p>
 <p style="text-align: justify;">In this case the component acting as <em>publisher</em> uses the <strong>publish</strong> method in the following way:</p>
-<pre><code class=" javascript language- javascript">this.owcApp.messageBroker.publish(topic,model,target);
+<pre  class="code-block">
+<code>this.owcApp.messageBroker.publish(topic,model,target);
 </code></pre>
 <p style="text-align: justify;">where:</p>
 <ul style="text-align: justify;">
-<li><strong>topic</strong> is a string representing topic name (i.e. message class name);</li>
-<li><strong>model</strong> is the variable containing the updated model;</li>
-<li><strong>target</strong> is the recipient component of the notification. If target is not specified, the notification impacts all components which expressed interest in the class containing message definition</li>
+<li><strong>• topic</strong> is a string representing topic name (i.e. message class name);</li>
+<li><strong>• model</strong> is the variable containing the updated model;</li>
+<li><strong>• target</strong> is the recipient component of the notification. If target is not specified, the notification impacts all components which expressed interest in the class containing message definition</li>
 </ul>
 <p style="text-align: justify;">Here is an example of usage:</p>
 <pre><code class=" javascript language- javascript">this.owcApp.messageBroker.publish('setNewModel',this.model,this.target);
@@ -376,7 +377,8 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 <h5 id="subscribemethodusage" style="text-align: justify;">Subscribe method usage</h5>
 <p style="text-align: justify;">A possible use case of <strong>subscribe</strong> method is to perform action after a reception of a notification of model update.</p>
 <p style="text-align: justify;">In this case the component acting as <em>subscriber</em> uses the <strong>subscribe</strong> method in the following way:</p>
-<pre><code class=" javascript language- javascript">this.owcApp.messageBroker.subscribe(topic,
+<pre  class="code-block">
+<code> this.owcApp.messageBroker.subscribe(topic,
   function(model){
   ....
 },target);
@@ -388,7 +390,8 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 <li><strong>target</strong> is the recipient component of the notification. If target is not specified, the notification impacts all components which expressed interest in the class containing message definition</li>
 </ul>
 <p style="text-align: justify;">Here is an example of usage:</p>
-<pre><code class=" javascript language- javascript">this.owcApp.messageBroker.subscribe('setNewModel',
+<pre  class="code-block">
+<code> this.owcApp.messageBroker.subscribe('setNewModel',
   function(model){
   this.model=model;
 },this.target);
@@ -396,11 +399,13 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 <h5 id="unsubscribemethodusage" style="text-align: justify;">Unsubscribe method usage</h5>
 <p style="text-align: justify;">A possible use case of <strong>unsubscribe</strong> method is to cease reception of a notification of model update.</p>
 <p style="text-align: justify;">In this case the component acting as <em>subscriber</em> uses the <strong>unsubscribe</strong> method in the following way:</p>
-<pre><code class=" javascript language- javascript">this.owcApp.messageBroker.unsubscribe(topic);
+<pre  class="code-block">
+<code> this.owcApp.messageBroker.unsubscribe(topic);
 </code></pre>
 <p style="text-align: justify;">where <strong>topic</strong> is a string representing topic name (i.e. message class name)</p>
 <p style="text-align: justify;">Here is an example of usage:</p>
-<pre><code class=" javascript language- javascript">this.owcApp.messageBroker.unsubscribe('setNewModel');
+<pre  class="code-block">
+<code> this.owcApp.messageBroker.unsubscribe('setNewModel');
 </code></pre>
 <h3 id="toastmanagercomponent" style="text-align: justify;">toast-manager component</h3>
 <p style="text-align: justify;">Toast manager component is devoted to show notification to users, as labels displayed on bottom of screen. Currently this web component manages the following notification types:</p>
@@ -421,11 +426,13 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 </code></pre>
 <p style="text-align: justify;"><img src="../src/main/frontend/docs/toast-info-example.png" alt="toast-info-example" /></p>
 <p style="text-align: justify;">Warning messages can be displayed on the screen by means of the following syntax:</p>
-<pre><code class=" javascript language- javascript">  this.owcApp.toastManager.warn(message);
+<pre  class="code-block">
+<code>  this.owcApp.toastManager.warn(message);
 </code></pre>
 <p style="text-align: justify;">where <em>message</em> is the string containing text to be shown.</p>
 <p style="text-align: justify;">Here is an example of usage:</p>
-<pre><code class=" javascript language- javascript">this.owcApp.toastManager.warn('Product Type Not Supported');
+<pre  class="code-block">
+<code> this.owcApp.toastManager.warn('Product Type Not Supported');
 </code></pre>
 <p style="text-align: justify;"><img src="../src/main/frontend/docs/toast-warn-example.png" alt="toast-warn-example" /></p>
 <h3 id="semanticmanagercomponent" style="text-align: justify;">semantic-manager component</h3>
