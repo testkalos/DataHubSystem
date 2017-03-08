@@ -301,33 +301,41 @@ h1 {font-size:33px;
 <h4 id="usage" style="text-align: justify;">Usage</h4>
 <p style="text-align: justify;"><em>navigation-manager</em> web component is part of <em>owc-app</em> web component, included in OWC application.</p>
 <p style="text-align: justify;">Here is an example on how to get a reference to <em>owc-app</em> web component in a different web component:</p>
-<pre><code class=" javascript language- javascript">this.owcApp = document.querySelector('#owc-app');
+<pre  class="code-block">
+<code> this.owcApp = document.querySelector('#owc-app');
 </code></pre>
+	
 <p style="text-align: justify;">The navigation-mamager is mainly used to publish a new panel in the DOM, by means of pushComponent method, which has the following input parameters:</p>
 <ul style="text-align: justify;">
-<li><strong>component</strong>, i.e. component name</li>
-<li><strong>panelWidth</strong>, i.e. width in pixel of container panel</li>
-<li><strong>title</strong>, i.e. panel title</li>
-<li><strong>hideCloseButton</strong>, i.e. a boolean used to show or hide close button in panel</li>
-<li><strong>resizable</strong>, i.e. a boolean used to enable or disable panel resizing</li>
-<li><strong>maxInstances</strong>, i.e. the maximun number of component instances shown at a time</li>
+<li><strong>• component</strong>, i.e. component name</li>
+<li><strong>• panelWidth</strong>, i.e. width in pixel of container panel</li>
+<li><strong>• title</strong>, i.e. panel title</li>
+<li><strong>• hideCloseButton</strong>, i.e. a boolean used to show or hide close button in panel</li>
+<li><strong>• resizable</strong>, i.e. a boolean used to enable or disable panel resizing</li>
+<li><strong>• maxInstances</strong>, i.e. the maximun number of component instances shown at a time</li>
 </ul>
-<pre><code class=" javascript language- javascript">pushComponent(component, panelWidth, title, hideCloseButton, resizable, maxInstances){
+	<pre  class="code-block">
+<code>
+pushComponent(component, panelWidth, title, hideCloseButton, resizable, maxInstances){
   ...
   ...
 }
 </code></pre>
 <p style="text-align: justify;">Below is reported an axample of navigation-manager component usage:</p>
 <ul style="text-align: justify;">
-<li>HTML code</li>
+<li>• HTML code</li>
 </ul>
-<pre><code class="html language-html">&lt;paper-icon-button icon="visibility"
+<pre  class="code-block">
+<code>
+&lt;paper-icon-button icon="visibility"
 on-click="details" title="View Product Details"&gt;&lt;/paper-icon-button&gt;
 </code></pre>
 <ul style="text-align: justify;">
-<li>Javascript code</li>
+<li>• Javascript code</li>
 </ul>
-<pre><code class="javascript language-javascript">details(){
+<pre  class="code-block">
+<code>
+	details(){
 var product = document.createElement('product-details');
 this.navigationManager.pushComponent(product, '500px', 'Product Details');
 }
