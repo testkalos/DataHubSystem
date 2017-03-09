@@ -88,8 +88,8 @@
 			    <h1><strong><a href="owc2.html#Chap2"> Chapter 2: Web Component Architecture </a></strong></h1>
 			    <h1><strong><a href="owc2.html#Chap3"> Chapter 3: Main OWC</a></strong></h1>
 			    <h1><strong><a href="owc2.html#Chap4"> Chapter 4: Main OWC</a></strong></h1>
-			    <h1><strong><a href="owc2.html#AnnexA"> Preface</a></strong></h1>
-			    <h1><strong><a href="owc2.html#AnnexB"> Preface</a></strong></h1>
+			    <h1><strong><a href="owc2.html#AnnA"> Annex A: </a></strong></h1>
+			    <h1><strong><a href="owc2.html#AnnB">Annex B: </a></strong></h1>
 			    
 			    
 <h2><a name="Preface">Preface</a></h2>
@@ -127,7 +127,8 @@ Before we dive in, a brief description of Standards and technologies involved is
 	The philosophy of gulp is <em>code over configurations</em></p>
 <h3 id="odata">OData</h3>
 <p style="text-align: justify;"><code>OData (Open Data Protocol)</code> is a standard that defines a set of best practices for building and consuming RESTful APIs. OData RESTful APIs are easy to consume. The OData metadata, a machine-readable description of the data model of the APIs, enables the creation of powerful generic client proxies and tools.</p>
-<h2 id="chapter1openwebcomponents">Chapter 1: Open Web Components</h2>
+
+<h2><a name="Chap1">Chapter 1: Open Web Components</a></h2>		   
 <h3 id="introductiontoopenwebcomponents">Introduction to Open Web Components</h3>
 <p style="text-align: justify;">The <strong>Open Web Components</strong> (<strong>OWC</strong>) is a client side software following the Single Page Application approach, for space data dissemination. The Software is based on Web Components Standard with Polymer v1.0 implementation.</p>
 <p style="text-align: justify;">These are the basic principles to be followed for <strong>OWC</strong> development:<br>
@@ -179,7 +180,9 @@ Before we dive in, a brief description of Standards and technologies involved is
 
 &bull; popComponent, devoted to remove a component from navigation stack on user request, which in turn implies component removal from main application container. Input parameter is the name of the component to remove.</li>
 </ul>
-<h2 id="chapter2webcomponentarchitecture">Chapter 2: Web Component architecture</h2>
+		
+<h2><a name="Chap2">Chapter 2: Web Component architecture</a></h2>		
+
 <h3 id="introduction">Introduction</h3>
 <p style="text-align: justify;"><em>OWC</em> is based on web components standard, using Google's Polymer library. Each entity in <em>OWC</em> is a web component, following the Model View Controller (MVC) design pattern and compatible with JavaScript ECMAScript 5 and ECMAScript 6.</p>
 <h3 id="abasicpolymercomponent">A basic Polymer component</h3>
@@ -304,7 +307,7 @@ h1 {font-size:33px;
 <li style="text-align: justify;"><strong>• wct.conf.js</strong>: in this file are listed <a href="https://github.com/Polymer/web-component-tester">web component tester</a> module settings</li>
 <li style="text-align: justify;"><strong>• wct.conf.json</strong>: this file includes <a href="https://github.com/Polymer/web-component-tester">web component tester</a> module configuration</li>
 
-<h2 id="chapter3owcmaincomponents">Chapter 3: OWC main components</h2>
+<h2><a name="Chap3">Chapter 3: Main Open Web Components</a></h2>
 <h3 id="navigationmanagercomponent" style="text-align: justify;">navigation-manager component</h3>
 <h4 id="architecture" style="text-align: justify;">Architecture</h4>
 <p style="text-align: justify;">This component manages the currently displayed components using the navigation stack, which is represented by an array of components. The first element in the array is the root, the <strong>dynamic-main-menu</strong>. The last element in the array is the last component displayed at the right of the screen (in Desktop view). The user can add components to the stack using the method <strong>pushComponent</strong> of navigation manager and can remove all components from the navigation stack, except for the root element, using the <strong>popComponent</strong> method. In Desktop view the new component is pushed on the right of the last visualized component, while in Mobile view the new component is pushed up to the currently visualized component.</p>
@@ -454,7 +457,8 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 <p style="text-align: justify;">The <em>Semantic Manager</em> generates the generic model extracting the data from the Search Request Model and applying the mapping defined in the Semantic Schema.</p>
 <h4 id="architecture-2" style="text-align: justify;">Architecture</h4>
 <p align=“JUSTIFY”><span class="image featured"><img src="assets/images/semanticmanager.png" alt="semanticmanager" /></span></p>
-<h2 id="chapter4buildyourownowcwebcomponent" style="text-align: justify;">Chapter 4: Build your own OWC Web Component</h2>
+<h2><a name="Chap4">Chapter 4:  Build your own OWC Web ComponentOpen Web Components</a></h2>
+
 <h3 id="anamegentool0001ahowtocreateanewwebcomponentforowcgenerationtool" style="text-align: justify;"><a name="gentool0001"></a> How to create a new web component for OWC (generation tool)</h3>
 <p style="text-align: justify;"><em>OWC</em> provides a tool to auto-generate a polymer from a template, which is compliant with folder structure described previously.</p>
 <p style="text-align: justify;">These are the steps to follow for running OWC component generation tool:</p>
@@ -565,7 +569,7 @@ python -m SimpleHTTPServer 8081
 </code></pre>
 <p style="text-align: justify;"><strong>Note</strong>: be careful about dependencies inclusion of bower_components folder. This is documentation page outcome:</p>
 <p align=“JUSTIFY”><span class="image featured"><img src="https://cloud.githubusercontent.com/assets/1030870/21138202/435af3a6-c12d-11e6-885d-3e8625d4078f.png" alt="auto-docs" /></span></p>
-<h2 id="appendixaowccomponentslist" style="text-align: justify;">Appendix A: OWC components list</h2>
+<h2><a name="AnnA">Appendix A: OWC list</a></h2>
 <ul style="text-align: justify;">
 <li><em>• adf-list-item</em>: item of auxiliary data file list.</li>
 <li><em>• authentication-manager</em>: manager of authentication features.</li>
@@ -623,7 +627,7 @@ python -m SimpleHTTPServer 8081
 <li><em>• toast-manager</em>: Notification system</li>
 <li><em>• user-manager</em>: User data manager web component</li>
 </ul>
-<h2 id="appendixbowcmaincomponentdescription" style="text-align: justify;">Appendix B: OWC main component description</h2>
+<h2><a name="AnnB">Appendix B: OWC main component description</a></h2>
 <h3 id="combosearchcomponent" style="text-align: justify;">Combo search component</h3>
 <p style="text-align: justify;">The combo-search-component is a polymer containing the search-box, list and map components, managing the interactions among them.</p>
 <p align=“JUSTIFY”><span class="image featured"><img src="https://cloud.githubusercontent.com/assets/1030870/17617877/b927b4c8-607c-11e6-9814-8df96fbfa600.png" alt="combo-search-component" /></span></p>
