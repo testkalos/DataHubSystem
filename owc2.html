@@ -20,7 +20,7 @@
 				padding: 5px;
 			}
 			
-			.flex {max-width: 100%}
+			.flex {max-width: 50%}
 	   	</style>
 	</head>
     <body>
@@ -155,7 +155,7 @@ Before we dive in, a brief description of Standards and technologies involved is
 &bull; internal components, i.e. components located within OWC application<br>
 &bull; external components, i.e. components deployed outside OWC application and reachable through an HTTP URL<br>
 
-<p align=“JUSTIFY”><span class="image featured"><img src="https://cloud.githubusercontent.com/assets/10920750/23408234/9ff94906-fdc7-11e6-9ff8-6cd6451234cb.png" alt="ext_int" /></span></p>
+<p align=“JUSTIFY”><img class="flex" src="https://cloud.githubusercontent.com/assets/10920750/23408234/9ff94906-fdc7-11e6-9ff8-6cd6451234cb.png" alt="ext_int" /></p>
 <p style="text-align: justify;">The extensibility principle is fully granted following the best practices of this guide for new components development.</p>
 <h4 id="customization">Customization</h4>
 <p style="text-align: justify;">Another important aspect of <strong>OWC</strong> is Customization, implemented in terms of:<br>
@@ -364,7 +364,7 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 <p style="text-align: justify;">In software architecture, publish&ndash;subscribe is a messaging pattern involving 2 main actors: publishers and subscribers.</p>
 <p style="text-align: justify;"><strong>Publishers</strong> are senders of messages. They don't send messages to specific receivers, but define messages into classes, regardless of whether there are or not receivers (so called subscribers).</p>
 <p style="text-align: justify;"><strong>Subscribers</strong> are messages receivers. They don't know who are message senders (so called publishers), but they express interest in one or more classes and only receive messages that are of interest for them.</p>
-<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/publish-subscribe.png" alt="pubsub" /></span></p>
+<p align=“JUSTIFY”><img class="flex" src="assets/images/publish-subscribe.png" alt="pubsub" /></p>
 <p style="text-align: justify;">This component exposed 3 main interfaces:</p>
 <ul style="text-align: justify;">
 <li>• subscribe, which is used by subscribers to express interest in one or more classes containing message definition;</li>
@@ -444,7 +444,7 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 <pre  class="code-block">
 <code> this.owcApp.toastManager.info('Completed new search.');
 </code></pre>
-<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/toast-info-example.png" alt="toast-info-example" /></span></p>
+<p align=“JUSTIFY”><img class="flex" src="assets/images/toast-info-example.png" alt="toast-info-example" /></p>
 <p style="text-align: justify;">Warning messages can be displayed on the screen by means of the following syntax:</p>
 <pre  class="code-block">
 <code>  this.owcApp.toastManager.warn(message);
@@ -459,7 +459,7 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 <p style="text-align: justify;">The Open Web Components (OWC) is composed by a generic set of components used for disseminating data regardless of their types. Ingested Objects in the DHuS have a specific class type, for every class type the UI components (e.g. List, Map) need to extract a set of attributes from the server model. This means that OWC software needs to know the semantic of the server model. To avoid hardcoded semantic in components code, OWC uses a generic model containing proper attributes for each different item, exploiting a Semantic Schema from Server.</p>
 <p style="text-align: justify;">The <em>Semantic Manager</em> generates the generic model extracting the data from the Search Request Model and applying the mapping defined in the Semantic Schema.</p>
 <h4 id="architecture-2" style="text-align: justify;">Architecture</h4>
-<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/semanticmanager.png" alt="semanticmanager" /></span></p>
+<p align=“JUSTIFY”><img src="assets/images/semanticmanager.png" alt="semanticmanager" /></p>
 <h2><a name="Chap4">Chapter 4:  Build your own Open Web Components</a></h2>
 
 <h3 id="anamegentool0001ahowtocreateanewwebcomponentforowcgenerationtool" style="text-align: justify;"><a name="gentool0001"></a> How to create a new web component for OWC (generation tool)</h3>
@@ -633,9 +633,9 @@ python -m SimpleHTTPServer 8081
 <h2><a name="AnnB">Appendix B: Main OWC description</a></h2>
 <h3 id="combosearchcomponent" style="text-align: justify;">Combo search component</h3>
 <p style="text-align: justify;">The combo-search-component is a polymer containing the search-box, list and map components, managing the interactions among them.</p>
-<p align=“JUSTIFY”><span class="image featured"><img src="https://cloud.githubusercontent.com/assets/1030870/17617877/b927b4c8-607c-11e6-9814-8df96fbfa600.png" alt="combo-search-component" /></span></p>
+<p align=“JUSTIFY”><img class="flex" src="https://cloud.githubusercontent.com/assets/1030870/17617877/b927b4c8-607c-11e6-9814-8df96fbfa600.png" alt="combo-search-component" /></p>
 <p style="text-align: justify;">The Class diagram of <em>combo-search-component</em> follows:</p>
-<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/combo-search-container.png" alt="combo-search-container" /></span></p>
+<p align=“JUSTIFY”><img class="flex" src="assets/images/combo-search-container.png" alt="combo-search-container" /></p>
 <h4 id="searchcomponent" style="text-align: justify;">SearchComponent</h4>
 <p style="text-align: justify;">This component is devoted to perform a new product search passing the query string.</p>
 <h4 id="datasource" style="text-align: justify;">DataSource</h4>
@@ -646,27 +646,27 @@ python -m SimpleHTTPServer 8081
 <p style="text-align: justify;">This is the HTTP reuqests manager of the whole application.</p>
 <h4 id="semanticmanager" style="text-align: justify;">SemanticManager</h4>
 <p style="text-align: justify;">The SemanticManager generates the generic model processing the server model using the semantic schema.</p>
-<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/semanticmanagerclientside.png" alt="semanticmanager" /></span></p>
+<p align=“JUSTIFY”><img class="flex" src="assets/images/semanticmanagerclientside.png" alt="semanticmanager" /></p>
 <h4 id="genericmodel" style="text-align: justify;">GenericModel</h4>
 <p style="text-align: justify;">This component contains the generic model shared among combo-search-component sub-elements.</p>
 <h4 id="owclist" style="text-align: justify;">OwcList</h4>
 <p style="text-align: justify;">This component is a generic list used to show data within OWC application</p>
-<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/list.png" alt="list" /></span></p>
+<p align=“JUSTIFY”><img class="flex" src="assets/images/list.png" alt="list" /></p>
 <h4 id="listcoder" style="text-align: justify;">ListCoder</h4>
 <p style="text-align: justify;">ListCoder processes the generic model to generate the specific model of list component.</p>
 <h4 id="owcmap" style="text-align: justify;">OwcMap</h4>
 <p style="text-align: justify;">The map component is used to visualize product footprints and to perform geographic filter by means of area selection.</p>
-	<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/map.png" alt="map" /></span></p>
+	<p align=“JUSTIFY”><img class="flex" src="assets/images/map.png" alt="map" /></p>
 <h4 id="mapcoder" style="text-align: justify;">MapCoder</h4>
 <p style="text-align: justify;">MapCoder processes the generic model to generate the specific model of map component.</p>
 <h4 id="messagebroker" style="text-align: justify;">MessageBroker</h4>
 <p style="text-align: justify;">The Message Broker allows the communication among components, reducing the components coupling and implementing the &ldquo;publish-subscribe&rdquo; design pattern.</p>
 <p style="text-align: justify;">The main goal of this component is to minimize dependencies among components and to centralize the messages exchange.</p>
-<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/message-broker.png" alt="message-broker" /></span></p>
-<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/message-broker-sequence.png" alt="message-broker-sequence" /></span></p>
+<p align=“JUSTIFY”><img class="flex" src="assets/images/message-broker.png" alt="message-broker" /></p>
+<p align=“JUSTIFY”><img class="flex" src="assets/images/message-broker-sequence.png" alt="message-broker-sequence" /></p>
 <h3 id="combosearchcomponentsequencediagram" style="text-align: justify;">Combo search component sequence diagram</h3>
 <p style="text-align: justify;">To understand deeply the interactions among components of combo-search-component, please refer to the sequence diagram below:</p>
-<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/combo-component-sequence-schema.png" alt="combo-component-sequence-schema" /></span></p>
+<p align=“JUSTIFY”><img class="flex" src="assets/images/combo-component-sequence-schema.png" alt="combo-component-sequence-schema" /></p>
 <p align=“JUSTIFY”>Note: <br /> The information contained in this webpage is a first draft intended to provide helpful information on the Open Web Components.</p>
 </body>
 </html>
