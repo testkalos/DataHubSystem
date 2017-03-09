@@ -132,7 +132,7 @@ Before we dive in, a brief description of Standards and technologies involved is
 			    </p>
 
   
-<p><img src="https://cloud.githubusercontent.com/assets/1030870/17594167/9f590f5e-5fe8-11e6-9a73-44692ecdfa1a.png" alt="modularity" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="https://cloud.githubusercontent.com/assets/1030870/17594167/9f590f5e-5fe8-11e6-9a73-44692ecdfa1a.png" alt="modularity" /></span></p>
 <h4 id="modularity">Modularity</h4>
 <p style="text-align: justify;">Since <strong>OWC</strong> architecture follows Object Oriented Programming, each component has to be designed and implemented as an independent module. This ensures the possibility to use and integrate easily a module in the main application, since each component is selfstanding and contains everything necessary to execute the desired functionalities.</p>
 <h4 id="extensibility">Extensibility</h4>
@@ -140,7 +140,7 @@ Before we dive in, a brief description of Standards and technologies involved is
 &bull; internal components, i.e. components located within OWC application<br>
 &bull; external components, i.e. components deployed outside OWC application and reachable through an HTTP URL<br>
 
-<p><img src="https://cloud.githubusercontent.com/assets/10920750/23408234/9ff94906-fdc7-11e6-9ff8-6cd6451234cb.png" alt="ext_int" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="https://cloud.githubusercontent.com/assets/10920750/23408234/9ff94906-fdc7-11e6-9ff8-6cd6451234cb.png" alt="ext_int" /></span></p>
 <p style="text-align: justify;">The extensibility principle is fully granted following the best practices of this guide for new components development.</p>
 <h4 id="customization">Customization</h4>
 <p style="text-align: justify;">Another important aspect of <strong>OWC</strong> is Customization, implemented in terms of:<br>
@@ -297,7 +297,7 @@ h1 {font-size:33px;
 <h3 id="navigationmanagercomponent" style="text-align: justify;">navigation-manager component</h3>
 <h4 id="architecture" style="text-align: justify;">Architecture</h4>
 <p style="text-align: justify;">This component manages the currently displayed components using the navigation stack, which is represented by an array of components. The first element in the array is the root, the <strong>dynamic-main-menu</strong>. The last element in the array is the last component displayed at the right of the screen (in Desktop view). The user can add components to the stack using the method <strong>pushComponent</strong> of navigation manager and can remove all components from the navigation stack, except for the root element, using the <strong>popComponent</strong> method. In Desktop view the new component is pushed on the right of the last visualized component, while in Mobile view the new component is pushed up to the currently visualized component.</p>
-<p style="text-align: justify;"><img src="assets/images/desktop_view.png" alt="Desktop View" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/desktop_view.png" alt="Desktop View" /></span></p>
 <h4 id="usage" style="text-align: justify;">Usage</h4>
 <p style="text-align: justify;"><em>navigation-manager</em> web component is part of <em>owc-app</em> web component, included in OWC application.</p>
 <p style="text-align: justify;">Here is an example on how to get a reference to <em>owc-app</em> web component in a different web component:</p>
@@ -340,14 +340,14 @@ var product = document.createElement('product-details');
 this.navigationManager.pushComponent(product, '500px', 'Product Details');
 }
 </code></pre>
-<p style="text-align: justify;"><img src="assets/images/product_details.png" alt="Product Details" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/product_details.png" alt="Product Details" /></span></p>
 <h3 id="messagebrokercomponent" style="text-align: justify;">message-broker component</h3>
 <p style="text-align: justify;">The communication among web components is managed by the Message Broker, a centralized messaging system based on the publish-subscribe Design Pattern.</p>
 <h4 id="architecture-1" style="text-align: justify;">Architecture</h4>
 <p style="text-align: justify;">In software architecture, publish&ndash;subscribe is a messaging pattern involving 2 main actors: publishers and subscribers.</p>
 <p style="text-align: justify;"><strong>Publishers</strong> are senders of messages. They don't send messages to specific receivers, but define messages into classes, regardless of whether there are or not receivers (so called subscribers).</p>
 <p style="text-align: justify;"><strong>Subscribers</strong> are messages receivers. They don't know who are message senders (so called publishers), but they express interest in one or more classes and only receive messages that are of interest for them.</p>
-<p style="text-align: justify;"><img src="assets/images/publish-subscribe.png" alt="pubsub" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/publish-subscribe.png" alt="pubsub" /></span></p>
 <p style="text-align: justify;">This component exposed 3 main interfaces:</p>
 <ul style="text-align: justify;">
 <li>• subscribe, which is used by subscribers to express interest in one or more classes containing message definition;</li>
@@ -414,7 +414,7 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 <li><strong>info</strong>, used to notify information messages, like login-in or log-out operation result;</li>
 <li><strong>warn</strong>, used to notify warning messages, like operations not supported.</li>
 </ul>
-<p style="text-align: justify;"><img src="assets/images/toast-manager.png" alt="toast-manager" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/toast-manager.png" alt="toast-manager" /></span></p>
 <h4 id="usage-1" style="text-align: justify;">Usage</h4>
 <p style="text-align: justify;"><em>toast-manager</em> web component is part of <em>owc-app</em> web component, which is included in OWC application.</p>
 <p style="text-align: justify;">An example on how to get a reference to <em>owc-app</em> web component can be found at the following <a href="#mbusage0001">link</a>.</p>
@@ -427,7 +427,7 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 <pre  class="code-block">
 <code> this.owcApp.toastManager.info('Completed new search.');
 </code></pre>
-<p style="text-align: justify;"><img src="assets/images/toast-info-example.png" alt="toast-info-example" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/toast-info-example.png" alt="toast-info-example" /></span></p>
 <p style="text-align: justify;">Warning messages can be displayed on the screen by means of the following syntax:</p>
 <pre  class="code-block">
 <code>  this.owcApp.toastManager.warn(message);
@@ -437,12 +437,12 @@ this.navigationManager.pushComponent(product, '500px', 'Product Details');
 <pre  class="code-block">
 <code> this.owcApp.toastManager.warn('Product Type Not Supported');
 </code></pre>
-<p style="text-align: justify;"><img src="assets/images/toast-warn-example.png" alt="toast-warn-example" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/toast-warn-example.png" alt="toast-warn-example" /></span></p>
 <h3 id="semanticmanagercomponent" style="text-align: justify;">semantic-manager component</h3>
 <p style="text-align: justify;">The Open Web Components (OWC) is composed by a generic set of components used for disseminating data regardless of their types. Ingested Objects in the DHuS have a specific class type, for every class type the UI components (e.g. List, Map) need to extract a set of attributes from the server model. This means that OWC software needs to know the semantic of the server model. To avoid hardcoded semantic in components code, OWC uses a generic model containing proper attributes for each different item, exploiting a Semantic Schema from Server.</p>
 <p style="text-align: justify;">The <em>Semantic Manager</em> generates the generic model extracting the data from the Search Request Model and applying the mapping defined in the Semantic Schema.</p>
 <h4 id="architecture-2" style="text-align: justify;">Architecture</h4>
-<p style="text-align: justify;"><img src="assets/images/semanticmanager.png" alt="semanticmanager" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/semanticmanager.png" alt="semanticmanager" /></span></p>
 <h2 id="chapter4buildyourownowcwebcomponent" style="text-align: justify;">Chapter 4: Build your own OWC Web Component</h2>
 <h3 id="anamegentool0001ahowtocreateanewwebcomponentforowcgenerationtool" style="text-align: justify;"><a name="gentool0001"></a> How to create a new web component for OWC (generation tool)</h3>
 <p style="text-align: justify;"><em>OWC</em> provides a tool to auto-generate a polymer from a template, which is compliant with folder structure described previously.</p>
@@ -503,7 +503,7 @@ setting element file
 <h3 id="howtogeneratedocumentationofwebcomponent" style="text-align: justify;">How to generate documentation of web component</h3>
 <p style="text-align: justify;">Google's provides automatic tools to auto-generate documentation from code comments.</p>
 <p style="text-align: justify;">Here is shown, as example, the iron-ajax documentation:</p>
-<p style="text-align: justify;"><img src="https://cloud.githubusercontent.com/assets/1030870/21136872/c29a9a8c-c127-11e6-8e5b-fc8225df7567.png" alt="autogenerated-docs" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="https://cloud.githubusercontent.com/assets/1030870/21136872/c29a9a8c-c127-11e6-8e5b-fc8225df7567.png" alt="autogenerated-docs" /></span></p>
 <p style="text-align: justify;">Comment written to generate component generic description is:</p>
 <pre  class="code-block">
 <code>&lt;!--
@@ -553,7 +553,7 @@ python -m SimpleHTTPServer 8081
 <code>http://localhost:8081/elements/new-component/
 </code></pre>
 <p style="text-align: justify;"><strong>Note</strong>: be careful about dependencies inclusion of bower_components folder. This is documentation page outcome:</p>
-<p style="text-align: justify;"><img src="https://cloud.githubusercontent.com/assets/1030870/21138202/435af3a6-c12d-11e6-885d-3e8625d4078f.png" alt="auto-docs" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="https://cloud.githubusercontent.com/assets/1030870/21138202/435af3a6-c12d-11e6-885d-3e8625d4078f.png" alt="auto-docs" /></span></p>
 <h2 id="appendixaowccomponentslist" style="text-align: justify;">Appendix A: OWC components list</h2>
 <ul style="text-align: justify;">
 <li><em>• adf-list-item</em>: item of auxiliary data file list.</li>
@@ -615,9 +615,9 @@ python -m SimpleHTTPServer 8081
 <h2 id="appendixbowcmaincomponentdescription" style="text-align: justify;">Appendix B: OWC main component description</h2>
 <h3 id="combosearchcomponent" style="text-align: justify;">Combo search component</h3>
 <p style="text-align: justify;">The combo-search-component is a polymer containing the search-box, list and map components, managing the interactions among them.</p>
-<p style="text-align: justify;"><img src="https://cloud.githubusercontent.com/assets/1030870/17617877/b927b4c8-607c-11e6-9814-8df96fbfa600.png" alt="combo-search-component" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="https://cloud.githubusercontent.com/assets/1030870/17617877/b927b4c8-607c-11e6-9814-8df96fbfa600.png" alt="combo-search-component" /></span></p>
 <p style="text-align: justify;">The Class diagram of <em>combo-search-component</em> follows:</p>
-<p style="text-align: justify;"><img src="assets/images/combo-search-container.png" alt="combo-search-container" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/combo-search-container.png" alt="combo-search-container" /></span></p>
 <h4 id="searchcomponent" style="text-align: justify;">SearchComponent</h4>
 <p style="text-align: justify;">This component is devoted to perform a new product search passing the query string.</p>
 <h4 id="datasource" style="text-align: justify;">DataSource</h4>
@@ -628,27 +628,27 @@ python -m SimpleHTTPServer 8081
 <p style="text-align: justify;">This is the HTTP reuqests manager of the whole application.</p>
 <h4 id="semanticmanager" style="text-align: justify;">SemanticManager</h4>
 <p style="text-align: justify;">The SemanticManager generates the generic model processing the server model using the semantic schema.</p>
-<p style="text-align: justify;"><img src="/assets/images/semanticmanagerclientside.png" alt="semanticmanager" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="/assets/images/semanticmanagerclientside.png" alt="semanticmanager" /></span></p>
 <h4 id="genericmodel" style="text-align: justify;">GenericModel</h4>
 <p style="text-align: justify;">This component contains the generic model shared among combo-search-component sub-elements.</p>
 <h4 id="owclist" style="text-align: justify;">OwcList</h4>
 <p style="text-align: justify;">This component is a generic list used to show data within OWC application</p>
-<p style="text-align: justify;"><img src="assets/images/list.png" alt="list" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/list.png" alt="list" /></span></p>
 <h4 id="listcoder" style="text-align: justify;">ListCoder</h4>
 <p style="text-align: justify;">ListCoder processes the generic model to generate the specific model of list component.</p>
 <h4 id="owcmap" style="text-align: justify;">OwcMap</h4>
 <p style="text-align: justify;">The map component is used to visualize product footprints and to perform geographic filter by means of area selection.</p>
-<p style="text-align: justify;"><img src="assets/images/map.png" alt="map" /></p>
+	<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/map.png" alt="map" /></span></p>
 <h4 id="mapcoder" style="text-align: justify;">MapCoder</h4>
 <p style="text-align: justify;">MapCoder processes the generic model to generate the specific model of map component.</p>
 <h4 id="messagebroker" style="text-align: justify;">MessageBroker</h4>
 <p style="text-align: justify;">The Message Broker allows the communication among components, reducing the components coupling and implementing the &ldquo;publish-subscribe&rdquo; design pattern.</p>
 <p style="text-align: justify;">The main goal of this component is to minimize dependencies among components and to centralize the messages exchange.</p>
-<p style="text-align: justify;"><img src="assets/images/message-broker.png" alt="message-broker" /></p>
-<p style="text-align: justify;"><img src="assets/images/message-broker-sequence.png" alt="message-broker-sequence" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/message-broker.png" alt="message-broker" /></span></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/message-broker-sequence.png" alt="message-broker-sequence" /></span></p>
 <h3 id="combosearchcomponentsequencediagram" style="text-align: justify;">Combo search component sequence diagram</h3>
 <p style="text-align: justify;">To understand deeply the interactions among components of combo-search-component, please refer to the sequence diagram below:</p>
-<p style="text-align: justify;"><img src="assets/images/combo-component-sequence-schema.png" alt="combo-component-sequence-schema" /></p>
+<p align=“JUSTIFY”><span class="image featured"><img src="assets/images/combo-component-sequence-schema.png" alt="combo-component-sequence-schema" /></span></p>
 
 			    	   <p align=“JUSTIFY”><span class="image featured"><img src="assets/images/combo-component-sequence-schema" alt="combo-component-sequence-schema" /></span></p>
 <p align=“JUSTIFY”>Note: <br /> The information contained in this webpage is a first draft intended to provide helpful information on the Open Web Components.</p>
