@@ -94,8 +94,134 @@
 <a target="_blank" href="https://github.com/SentinelDataHub/DataHubSystem/releases/download/0.12.5-6-osf/dhus-software-0.12.5-6-osf-distribution.shar" class="button">Download DHuS VERSION 0.12.5-6-osf</a>
 		</header>
 	</section>
+
+<script language="javascript">
+
+
+//ENTER CONTENT TO SCROLL BELOW.
+var content='Download DHuS version with  Landsat-8 and COSMO-Skymed add-ons';
+
+var boxheight=45;          //BACKGROUND BOX HEIGHT IN PIXELS.
+var boxwidth=390;          //BACKGROUND BOX WIDTH IN PIXELS.
+var boxcolor="#FFF6e9";    //BACKGROUND BOX COLOR.
+var speed=60;              //SPEED OF SCROLL IN MILLISECONDS (1 SECOND=1000 MILLISECONDS)..
+var pixelstep=2;           //PIXELS "STEPS" PER REPITITION.
+var goright=false;         //LEFT TO RIGHT=TRUE , RIGHT TO LEFT=FALSE
+var pauseOnmouseover=true; //SET TO "true" TO ENABLE PAUSE WHEN MOUSEOVER, "false" TO DISABLE IT.
+
+//** DO NOT EDIT BEYOND THIS POINT **
+var outer,inner,ref,elementwidth;
+var w3c=(document.getElementById)?true:false;
+var ns4=(document.layers)?true:false;
+var ie4=(document.all && !w3c)?true:false;
+var ie5=(document.all && w3c)?true:false;
+var ns6=(w3c && navigator.appName.indexOf("Netscape")>=0)?true:false;
+var txt='';
+var goscroll=true;
+if(ns4){
+txt+='<table cellpadding=0 cellspacing=0 border=0 height='+boxheight+' width='+boxwidth+'><tr><td>';
+txt+='<ilayer name="ref" bgcolor="'+boxcolor+'" width="'+boxwidth+'" height="'+boxheight+'"></ilayer>';
+txt+='</td></tr></table>';
+txt+='<layer name="outer" bgcolor="'+boxcolor+'" visibility="hidden" width="'+boxwidth+'" height="'+boxheight+'" '+((pauseOnmouseover)? 'onmouseover="goscroll=false" onmouseout="goscroll=true"':'')+'>';
+txt+='<layer name="inner"  visibility="hidden" left="2" top="2">';
+txt+=content;
+txt+='</layer></layer>';
+}else{
+txt+='<div id="ref" style="position:relative; width:'+boxwidth+'; height:'+boxheight+'; visibility:visible; background-color:'+boxcolor+';" '+((pauseOnmouseover)? 'onmouseover="goscroll=false" onmouseout="goscroll=true"':'')+'></div>';
+txt+='<div id="outer" style="position:absolute; width:'+boxwidth+'; height:'+boxheight+'; visibility:hidden; background-color:'+boxcolor+'; overflow:hidden;">';
+txt+='<div id="inner"  style="position:absolute; visibility:hidden; left:2px; top:2px; overflow:hidden; cursor:default;" '+((pauseOnmouseover)? 'onmouseover="goscroll=false" onmouseout="goscroll=true"':'')+'>';
+txt+=content;
+txt+='</div></div>';
+}
+document.write(txt);
+txt=0;
+
+function getPageLeft(el){
+var x;
+if(ns4)return el.pageX;
+if(ie4||w3c){
+x = 0;
+while(el.offsetParent!=null){
+x+=el.offsetLeft;
+el=el.offsetParent;
+}
+x+=el.offsetLeft;
+return x;
+}}
+
+function getPageTop(el){
+var y;
+if(ns4)return el.pageY;
+if(ie4||w3c){
+y=0;
+while(el.offsetParent!=null){
+y+=el.offsetTop;
+el=el.offsetParent;
+}
+y+=el.offsetTop;
+return y;
+}}
+
+function getElWidth(el){
+if(ns4)return (el.document.width)? el.document.width : el.clip.right-el.clip.left;
+else if(ie4||ie5)return (el.style.width)? el.style.width:el.clientWidth;
+else if(w3c)return (el.style.width)?parseInt(el.style.width):parseInt(el.offsetWidth);
+else return -1;
+}
+
+window.onresize=function(){
+if(ns4)setTimeout('history.go(0)', 400);
+else{
+outer.style.left=getPageLeft(ref)+'px';
+outer.style.top=getPageTop(ref)+'px';
+}}
+
+function scrollbox(){
+if(goscroll){
+if(ns4){
+inner.left+=(goright)? pixelstep: -pixelstep;
+inner.clip.right=(boxwidth-inner.left-2>boxwidth)? boxwidth-2 : boxwidth-inner.left-2;
+inner.clip.left=-inner.left+2;
+if(goright){
+if(inner.left>boxwidth)inner.left=-elementwidth;
+}else{
+if(inner.left<-elementwidth)inner.left=boxwidth+2;
+}}else{
+inner.style.left=parseInt(inner.style.left)+((goright)? pixelstep: -pixelstep)+'px';
+if(goright){
+if(parseInt(inner.style.left)>boxwidth)inner.style.left=-elementwidth+'px';
+}else{
+if(parseInt(inner.style.left)<-elementwidth)inner.style.left=boxwidth+2+'px';
+}}}}
+
+window.onload=function(){
+ref=(ns4)?document.layers['ref']:(ie4)?document.all['ref']:document.getElementById('ref');
+outer=(ns4)?document.layers['outer']:(ie4)?document.all['outer']:document.getElementById('outer');
+inner=(ns4)?outer.document.layers['inner']:(ie4)?document.all['inner']:document.getElementById('inner');
+elementwidth=getElWidth(inner);
+if(ns4){
+outer.clip.width=boxwidth;
+outer.clip.height=boxheight;
+outer.moveTo(getPageLeft(ref),getPageTop(ref));
+inner.left=(goright)? -elementwidth : boxwidth-2;
+inner.clip.width=0
+inner.clip.height=boxheight-4;
+outer.visibility="show";
+inner.visibility="show";
+}else{
+outer.style.left=getPageLeft(ref)+'px';
+outer.style.top=getPageTop(ref)+'px';
+inner.style.width=elementwidth+'px';
+inner.style.left=((goright)? -elementwidth : boxwidth-2)+'px';
+inner.style.visibility="visible";
+}
+setInterval('scrollbox()',speed);
+}
+</script>		
 		
-			
+		
+		
+<!--			
 		<header>
 		<div id="blink" style="text-align:center;"> <a 
 href="https://github.com/testkalos/DataHubSystem/releases/download/0.12.5-6-osf-L8-COSMO-Skymed/dhus-software-0.12.5-6-osf-distribution_with_Landsat8_Cosmoskymed.tar" target="_blank"> <span style="color:#003366;font-size:20px;"><strong>Latest News:</strong></span> <span style="color:#00a2e8;font-size:20px;">
@@ -113,6 +239,9 @@ blink_one();
 </script>	
 	
 		</header>
+
+-->
+		
 	
 		
 		
