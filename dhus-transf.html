@@ -115,9 +115,10 @@ The file<strong><em> burst/lib/getBurst.py</em></strong> :<br>
 • From the correspondent annotation file get the number of burst, linesPerBurst and NumberOfSamples<br>
 • For each burst get the startTimeBurst(azimuthTime)<br>
 • From the geolocationGrid extract the line (startLineBurst) correspondent to the startTimeBurst (convertion [azimuthTime&agrave;line] using the GeolocatedGrid )<br>
-• Build the stopLineBurst.<br>
+• Build the stopLineBurst(Figure 1) <br>
+• Build the first sample and the last sample (C0 and C1) (Figure 1)<br>
 • Cut the tiffProduct whit startLineBurst,stopLineBurst,C0 , C1<br>
-• Creates the &lsquo;burst&rsquo; folder inside the SAFE product. The burst folder will contain all the GEOtiff bursts divided by polarization, swath, and burst: ES: Burst_coPol_3_7.tiff (3 = swath, 7 = burst).<br>
+• Creates the &lsquo;burst&rsquo; folder inside the SAFE product. The burst folder will contain all the GEOtiff bursts divided by polarization, swath, and burst: ES: Burst_coPol_3_7.tiff (3 = swath, 7 = burst) (Figure 2)<br>
 • Each GeoTiff burst is associated with a manifest with information about the original product and burst information.<br>
 						</p>
 <p>
@@ -132,6 +133,20 @@ In the <em>&nbsp;<strong>burst/config/config.ini</strong></em> there are the con
 						<p>
 The <strong>burst/config/manifest.xml</strong> is a template for to create the manifest for each burst.</p>
 
+<p>
+<img src="assets/images/dhus-transf-fig.1.png" alt=""/>
+</p>
+
+						<p align="justify"> Figure 1: start e stop line and c0 /c1 samples of a burst</p>						
+						
+<p>
+<img src="assets/images/dhus-transf-fig.2.png" alt=""/>
+</p>
+						
+						
+						<p align="JUSTIFY">Figure 2 : output burst whit SNAP tool</p>
+						
+						
 						<p><strong>Information about the set of metadata for get a burst(<sup>2</sup>):</strong></p>
 <p>
 • In the annotation data set are reported the section:<br>
@@ -166,12 +181,13 @@ The <strong>burst/config/manifest.xml</strong> is a template for to create the m
 <img src="assets/images/dhus-transf-1.png" alt=""/>
 </p>
 			
-<p>Figure 1:numeration of bursts for a first swath of a SLC IW in ascending pass</p>
+<p>Figure 3:numeration of bursts for a first swath of a SLC IW in ascending pass</p>
 	<p>
+		<p align="JUSTIFY">S1B_IW_SLC__1SDV_20170404T212628_20170404T212656_005016_008C5F_1659<br>	
 <img src="assets/images/dhus-transf-2.png" alt=""/>
 </p>		
-			
-<p>Figure 2: numeration of bursts for a first swath of a SLC IW in descending pass</p>
+		
+<p>Figure 4: numeration of bursts for a first swath of a SLC IW in descending pass</p>
 
 			
 <p><strong>Reference Documents:</strong></p>
