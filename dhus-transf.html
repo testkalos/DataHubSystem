@@ -20,13 +20,7 @@
 		<!-- Header -->
 			<div id="header">
 				<h1><a href="index.html" id="logo">Open Source DHuS Portal</a></h1>		
-     <!--<h1>
-     <a href="index.html" class="image left"><img src="assets/images/oslogomini.jpg" "alt="" /></a>
-     <a href="http://ec.europa.eu/index_en.html" class="image left"><img src="assets/images/ec-mini.jpg" "alt=""/></a>
-     <a href="index.html" id="logo"> <em>Open Source Portal</em></a>
-     <a href="http://www.copernicus.eu/" class="image left"><img src="assets/images/copernicus-mini.jpg" "alt=""/></a>
-     <a href="http://www.esa.int/ESA" class="image left"><img src="/assets/images/esa-mini.jpg" "alt=""/></a>    
-     </h1>-->
+   
 				
 		<nav id="nav">
 						<ul>
@@ -51,7 +45,7 @@
 								<li><a href="dhus_docker_installation.html"> Docker Technologies Integration</a></li>
 								<li><a href="multi-mission-access.html">Multi-Mission Access</a></li>
 								<li><a href="wms.html">WMS-Integration</a></li>
-                <li><a href=dhus-transf.html">WMS-Integration</a></li>
+                                                                <li><a href="dhus-transf.html">DHuS Transformation </a></li>
 					</ul>
 				</li>
 							<li ><a href="">External Resources</a>
@@ -83,114 +77,98 @@
 											</header>
 <p align="JUSTIFY">
 						<h3>Introduction</h3>
-
+<p>
 The DHuS  multi-mission design allows to manipulate the data at the time of ingestion. 
 The definitions and configuration of the Transformations are plugged through the DRB Cortex Ontology mechanism. 
-An example of basic algorithm that can be integrated in to a DHuS addon is available <a href=""> here </a>
+An example of basic algorithm that can be integrated in to a DHuS addon is available <a href=" "> here </a>
 
+						</p>
+<p><strong>PREREQUISITES: </strong><br>
+
+- Python 2.7<br>
+- GDAL library (for python2.7 : from osgeo import gdal: <a href="https://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries">https://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries</a>)</li>
 <br>
-<p><strong>PREREQUISITES: </strong></p>
-<ul>
-<li>Python 2.7</li>
-<li>GDAL library (for python2.7 : from osgeo import gdal: <a href="https://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries">https://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries</a>)</li>
-</ul>
-<p>&nbsp;</p>
-<p><strong>INPUT</strong> =Sentinel1 SAFE product</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mode=IW or EW</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type=SLC</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-<p><strong>OUTPUT</strong> = folder 'burst ' in Sentinel1 SAFE product with all tiff for pol, burst, swath</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ES: Burst_coPol_1_1.tiff ('Burst'+Pol+swath+burst)</p>
-<p>&nbsp;</p>
-<p><strong>EXAMPLE USE=</strong></p>
-<p>&nbsp;</p>
-<p>python2.7 getBurst.py ../input/S1B_IW_SLC__1SSV_20170303T095921_20170303T095951_004542_007E9A_489E.SAFE</p>
-<p>&nbsp;</p>
-<p><strong>TREE: </strong></p>
-<p><strong>burst</strong></p>
-<p>|____config</p>
-<p>| |____config.ini</p>
-<p>| |____manifest.xml</p>
-<p>|____input</p>
-<p>|____lib</p>
-<p>| |____config.py</p>
-<p>| |____getBurst.py</p>
-<p>| |____level1.py</p>
-<p>&nbsp;</p>
-<p>The file<strong><em> burst/lib/getBurst.py</em></strong> :</p>
-<p>&nbsp;</p>
-<ul>
-<li>For each swath and for each polarization get the correspondent tiffProduct</li>
-<li>From the correspondent annotation file get the number of burst, linesPerBurst and NumberOfSamples</li>
-<li>For each burst get the startTimeBurst(azimuthTime)</li>
-<li>From the geolocationGrid extract the line (startLineBurst) correspondent to the startTimeBurst (convertion [azimuthTime&agrave;line] using the GeolocatedGrid )</li>
-<li>Build the stopLineBurst.</li>
-<li>Build the first sample and the last sample (C0 and C1)</li>
-<li>Cut the tiffProduct whit startLineBurst,stopLineBurst,C0 , C1</li>
-<li>Creates the &lsquo;burst&rsquo; folder inside the SAFE product. The burst folder will contain all the GEOtiff bursts divided by polarization, swath, and burst: ES: Burst_coPol_3_7.tiff (3 = swath, 7 = burst).</li>
-<li>Each GeoTiff burst is associated with a manifest with information about the original product and burst information.</li>
-</ul>
-<p>&nbsp;</p>
-<p>The file <strong>burst/lib/level1.py</strong> makes:</p>
-<ul>
-<li>The SAFE folder parser</li>
-<li>Parses the manifest.safe</li>
-<li>Parses the annotation files</li>
-</ul>
-<p>&nbsp;</p>
-<p>In the <em>&nbsp;<strong>burst/config/config.ini</strong></em> there are the configuration parameters&nbsp; in this case there is the path of GDAL library.</p>
-<p>&nbsp;</p>
-<p>The <strong>burst/config/manifest.xml</strong> is a template for to create the manifest for each burst.</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>Information about the set of metadata for get a burst(<sup>2</sup>):</p>
-<ul>
-<li>In the annotation data set are reported the section:</li>
-</ul>
-<p><strong>Swath Timing </strong>: The swath timing data set record contains information for each burst within a swath for TOPSAR products and is specific to IW and EW SLC products. The purpose of the information included in this file is to allow users of IW and EW products to extract bursts from the image files included with the product.</p>
-<p><strong>GeolocationGrid </strong>: The geolocation grid data set record contains a matrix of points defining the slant range time, incidence angle, and geodetic latitude and longitude positions at various range and azimuth positions within the image.</p>
-<ul>
-<li>In the manifest.safe there are the information about:</li>
-</ul>
-<p>number of polarization</p>
-<p>number of swath</p>
-<ul>
-<li>In the section Swath Timing there are the information about :</li>
-</ul>
-<p><strong>linesPerBurst</strong> : Number of range lines within each burst (constant for all bursts within the swath). &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-<p><strong>samplesPerBurst</strong> : Number of range samples within each burst (constant for all bursts within the swath). &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-<p><strong>count</strong> :Number of burst records within the list</p>
-<p><em>And for each burst there is :</em></p>
-<p><strong>azimuthTime</strong> : Zero Doppler azimuth time of the first line of this burst [UTC]. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-<ul>
-<li>To convert the azimuthTime&agrave;line make used the GeolocatedGrid</li>
-<li>In the section GeolocatedGrid there are the information about:</li>
-</ul>
-<p><strong>azimuthTime:</strong> Zero Doppler azimuth time to which grid point applies [UTC].</p>
-<p><strong>line</strong>: Reference image MesuramentSet Data line to which this geolocation grid point applies.</p>
-<p>&nbsp;</p>
-<p><strong>&nbsp;</strong></p>
+
+<strong>INPUT</strong> =Sentinel1 SAFE product<br>
+ mode=IW or EW <br>
+ type=SLC<br>
+
+<strong>OUTPUT</strong> = folder 'burst ' in Sentinel1 SAFE product with all tiff for pol, burst, swath<br>>
+ES: Burst_coPol_1_1.tiff ('Burst'+Pol+swath+burst)<br>
+
+<strong>EXAMPLE USE=</strong><br>
+python2.7 getBurst.py ../input/S1B_IW_SLC__1SSV_20170303T095921_20170303T095951_004542_007E9A_489E.SAFE<br>
+
+<strong>TREE: </strong><br>
+<strong>burst</strong><br>
+|____config<br>
+| |____config.ini<br>
+| |____manifest.xml<br>
+|____input<br>
+|____lib<br>
+| |____config.py<br>
+| |____getBurst.py<br>
+| |____level1.py<br>
+
+The file<strong><em> burst/lib/getBurst.py</em></strong> :<br>
+• For each swath and for each polarization get the correspondent tiffProduct<br>
+• From the correspondent annotation file get the number of burst, linesPerBurst and NumberOfSamples<br>
+• For each burst get the startTimeBurst(azimuthTime)<br>
+• From the geolocationGrid extract the line (startLineBurst) correspondent to the startTimeBurst (convertion [azimuthTime&agrave;line] using the GeolocatedGrid )<br>
+• Build the stopLineBurst.<br>
+• Cut the tiffProduct whit startLineBurst,stopLineBurst,C0 , C1<br>
+• Creates the &lsquo;burst&rsquo; folder inside the SAFE product. The burst folder will contain all the GEOtiff bursts divided by polarization, swath, and burst: ES: Burst_coPol_3_7.tiff (3 = swath, 7 = burst).<br>
+• Each GeoTiff burst is associated with a manifest with information about the original product and burst information.<br>
+
+The file <strong>burst/lib/level1.py</strong> makes:<br>
+• The SAFE folder parser<br>
+• Parses the manifest.safe<br>
+• Parses the annotation files<br>
+
+In the <em>&nbsp;<strong>burst/config/config.ini</strong></em> there are the configuration parameters&nbsp; in this case there is the path of GDAL library.</p>
+<br>
+The <strong>burst/config/manifest.xml</strong> is a template for to create the manifest for each burst.<br>
+
+Information about the set of metadata for get a burst(<sup>2</sup>):<br>
+
+• In the annotation data set are reported the section:<br>
+<strong>Swath Timing </strong>: The swath timing data set record contains information for each burst within a swath for TOPSAR products and is specific to IW and EW SLC products. The purpose of the information included in this file is to allow users of IW and EW products to extract bursts from the image files included with the product.<br>
+<strong>GeolocationGrid </strong>: The geolocation grid data set record contains a matrix of points defining the slant range time, incidence angle, and geodetic latitude and longitude positions at various range and azimuth positions within the image.<br>
+
+• In the manifest.safe there are the information about:<br>
+- number of polarization<br>
+- number of swath<br>
+• In the section Swath Timing there are the information about :<br>
+
+<strong>linesPerBurst</strong> : Number of range lines within each burst (constant for all bursts within the swath). &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<strong>samplesPerBurst</strong> : Number of range samples within each burst (constant for all bursts within the swath). &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<strong>count</strong> :Number of burst records within the list
+<em>And for each burst there is :</em><br>
+<strong>azimuthTime</strong> : Zero Doppler azimuth time of the first line of this burst [UTC].<br>
+• To convert the azimuthTime&agrave;line make used the GeolocatedGrid<br>
+• In the section GeolocatedGrid there are the information about:<br>
+
+<strong>azimuthTime:</strong> Zero Doppler azimuth time to which grid point applies [UTC].<br>
+<strong>line</strong>: Reference image MesuramentSet Data line to which this geolocation grid point applies.<br>
+
 <p><strong>Information about the SLC product TOPSAR (<sup>1</sup>) :</strong></p>
-<p>&nbsp;</p>
-<ul>
-<li>TOPSAR SLC products contain one image per sub-swath and one per polarization channel, for a total of three (single polarization) or six (dual polarization) images in an IW product and&nbsp; a total of five (single polarization) or ten (dual polarization) images in an EW product.</li>
-<li>Each image pixel is represented by a complex (I and Q) magnitude value and therefore contains both amplitude and phase information. The imagery is geo-referenced using orbit and attitude data from the satellite.</li>
-<li>L1 SLC images are generated in 32-bit signed integer format with each pixel represented by two interleaved I&amp;Q 16-bit signed integer samples in the order: IQIQIQ&hellip;</li>
-<li>Each sub-swath image consists of a series of bursts, where each burst has been processed as a separate SLC image. The individually focused complex burst images are included, in azimuth-time order, into a single sub-swath image with black-fill demarcation in between</li>
-<li>For each image is associated with an annotation data sets. The annotation data set contain metadata that describes the properties and characteristics of the measurement data or how the measurement data was generated</li>
-</ul>
-<p>&nbsp;</p>
+• TOPSAR SLC products contain one image per sub-swath and one per polarization channel, for a total of three (single polarization) or six (dual polarization) images in an IW product and&nbsp; a total of five (single polarization) or ten (dual polarization) images in an EW product.<br>
+• Each image pixel is represented by a complex (I and Q) magnitude value and therefore contains both amplitude and phase information. The imagery is geo-referenced using orbit and attitude data from the satellite.<br>
+• L1 SLC images are generated in 32-bit signed integer format with each pixel represented by two interleaved I&amp;Q 16-bit signed integer samples in the order: IQIQIQ&hellip;<br>
+• Each sub-swath image consists of a series of bursts, where each burst has been processed as a separate SLC image. The individually focused complex burst images are included, in azimuth-time order, into a single sub-swath image with black-fill demarcation in between<br>
+• For each image is associated with an annotation data sets. The annotation data set contain metadata that describes the properties and characteristics of the measurement data or how the measurement data was generated<br>
+
+			
 <p>Figure 1:numeration of bursts for a first swath of a SLC IW in ascending pass</p>
+			
+			
 <p>Figure 2: numeration of bursts for a first swath of a SLC IW in descending pass</p>
-<p><br /> </p>
+
+			
 <p><strong>Reference Documents:</strong></p>
 <p>&nbsp;</p>
 <p>(1) Sentinel-1 Level 1 Detailed Algorithm Definition, &nbsp;S1-TN-MDA-52-7445, 1/6, NOV. 28, 2014</p>
 <p>(2)Sentinel-1 Product Specification , S1-RS-MDA-52-7441,3/2 , 14/03/2016</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>			
-						
-		
 
 
 	</article>
