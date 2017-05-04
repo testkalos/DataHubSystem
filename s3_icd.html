@@ -1,0 +1,389 @@
+<!DOCTYPE HTML>   
+<html>
+	<head>
+		<link rel="stylesheet" href="assets/css/skel.css" />
+			<link rel="stylesheet" href="assets/css/style.css" />
+			<link rel="stylesheet" href="assets/css/style-wide.css" />
+		<title>DHuS Open Source Portal</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+ 		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/skel-layers.min.js"></script>
+		<script src="assets/js/init.js"></script>
+	<style>
+			.code-block{
+				background-color: #f7f7f7;
+				font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+				padding: 5px;
+			}
+			
+			.flex {max-width: 50%}
+			.flex1 {max-width: 80%}
+	   	</style>
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+				<h1><a href="index.html" id="logo">DHuS Open Source Portal</a></h1>		
+     <!--<h1>
+     <a href="index.html" class="image left"><img src="assets/images/oslogomini.jpg" "alt="" /></a>
+     <a href="http://ec.europa.eu/index_en.html" class="image left"><img src="assets/images/ec-mini.jpg" "alt=""/></a>
+     <a href="index.html" id="logo"> <em>Open Source Portal</em></a>
+     <a href="http://www.copernicus.eu/" class="image left"><img src="assets/images/copernicus-mini.jpg" "alt=""/></a>
+     <a href="http://www.esa.int/ESA" class="image left"><img src="/assets/images/esa-mini.jpg" "alt=""/></a>    
+     </h1>-->
+				
+		<nav id="nav">
+						<ul>
+						<li ><a href="index.html">Home</a></li>
+						<li ><a href="about.html">About</a></li>
+
+							<li ><a href="https://github.com/SentinelDataHub/DataHubSystem">Download</a></li>	
+							<li ><a href="support.html">Support</a></li>
+							
+							<li>
+               	<a href="">Documentation</a>
+								<ul>
+									<li><a href="governance.html"> Governance Model</a></li>
+									<li><a href="guidelines.html">Developer Guidelines</a></li>
+									<li><a href="s1_icd.html">Sentinel-1 ICD</a></li>
+									<li><a href="s2_icd.html">Sentinel-2 ICD</a></li>
+									<li><a href="s3_icd.html">Sentinel-3 ICD</a></li>
+                 <!-- <li><a href="#">Interface Control Document</a></li>-->
+      		       </ul>
+							</li>
+					
+							
+					<li> <a href=""> Pilot Projects</a>
+							<ul>
+								<li><a href="dhus_docker_installation.html"> Docker Technologies Integration</a></li>
+								<li><a href="multi-mission-access.html">Multi-Mission Access</a></li>
+								<li><a href="wms.html">WMS-Integration</a></li>
+								<li><a href="dhus-transformations.html">DHuS Transformations </a></li>
+					</ul>
+				</li>
+							<li ><a href="">External Resources</a>
+							         <ul>
+								<li><a target="_blank" href="http://step.esa.int/main/toolboxes/snap/"> SNAP</a></li>
+								<li><a target="_blank" href="http://step.esa.int/main/toolboxes/sentinel-1-toolbox/">S-1 Toolbox </a></li>
+								<li><a target="_blank" href="http://step.esa.int/main/toolboxes/sentinel-2-toolbox/">S-2 Toolbox</a></li>
+								<li><a target="_blank" href="http://step.esa.int/main/toolboxes/sentinel-3-toolbox/">S-3 Toolbox</a></li>
+								</ul>
+							</li>
+				<li ><a href="contact.html">Contact Us</a></li>
+					
+						</ul>
+					</nav>
+
+			</div>
+				
+<!-- Main -->
+<section id="banner">
+</section>
+	<section class="wrapper style1">
+		<div class="container">
+			<div id="content">
+				<!-- Content -->
+					<article>
+						
+						
+                        <header>
+                            <h2>Sentinel-3 ICD to verify </h2>
+                        </header>
+<p align="JUSTIFY"> <strong>Introducing the Sentinel-1 products formatting</strong></p>
+<p align="JUSTIFY">
+SENTINEL-2 data products are distributed using a SENTINEL-specific variation of the Standard Archive Format for Europe (SAFE) format specification. The SAFE format has been designed to act as a common format for archiving and conveying data within ESA Earth Observation archiving facilities.
+The SENTINEL-SAFE format wraps a folder containing image data in a binary data format and product metadata in XML. This flexibility allows the format to be scalable enough to represent all levels of SENTINEL products.
+A SENTINEL product refers to a directory folder that contains a collection of information. It includes:</p>
+<p align="JUSTIFY">&bull; a 'manifest.safe' file which holds the general product information in XML;</p>
+<p align="JUSTIFY">&bull; subfolders for measurement datasets containing image data in various binary formats;</p>
+<p align="JUSTIFY">&bull;a preview folder containing 'quicklooks' in PNG format, Google Earth overlays in KML format and HTML preview files;</p>
+<p align="JUSTIFY">&bull; an annotation folder containing the product metadata in XML as well as calibration data </p>
+<p align="JUSTIFY">&bull; a support folder containing the XML schemes describing the product XML.</p>
+<p align="JUSTIFY">The data delivered is packaged as a file structure containing a manifest file in XML format listing general product metadata and subfolders for measurement data, annotations, previews and support files.</p>
+
+
+<p align="JUSTIFY"> <strong>Inspection of Product Nodes (Odata Protocol) </strong></p>
+<p align="justify">
+The DHuS recognises the Sentinel-1 products at ingestion time and makes products nodes accessible through the OData Protocol. The following odata query returns the list of nodes within the document root (first level).
+			    Note that both UUID and product name are needed</p>
+<p align="JUSTIFY">
+. /odata/v1/Products[‘UUID’]/Nodes('PRODUCT_NAME.SAFE')/Nodes
+</p>
+			<p align="JUSTIFY">    To inspect the nodes of lower levels:</p>
+			<p align="JUSTIFY">    /odata/v1/Products[‘UUID’]/Nodes('PRODUCT_NAME.SAFE')/Nodes(‘nodename’)/Nodes</p>
+
+<p align="JUSTIFY"> For example, in order to get all children of the Node ‘annotation’ of a Product</p>
+
+<p align="justify"> /odata/v1/Products('2573986b-f66e-46a4-90e8-00598c3b6475')/Nodes('S1A_S5_GRDH_1SSV_20141003T182910_20141003T182928_002669_002F8D_E968.SAFE')/Nodes('annotation')/Nodes </p>		    
+
+<p align="JUSTIFY">  
+
+<p align="JUSTIFY"> <strong>Open Search Indexes</strong></p>
+		    
+<p align="JUSTIFY"> Every open search is triggered by adding to the dhus path the string ”/search?q=” followed by the example provided in the last column below.
+<br>
+<p align="justify"><strong>Sentinel-3 Auxiliary Data File Metadata </strong><br>
+
+<style type="text/css">
+	table.tableizer-table {
+		font-size: 16px;
+		border: 1px solid #CCC; 
+		font-family: Arial, Helvetica, sans-serif;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #CCC;
+	}
+	.tableizer-table th {
+		background-color: #00A2E8; 
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Id</th><th>Metadata name</th><th>Metadata Queryable (Index name)</th></tr></thead><tbody>
+ <tr><td>adfqualitycheck</td><td>ADF Quality Check</td><td>adfqualitycheck</td></tr>
+ <tr><td>beginPosition</td><td>Validity start</td><td>beginposition</td></tr>
+ <tr><td>creationdate</td><td>Creation date</td><td>creationdate</td></tr>
+ <tr><td>endPosition</td><td>Validity stop</td><td>endposition</td></tr>
+ <tr><td>filename</td><td>Filename</td><td>filename</td></tr>
+ <tr><td>format</td><td>Format</td><td>format</td></tr>
+ <tr><td>platformName</td><td>Satellite name</td><td>platformname</td></tr>
+ <tr><td>platformNumber</td><td>Satellite number</td><td>&nbsp;</td></tr>
+ <tr><td>productType</td><td>Product type</td><td>producttype</td></tr>
+ <tr><td>satellite</td><td>Satellite</td><td>&nbsp;</td></tr>
+ <tr><td>size</td><td>Size</td><td>size</td></tr>
+</tbody></table>
+
+	<p align="justify"><strong>Sentinel-3 User Product Primary Metadata	</strong><br>  
+  <style type="text/css">
+	table.tableizer-table {
+		font-size: 16px;
+		border: 1px solid #CCC; 
+		font-family: Arial, Helvetica, sans-serif;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #CCC;
+	}
+	.tableizer-table th {
+		background-color: #00A2E8; 
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Id</th><th>Metadata name</th><th>Metadata Queryable (Index name)</th></tr></thead><tbody>
+ <tr><td>beginPosition</td><td>Sensing start</td><td>beginposition</td></tr>
+ <tr><td>collection</td><td>Baseline Collection</td><td>collection</td></tr>
+ <tr><td>creationdate</td><td>Creation date</td><td>creationdate</td></tr>
+ <tr><td>cyclenumber</td><td>Cycle number</td><td>cyclenumber</td></tr>
+ <tr><td>date</td><td>Date</td><td>&nbsp;</td></tr>
+ <tr><td>endPosition</td><td>Sensing stop</td><td>endposition</td></tr>
+ <tr><td>filename</td><td>Filename</td><td>filename</td></tr>
+ <tr><td>footprint</td><td>JTS footprint</td><td>footprint</td></tr>
+ <tr><td>format</td><td>Format</td><td>format</td></tr>
+ <tr><td>GMLfootprint</td><td>Footprint</td><td>gmlfootprint</td></tr>
+ <tr><td>instrument</td><td>Instrument</td><td>&nbsp;</td></tr>
+ <tr><td>instrumentName</td><td>Instrument name</td><td>instrumentname</td></tr>
+ <tr><td>instrumentShortName</td><td>Instrument abbreviation</td><td>instrumentshortname</td></tr>
+ <tr><td>lastOrbitDirection</td><td>Orbit Direction (stop)</td><td>lastorbitdirection</td></tr>
+ <tr><td>lastOrbitNumber</td><td>Orbit number (stop)</td><td>lastorbitnumber</td></tr>
+ <tr><td>lastpassdirection</td><td>Pass direction (stop)</td><td>lastpassdirection</td></tr>
+ <tr><td>lastPassNumber</td><td>Pass (stop)</td><td>lastpassnumber</td></tr>
+ <tr><td>lastRelativeOrbitNumber</td><td>Relative orbit (stop)</td><td>lastrelativeorbitnumber</td></tr>
+ <tr><td>lastrelorbitdirection</td><td>Relative Orbit Direction (stop)</td><td>lastrelorbitdirection</td></tr>
+ <tr><td>lastrelpassdirection</td><td>Relative pass direction (stop)</td><td>lastrelpassdirection</td></tr>
+ <tr><td>lastRelPassNumber</td><td>Relative pass (stop)</td><td>lastrelpassnumber</td></tr>
+ <tr><td>leapsecond</td><td>Leap Second (s)</td><td>leapsecond</td></tr>
+ <tr><td>leapSecondOccurrence</td><td>Leap Second Occurrence</td><td>leapSecondOccurrence</td></tr>
+ <tr><td>missionType</td><td>Mission type</td><td>&nbsp;</td></tr>
+ <tr><td>mode</td><td>Mode</td><td>mode</td></tr>
+ <tr><td>olcilevel</td><td>olci level</td><td>olcilevel</td></tr>
+ <tr><td>onlinequalitycheck</td><td>Online Quality Check</td><td>onlinequalitycheck</td></tr>
+ <tr><td>operator</td><td>Operator</td><td>&nbsp;</td></tr>
+ <tr><td>orbitDirection</td><td>Orbit Direction (start)</td><td>orbitdirection</td></tr>
+ <tr><td>orbitNumber</td><td>Orbit number (start)</td><td>orbitnumber</td></tr>
+ <tr><td>passdirection</td><td>Pass direction (start)</td><td>passdirection</td></tr>
+ <tr><td>passNumber</td><td>Pass (start)</td><td>passnumber</td></tr>
+ <tr><td>pdualongtrackcoord</td><td>PDU Along Track Coordinate (s)</td><td>pdualongtrackcoord</td></tr>
+ <tr><td>pduduration</td><td>PDU Duration (s)</td><td>pduduration</td></tr>
+ <tr><td>pdutileid</td><td>PDU Tile identifier</td><td>pdutileid</td></tr>
+ <tr><td>platformidentifier</td><td>NSSDC identifier</td><td>platformidentifier</td></tr>
+ <tr><td>platformName</td><td>Satellite name</td><td>platformname</td></tr>
+ <tr><td>platformNumber</td><td>Satellite number</td><td>&nbsp;</td></tr>
+ <tr><td>processinglevel</td><td>Processing level</td><td>processinglevel</td></tr>
+ <tr><td>processingname</td><td>Processing name</td><td>processingname</td></tr>
+ <tr><td>procfacilityname</td><td>Processing Facility Name</td><td>procfacilityname</td></tr>
+ <tr><td>procfacilityorg</td><td>Processing Facility Organization</td><td>procfacilityorg</td></tr>
+ <tr><td>productlevel</td><td>Product level</td><td>productlevel</td></tr>
+ <tr><td>productType</td><td>Product type</td><td>producttype</td></tr>
+ <tr><td>relativeOrbitNumber</td><td>Relative orbit (start)</td><td>relativeorbitnumber</td></tr>
+ <tr><td>relorbitdir</td><td>Relative Orbit Direction (start)</td><td>relorbitdir</td></tr>
+ <tr><td>relpassdirection</td><td>Relative pass direction (start)</td><td>relpassdirection</td></tr>
+ <tr><td>relPassNumber</td><td>Relative pass (start)</td><td>relpassnumber</td></tr>
+ <tr><td>satellite</td><td>Satellite</td><td>&nbsp;</td></tr>
+ <tr><td>satelliteDescription</td><td>Satellite description</td><td>&nbsp;</td></tr>
+ <tr><td>sensorOperationalMode</td><td>Instrument mode</td><td>sensoroperationalmode</td></tr>
+ <tr><td>size</td><td>Size</td><td>size</td></tr>
+ <tr><td>timeliness</td><td>Timeliness Category</td><td>timeliness</td></tr>
+</tbody></table>
+  
+  
+  <p align="justify"><strong>Sentinel-3 User Product Secondary Metadata (L0) </strong><br>  
+  <style type="text/css">
+	table.tableizer-table {
+		font-size: 16px;
+		border: 1px solid #CCC; 
+		font-family: Arial, Helvetica, sans-serif;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #CCC;
+	}
+	.tableizer-table th {
+		background-color: #00A2E8; 
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Id</th><th>Metadata name</th><th>Metadata Queryable (Index name)</th></tr></thead><tbody>
+ <tr><td>ispcount</td><td>ISP Count</td><td>ispcount</td></tr>
+ <tr><td>olcicaldescription</td><td>OLCI Calibration Description</td><td>olcicaldescription</td></tr>
+ <tr><td>olcicalseq</td><td>OLCI Calibration Sequence</td><td>olcicalseq</td></tr>
+ <tr><td>olcicaltriggers</td><td>OLCI Calibration Triggers</td><td>olcicaltriggers</td></tr>
+ <tr><td>olcilevel</td><td>olci level</td><td>olcilevel</td></tr>
+</tbody></table>
+		        
+      <p align="justify"><strong>Sentinel-3 User Product Secondary Metadata (SRAL) </strong><br>  
+      
+      <style type="text/css">
+	table.tableizer-table {
+		font-size: 16px;
+		border: 1px solid #CCC; 
+		font-family: Arial, Helvetica, sans-serif;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #CCC;
+	}
+	.tableizer-table th {
+		background-color: #00A2E8; 
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Id</th><th>Metadata name</th><th>Metadata Queryable (Index name)</th></tr></thead><tbody>
+ <tr><td>lrmpercentage</td><td>Measurement Records in LRM Mode (%)</td><td>lrmpercentage</td></tr>
+ <tr><td>sarpercentage</td><td>Measurement Records in SAR Mode (%)</td><td>sarpercentage</td></tr>
+ <tr><td>landpercentage</td><td>Measurement Records on Land (%)</td><td>landpercentage</td></tr>
+ <tr><td>closedseapercentage</td><td>Measurement Records on Closed Sea (%)</td><td>closedseapercentage</td></tr>
+ <tr><td>continentalicepercentage</td><td>Measurement Records on Continental Ice (%)</td><td>continentalicepercentage</td></tr>
+ <tr><td>openseapercentage</td><td>Measurement Records on Open Ocean (%)</td><td>openseapercentage</td></tr>
+</tbody></table>
+           
+       <p align="justify"><strong>Sentinel-3 User Product Secondary Metadata (OLCI) </strong><br>  
+       <style type="text/css">
+	table.tableizer-table {
+		font-size: 16px;
+		border: 1px solid #CCC; 
+		font-family: Arial, Helvetica, sans-serif;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #CCC;
+	}
+	.tableizer-table th {
+		background-color: #00A2E8; 
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Id</th><th>Metadata name</th><th>Metadata Queryable (Index name)</th></tr></thead><tbody>
+ <tr><td>brightcoverpercentage</td><td>Bright Cover Percentage (%)</td><td>brightcoverpercentage</td></tr>
+ <tr><td>cloudcoverpercentage</td><td>Cloud Cover Percentage (%)</td><td>cloudcoverpercentage</td></tr>
+ <tr><td>coastalcoverpercentage</td><td>Coastal Cover Percentage (%)</td><td>coastalcoverpercentage</td></tr>
+ <tr><td>ecmwf</td><td>ECMWF Type</td><td>ecmwf</td></tr>
+ <tr><td>freshwatercoverpercentage</td><td>Fresh Inland Water Cover Percentage (%)</td><td>freshwatercoverpercentage</td></tr>
+ <tr><td>landcoverpercentage</td><td>Land Cover Percentage (%)</td><td>landcoverpercentage</td></tr>
+ <tr><td>salinewatercoverpercentage</td><td>Saline Water Cover Percentage (%)</td><td>salinewatercoverpercentage</td></tr>
+ <tr><td>tidalregioncoverpercentage</td><td>Tidal Region Cover Percentage (%)</td><td>tidalregioncoverpercentage</td></tr>
+</tbody></table>
+    
+        <p align="justify"><strong>Sentinel-3 User Product Secondary Metadata (SLSTR) </strong><br>
+        
+        <style type="text/css">
+	table.tableizer-table {
+		font-size: 16px;
+		border: 1px solid #CCC; 
+		font-family: Arial, Helvetica, sans-serif;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #CCC;
+	}
+	.tableizer-table th {
+		background-color: #00A2E8; 
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Id</th><th>Metadata name</th><th>Metadata Queryable (Index name)</th></tr></thead><tbody>
+ <tr><td>ecmwf</td><td>ECMWF Type</td><td>ecmwf</td></tr>
+</tbody></table>
+        
+        
+        
+        
+         <p align="justify"><strong>Sentinel-3 User Product Secondary Metadata (SYNERGY) </strong><br>  
+      <style type="text/css">
+	table.tableizer-table {
+		font-size: 16px;
+		border: 1px solid #CCC; 
+		font-family: Arial, Helvetica, sans-serif;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #CCC;
+	}
+	.tableizer-table th {
+		background-color: #00A2E8; 
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Id</th><th>Metadata name</th><th>Metadata Queryable (Index name)</th></tr></thead><tbody>
+ <tr><td>cloudcoverpercentage</td><td>Cloud Cover Percentage (%)</td><td>cloudcoverpercentage</td></tr>
+ <tr><td>coastalcoverpercentage</td><td>Coastal Cover Percentage (%)</td><td>coastalcoverpercentage</td></tr>
+ <tr><td>freshwatercoverpercentage</td><td>Fresh Inland Water Cover Percentage (%)</td><td>freshwatercoverpercentage</td></tr>
+ <tr><td>landcoverpercentage</td><td>Land Cover Percentage (%)</td><td>landcoverpercentage</td></tr>
+ <tr><td>salinewatercoverpercentage</td><td>Saline Water Cover Percentage (%)</td><td>salinewatercoverpercentage</td></tr>
+ <tr><td>snoworicecoverpercentage</td><td>Snow or Ice Cover Percentage (%)</td><td>snoworicecoverpercentage</td></tr>
+ <tr><td>tidalregioncoverpercentage</td><td>Tidal Region Cover Percentage (%)</td><td>tidalregioncoverpercentage</td></tr>
+</tbody></table>
+      
+      </article>
+  </div>
+        </div>
+    </section>
+		</div>
+</body>
+</html>
