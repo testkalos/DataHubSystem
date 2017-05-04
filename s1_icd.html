@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="assets/css/skel.css" />
 			<link rel="stylesheet" href="assets/css/style.css" />
 			<link rel="stylesheet" href="assets/css/style-wide.css" />
-		<title>Open Source Portal</title>
+		<title>DHuS Open Source Portal</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -13,13 +13,23 @@
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/skel-layers.min.js"></script>
 		<script src="assets/js/init.js"></script>
-	
+	<style>
+			.code-block{
+				background-color: #f7f7f7;
+				font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+				padding: 5px;
+			}
+			
+			.flex {max-width: 50%}
+			.flex1 {max-width: 80%}
+	   	</style>
+
 	</head>
 	<body>
 
 		<!-- Header -->
 			<div id="header">
-				<h1><a href="index.html" id="logo">Open Source Portal</a></h1>		
+				<h1><a href="index.html" id="logo">DHuS Open Source Portal</a></h1>		
      <!--<h1>
      <a href="index.html" class="image left"><img src="assets/images/oslogomini.jpg" "alt="" /></a>
      <a href="http://ec.europa.eu/index_en.html" class="image left"><img src="assets/images/ec-mini.jpg" "alt=""/></a>
@@ -41,6 +51,9 @@
 								<ul>
 									<li><a href="governance.html"> Governance Model</a></li>
 									<li><a href="guidelines.html">Developer Guidelines</a></li>
+									<li><a href="s1_icd.html">Sentinel-1 ICD</a></li>
+									<li><a href="s2_icd.html">Sentinel-2 ICD</a></li>
+									<li><a href="s3_icd.html">Sentinel-3 ICD</a></li>
                  <!-- <li><a href="#">Interface Control Document</a></li>-->
       		       </ul>
 							</li>
@@ -49,16 +62,17 @@
 					<li> <a href=""> Pilot Projects</a>
 							<ul>
 								<li><a href="dhus_docker_installation.html"> Docker Technologies Integration</a></li>
-								<li><a href="">Multi-Mission Access</a></li>
+								<li><a href="multi-mission-access.html">Multi-Mission Access</a></li>
 								<li><a href="wms.html">WMS-Integration</a></li>
+								<li><a href="dhus-transformations.html">DHuS Transformations </a></li>
 					</ul>
 				</li>
 							<li ><a href="">External Resources</a>
 							         <ul>
-								<li><a href="http://step.esa.int/main/toolboxes/snap/"> SNAP</a></li>
-								<li><a href="http://step.esa.int/main/toolboxes/sentinel-1-toolbox/">S-1 Toolbox </a></li>
-								<li><a href="http://step.esa.int/main/toolboxes/sentinel-2-toolbox/">S-2 Toolbox</a></li>
-								<li><a href="http://step.esa.int/main/toolboxes/sentinel-3-toolbox/">S-3 Toolbox</a></li>
+								<li><a target="_blank" href="http://step.esa.int/main/toolboxes/snap/"> SNAP</a></li>
+								<li><a target="_blank" href="http://step.esa.int/main/toolboxes/sentinel-1-toolbox/">S-1 Toolbox </a></li>
+								<li><a target="_blank" href="http://step.esa.int/main/toolboxes/sentinel-2-toolbox/">S-2 Toolbox</a></li>
+								<li><a target="_blank" href="http://step.esa.int/main/toolboxes/sentinel-3-toolbox/">S-3 Toolbox</a></li>
 								</ul>
 							</li>
 				<li ><a href="contact.html">Contact Us</a></li>
@@ -67,20 +81,17 @@
 					</nav>
 
 			</div>
-	<div class="home">
-
-<h1 class="page-heading"></h1>
-
- 
+				
 <!-- Main -->
 <section id="banner">
 </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <div id="content">
-                <!-- Content -->
-                    <article>
-
+	<section class="wrapper style1">
+		<div class="container">
+			<div id="content">
+				<!-- Content -->
+					<article>
+						
+						
                         <header>
                             <h2>Sentinel-1 ICD</h2>
                         </header>
@@ -116,7 +127,9 @@ The DHuS recognises the Sentinel-1 products at ingestion time and makes products
 <p align="JUSTIFY"> <strong>Open Search Indexes</strong></p>
 		    
 <p align="JUSTIFY"> Every open search is triggered by adding to the dhus path the string ”/search?q=” followed by the example provided in the last column below.
-<style type="text/css">
+<br>
+						<p align="justify"><strong> SENTINEL-1 Mission</strong></p>
+	<style type="text/css">
 	table.tableizer-table {
 		font-size: 16px;
 		border: 1px solid #CCC; 
