@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>   
+<html>
+	<head>
+		<link rel="stylesheet" href="assets/css/skel.css" />
+			<link rel="stylesheet" href="assets/css/style.css" />
+			<link rel="stylesheet" href="assets/css/style-wide.css" />
+		<title>DHuS Open Source Portal</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+ 		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/skel-layers.min.js"></script>
+		<script src="assets/js/init.js"></script>
+	<style>
+			.code-block{
+				background-color: #f7f7f7;
+				font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+				padding: 5px;
+			}
+			
+			.flex {max-width: 50%}
+			.flex1 {max-width: 80%}
+	   	</style>
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+				<h1><a href="index.html" id="logo">DHuS Open Source Portal</a></h1>		
+     <!--<h1>
+     <a href="index.html" class="image left"><img src="assets/images/oslogomini.jpg" "alt="" /></a>
+     <a href="http://ec.europa.eu/index_en.html" class="image left"><img src="assets/images/ec-mini.jpg" "alt=""/></a>
+     <a href="index.html" id="logo"> <em>Open Source Portal</em></a>
+     <a href="http://www.copernicus.eu/" class="image left"><img src="assets/images/copernicus-mini.jpg" "alt=""/></a>
+     <a href="http://www.esa.int/ESA" class="image left"><img src="/assets/images/esa-mini.jpg" "alt=""/></a>    
+     </h1>-->
+				
+		<nav id="nav">
+						<ul>
+						<li ><a href="index.html">Home</a></li>
+						<li ><a href="about.html">About</a></li>
+
+							<li ><a href="https://github.com/SentinelDataHub/DataHubSystem">Download</a></li>	
+							<li ><a href="support.html">Support</a></li>
+							
+							<li>
+               	<a href="">Documentation</a>
+								<ul>
+									<li><a href="governance.html"> Governance Model</a></li>
+									<li><a href="guidelines.html">Developer Guidelines</a></li>
+									<li><a href="s1_icd.html">Sentinel-1 ICD</a></li>
+									<li><a href="s2_icd.html">Sentinel-2 ICD</a></li>
+									<li><a href="s3_icd.html">Sentinel-3 ICD</a></li>
+                 <!-- <li><a href="#">Interface Control Document</a></li>-->
+      		       </ul>
+							</li>
+					
+							
+					<li> <a href=""> Pilot Projects</a>
+							<ul>
+								<li><a href="dhus_docker_installation.html"> Docker Technologies Integration</a></li>
+								<li><a href="multi-mission-access.html">Multi-Mission Access</a></li>
+								<li><a href="wms.html">WMS-Integration</a></li>
+								<li><a href="dhus-transformations.html">DHuS Transformations </a></li>
+					</ul>
+				</li>
+							<li ><a href="">External Resources</a>
+							         <ul>
+								<li><a target="_blank" href="http://step.esa.int/main/toolboxes/snap/"> SNAP</a></li>
+								<li><a target="_blank" href="http://step.esa.int/main/toolboxes/sentinel-1-toolbox/">S-1 Toolbox </a></li>
+								<li><a target="_blank" href="http://step.esa.int/main/toolboxes/sentinel-2-toolbox/">S-2 Toolbox</a></li>
+								<li><a target="_blank" href="http://step.esa.int/main/toolboxes/sentinel-3-toolbox/">S-3 Toolbox</a></li>
+								</ul>
+							</li>
+				<li ><a href="contact.html">Contact Us</a></li>
+					
+						</ul>
+					</nav>
+
+			</div>
+				
+<!-- Main -->
+<section id="banner">
+</section>
+	<section class="wrapper style1">
+		<div class="container">
+			<div id="content">
+				<!-- Content -->
+					<article>
+						
+						
+                        <header>
+                            <h2>Sentinel-2 ICD to verify </h2>
+                        </header>
+<p align="JUSTIFY"> <strong>Introducing the Sentinel-1 products formatting</strong></p>
+<p align="JUSTIFY">
+SENTINEL-2 data products are distributed using a SENTINEL-specific variation of the Standard Archive Format for Europe (SAFE) format specification. The SAFE format has been designed to act as a common format for archiving and conveying data within ESA Earth Observation archiving facilities.
+The SENTINEL-SAFE format wraps a folder containing image data in a binary data format and product metadata in XML. This flexibility allows the format to be scalable enough to represent all levels of SENTINEL products.
+A SENTINEL product refers to a directory folder that contains a collection of information. It includes:</p>
+<p align="JUSTIFY">&bull; a 'manifest.safe' file which holds the general product information in XML;</p>
+<p align="JUSTIFY">&bull; subfolders for measurement datasets containing image data in various binary formats;</p>
+<p align="JUSTIFY">&bull;a preview folder containing 'quicklooks' in PNG format, Google Earth overlays in KML format and HTML preview files;</p>
+<p align="JUSTIFY">&bull; an annotation folder containing the product metadata in XML as well as calibration data </p>
+<p align="JUSTIFY">&bull; a support folder containing the XML schemes describing the product XML.</p>
+<p align="JUSTIFY">The data delivered is packaged as a file structure containing a manifest file in XML format listing general product metadata and subfolders for measurement data, annotations, previews and support files.</p>
+
+
+<p align="JUSTIFY"> <strong>Inspection of Product Nodes (Odata Protocol) </strong></p>
+<p align="justify">
+The DHuS recognises the Sentinel-1 products at ingestion time and makes products nodes accessible through the OData Protocol. The following odata query returns the list of nodes within the document root (first level).
+			    Note that both UUID and product name are needed</p>
+<p align="JUSTIFY">
+. /odata/v1/Products[‘UUID’]/Nodes('PRODUCT_NAME.SAFE')/Nodes
+</p>
+			<p align="JUSTIFY">    To inspect the nodes of lower levels:</p>
+			<p align="JUSTIFY">    /odata/v1/Products[‘UUID’]/Nodes('PRODUCT_NAME.SAFE')/Nodes(‘nodename’)/Nodes</p>
+
+<p align="JUSTIFY"> For example, in order to get all children of the Node ‘annotation’ of a Product</p>
+
+<p align="justify"> /odata/v1/Products('2573986b-f66e-46a4-90e8-00598c3b6475')/Nodes('S1A_S5_GRDH_1SSV_20141003T182910_20141003T182928_002669_002F8D_E968.SAFE')/Nodes('annotation')/Nodes </p>		    
+
+<p align="JUSTIFY">  
+
+<p align="JUSTIFY"> <strong>Open Search Indexes</strong></p>
+		    
+<p align="JUSTIFY"> Every open search is triggered by adding to the dhus path the string ”/search?q=” followed by the example provided in the last column below.
+<br>
+						<p align="justify"><strong> SENTINEL-2 Mission</strong></p>
+	<style type="text/css">
+	table.tableizer-table {
+		font-size: 16px;
+		border: 1px solid #CCC; 
+		font-family: Arial, Helvetica, sans-serif;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #CCC;
+	}
+	.tableizer-table th {
+		background-color: #00a2e8; 
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Id</th><th>Metadata name</th><th>Metadata Queryable (Index name)</th></tr></thead><tbody>
+ <tr><td>aotRetrievalAccuracy</td><td>Aot retrieval accuracy</td><td>&nbsp;</td></tr>
+ <tr><td>bareSoilPercentage</td><td>Bare soils percentage</td><td>baresoilpercentage</td></tr>
+ <tr><td>beginPosition</td><td>Sensing start</td><td>beginposition</td></tr>
+ <tr><td>cloudCoverPercentage</td><td>Cloud cover percentage</td><td>cloudcoverpercentage</td></tr>
+ <tr><td>cloudShadowPercentage</td><td>Cloud shadow percentage</td><td>&nbsp;</td></tr>
+ <tr><td>darkFeaturesPercentage</td><td>Dark features percentage</td><td>&nbsp;</td></tr>
+ <tr><td>dataTakeId</td><td>Mission datatake id</td><td>s2datatakeid</td></tr>
+ <tr><td>datatakesensingstart</td><td>Datatake sensing start</td><td>datatakesensingstart</td></tr>
+ <tr><td>date</td><td>Date</td><td>&nbsp;</td></tr>
+ <tr><td>degradedAncDataPercentage</td><td>Degraded ancillary data percentage</td><td>&nbsp;</td></tr>
+ <tr><td>degradedMsiDataPercentage</td><td>Degraded MSI data percentage</td><td>&nbsp;</td></tr>
+ <tr><td>endPosition</td><td>Sensing stop</td><td>endposition</td></tr>
+ <tr><td>filename</td><td>Filename</td><td>filename</td></tr>
+ <tr><td>footprint</td><td>JTS footprint</td><td>footprint</td></tr>
+ <tr><td>format</td><td>Format</td><td>format</td></tr>
+ <tr><td>formatCorrectnessFlag</td><td>Format correctness</td><td>&nbsp;</td></tr>
+ <tr><td>generalQualityFlag</td><td>General quality</td><td>&nbsp;</td></tr>
+ <tr><td>generationTime</td><td>Generation time</td><td>&nbsp;</td></tr>
+ <tr><td>geometryQualityFlag</td><td>Geometric quality</td><td>&nbsp;</td></tr>
+ <tr><td>GMLfootprint</td><td>Footprint</td><td>gmlfootprint</td></tr>
+ <tr><td>highProbaCloudsPercentage</td><td>High proba clouds percentage</td><td>highprobacloudspercentage</td></tr>
+ <tr><td>hv_order_tileid</td><td>Tile Identifier horizontal order</td><td>hv_order_tileid</td></tr>
+ <tr><td>instrument</td><td>Instrument</td><td>&nbsp;</td></tr>
+ <tr><td>instrumentName</td><td>Instrument name</td><td>instrumentname</td></tr>
+ <tr><td>instrumentShortName</td><td>Instrument abbreviation</td><td>instrumentshortname</td></tr>
+ <tr><td>lowProbaCloudsPercentage</td><td>Low proba clouds percentage</td><td>lowprobacloudspercentage</td></tr>
+ <tr><td>mediumProbaCloudsPercentage</td><td>Medium proba clouds percentage</td><td>mediumprobacloudspercentage</td></tr>
+ <tr><td>noDataPixelPercentage</td><td>No data pixel percentage</td><td>&nbsp;</td></tr>
+ <tr><td>orbitDirection</td><td>Pass direction</td><td>orbitdirection</td></tr>
+ <tr><td>orbitNumber</td><td>Orbit number (start)</td><td>orbitnumber</td></tr>
+ <tr><td>platformidentifier</td><td>NSSDC identifier</td><td>platformidentifier</td></tr>
+ <tr><td>platformName</td><td>Satellite name</td><td>platformname</td></tr>
+ <tr><td>platformNumber</td><td>Satellite number</td><td>&nbsp;</td></tr>
+ <tr><td>platformSerialIdentifier</td><td>Platform serial identifier</td><td>platformserialidentifier</td></tr>
+ <tr><td>processingbaseline</td><td>Processing baseline</td><td>processingbaseline</td></tr>
+ <tr><td>processingLevel</td><td>Processing level</td><td>processinglevel</td></tr>
+ <tr><td>productType</td><td>Product type</td><td>producttype</td></tr>
+ <tr><td>radiativeTransferAcurray</td><td>Radiative transfer acurray</td><td>&nbsp;</td></tr>
+ <tr><td>radiometricQualityFlag</td><td>Radiometric quality</td><td>&nbsp;</td></tr>
+ <tr><td>relativeOrbitNumber</td><td>Relative orbit (start)</td><td>relativeorbitnumber</td></tr>
+ <tr><td>satellite</td><td>Satellite</td><td>&nbsp;</td></tr>
+ <tr><td>saturatedDefectivePixelPercentage</td><td>Saturated defective pixel percentage</td><td>&nbsp;</td></tr>
+ <tr><td>sensorOperationalMode</td><td>Instrument mode</td><td>sensoroperationalmode</td></tr>
+ <tr><td>sensorQualityFlag</td><td>Sensor quality</td><td>&nbsp;</td></tr>
+ <tr><td>size</td><td>Size</td><td>size</td></tr>
+ <tr><td>snowIcePercentage</td><td>Snow ice percentage</td><td>snowicepercentage</td></tr>
+ <tr><td>thinCirrusPercentage</td><td>Thin cirrus percentage</td><td>&nbsp;</td></tr>
+ <tr><td>tileid</td><td>Tile Identifier</td><td>tileid</td></tr>
+ <tr><td>vegetationPercentage</td><td>Vegetation percentage</td><td>vegetationpercentage</td></tr>
+ <tr><td>waterPercentage</td><td>Water percentage</td><td>waterpercentage</td></tr>
+ <tr><td>waterVapourRetrievalAccuracy</td><td>Water vapour retrieval accuracy</td><td></td></tr>
+</tbody></table>
+		    
+		    </article>
+  </div>
+        </div>
+    </section>
+		</div>
+</body>
+</html>
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
