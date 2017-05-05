@@ -93,12 +93,12 @@
 						
 						
                         <header>
-                            <h2>Sentinel-3 ICD to verify </h2>
+                            <h2>Sentinel-3 ICD </h2>
                         </header>
 <p align="JUSTIFY"> <strong>Introducing the Sentinel-1 products formatting</strong></p>
 <p align="JUSTIFY">
-SENTINEL-2 data products are distributed using a SENTINEL-specific variation of the Standard Archive Format for Europe (SAFE) format specification. The SAFE format has been designed to act as a common format for archiving and conveying data within ESA Earth Observation archiving facilities.
-The SENTINEL-SAFE format wraps a folder containing image data in a binary data format and product metadata in XML. This flexibility allows the format to be scalable enough to represent all levels of SENTINEL products.
+SENTINEL-3 data products, as described in the Sentinel-3 Product Specification (see RD-3), are distributed using a SENTINEL-specific variation of the Standard Archive Format for Europe (SAFE) format specification. The SAFE format has been designed to act as a common format for archiving and conveying data within ESA Earth Observation archiving facilities. 
+The SENTINEL-SAFE format wraps a folder containing image data in a binary data format and product metadata in XML. This flexibility allows the format to be scalable enough to represent all levels of SENTINEL products. 
 A SENTINEL product refers to a directory folder that contains a collection of information. It includes:</p>
 <p align="JUSTIFY">&bull; a 'manifest.safe' file which holds the general product information in XML;</p>
 <p align="JUSTIFY">&bull; subfolders for measurement datasets containing image data in various binary formats;</p>
@@ -115,18 +115,19 @@ The DHuS recognises the Sentinel-1 products at ingestion time and makes products
 <p align="JUSTIFY">
 . /odata/v1/Products[‘UUID’]/Nodes('PRODUCT_NAME.SAFE')/Nodes
 </p>
-			<p align="JUSTIFY">    To inspect the nodes of lower levels:</p>
-			<p align="JUSTIFY">    /odata/v1/Products[‘UUID’]/Nodes('PRODUCT_NAME.SAFE')/Nodes(‘nodename’)/Nodes</p>
+<pre  class="code-block">
+<code>
 
-<p align="JUSTIFY"> For example, in order to get all children of the Node ‘annotation’ of a Product</p>
-
-<p align="justify"> /odata/v1/Products('2573986b-f66e-46a4-90e8-00598c3b6475')/Nodes('S1A_S5_GRDH_1SSV_20141003T182910_20141003T182928_002669_002F8D_E968.SAFE')/Nodes('annotation')/Nodes </p>		    
-
+<p align="justify"> example </p>		    
+						</code></pre>
+						
+						
 <p align="JUSTIFY">  
 
 <p align="JUSTIFY"> <strong>Open Search Indexes</strong></p>
 		    
-<p align="JUSTIFY"> Every open search is triggered by adding to the dhus path the string ”/search?q=” followed by the example provided in the last column below.
+<p align="JUSTIFY"> Every open search is triggered by adding to the dhus path the string <pre  class="code-block">
+<code> /search?q=</code> </pre> followed by the example provided in the last column below.
 <br>
 <p align="justify"><strong>Sentinel-3 Auxiliary Data File Metadata </strong><br>
 
