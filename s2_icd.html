@@ -113,8 +113,12 @@ A SENTINEL product refers to a directory folder that contains a collection of in
 The DHuS recognises the Sentinel-2 products at ingestion time and makes products nodes accessible through the OData Protocol. The following odata query returns the list of nodes within the document root (first level).
 			    Note that both UUID and product name are needed</p>
 <p align="JUSTIFY">
+	<pre  class="code-block">
+<code>
 . /odata/v1/Products[‘UUID’]/Nodes('PRODUCT_NAME.SAFE')/Nodes
-</p>
+
+</code>
+						</pre>
 <p align="JUSTIFY"> For example:</p>
 
 <p align="justify"> https://scihub.copernicus.eu/dhus/odata/v1/Products('aee30ba1-e0dd-4395-a3cd-832178bc7590')/Nodes('S2A_MSIL2A_20170503T085601_N0205_R007_T35SLU_20170503T090332.SAFE')/Nodes</p>		    
